@@ -1,0 +1,3059 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VanLUG: Vancouver Linux Users Group</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@patternfly/patternfly@6/patternfly.min.css"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@patternfly/patternfly@6/patternfly-addons.css"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div
+      class="pf-v6-c-page"
+      style="--pf-v6-c-page--section--m-limit-width--MaxWidth: 62rem"
+    >
+      <header class="pf-v6-c-masthead" id="masthead">
+        <div class="pf-v6-c-masthead__main">
+          <span class="pf-v6-c-masthead__toggle">
+            <button
+              class="pf-v6-c-button pf-m-plain"
+              type="button"
+              aria-label="Global navigation"
+              id="nav-toggle"
+              aria-expanded="true"
+            >
+              <svg
+                class="pf-v6-svg"
+                viewBox="0 0 448 512"
+                fill="currentColor"
+                aria-hidden="true"
+                width="1em"
+                height="1em"
+              >
+                <path
+                  d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"
+                />
+              </svg>
+            </button>
+          </span>
+          <a
+            class="pf-v6-c-masthead__brand pf-v6-u-text-color-regular"
+            href="#home"
+            style="text-decoration: none"
+          >
+            <div
+              class="pf-v6-c-masthead__logo"
+              style="
+                display: flex;
+                align-items: center;
+                gap: var(--pf-t--global--spacer--sm);
+                width: auto;
+              "
+            >
+              <img
+                class="pf-v6-c-brand"
+                src="logo.svg"
+                alt="Tux, the Linux mascot"
+                style="height: var(--pf-v6-c-masthead__logo--MaxHeight)"
+              />
+              <span class="pf-v6-u-font-weight-bold">VanLUG</span>
+            </div>
+          </a>
+        </div>
+        <div class="pf-v6-c-masthead__content">
+          <div class="pf-v6-c-toolbar">
+            <div class="pf-v6-c-toolbar__content">
+              <div class="pf-v6-c-toolbar__content-section">
+                <div class="pf-v6-c-toolbar__item pf-m-align-end">
+                  <a
+                    href="#connect"
+                    class="pf-v6-c-button pf-m-secondary pf-m-small"
+                    >Connect with us</a
+                  >
+                </div>
+                <div class="pf-v6-c-toolbar__item">
+                  <a
+                    href="#membership"
+                    class="pf-v6-c-button pf-m-primary pf-m-small"
+                    >Become a member</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <aside class="pf-v6-c-page__sidebar pf-m-expanded" id="page-sidebar">
+        <div class="pf-v6-c-page__sidebar-body">
+          <nav class="pf-v6-c-nav" aria-label="Global navigation">
+            <ul class="pf-v6-c-nav__list" role="list">
+              <li class="pf-v6-c-nav__item">
+                <a class="pf-v6-c-nav__link" href="#home" data-nav="home"
+                  >Home</a
+                >
+              </li>
+              <li class="pf-v6-c-nav__item">
+                <a class="pf-v6-c-nav__link" href="#events" data-nav="events"
+                  >Events</a
+                >
+              </li>
+              <li class="pf-v6-c-nav__item">
+                <a class="pf-v6-c-nav__link" href="#about" data-nav="about"
+                  >About</a
+                >
+              </li>
+              <li class="pf-v6-c-nav__item">
+                <a
+                  class="pf-v6-c-nav__link"
+                  href="#partners"
+                  data-nav="partners"
+                  >Partners</a
+                >
+              </li>
+              <li class="pf-v6-c-nav__item">
+                <a
+                  class="pf-v6-c-nav__link"
+                  href="#resources"
+                  data-nav="resources"
+                  >Resources</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+
+      <div class="pf-v6-c-page__main-container">
+        <main class="pf-v6-c-page__main" id="main-content">
+          <div id="page-home" class="page-section">
+            <section
+              class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+              style="
+                --pf-v6-c-page__main-section--BackgroundColor: var(
+                  --pf-t--global--background--color--secondary--default
+                );
+                padding-block: var(--pf-t--global--spacer--3xl);
+              "
+            >
+              <div
+                class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-lg"
+              >
+                <div class="pf-v6-c-content">
+                  <span
+                    class="pf-v6-u-font-size-sm pf-v6-u-font-weight-bold"
+                    style="
+                      color: var(--pf-t--global--text--color--brand--default);
+                      letter-spacing: 0.05em;
+                      text-transform: uppercase;
+                    "
+                  >
+                    Since the 1990s &middot; 2,200+ members
+                  </span>
+                  <h1 class="pf-v6-u-font-size-4xl">
+                    Vancouver's Linux community
+                  </h1>
+                  <p class="pf-v6-u-font-size-lg">
+                    VanLUG is a non-profit user group for Linux professionals,
+                    hobbyists, and curious newcomers in the Greater Vancouver
+                    area. For over three decades, we've been promoting Linux and
+                    free, open-source software through monthly talks, drop-in
+                    help sessions, and community events, all free and all
+                    volunteer-run, for every level of proficiency.
+                  </p>
+                </div>
+                <div class="pf-v6-l-flex pf-m-gap-sm">
+                  <a href="#events" class="pf-v6-c-button pf-m-primary"
+                    >See upcoming events</a
+                  >
+                  <a href="#about" class="pf-v6-c-button pf-m-secondary"
+                    >Who we are</a
+                  >
+                </div>
+              </div>
+            </section>
+
+            <section
+              class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+            >
+              <div
+                class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+              >
+                <div class="pf-v6-c-content">
+                  <h3>Next meeting</h3>
+                </div>
+                <div class="pf-v6-c-card pf-m-compact">
+                  <div class="pf-v6-c-card__body">
+                    <div
+                      class="pf-v6-l-flex pf-m-gap-lg pf-m-align-items-flex-start"
+                    >
+                      <div
+                        class="pf-v6-l-flex pf-m-column pf-m-align-items-center"
+                      >
+                        <span class="pf-v6-c-label pf-m-green pf-m-outline">
+                          <span class="pf-v6-c-label__content">
+                            <span class="pf-v6-c-label__text">Apr 4</span>
+                          </span>
+                        </span>
+                      </div>
+                      <div class="pf-v6-l-flex pf-m-column pf-m-gap-sm">
+                        <div class="pf-v6-c-content">
+                          <h4>Linux Talks</h4>
+                          <p>
+                            <small
+                              >Burnaby Public Library, Bob Prittie Metrotown
+                              &middot; 2:00 pm</small
+                            >
+                          </p>
+                        </div>
+                        <a
+                          href="https://lu.ma/6vxeehqg"
+                          target="_blank"
+                          rel="noopener"
+                          class="pf-v6-c-button pf-m-link pf-m-inline"
+                          >RSVP on Luma</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="pf-v6-c-content">
+                  <p>
+                    We also run regular drop-in Linux help sessions at libraries
+                    in Richmond, Surrey, and Burnaby.
+                    <a href="#events">Full schedule</a>
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section
+              class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+            >
+              <div
+                class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+              >
+                <div class="pf-v6-c-content">
+                  <h3>What to expect</h3>
+                </div>
+                <div class="pf-v6-l-gallery pf-m-gutter">
+                  <div class="pf-v6-c-card">
+                    <div class="pf-v6-c-card__title">
+                      <div class="pf-v6-c-card__title-text">Monthly talks</div>
+                    </div>
+                    <div class="pf-v6-c-card__body">
+                      One or two presentations each month: sysadmin deep-dives,
+                      tooling demos, career talks, security, whatever people
+                      find interesting.
+                    </div>
+                  </div>
+                  <div class="pf-v6-c-card">
+                    <div class="pf-v6-c-card__title">
+                      <div class="pf-v6-c-card__title-text">
+                        Drop-in help sessions
+                      </div>
+                    </div>
+                    <div class="pf-v6-c-card__body">
+                      Bring your laptop. We help people install Linux,
+                      troubleshoot problems, and get comfortable with the
+                      command line.
+                    </div>
+                  </div>
+                  <div class="pf-v6-c-card">
+                    <div class="pf-v6-c-card__title">
+                      <div class="pf-v6-c-card__title-text">
+                        Community year-round
+                      </div>
+                    </div>
+                    <div class="pf-v6-c-card__body">
+                      The conversation keeps going on
+                      <a
+                        href="https://discourse.vanlug.ca"
+                        target="_blank"
+                        rel="noopener"
+                        >Discourse</a
+                      >
+                      between meetings. Ask questions, share projects, find
+                      collaborators.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <div id="page-events" class="page-section">
+            <section
+              class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+            >
+              <div
+                class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+              >
+                <div class="pf-v6-c-content">
+                  <h1>Events</h1>
+                  <p>
+                    We meet three times a month across Greater Vancouver. All
+                    events are free. Want to give a talk?
+                    <a href="#connect">Get in touch.</a>
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section
+              class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+            >
+              <div
+                class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+              >
+                <div class="pf-v6-c-content">
+                  <h3>Upcoming</h3>
+                </div>
+                <table
+                  class="pf-v6-c-table pf-m-grid-md pf-m-compact"
+                  role="grid"
+                  aria-label="Upcoming events"
+                >
+                  <thead class="pf-v6-c-table__thead">
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <th
+                        class="pf-v6-c-table__th"
+                        role="columnheader"
+                        scope="col"
+                      >
+                        Date
+                      </th>
+                      <th
+                        class="pf-v6-c-table__th"
+                        role="columnheader"
+                        scope="col"
+                      >
+                        Event
+                      </th>
+                      <th
+                        class="pf-v6-c-table__th"
+                        role="columnheader"
+                        scope="col"
+                      >
+                        Location
+                      </th>
+                      <th
+                        class="pf-v6-c-table__th"
+                        role="columnheader"
+                        scope="col"
+                      ></th>
+                    </tr>
+                  </thead>
+                  <tbody class="pf-v6-c-table__tbody" role="rowgroup">
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Apr 4
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Event"
+                      >
+                        Linux Talks
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Location"
+                      >
+                        Burnaby Public Library, Bob Prittie Metrotown &middot;
+                        2:00 pm
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell">
+                        <a
+                          href="https://lu.ma/6vxeehqg"
+                          target="_blank"
+                          rel="noopener"
+                          class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small"
+                          >RSVP</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Apr 8
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Event"
+                      >
+                        Linux Link at Richmond
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Location"
+                      >
+                        Richmond Public Library, Brighouse Branch &middot; 5:30
+                        pm
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell">
+                        <a
+                          href="https://lu.ma/t5jdcd0f"
+                          target="_blank"
+                          rel="noopener"
+                          class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small"
+                          >RSVP</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Apr 14
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Event"
+                      >
+                        Linux Link at Surrey (Guildford)
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Location"
+                      >
+                        Surrey Libraries, Guildford Branch &middot; 5:30 pm
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell">
+                        <a
+                          href="https://lu.ma/dtp4rbec"
+                          target="_blank"
+                          rel="noopener"
+                          class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small"
+                          >RSVP</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        May 13
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Event"
+                      >
+                        Linux Link at Richmond
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Location"
+                      >
+                        Richmond Public Library, Brighouse Branch &middot; 5:30
+                        pm
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell">
+                        <a
+                          href="https://lu.ma/vanlug"
+                          target="_blank"
+                          rel="noopener"
+                          class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small"
+                          >RSVP</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        May 19
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Event"
+                      >
+                        Linux Link at Surrey (Guildford)
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Location"
+                      >
+                        Surrey Libraries, Guildford Branch &middot; 5:30 pm
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell">
+                        <a
+                          href="https://lu.ma/vanlug"
+                          target="_blank"
+                          rel="noopener"
+                          class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small"
+                          >RSVP</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        May 23
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Event"
+                      >
+                        Linux Talks
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Location"
+                      >
+                        Burnaby Public Library, Bob Prittie Metrotown &middot;
+                        2:00 pm
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell">
+                        <a
+                          href="https://lu.ma/vanlug"
+                          target="_blank"
+                          rel="noopener"
+                          class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small"
+                          >RSVP</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Jun 10
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Event"
+                      >
+                        Linux Link at Richmond
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Location"
+                      >
+                        Richmond Public Library, Brighouse Branch &middot; 5:30
+                        pm
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell">
+                        <a
+                          href="https://lu.ma/vanlug"
+                          target="_blank"
+                          rel="noopener"
+                          class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small"
+                          >RSVP</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Jun 16
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Event"
+                      >
+                        Linux Link at Surrey (Guildford)
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Location"
+                      >
+                        Surrey Libraries, Guildford Branch &middot; 5:30 pm
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell">
+                        <a
+                          href="https://lu.ma/vanlug"
+                          target="_blank"
+                          rel="noopener"
+                          class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small"
+                          >RSVP</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Jun 20
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Event"
+                      >
+                        Linux Talks
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Location"
+                      >
+                        Burnaby Public Library, Bob Prittie Metrotown &middot;
+                        2:00 pm
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell">
+                        <a
+                          href="https://lu.ma/vanlug"
+                          target="_blank"
+                          rel="noopener"
+                          class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small"
+                          >RSVP</a
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <section
+              class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+            >
+              <div
+                class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+              >
+                <div class="pf-v6-c-content">
+                  <h3>Past events</h3>
+                </div>
+                <table
+                  class="pf-v6-c-table pf-m-grid-md pf-m-compact"
+                  role="grid"
+                  aria-label="Past events"
+                >
+                  <thead class="pf-v6-c-table__thead">
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <th
+                        class="pf-v6-c-table__th"
+                        role="columnheader"
+                        scope="col"
+                      >
+                        Date
+                      </th>
+                      <th
+                        class="pf-v6-c-table__th"
+                        role="columnheader"
+                        scope="col"
+                      >
+                        Event
+                      </th>
+                      <th
+                        class="pf-v6-c-table__th"
+                        role="columnheader"
+                        scope="col"
+                      >
+                        Location
+                      </th>
+                      <th
+                        class="pf-v6-c-table__th"
+                        role="columnheader"
+                        scope="col"
+                      ></th>
+                    </tr>
+                  </thead>
+                  <tbody class="pf-v6-c-table__tbody" role="rowgroup">
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Mar 21, 2026
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Event"
+                      >
+                        Linux Talks: Ansible 101 (Automate Everything)
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Location"
+                      >
+                        Burnaby Public Library, Bob Prittie Metrotown
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell">
+                        <a
+                          href="https://www.meetup.com/vanlug-bc/events/313215980/"
+                          target="_blank"
+                          rel="noopener"
+                          class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small"
+                          >Meetup</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Mar 17, 2026
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Event"
+                      >
+                        Linux Link at Surrey (Guildford)
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Location"
+                      >
+                        Surrey Libraries, Guildford Branch
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell">
+                        <a
+                          href="https://www.meetup.com/vanlug-bc/events/313215966/"
+                          target="_blank"
+                          rel="noopener"
+                          class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small"
+                          >Meetup</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Mar 11, 2026
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Event"
+                      >
+                        Linux Link at Richmond
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Location"
+                      >
+                        Richmond Public Library, Brighouse Branch
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell">
+                        <a
+                          href="https://www.meetup.com/vanlug-bc/events/313215956/"
+                          target="_blank"
+                          rel="noopener"
+                          class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small"
+                          >Meetup</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Feb 17, 2026
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Event"
+                      >
+                        Linux Link at Surrey (Guildford)
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Location"
+                      >
+                        Surrey Libraries, Guildford Branch
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell">
+                        <a
+                          href="https://www.meetup.com/vanlug-bc/events/312096580/"
+                          target="_blank"
+                          rel="noopener"
+                          class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small"
+                          >Meetup</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Feb 14, 2026
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Event"
+                      >
+                        Linux Talks
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Location"
+                      >
+                        Burnaby Public Library, Bob Prittie Metrotown
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell">
+                        <a
+                          href="https://www.meetup.com/vanlug-bc/events/312546184/"
+                          target="_blank"
+                          rel="noopener"
+                          class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small"
+                          >Meetup</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Feb 11, 2026
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Event"
+                      >
+                        Linux Link at Richmond
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Location"
+                      >
+                        Richmond Public Library, Brighouse Branch
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell">
+                        <a
+                          href="https://www.meetup.com/vanlug-bc/events/312096570/"
+                          target="_blank"
+                          rel="noopener"
+                          class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small"
+                          >Meetup</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Jan 20, 2026
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Event"
+                      >
+                        Linux Link at Surrey (Guildford)
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Location"
+                      >
+                        Surrey Libraries, Guildford Branch
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell">
+                        <a
+                          href="https://www.meetup.com/vanlug-bc/events/312096575/"
+                          target="_blank"
+                          rel="noopener"
+                          class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small"
+                          >Meetup</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Jan 17, 2026
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Event"
+                      >
+                        Linux Talks
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Location"
+                      >
+                        Burnaby Public Library, Bob Prittie Metrotown
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell">
+                        <a
+                          href="https://www.meetup.com/vanlug-bc/events/312546176/"
+                          target="_blank"
+                          rel="noopener"
+                          class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small"
+                          >Meetup</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Jan 14, 2026
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Event"
+                      >
+                        Linux Link at Richmond
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Location"
+                      >
+                        Richmond Public Library, Brighouse Branch
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell">
+                        <a
+                          href="https://www.meetup.com/vanlug-bc/events/312096564/"
+                          target="_blank"
+                          rel="noopener"
+                          class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small"
+                          >Meetup</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Dec 23, 2025
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Event"
+                      >
+                        VanLUG Christmas Party
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Location"
+                      >
+                        Surrey Libraries, Guildford Branch
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell"></td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Dec 20, 2025
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Event"
+                      >
+                        2025 Annual General Meeting
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Location"
+                      >
+                        Burnaby Public Library, Bob Prittie Metrotown
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell"></td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Nov 1, 2025
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Event"
+                      >
+                        Linux Link: Networking Event
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Location"
+                      >
+                        Burnaby Public Library, Bob Prittie Metrotown
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell"></td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Oct 11, 2025
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Event"
+                      >
+                        Hacktoberfest 2025 with VanLUG
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Location"
+                      >
+                        Z-Space
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell"></td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Oct 4, 2025
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Event"
+                      >
+                        Linux Link: They Go Phishing
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Location"
+                      >
+                        Burnaby Public Library, Bob Prittie Metrotown
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell"></td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Sep 13, 2025
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Event"
+                      >
+                        Linux Foundation: 2025 State of Tech Talent Report
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Location"
+                      >
+                        Burnaby Public Library, Bob Prittie Metrotown
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell"></td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Jul 19, 2025
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Event"
+                      >
+                        Burnaby Linux Meet: AI in Agriculture
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Location"
+                      >
+                        Burnaby Public Library, Bob Prittie Metrotown
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell"></td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Jun 7, 2025
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Event"
+                      >
+                        VPL Linux Link: State of Linux Gaming in 2025
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Location"
+                      >
+                        Vancouver Public Library, Central Library
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell"></td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Nov 16, 2024
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Event"
+                      >
+                        Cybersecurity for ALL
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Location"
+                      >
+                        Vancouver Public Library, Central Library
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell"></td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Nov 9, 2024
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Event"
+                      >
+                        VanLUG Annual General Meeting
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Location"
+                      >
+                        Burnaby Public Library, Bob Prittie Metrotown
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell"></td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Oct 19, 2024
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Event"
+                      >
+                        Shell Magic: The Power of Bash One-Liners
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Location"
+                      >
+                        Vancouver Public Library, Central Library
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell"></td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Sep 7, 2024
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Event"
+                      >
+                        Thoughts on Go Programming Language
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Location"
+                      >
+                        Burnaby Public Library, Bob Prittie Metrotown
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell"></td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Aug 24, 2024
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Event"
+                      >
+                        Expand Your Career with Red Hat Upstream Projects
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Location"
+                      >
+                        Burnaby Public Library, Bob Prittie Metrotown
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell"></td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Jul 27, 2024
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Event"
+                      >
+                        Open Source AI: Opportunities and Applications
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Location"
+                      >
+                        Vancouver Public Library, Central Library
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell"></td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Jul 20, 2024
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Event"
+                      >
+                        DevOps, Linux &amp;&amp; Open Source
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Location"
+                      >
+                        Burnaby Public Library, Bob Prittie Metrotown
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell"></td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Jun 15, 2024
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Event"
+                      >
+                        Data Science on Linux
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Location"
+                      >
+                        Burnaby Public Library, Bob Prittie Metrotown
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell"></td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Mar 9, 2024
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Event"
+                      >
+                        Cybersecurity &amp; the Flipper Zero
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Location"
+                      >
+                        Vancouver Public Library, Central Library
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell"></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="pf-v6-c-content">
+                  <p>
+                    Full event history is available on
+                    <a
+                      href="https://lu.ma/vanlug"
+                      target="_blank"
+                      rel="noopener"
+                      >Luma</a
+                    >
+                    and
+                    <a
+                      href="https://www.meetup.com/vanlug-bc/events/"
+                      target="_blank"
+                      rel="noopener"
+                      >Meetup</a
+                    >.
+                  </p>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <div id="page-about" class="page-section">
+            <section
+              class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+            >
+              <div
+                class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+              >
+                <div class="pf-v6-c-content">
+                  <h1>About VanLUG</h1>
+                  <p>
+                    The Vancouver Linux User Group is a non-profit association
+                    of technology professionals and enthusiasts in the Greater
+                    Vancouver area. With over 2,200 members, we are one of the
+                    largest Linux user groups in the world.
+                  </p>
+                  <p>
+                    VanLUG has been bringing Linux and open-source enthusiasts
+                    together since the 1990s. What started as a handful of
+                    people in a library meeting room has grown into one of the
+                    most active user groups of its kind across Greater Vancouver
+                    and the Lower Mainland.
+                  </p>
+                  <p>
+                    We promote Linux and free, open-source software as
+                    alternatives to proprietary platforms, and provide a forum
+                    for professionals and newcomers alike to meet, learn, and
+                    collaborate. Our monthly meetings feature guest speakers
+                    from local and international companies on topics ranging
+                    from kernel internals and automation to career strategy and
+                    startup opportunities.
+                  </p>
+                  <p>
+                    More importantly, VanLUG wants members to gain new skills,
+                    new ideas, better career trajectories, and greater
+                    opportunities in the open-source ecosystem.
+                  </p>
+                </div>
+                <div class="pf-v6-l-gallery pf-m-gutter">
+                  <img
+                    src="https://vanlug.ca/wp-content/uploads/2025/10/img_0874.jpg?w=1024"
+                    alt="VanLUG meeting at a library"
+                    style="
+                      border-radius: var(
+                        --pf-t--global--border--radius--medium
+                      );
+                    "
+                  />
+                  <img
+                    src="https://vanlug.ca/wp-content/uploads/2025/10/felicitas-vanlug-presentation.jpeg?w=1024"
+                    alt="VanLUG presentation"
+                    style="
+                      border-radius: var(
+                        --pf-t--global--border--radius--medium
+                      );
+                    "
+                  />
+                </div>
+                <div class="pf-v6-c-content">
+                  <h3>Our purpose</h3>
+                  <p>We exist to fulfill the following mandates:</p>
+                  <ol type="a">
+                    <li>
+                      To promote the use of GNU-Linux (aka LINUX), a freely
+                      distributable, UNIX-like operating system developed by
+                      Linus Torvalds and a team of International collaborators.
+                      Linux follows the 'free, open source software' (FOSS)
+                      principles created by Richard M. Stallman who headed the
+                      GNU project. We also promote other variants of Linux
+                      (called Distros) and other UNIX versions (like GNU, BSD,
+                      FreeBSD, OpenBSD, etc) by individuals, businesses,
+                      organizations, institutions, and others, particularly
+                      those in the Greater Vancouver Area, the Canadian
+                      Westcoast, and the Pacific North-West.
+                    </li>
+                    <li>
+                      To promote Free, Open Source and other software
+                      development models under which GNU-Linux and related
+                      software are being developed.
+                    </li>
+                    <li>
+                      To foster collaboration and cooperation between GNU-Linux
+                      / Unix users and developers, particularly those in the
+                      Greater Vancouver Area, the Canadian Westcoast, and the
+                      Pacific North-West.
+                    </li>
+                    <li>
+                      To provide a focus for GNU-Linux / Unix users and
+                      developers, particularly those in Greater Vancouver Area
+                      and the Pacific North-West.
+                    </li>
+                    <li>
+                      To organize events of various types in Greater Vancouver
+                      Area and the Pacific-North West, that promote the
+                      GNU-Linux / UNIX and related software and products to the
+                      larger community.
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </section>
+
+            <section
+              class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+            >
+              <div
+                class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+              >
+                <div class="pf-v6-c-content">
+                  <h3>2026 Board of Directors</h3>
+                  <p>
+                    As a registered non-profit society in British Columbia,
+                    VanLUG is governed by a volunteer Board of Directors.
+                    Elections are held annually at our AGM. New volunteers are
+                    always welcome. <a href="#connect">Get in touch</a> if you'd
+                    like to help.
+                  </p>
+                </div>
+                <dl class="pf-v6-c-description-list pf-m-horizontal">
+                  <div class="pf-v6-c-description-list__group">
+                    <dt class="pf-v6-c-description-list__term">
+                      <span class="pf-v6-c-description-list__text"
+                        >President</span
+                      >
+                    </dt>
+                    <dd class="pf-v6-c-description-list__description">
+                      <div class="pf-v6-c-description-list__text">
+                        Nestor Balce
+                      </div>
+                    </dd>
+                  </div>
+                  <div class="pf-v6-c-description-list__group">
+                    <dt class="pf-v6-c-description-list__term">
+                      <span class="pf-v6-c-description-list__text"
+                        >Vice President</span
+                      >
+                    </dt>
+                    <dd class="pf-v6-c-description-list__description">
+                      <div class="pf-v6-c-description-list__text">
+                        John Weintraub
+                      </div>
+                    </dd>
+                  </div>
+                  <div class="pf-v6-c-description-list__group">
+                    <dt class="pf-v6-c-description-list__term">
+                      <span class="pf-v6-c-description-list__text"
+                        >Treasurer / Acting Secretary</span
+                      >
+                    </dt>
+                    <dd class="pf-v6-c-description-list__description">
+                      <div class="pf-v6-c-description-list__text">
+                        Kim Kulak
+                      </div>
+                    </dd>
+                  </div>
+                  <div class="pf-v6-c-description-list__group">
+                    <dt class="pf-v6-c-description-list__term">
+                      <span class="pf-v6-c-description-list__text"
+                        >Directors-at-large</span
+                      >
+                    </dt>
+                    <dd class="pf-v6-c-description-list__description">
+                      <div class="pf-v6-c-description-list__text">
+                        PJ L., Felicitas P., William G., Frank L., Alex Z.,
+                        Zhiqiang Z., Brant F., Violet F., Victor AV S., Ted L.
+                      </div>
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+            </section>
+          </div>
+
+          <div id="page-partners" class="page-section">
+            <section
+              class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+            >
+              <div
+                class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+              >
+                <div class="pf-v6-c-content">
+                  <h1>Partners</h1>
+                  <p>
+                    Thank you to our generous sponsors and partners who believe
+                    in our mission of connecting open-source technology to
+                    people to improve their lives and careers. Our events are
+                    hosted by Vancouver's public library system and community
+                    spaces, who share our belief that knowledge should be freely
+                    accessible.
+                  </p>
+                </div>
+
+                <div class="pf-v6-c-card pf-m-compact">
+                  <div class="pf-v6-c-card__body">
+                    <div
+                      class="pf-v6-l-grid pf-m-gutter pf-m-all-12-col pf-m-all-4-col-on-md"
+                    >
+                      <div class="pf-v6-l-grid__item">
+                        <img
+                          src="https://vanlug.ca/wp-content/uploads/2025/12/416252b20689347b0bd7e95656024acf_fgraphic.png?w=300"
+                          alt="Burnaby Public Library"
+                          style="max-width: 100%"
+                        />
+                      </div>
+                      <div class="pf-v6-l-grid__item pf-m-8-col-on-md">
+                        <div class="pf-v6-c-content">
+                          <p>
+                            <b
+                              ><a
+                                href="https://bpl.bc.ca"
+                                target="_blank"
+                                rel="noopener"
+                                >Burnaby Public Library</a
+                              ></b
+                            >
+                            serves Burnaby and the surrounding Lower Mainland,
+                            empowering the community to engage with and share
+                            stories, ideas, and information through its four
+                            branches and online services.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="pf-v6-c-card pf-m-compact">
+                  <div class="pf-v6-c-card__body">
+                    <div
+                      class="pf-v6-l-grid pf-m-gutter pf-m-all-12-col pf-m-all-4-col-on-md"
+                    >
+                      <div class="pf-v6-l-grid__item">
+                        <img
+                          src="https://vanlug.ca/wp-content/uploads/2024/06/surreylogo-1.png?w=300"
+                          alt="Surrey Libraries"
+                          style="max-width: 100%"
+                        />
+                      </div>
+                      <div class="pf-v6-l-grid__item pf-m-8-col-on-md">
+                        <div class="pf-v6-c-content">
+                          <p>
+                            <b
+                              ><a
+                                href="https://surreylibraries.ca/"
+                                target="_blank"
+                                rel="noopener"
+                                >Surrey Libraries</a
+                              ></b
+                            >
+                            is the municipal public library system of Surrey,
+                            BC, serving a population of approximately 580,000
+                            with a collection of more than 790,000 items.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="pf-v6-c-card pf-m-compact">
+                  <div class="pf-v6-c-card__body">
+                    <div
+                      class="pf-v6-l-grid pf-m-gutter pf-m-all-12-col pf-m-all-4-col-on-md"
+                    >
+                      <div class="pf-v6-l-grid__item">
+                        <img
+                          src="https://vanlug.ca/wp-content/uploads/2025/03/rpl-logo-2.webp"
+                          alt="Richmond Public Library"
+                          style="max-width: 100%"
+                        />
+                      </div>
+                      <div class="pf-v6-l-grid__item pf-m-8-col-on-md">
+                        <div class="pf-v6-c-content">
+                          <p>
+                            <b
+                              ><a
+                                href="https://www.yourlibrary.ca/"
+                                target="_blank"
+                                rel="noopener"
+                                >Richmond Public Library</a
+                              ></b
+                            >
+                            has been proudly serving the Richmond community
+                            since 1976, creating opportunities to learn,
+                            connect, and belong.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="pf-v6-c-card pf-m-compact">
+                  <div class="pf-v6-c-card__body">
+                    <div
+                      class="pf-v6-l-grid pf-m-gutter pf-m-all-12-col pf-m-all-4-col-on-md"
+                    >
+                      <div class="pf-v6-l-grid__item">
+                        <img
+                          src="https://vanlug.ca/wp-content/uploads/2023/06/your-paragraph-text.jpg"
+                          alt="Z-Space"
+                          style="max-width: 100%"
+                        />
+                      </div>
+                      <div class="pf-v6-l-grid__item pf-m-8-col-on-md">
+                        <div class="pf-v6-c-content">
+                          <p>
+                            <b
+                              ><a
+                                href="https://z-space.ca"
+                                target="_blank"
+                                rel="noopener"
+                                >Z-Space</a
+                              ></b
+                            >
+                            is a registered non-profit in British Columbia, a
+                            creative culture hub supporting art, tech, music,
+                            science, food, and community. They provide
+                            affordable, sustainable, and community-oriented
+                            space for startups, artists, and builders.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <div id="page-connect" class="page-section">
+            <section
+              class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+            >
+              <div
+                class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+              >
+                <div class="pf-v6-c-content">
+                  <h1>Connect with us</h1>
+                  <p>Where the community lives, and how to reach us.</p>
+                </div>
+              </div>
+            </section>
+
+            <section
+              class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+            >
+              <div
+                class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+              >
+                <div class="pf-v6-c-content">
+                  <h3>Discussion</h3>
+                  <p>
+                    Where the ongoing conversation happens between meetings.
+                  </p>
+                </div>
+                <div class="pf-v6-l-flex pf-m-column pf-m-gap-md">
+                  <a
+                    href="https://discourse.vanlug.ca/latest"
+                    target="_blank"
+                    rel="noopener"
+                    class="pf-v6-c-card pf-m-compact pf-m-full-height pf-v6-u-text-color-regular"
+                    style="text-decoration: none"
+                  >
+                    <div class="pf-v6-c-card__body">
+                      <div
+                        class="pf-v6-l-flex pf-m-justify-content-space-between pf-m-align-items-center"
+                      >
+                        <div class="pf-v6-l-flex pf-m-column pf-m-gap-xs">
+                          <div class="pf-v6-c-content"><b>Discourse</b></div>
+                          <div class="pf-v6-c-content">
+                            <small
+                              >Our forum: ask questions, start discussions,
+                              share what you're working on</small
+                            >
+                          </div>
+                        </div>
+                        <span class="pf-v6-c-content"
+                          ><small>discourse.vanlug.ca</small></span
+                        >
+                      </div>
+                    </div>
+                  </a>
+                  <a
+                    href="https://signal.group/#CjQKIDT_S1T4NAqQq0UhlMwAVjirsOj6iW1JzpicVudNwr7SEhBRwaLJ9JGEM9CaciluJQdf"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    class="pf-v6-c-card pf-m-compact pf-m-full-height pf-v6-u-text-color-regular"
+                    style="text-decoration: none"
+                  >
+                    <div class="pf-v6-c-card__body">
+                      <div
+                        class="pf-v6-l-flex pf-m-justify-content-space-between pf-m-align-items-center"
+                      >
+                        <div class="pf-v6-l-flex pf-m-column pf-m-gap-xs">
+                          <div class="pf-v6-c-content"><b>Signal</b></div>
+                          <div class="pf-v6-c-content">
+                            <small
+                              >Encrypted group chat for real-time
+                              conversation</small
+                            >
+                          </div>
+                        </div>
+                        <span class="pf-v6-c-content"
+                          ><small>Signal group</small></span
+                        >
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </section>
+
+            <section
+              class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+            >
+              <div
+                class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+              >
+                <div class="pf-v6-c-content">
+                  <h3>Follow</h3>
+                  <p>
+                    Stay up to date with event announcements and community news.
+                  </p>
+                </div>
+                <div class="pf-v6-l-flex pf-m-column pf-m-gap-md">
+                  <a
+                    href="https://cosocial.ca/@vanlug"
+                    target="_blank"
+                    rel="noopener"
+                    class="pf-v6-c-card pf-m-compact pf-m-full-height pf-v6-u-text-color-regular"
+                    style="text-decoration: none"
+                  >
+                    <div class="pf-v6-c-card__body">
+                      <div
+                        class="pf-v6-l-flex pf-m-justify-content-space-between pf-m-align-items-center"
+                      >
+                        <div class="pf-v6-l-flex pf-m-column pf-m-gap-xs">
+                          <div class="pf-v6-c-content"><b>Mastodon</b></div>
+                          <div class="pf-v6-c-content">
+                            <small
+                              >Follow us on the fediverse for updates and
+                              announcements</small
+                            >
+                          </div>
+                        </div>
+                        <span class="pf-v6-c-content"
+                          ><small>@vanlug@cosocial.ca</small></span
+                        >
+                      </div>
+                    </div>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/groups/1895787/"
+                    target="_blank"
+                    rel="noopener"
+                    class="pf-v6-c-card pf-m-compact pf-m-full-height pf-v6-u-text-color-regular"
+                    style="text-decoration: none"
+                  >
+                    <div class="pf-v6-c-card__body">
+                      <div
+                        class="pf-v6-l-flex pf-m-justify-content-space-between pf-m-align-items-center"
+                      >
+                        <div class="pf-v6-l-flex pf-m-column pf-m-gap-xs">
+                          <div class="pf-v6-c-content"><b>LinkedIn</b></div>
+                          <div class="pf-v6-c-content">
+                            <small
+                              >Professional networking with VanLUG
+                              members</small
+                            >
+                          </div>
+                        </div>
+                        <span class="pf-v6-c-content"
+                          ><small>VanLUG group</small></span
+                        >
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </section>
+
+            <section
+              class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+            >
+              <div
+                class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+              >
+                <div class="pf-v6-c-content">
+                  <h3>Contact the board</h3>
+                  <p>
+                    Questions, talk proposals, or anything else? We'd love to
+                    hear from you.
+                  </p>
+                </div>
+                <div class="pf-v6-l-flex pf-m-column pf-m-gap-md">
+                  <a
+                    href="mailto:board@vanlug.ca"
+                    class="pf-v6-c-card pf-m-compact pf-m-full-height pf-v6-u-text-color-regular"
+                    style="text-decoration: none"
+                  >
+                    <div class="pf-v6-c-card__body">
+                      <div
+                        class="pf-v6-l-flex pf-m-justify-content-space-between pf-m-align-items-center"
+                      >
+                        <div class="pf-v6-l-flex pf-m-column pf-m-gap-xs">
+                          <div class="pf-v6-c-content"><b>Email</b></div>
+                          <div class="pf-v6-c-content">
+                            <small>Reach the board directly</small>
+                          </div>
+                        </div>
+                        <span class="pf-v6-c-content"
+                          ><small>board@vanlug.ca</small></span
+                        >
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <div id="page-resources" class="page-section">
+            <section
+              class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+            >
+              <div
+                class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+              >
+                <div class="pf-v6-c-content">
+                  <h1>Resources</h1>
+                  <p>
+                    Speaker slides, learning materials, and links to help you on
+                    your Linux journey.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section
+              class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+            >
+              <div
+                class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+              >
+                <div class="pf-v6-c-content">
+                  <h3>Speaker slides</h3>
+                  <p>Slides and materials from past VanLUG presentations.</p>
+                </div>
+                <table
+                  class="pf-v6-c-table pf-m-grid-md pf-m-compact"
+                  role="grid"
+                  aria-label="Speaker slides"
+                >
+                  <thead class="pf-v6-c-table__thead">
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <th
+                        class="pf-v6-c-table__th"
+                        role="columnheader"
+                        scope="col"
+                      >
+                        Date
+                      </th>
+                      <th
+                        class="pf-v6-c-table__th"
+                        role="columnheader"
+                        scope="col"
+                      >
+                        Talk
+                      </th>
+                      <th
+                        class="pf-v6-c-table__th"
+                        role="columnheader"
+                        scope="col"
+                      >
+                        Speaker
+                      </th>
+                      <th
+                        class="pf-v6-c-table__th"
+                        role="columnheader"
+                        scope="col"
+                      ></th>
+                    </tr>
+                  </thead>
+                  <tbody class="pf-v6-c-table__tbody" role="rowgroup">
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        May 2025
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Talk"
+                      >
+                        Photography &amp; Open Source Tools
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Speaker"
+                      >
+                        Serhiy Kobyakov
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell">
+                        <a
+                          href="https://vanlug.ca/wp-content/uploads/2025/05/photography_and_open_source_software.pdf"
+                          target="_blank"
+                          rel="noopener"
+                          class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small"
+                          >Slides</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Apr 2025
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Talk"
+                      >
+                        Version Control Therapy through Git
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Speaker"
+                      >
+                        Eduard M.
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell">
+                        <a
+                          href="https://vanlug.ca/wp-content/uploads/2025/04/git-_ttherapy_eduard_maievskyi.pdf"
+                          target="_blank"
+                          rel="noopener"
+                          class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small"
+                          >Slides</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Jan 2025
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Talk"
+                      >
+                        Mastering Regex
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Speaker"
+                      >
+                        Dolan H.
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell">
+                        <a
+                          href="https://vanlug.ca/wp-content/uploads/2025/01/dolanh_regex.pdf"
+                          target="_blank"
+                          rel="noopener"
+                          class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small"
+                          >Slides</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Oct 2024
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Talk"
+                      >
+                        Shell Magic: The Power of Bash One-Liners
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Speaker"
+                      >
+                        —
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell">
+                        <a
+                          href="https://docs.google.com/presentation/d/1XpjvI3-uAbBBhxw1EJnOq5le--mSQcaBVMBnROF5qmk/edit?usp=sharing"
+                          target="_blank"
+                          rel="noopener"
+                          class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small"
+                          >Slides</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Sep 2024
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Talk"
+                      >
+                        Job Search Strategies: "Dude, Where's My Job?"
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Speaker"
+                      >
+                        —
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell">
+                        <a
+                          href="https://vanlug.ca/wp-content/uploads/2024/09/dude-wheres-my-job.pdf"
+                          target="_blank"
+                          rel="noopener"
+                          class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small"
+                          >Slides</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Sep 2024
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Talk"
+                      >
+                        Discover Go Programming Language
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Speaker"
+                      >
+                        —
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell">
+                        <a
+                          href="https://vanlug.ca/wp-content/uploads/2024/09/discover-go-a-powerful-modern-prograaming-language.pdf"
+                          target="_blank"
+                          rel="noopener"
+                          class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small"
+                          >Slides</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Aug 2024
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Talk"
+                      >
+                        Upstream Projects from Red Hat
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Speaker"
+                      >
+                        Waldirio
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell">
+                        <a
+                          href="http://www.waldirio.com.br/presentations/"
+                          target="_blank"
+                          rel="noopener"
+                          class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small"
+                          >Slides</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Jun 2024
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Talk"
+                      >
+                        DevOps, Linux &amp;&amp; Open Source
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Speaker"
+                      >
+                        KC
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell">
+                        <a
+                          href="https://vanlug.ca/wp-content/uploads/2024/07/burnaby-devops.pdf"
+                          target="_blank"
+                          rel="noopener"
+                          class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small"
+                          >Slides</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Jun 2024
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Talk"
+                      >
+                        Data Science &amp; Open Source Tools
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Speaker"
+                      >
+                        Eduard
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell">
+                        <a
+                          href="https://vanlug.ca/wp-content/uploads/2024/06/em_empowering_data_enthusiasts_with_open_source_tools.pdf"
+                          target="_blank"
+                          rel="noopener"
+                          class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small"
+                          >Slides</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        May 2024
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Talk"
+                      >
+                        Bash Script Crash Course
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Speaker"
+                      >
+                        Iman Anooshehpoor
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell">
+                        <a
+                          href="https://pitch.com/v/bash-script-crash-course-tifk8y"
+                          target="_blank"
+                          rel="noopener"
+                          class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small"
+                          >Slides</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Apr 2024
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Talk"
+                      >
+                        Tips on Compiling Linux Kernels
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Speaker"
+                      >
+                        Kim Kulak
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell">
+                        <a
+                          href="https://vanlug.ca/wp-content/uploads/2024/04/kernel-build-outline.pdf"
+                          target="_blank"
+                          rel="noopener"
+                          class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small"
+                          >Handout</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Mar 2024
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Talk"
+                      >
+                        Unlock Linux: Software Packages
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Speaker"
+                      >
+                        John Weintraub
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell">
+                        <a
+                          href="https://vanlug.ca/wp-content/uploads/2024/04/linux_package_managers.zip"
+                          target="_blank"
+                          rel="noopener"
+                          class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small"
+                          >Slides</a
+                        >
+                      </td>
+                    </tr>
+                    <tr class="pf-v6-c-table__tr" role="row">
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Date"
+                      >
+                        Mar 2024
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Talk"
+                      >
+                        Cybersecurity &amp; the Flipper Zero
+                      </td>
+                      <td
+                        class="pf-v6-c-table__td"
+                        role="cell"
+                        data-label="Speaker"
+                      >
+                        Levko Kravchuk
+                      </td>
+                      <td class="pf-v6-c-table__td" role="cell">
+                        <a
+                          href="https://vanlug.ca/wp-content/uploads/2024/03/vanlug_and_flipper_by_levko_kravchuk.pdf"
+                          target="_blank"
+                          rel="noopener"
+                          class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small"
+                          >Slides</a
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <section
+              class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+            >
+              <div
+                class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+              >
+                <div class="pf-v6-c-content">
+                  <h3>AGM documents</h3>
+                  <p>Minutes and reports from our Annual General Meetings.</p>
+                  <ul>
+                    <li>
+                      <a
+                        href="https://vanlug.ca/wp-content/uploads/2025/01/vanlug-agm-2024-minutes-updated.pdf"
+                        target="_blank"
+                        rel="noopener"
+                        >2024 AGM agenda and minutes</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://vanlug.ca/wp-content/uploads/2025/01/vanlug-community_involvement.pdf"
+                        target="_blank"
+                        rel="noopener"
+                        >Community Involvement, Kim Kulak</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://vanlug.ca/wp-content/uploads/2024/11/vanlug-agm-2023-minutes.pdf"
+                        target="_blank"
+                        rel="noopener"
+                        >2023 AGM minutes</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://vanlug.ca/wp-content/uploads/2024/11/2024-vanlug-year-end-report.pdf"
+                        target="_blank"
+                        rel="noopener"
+                        >2024 year-end report</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <section
+              class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+            >
+              <div
+                class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+              >
+                <div class="pf-v6-c-content">
+                  <h3>Learning Linux</h3>
+                  <p>
+                    Whether you're just getting started or sharpening your
+                    skills, these free resources are a great place to begin.
+                  </p>
+                </div>
+                <div
+                  class="pf-v6-l-flex pf-m-wrap pf-m-gap-md pf-m-align-items-flex-start"
+                >
+                  <div
+                    class="pf-v6-c-card pf-m-compact"
+                    style="flex: 1; min-width: 15rem"
+                  >
+                    <div class="pf-v6-c-card__title">
+                      <div class="pf-v6-c-card__title-text">
+                        Beginner-friendly
+                      </div>
+                    </div>
+                    <div class="pf-v6-c-card__body">
+                      <div class="pf-v6-c-content">
+                        <ul>
+                          <li>
+                            <a
+                              href="https://training.linuxfoundation.org/training/introduction-to-linux/"
+                              target="_blank"
+                              rel="noopener"
+                              >Linux Foundation: Intro to Linux</a
+                            >
+                            (free course, optional certification)
+                          </li>
+                          <li>
+                            <a
+                              href="https://youtu.be/ROjZy1WbCIA"
+                              target="_blank"
+                              rel="noopener"
+                              >freeCodeCamp Linux Crash Course</a
+                            >
+                            (video, beginner-friendly)
+                          </li>
+                          <li>
+                            <a
+                              href="https://youtu.be/sWbUDq4S6Y8"
+                              target="_blank"
+                              rel="noopener"
+                              >freeCodeCamp Introduction</a
+                            >
+                            (updated 2023 post-install course)
+                          </li>
+                          <li>
+                            <a
+                              href="https://www.reddit.com/r/linux4noobs/"
+                              target="_blank"
+                              rel="noopener"
+                              >r/linux4noobs</a
+                            >
+                            (no-judgement community Q&amp;A)
+                          </li>
+                          <li>
+                            <a
+                              href="https://www.ee.surrey.ac.uk/Teaching/Unix/index.html"
+                              target="_blank"
+                              rel="noopener"
+                              >University of Surrey UNIX Tutorials</a
+                            >
+                            (eight fundamental exercises)
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="pf-v6-c-card pf-m-compact"
+                    style="flex: 1; min-width: 15rem"
+                  >
+                    <div class="pf-v6-c-card__title">
+                      <div class="pf-v6-c-card__title-text">
+                        Intermediate &amp; certification
+                      </div>
+                    </div>
+                    <div class="pf-v6-c-card__body">
+                      <div class="pf-v6-c-content">
+                        <ul>
+                          <li>
+                            <a
+                              href="https://linux.org/forums/#linux-tutorials.122"
+                              target="_blank"
+                              rel="noopener"
+                              >Linux.org Tutorials</a
+                            >
+                            (formal training for CS students)
+                          </li>
+                          <li>
+                            <a
+                              href="http://www.professormesser.com/linux-plus/linux-training-videos/"
+                              target="_blank"
+                              rel="noopener"
+                              >Professor Messer: CompTIA Linux+</a
+                            >
+                            (free certification prep videos)
+                          </li>
+                          <li>
+                            <a
+                              href="http://www.ibm.com/developerworks/linux/tutorials/l-lpic2201/"
+                              target="_blank"
+                              rel="noopener"
+                              >IBM: Linux Kernel Tutorial</a
+                            >
+                            (LPI exam prep)
+                          </li>
+                          <li>
+                            <a
+                              href="http://heather.cs.ucdavis.edu/~matloff/unix.html"
+                              target="_blank"
+                              rel="noopener"
+                              >UC Davis: Linux/Unix Tutorial Center</a
+                            >
+                            (Professor Matloff)
+                          </li>
+                          <li>
+                            <a
+                              href="http://www.linuxtopia.org/LinuxSecurity/index.html"
+                              target="_blank"
+                              rel="noopener"
+                              >Linuxtopia: Linux Security for Beginners</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="pf-v6-c-card pf-m-compact"
+                    style="flex: 1; min-width: 15rem"
+                  >
+                    <div class="pf-v6-c-card__title">
+                      <div class="pf-v6-c-card__title-text">
+                        Distros &amp; video guides
+                      </div>
+                    </div>
+                    <div class="pf-v6-c-card__body">
+                      <div class="pf-v6-c-content">
+                        <ul>
+                          <li>
+                            <a
+                              href="https://youtu.be/BMGixkvJ-6w"
+                              target="_blank"
+                              rel="noopener"
+                              >Introduction to Ubuntu Linux</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="https://youtu.be/g5d0dfq_Ew8"
+                              target="_blank"
+                              rel="noopener"
+                              >Introduction to Fedora Linux</a
+                            >
+                            (<a
+                              href="https://youtu.be/f-CkvPNJ4iM"
+                              target="_blank"
+                              rel="noopener"
+                              >v38 update</a
+                            >)
+                          </li>
+                          <li>
+                            <a
+                              href="https://youtu.be/P9a0TALERK8"
+                              target="_blank"
+                              rel="noopener"
+                              >From Windows to Linux: Transitioning to Ubuntu</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="https://youtu.be/cN6DBsuvcpU"
+                              target="_blank"
+                              rel="noopener"
+                              >KDE Desktop Environment for Linux Users</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="https://docs.vmware.com/en/VMware-Horizon/2303/linux-desktops-setup/GUID-51C371A9-4D76-4A8C-8645-909E93080B4F.html"
+                              target="_blank"
+                              rel="noopener"
+                              >How to Install Linux in a VMware VM</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section
+              class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+            >
+              <div
+                class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+              >
+                <div class="pf-v6-c-content">
+                  <h3>Tools &amp; reference</h3>
+                  <ul>
+                    <li>
+                      <a
+                        href="https://www.usenix.org/sites/default/files/conference/protected-files/lisa19_maheshwari.pdf"
+                        target="_blank"
+                        rel="noopener"
+                        >Linux Productivity Tools</a
+                      >, command-line toolkit by Ketan Maheshwari (Oak Ridge
+                      National Laboratory)
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.oreilly.com/library/view/running-linux-third/156592469X/ch01s09.html"
+                        target="_blank"
+                        rel="noopener"
+                        >Recommended Hardware</a
+                      >, O'Reilly guide to Linux-compatible hardware
+                    </li>
+                    <li>
+                      <a
+                        href="https://youtu.be/dL05DoJ0qsQ"
+                        target="_blank"
+                        rel="noopener"
+                        >Free Linux Training Videos</a
+                      >, introductions to various distros and VMware setup
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <div id="page-membership" class="page-section">
+            <section
+              class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+            >
+              <div
+                class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+              >
+                <div class="pf-v6-c-content">
+                  <h1>Become a member</h1>
+                  <p>VanLUG has no dues. If you show up, you're in.</p>
+                </div>
+                <img
+                  src="https://vanlug.ca/wp-content/uploads/2023/06/vpl2.jpg?w=1024"
+                  alt="VanLUG meetup at Vancouver Public Library"
+                  style="
+                    border-radius: var(--pf-t--global--border--radius--medium);
+                    width: 100%;
+                  "
+                />
+              </div>
+            </section>
+
+            <section
+              class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+            >
+              <div
+                class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+              >
+                <div class="pf-v6-c-content">
+                  <h3>Why join</h3>
+                  <p>
+                    Over 2,200 members come to VanLUG for the people, the
+                    knowledge, and the shared belief that open source makes
+                    technology better for everyone.
+                  </p>
+                </div>
+                <div class="pf-v6-l-gallery pf-m-gutter">
+                  <div class="pf-v6-c-card">
+                    <div class="pf-v6-c-card__title">
+                      <div class="pf-v6-c-card__title-text">Learn and grow</div>
+                    </div>
+                    <div class="pf-v6-c-card__body">
+                      Talks on everything from kernel internals to career
+                      strategy. Pick up practical skills, discover new tools,
+                      and get better at troubleshooting.
+                    </div>
+                  </div>
+                  <div class="pf-v6-c-card">
+                    <div class="pf-v6-c-card__title">
+                      <div class="pf-v6-c-card__title-text">
+                        Build your network
+                      </div>
+                    </div>
+                    <div class="pf-v6-c-card__body">
+                      Connect with Linux professionals, developers, and
+                      hobbyists across Greater Vancouver. Find collaborators,
+                      mentors, and job leads.
+                    </div>
+                  </div>
+                  <div class="pf-v6-c-card">
+                    <div class="pf-v6-c-card__title">
+                      <div class="pf-v6-c-card__title-text">
+                        Support open source
+                      </div>
+                    </div>
+                    <div class="pf-v6-c-card__body">
+                      Be part of a community that champions transparent,
+                      collaborative software development and helps newcomers get
+                      started with Linux.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section
+              class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+            >
+              <div
+                class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+              >
+                <div class="pf-v6-c-content">
+                  <h3>How to join</h3>
+                  <p>
+                    Register and subscribe to event notifications. That's it,
+                    you're a member. Come to any of our three monthly meetings
+                    when you can. If you miss one, just catch the next.
+                  </p>
+                </div>
+                <a
+                  href="https://lu.ma/vanlug"
+                  target="_blank"
+                  rel="noopener"
+                  class="pf-v6-c-button pf-m-primary"
+                  >Register on Luma</a
+                >
+              </div>
+            </section>
+          </div>
+
+          <div id="page-conduct" class="page-section">
+            <section
+              class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+            >
+              <div
+                class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+              >
+                <div class="pf-v6-c-content">
+                  <h1>Code of Conduct</h1>
+
+                  <h3>1. Our Pledge</h3>
+                  <p>
+                    In the interest of fostering an open and welcoming
+                    environment, we as members, contributors, and leaders of our
+                    organization, commit to making participation in our
+                    community a harassment-free experience for everyone,
+                    regardless of age, body size, visible or invisible
+                    disability, ethnicity, gender identity and expression, level
+                    of experience, nationality, personal appearance, race,
+                    religion, or sexual identity and orientation.
+                  </p>
+
+                  <h3>2. Our Standards</h3>
+                  <ul>
+                    <li>
+                      <b>Respectful Communication:</b> We prioritize respectful
+                      and professional communication, even during disagreements.
+                      We value constructive criticism and feedback, and we do
+                      not tolerate personal attacks, insults, or derogatory
+                      comments.
+                    </li>
+                    <li>
+                      <b>Inclusivity:</b> We are committed to ensuring a
+                      welcoming environment for everyone. Discrimination or
+                      exclusionary behavior is not tolerated.
+                    </li>
+                    <li>
+                      <b>Collaboration:</b> We encourage collaboration and
+                      cooperation. We seek to build on the collective strength
+                      of our diverse community, and we value the sharing of
+                      ideas, knowledge, and experience.
+                    </li>
+                    <li>
+                      <b>Responsibility:</b> We expect all members to take
+                      responsibility for their actions. Apologies should be
+                      given where appropriate, with a commitment to learn from
+                      mistakes.
+                    </li>
+                  </ul>
+
+                  <h3>3. Our Responsibilities</h3>
+                  <p>
+                    Community leaders are responsible for clarifying the
+                    standards of acceptable behavior and are expected to take
+                    appropriate and fair corrective action in response to any
+                    instances of unacceptable behavior.
+                  </p>
+                  <p>
+                    Community leaders have the right and responsibility to
+                    remove, edit, or reject comments, code, wiki edits, commits,
+                    issues, and other contributions that are not aligned with
+                    this Code of Conduct.
+                  </p>
+
+                  <h3>4. Reporting &amp; Enforcement</h3>
+                  <p>
+                    Instances of abusive, harassing, or otherwise unacceptable
+                    behavior may be reported by contacting the community team
+                    via our <a href="#connect">Connect page</a>. The team will
+                    review and investigate all complaints, and will respond in a
+                    way that it deems appropriate to the circumstances.
+                  </p>
+
+                  <h3>5. Changes to this Code of Conduct</h3>
+                  <p>
+                    The VanLUG organization reserves the right to revise,
+                    update, or change this Code of Conduct at any time. The
+                    community will be notified of any significant changes.
+                  </p>
+
+                  <h3>6. Conclusion</h3>
+                  <p>
+                    We aim to foster a community that is welcoming, inclusive,
+                    and supportive. We encourage all members to help us create a
+                    safe and positive environment. By participating in this
+                    community, you agree to adhere to this Code of Conduct.
+                  </p>
+                  <p>
+                    This is a living document and we encourage all members to
+                    suggest changes or improvements as our community grows and
+                    evolves.
+                  </p>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <footer
+            class="pf-v6-c-page__main-section pf-m-no-fill pf-m-limit-width pf-m-align-center"
+            style="
+              --pf-v6-c-page__main-section--BackgroundColor: var(
+                --pf-t--global--background--color--secondary--default
+              );
+            "
+          >
+            <div
+              class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-lg"
+            >
+              <div class="pf-v6-c-card">
+                <div class="pf-v6-c-card__title">
+                  <div class="pf-v6-c-card__title-text">Support VanLUG</div>
+                </div>
+                <div class="pf-v6-c-card__body">
+                  <div class="pf-v6-c-content">
+                    <p>
+                      VanLUG is 100% volunteer-run. All Board of Directors and
+                      Executives volunteer their time and effort for free.
+                      Donations go toward maintaining our website, Discourse
+                      platform, network infrastructure, and expenses related to
+                      our in-person meetings. Any amount helps. Thank you for
+                      sharing your resources.
+                    </p>
+                  </div>
+                </div>
+                <div class="pf-v6-c-card__footer">
+                  <a
+                    href="https://www.paypal.com/ncp/payment/5LJ46YPC7JJ7E"
+                    target="_blank"
+                    rel="noopener"
+                    class="pf-v6-c-button pf-m-control"
+                    >Donate via PayPal</a
+                  >
+                </div>
+              </div>
+              <div class="pf-v6-l-grid pf-m-gutter">
+                <div class="pf-v6-l-grid__item pf-m-12-col pf-m-6-col-on-md">
+                  <p>
+                    <small
+                      ><a
+                        href="https://github.com/vanlug/vanlug.github.io/"
+                        target="_blank"
+                        rel="noopener"
+                        class="pf-v6-u-text-color-regular pf-v6-u-text-decoration-none"
+                        style="text-decoration: none"
+                        >&copy; 2026 Vancouver Linux Users Group</a
+                      ></small
+                    >
+                  </p>
+                  <div class="pf-v6-c-content">
+                    <p>
+                      <small
+                        >Our <a href="#conduct">Code of Conduct</a> applies in
+                        all VanLUG spaces.</small
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div class="pf-v6-l-grid__item pf-m-12-col pf-m-6-col-on-md">
+                  <div class="pf-v6-c-content">
+                    <p>
+                      <small
+                        >VanLUG is a registered non-profit organization with the
+                        <a
+                          href="https://www2.gov.bc.ca/gov/content/employment-business/business/not-for-profit-organizations"
+                          target="_blank"
+                          rel="noreferrer noopener"
+                          >BC Provincial Government</a
+                        >. Run entirely by volunteers, we've been bringing Linux
+                        and open-source enthusiasts together in Vancouver since
+                        the 1990s.</small
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      {
+        const applyTheme = () =>
+          document.documentElement.classList.toggle(
+            "pf-v6-theme-dark",
+            matchMedia("(prefers-color-scheme: dark)").matches,
+          );
+        applyTheme();
+        matchMedia("(prefers-color-scheme: dark)").addEventListener(
+          "change",
+          applyTheme,
+        );
+
+        const sidebar = document.getElementById("page-sidebar");
+        const toggle = document.getElementById("nav-toggle");
+        const xlBreakpoint = matchMedia("(min-width: 75rem)");
+
+        const setSidebarState = (expanded) => {
+          sidebar.classList.toggle("pf-m-expanded", expanded);
+          sidebar.classList.toggle("pf-m-collapsed", !expanded);
+          toggle.setAttribute("aria-expanded", expanded);
+        };
+
+        toggle.addEventListener("click", () =>
+          setSidebarState(!sidebar.classList.contains("pf-m-expanded")),
+        );
+
+        xlBreakpoint.addEventListener("change", (e) =>
+          setSidebarState(e.matches),
+        );
+        setSidebarState(xlBreakpoint.matches);
+
+        const route = () => {
+          const hash = location.hash.slice(1) || "home";
+
+          for (const s of document.querySelectorAll(".page-section")) {
+            s.style.display = "none";
+          }
+          (
+            document.getElementById(`page-${hash}`) ??
+            document.getElementById("page-home")
+          ).style.display = "block";
+
+          for (const link of document.querySelectorAll(".pf-v6-c-nav__link")) {
+            const active = link.dataset.nav === hash;
+            link.classList.toggle("pf-m-current", active);
+            active
+              ? link.setAttribute("aria-current", "page")
+              : link.removeAttribute("aria-current");
+          }
+
+          if (!xlBreakpoint.matches) setSidebarState(false);
+
+          document.getElementById("main-content")?.scrollTo(0, 0);
+          scrollTo(0, 0);
+        };
+
+        addEventListener("hashchange", route);
+        addEventListener("DOMContentLoaded", route);
+      }
+    </script>
+  </body>
+</html>
