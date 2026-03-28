@@ -14471,14 +14471,14 @@
                   const days = Math.ceil((start - now) / 86400000);
                   const relative =
                     days <= 0
-                      ? "Today!"
+                      ? "(Today!)"
                       : days === 1
-                        ? "Tomorrow"
+                        ? "(Tomorrow)"
                         : days < 7
-                          ? `in ${days} days`
+                          ? `(in ${days} days)`
                           : days < 14
-                            ? "in 1 week"
-                            : `in ${Math.round(days / 7)} weeks`;
+                            ? "(in 1 week)"
+                            : `(in ${Math.round(days / 7)} weeks)`;
                   const time = start.toLocaleTimeString("en-US", {
                     hour: "numeric",
                     minute: "2-digit",
