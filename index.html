@@ -307,41 +307,33 @@
                 <div class="pf-v6-c-content">
                   <h3>Next meeting</h3>
                 </div>
+                <luma-next-event
+                  calendar="cal-x23GENOxTsZqSMO"
+                  proxy="https://next-event-production.up.railway.app"
+                >
                 <div class="pf-v6-c-card pf-m-compact">
                   <div class="pf-v6-c-card__body">
                     <div
                       class="pf-v6-l-flex pf-m-gap-lg pf-m-align-items-flex-start"
                     >
                       <div
-                        class="pf-v6-l-flex pf-m-column pf-m-align-items-center"
-                      >
-                        <span class="pf-v6-c-label pf-m-green pf-m-outline">
-                          <span class="pf-v6-c-label__content">
-                            <span class="pf-v6-c-label__text">Apr 4</span>
-                          </span>
-                        </span>
-                      </div>
-                      <div class="pf-v6-l-flex pf-m-column pf-m-gap-sm">
-                        <div class="pf-v6-c-content">
-                          <h4>Linux Talks</h4>
-                          <p>
-                            <small
-                              >Burnaby Public Library, Bob Prittie Metrotown
-                              &middot; 2:00 pm</small
-                            >
-                          </p>
-                        </div>
-                        <a
-                          href="https://lu.ma/6vxeehqg"
-                          target="_blank"
-                          rel="noopener"
-                          class="pf-v6-c-button pf-m-link pf-m-inline"
-                          >RSVP on Luma</a
+                          class="pf-v6-c-skeleton"
+                          style="--pf-v6-c-skeleton--Height: 3rem; --pf-v6-c-skeleton--Width: 3.5rem"
+                        ></div>
+                        <div
+                          class="pf-v6-l-flex pf-m-column pf-m-gap-sm pf-m-grow"
                         >
+                          <div
+                            class="pf-v6-c-skeleton pf-m-text-lg pf-m-width-50"
+                          ></div>
+                          <div
+                            class="pf-v6-c-skeleton pf-m-text-sm pf-m-width-75"
+                          ></div>
+                      </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
+                </luma-next-event>
                 <div class="pf-v6-c-content">
                   <p>
                     We also run regular drop-in Linux help sessions at libraries
@@ -3161,6 +3153,46 @@
       </div>
     </div>
 
+    <template id="next-event-template">
+      <div class="pf-v6-c-card pf-m-compact">
+        <div class="pf-v6-c-card__body">
+          <div
+            class="pf-v6-l-flex pf-m-gap-lg pf-m-align-items-flex-start"
+          >
+            <div
+              class="pf-v6-l-flex pf-m-column pf-m-align-items-center pf-m-gap-xs"
+            >
+              <span class="pf-v6-c-label pf-m-green pf-m-outline">
+                <span class="pf-v6-c-label__content">
+                  <span class="pf-v6-c-label__text" data-slot="date"></span>
+                </span>
+              </span>
+              <span class="pf-v6-u-font-size-xs" data-slot="weekday"></span>
+              <span class="pf-v6-u-font-size-xs" data-slot="relative"></span>
+            </div>
+            <div class="pf-v6-l-flex pf-m-column pf-m-gap-sm">
+              <div class="pf-v6-c-content">
+                <h4 data-slot="name"></h4>
+                <p>
+                  <small data-slot="detail"></small>
+                </p>
+              </div>
+              <a
+                data-slot="rsvp"
+                target="_blank"
+                rel="noopener"
+                class="pf-v6-c-button pf-m-link pf-m-inline"
+                ><span class="pf-v6-c-button__text">RSVP on Luma</span
+                ><span class="pf-v6-c-button__icon pf-m-end"
+                  ><icon-external></icon-external></span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+
     <script>
       {
         const applyTheme = () =>
@@ -3212,6 +3244,14 @@
               : link.removeAttribute("aria-current");
           }
 
+          for (const link of document.querySelectorAll("[data-topnav]")) {
+            const active = link.dataset.topnav === hash;
+            link.classList.toggle("pf-m-current", active);
+            active
+              ? link.setAttribute("aria-current", "page")
+              : link.removeAttribute("aria-current");
+          }
+
           if (!xlBreakpoint.matches) setSidebarState(false);
 
           document.getElementById("main-content")?.scrollTo(0, 0);
@@ -3220,6 +3260,140 @@
 
         addEventListener("hashchange", route);
         addEventListener("DOMContentLoaded", route);
+
+        {
+          const inButton = (el) =>
+            el.closest(".pf-v6-c-button__icon") !== null;
+          const iconSvg = (path) =>
+            `<svg class="pf-v6-svg" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true" width="0.75em" height="0.75em"><path d="${path}"/></svg>`;
+          const externalPath =
+            "M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112v320c0 44.2 35.8 80 80 80h320c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32v112c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16h112c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z";
+          const emailPath =
+            "M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z";
+          const renderIcon = (el, path) => {
+            if (inButton(el)) {
+              el.innerHTML = iconSvg(path);
+            } else {
+              el.style.display = "inline";
+              el.style.whiteSpace = "nowrap";
+              el.innerHTML = "\u2060" + iconSvg(path);
+              el.querySelector("svg").classList.add("pf-v6-u-ml-xs");
+            }
+          };
+          customElements.define(
+            "icon-external",
+            class extends HTMLElement {
+              connectedCallback() {
+                renderIcon(this, externalPath);
+              }
+            },
+          );
+          customElements.define(
+            "icon-email",
+            class extends HTMLElement {
+              connectedCallback() {
+                renderIcon(this, emailPath);
+              }
+            },
+          );
+        }
+
+        customElements.define(
+          "luma-embed",
+          class extends HTMLElement {
+            connectedCallback() {
+              this.querySelector("[data-slot=load]").addEventListener(
+                "click",
+                () => {
+                  const cal = this.getAttribute("calendar");
+                  const iframe = document.createElement("iframe");
+                  iframe.src = `https://luma.com/embed/calendar/${encodeURIComponent(cal)}/events`;
+                  iframe.allowFullscreen = true;
+                  iframe.setAttribute(
+                    "aria-label",
+                    "Upcoming VanLUG events on Luma",
+                  );
+                  iframe.frameBorder = "0";
+                  iframe.className = "pf-v6-u-w-100";
+                  iframe.style.cssText =
+                    "height:28rem;border:none;border-radius:var(--pf-t--global--border--radius--medium)";
+                  this.replaceChildren(iframe);
+                },
+              );
+            }
+          },
+        );
+
+        customElements.define(
+          "luma-next-event",
+          class extends HTMLElement {
+            connectedCallback() {
+              const cal = this.getAttribute("calendar");
+              const proxy = this.getAttribute("proxy");
+              const t = document.getElementById("next-event-template");
+              fetch(
+                `${proxy}/next-event?calendar=${encodeURIComponent(cal)}`,
+              )
+                .then((r) => r.json())
+                .then(({ entries }) => {
+                  const evt = entries?.[0];
+                  if (!evt) {
+                    this.textContent =
+                      "No upcoming events right now. Check back soon!";
+                    return;
+                  }
+
+                  const start = new Date(evt.start_at);
+                  const now = new Date();
+                  const days = Math.ceil((start - now) / 86400000);
+                  const relative =
+                    days <= 0
+                      ? "Today!"
+                      : days === 1
+                        ? "Tomorrow"
+                        : days < 7
+                          ? `in ${days} days`
+                          : days < 14
+                            ? "in 1 week"
+                            : `in ${Math.round(days / 7)} weeks`;
+                  const time = start.toLocaleTimeString("en-US", {
+                    hour: "numeric",
+                    minute: "2-digit",
+                  });
+
+                  this.replaceChildren();
+                  const clone = t.content.cloneNode(true);
+                  const $ = (s) => clone.querySelector(`[data-slot="${s}"]`);
+                  $("date").textContent = start.toLocaleDateString("en-US", {
+                    month: "short",
+                    day: "numeric",
+                  });
+                  $("weekday").textContent = start.toLocaleDateString(
+                    "en-US",
+                    { weekday: "long" },
+                  );
+                  $("relative").textContent = relative;
+                  $("name").textContent = evt.name || "VanLUG Meeting";
+                  $("detail").textContent = evt.location
+                    ? `${evt.location} \u00b7 ${time}`
+                    : time;
+                  const link = $("rsvp");
+                  link.href = evt.url
+                    ? `https://luma.com/${evt.url}`
+                    : "https://luma.com/vanlug";
+                  this.append(clone);
+                })
+                .catch(() => {
+                  this.textContent =
+                    "Could not load the next event. ";
+                  const a = document.createElement("a");
+                  a.href = "#events";
+                  a.textContent = "See all events.";
+                  this.append(a);
+                });
+            }
+          },
+        );
       }
     </script>
   </body>
