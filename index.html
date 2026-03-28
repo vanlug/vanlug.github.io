@@ -14,6 +14,16 @@
       href="https://unpkg.com/@patternfly/patternfly@6/patternfly-addons.css"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      crossorigin="anonymous"
+    />
     <link rel="icon" href="assets/ci/logo.svg" />
     <link rel="me" href="https://thecanadian.social/@vanlug" />
 
@@ -175,7 +185,7 @@
                   target="_blank"
                   rel="noopener"
                   ><span
-                    >Discourse<icon-external></icon-external><br /><small
+                    >Discourse<icon-discourse></icon-discourse><br /><small
                       class="pf-v6-u-font-size-xs pf-v6-u-text-color-subtle"
                       >Our forum for questions &amp; projects</small
                     ></span
@@ -189,7 +199,7 @@
                   target="_blank"
                   rel="noreferrer noopener"
                   ><span
-                    >Signal<icon-external></icon-external><br /><small
+                    >Signal<icon-signal></icon-signal><br /><small
                       class="pf-v6-u-font-size-xs pf-v6-u-text-color-subtle"
                       >Our encrypted group chat</small
                     ></span
@@ -203,7 +213,7 @@
                   target="_blank"
                   rel="noopener"
                   ><span
-                    >Mastodon<icon-external></icon-external><br /><small
+                    >Mastodon<icon-mastodon></icon-mastodon><br /><small
                       class="pf-v6-u-font-size-xs pf-v6-u-text-color-subtle"
                       >Follow us on the fediverse</small
                     ></span
@@ -217,7 +227,7 @@
                   target="_blank"
                   rel="noopener"
                   ><span
-                    >Bluesky<icon-external></icon-external><br /><small
+                    >Bluesky<icon-bluesky></icon-bluesky><br /><small
                       class="pf-v6-u-font-size-xs pf-v6-u-text-color-subtle"
                       >Bridged from Mastodon</small
                     ></span
@@ -231,7 +241,7 @@
                   target="_blank"
                   rel="noopener"
                   ><span
-                    >LinkedIn<icon-external></icon-external><br /><small
+                    >LinkedIn<icon-linkedin></icon-linkedin><br /><small
                       class="pf-v6-u-font-size-xs pf-v6-u-text-color-subtle"
                       >Our professional network group</small
                     ></span
@@ -308,7 +318,7 @@
                     class="pf-v6-c-button pf-m-link"
                     ><span class="pf-v6-c-button__text">Join the forum</span
                     ><span class="pf-v6-c-button__icon pf-m-end"
-                      ><icon-external></icon-external></span
+                      ><i class="fa-brands fa-discourse"></i></span
                   ></a>
                 </div>
               </div>
@@ -407,14 +417,14 @@
                         href="https://discourse.vanlug.ca"
                         target="_blank"
                         rel="noopener"
-                        >Discourse<icon-external></icon-external
+                        >Discourse<icon-discourse></icon-discourse
                       ></a>
                       and
                       <a
                         href="https://signal.group/#CjQKIDT_S1T4NAqQq0UhlMwAVjirsOj6iW1JzpicVudNwr7SEhBRwaLJ9JGEM9CaciluJQdf"
                         target="_blank"
                         rel="noreferrer noopener"
-                        >Signal<icon-external></icon-external
+                        >Signal<icon-signal></icon-signal
                       ></a>
                       between meetings. Ask questions, share projects, find
                       collaborators.
@@ -428,19 +438,19 @@
                       href="https://thecanadian.social/@vanlug"
                       target="_blank"
                       rel="noopener"
-                      >Mastodon<icon-external></icon-external></a
+                      >Mastodon<icon-mastodon></icon-mastodon></a
                     >,
                     <a
                       href="https://bsky.app/profile/vanlug.thecanadian.social.ap.brid.gy"
                       target="_blank"
                       rel="noopener"
-                      >Bluesky<icon-external></icon-external></a
+                      >Bluesky<icon-bluesky></icon-bluesky></a
                     >, or
                     <a
                       href="https://www.linkedin.com/groups/1895787/"
                       target="_blank"
                       rel="noopener"
-                      >LinkedIn<icon-external></icon-external
+                      >LinkedIn<icon-linkedin></icon-linkedin
                     ></a>
                     for announcements. Want to give a talk or have a question?
                     <a href="mailto:board@vanlug.ca"
@@ -14187,7 +14197,7 @@
                     class="pf-v6-c-button pf-m-control"
                     ><span class="pf-v6-c-button__text">Donate via PayPal</span
                     ><span class="pf-v6-c-button__icon pf-m-end"
-                      ><icon-external></icon-external></span
+                      ><i class="fa-brands fa-paypal"></i></span
                   ></a>
                 </div>
               </div>
@@ -14366,27 +14376,40 @@
 
         {
           const inButton = (el) => el.closest(".pf-v6-c-button__icon") !== null;
-          const iconSvg = (path) =>
-            `<svg class="pf-v6-svg" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true" width="0.75em" height="0.75em"><path d="${path}"/></svg>`;
-          const externalPath =
-            "M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112v320c0 44.2 35.8 80 80 80h320c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32v112c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16h112c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z";
-          const emailPath =
-            "M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z";
-          const renderIcon = (el, path) => {
+          const renderFaIcon = (el, faClasses) => {
+            const i = `<i class="${faClasses}" aria-hidden="true"></i>`;
             if (inButton(el)) {
-              el.innerHTML = iconSvg(path);
+              el.innerHTML = i;
             } else {
               el.style.display = "inline";
               el.style.whiteSpace = "nowrap";
-              el.innerHTML = "\u2060" + iconSvg(path);
-              el.querySelector("svg").classList.add("pf-v6-u-ml-xs");
+              el.innerHTML = "\u2060" + i;
+              el.querySelector("i").classList.add("pf-v6-u-ml-xs");
             }
           };
+          const brandIcons = {
+            "icon-discourse": "fa-brands fa-discourse",
+            "icon-signal": "fa-brands fa-signal-messenger",
+            "icon-mastodon": "fa-brands fa-mastodon",
+            "icon-bluesky": "fa-brands fa-bluesky",
+            "icon-linkedin": "fa-brands fa-linkedin",
+            "icon-paypal": "fa-brands fa-paypal",
+          };
+          for (const [tag, cls] of Object.entries(brandIcons)) {
+            customElements.define(
+              tag,
+              class extends HTMLElement {
+                connectedCallback() {
+                  renderFaIcon(this, cls);
+                }
+              },
+            );
+          }
           customElements.define(
             "icon-external",
             class extends HTMLElement {
               connectedCallback() {
-                renderIcon(this, externalPath);
+                renderFaIcon(this, "fa-solid fa-arrow-up-right-from-square");
               }
             },
           );
@@ -14394,7 +14417,7 @@
             "icon-email",
             class extends HTMLElement {
               connectedCallback() {
-                renderIcon(this, emailPath);
+                renderFaIcon(this, "fa-solid fa-envelope");
               }
             },
           );
