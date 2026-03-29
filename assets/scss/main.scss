@@ -1,0 +1,15 @@
+@import "@patternfly/patternfly/sass-utilities/_index.scss";
+
+$pf-v6-global--font-path: "../../fonts";
+$pf-v6-global--fonticon-path: "../../pficon";
+$pf-v6-global--image-path: "../../images";
+
+@import "@patternfly/patternfly/patternfly.scss";
+@import "@patternfly/patternfly/patternfly-addons.scss";
+
+$font-path: "../../webfonts";
+@import "@fortawesome/fontawesome-free/scss/fontawesome";
+@import "@fortawesome/fontawesome-free/scss/solid";
+@import "@fortawesome/fontawesome-free/scss/brands";
+
+// Customization here
