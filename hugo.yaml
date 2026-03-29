@@ -1,0 +1,21 @@
+baseURL: https://vanlug.github.io/
+locale: en-CA
+languageCode: en-CA
+title: "VanLUG: Vancouver Linux Users Group"
+relativeURLs: true
+disableKinds:
+  - taxonomy
+  - term
+caches:
+  images:
+    dir: ":cacheDir/images"
+module:
+  mounts:
+    - source: static
+      target: static
+    - source: node_modules/@patternfly/patternfly/assets/fonts
+      target: static/fonts
+    - source: node_modules/@patternfly/patternfly/assets/pficon
+      target: static/pficon
+    - source: node_modules/@fortawesome/fontawesome-free/webfonts
+      target: static/webfonts
