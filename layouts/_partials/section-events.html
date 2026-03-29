@@ -1,0 +1,145 @@
+{{ $c := .Site.Data.content.events }}
+  <section
+    class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+  >
+    <div
+      class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+    >
+      <div class="pf-v6-c-content">
+        <h1>{{ .Title }}</h1>
+        {{ .Content }}
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+  >
+    <div
+      class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+    >
+      <div class="pf-v6-c-content">
+        <h3>Upcoming</h3>
+        <p>
+          All upcoming events are listed on our
+          <a
+            href="{{ .Site.Data.links.luma.url }}"
+            target="_blank"
+            rel="noopener"
+            >Luma calendar<icon-external></icon-external></a
+          >. RSVP there to get reminders.
+        </p>
+      </div>
+      <luma-embed calendar="{{ .Site.Data.links.luma.calendar }}">
+        <div class="pf-v6-c-empty-state">
+          <div class="pf-v6-c-empty-state__content">
+            <div class="pf-v6-c-empty-state__icon">
+              <i class="fas fa-shield-alt" aria-hidden="true"></i>
+            </div>
+            <div class="pf-v6-c-empty-state__title-text">
+              External content
+            </div>
+            <div class="pf-v6-c-empty-state__body">
+              The event calendar is hosted by Luma. Loading it will
+              connect your browser to their servers. See Luma's
+              <a
+                href="https://luma.com/privacy-policy"
+                target="_blank"
+                rel="noopener"
+                >privacy policy<icon-external></icon-external></a
+              >.
+            </div>
+            <div class="pf-v6-c-empty-state__footer">
+              <div class="pf-v6-c-empty-state__actions">
+                <button
+                  class="pf-v6-c-button pf-m-primary"
+                  type="button"
+                  data-slot="load"
+                >
+                  Load events from Luma
+                </button>
+              </div>
+              <a
+                href="{{ .Site.Data.links.luma.url }}"
+                target="_blank"
+                rel="noopener"
+                class="pf-v6-c-button pf-m-link"
+                ><span class="pf-v6-c-button__text"
+                  >Open on Luma instead</span
+                ><span class="pf-v6-c-button__icon pf-m-end"
+                  ><icon-external></icon-external></span
+              ></a>
+            </div>
+          </div>
+        </div>
+      </luma-embed>
+    </div>
+  </section>
+
+  <section
+    class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+  >
+    <div
+      class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+    >
+      <div class="pf-v6-c-content">
+        <h3>Past events</h3>
+        <p>
+          Full event history is available on
+          <a
+            href="{{ .Site.Data.links.luma.url }}"
+            target="_blank"
+            rel="noopener"
+            >Luma<icon-external></icon-external></a
+          >,
+          <a
+            href="{{ .Site.Data.links.meetup.url }}"
+            target="_blank"
+            rel="noopener"
+            >Meetup<icon-external></icon-external
+          ></a>
+          and the Web Archive ({{ range $i, $link := $c.past.archive_links }}{{ if $i }}, {{ end }}<a
+            href="{{ $link.url }}"
+            target="_blank"
+            rel="noopener"
+            >{{ $link.title }}<icon-external></icon-external></a
+          >{{ end }}). Slides and materials from past talks are on our
+          <a href="{{ "/resources/" | relURL }}">Resources</a> page.
+        </p>
+      </div>
+      <table
+        class="pf-v6-c-table pf-m-grid-md pf-m-compact"
+        role="grid"
+        aria-label="Past events"
+      >
+        <thead class="pf-v6-c-table__thead">
+          <tr class="pf-v6-c-table__tr" role="row">
+            <th class="pf-v6-c-table__th" role="columnheader" scope="col">Date</th>
+            <th class="pf-v6-c-table__th" role="columnheader" scope="col">Event</th>
+            <th class="pf-v6-c-table__th" role="columnheader" scope="col">Location</th>
+            <th class="pf-v6-c-table__th" role="columnheader" scope="col"></th>
+          </tr>
+        </thead>
+        <tbody class="pf-v6-c-table__tbody" role="rowgroup">
+          {{ range .Site.Data.events.past }}
+            <tr class="pf-v6-c-table__tr" role="row">
+              <td class="pf-v6-c-table__td" role="cell" data-label="Date">{{ .date }}</td>
+              <td class="pf-v6-c-table__td" role="cell" data-label="Event">{{ .name }}</td>
+              <td class="pf-v6-c-table__td" role="cell" data-label="Location">{{ .location }}</td>
+              <td class="pf-v6-c-table__td" role="cell">
+                {{ range .links }}
+                  <a
+                    href="{{ .url }}"
+                    target="_blank"
+                    rel="noopener"
+                    class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small"
+                    >{{ .title }}<icon-external></icon-external
+                  ></a>
+                {{ end }}
+              </td>
+            </tr>
+          {{ end }}
+        </tbody>
+      </table>
+    </div>
+  </section>

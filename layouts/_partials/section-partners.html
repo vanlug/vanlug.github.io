@@ -1,0 +1,54 @@
+  <section
+    class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+  >
+    <div
+      class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+    >
+      <div class="pf-v6-c-content">
+        <h1>{{ .Title }}</h1>
+        {{ .Content }}
+      </div>
+
+      <table
+        class="pf-v6-c-table pf-m-grid-md pf-m-compact"
+        role="grid"
+        aria-label="Partners"
+      >
+        <tbody class="pf-v6-c-table__tbody" role="rowgroup">
+          {{ range .Site.Data.partners }}
+            <tr class="pf-v6-c-table__tr" role="row">
+              <td
+                class="pf-v6-c-table__td"
+                role="cell"
+                style="width: 8rem; vertical-align: middle"
+              >
+                <img
+                  src="{{ .logo | relURL }}"
+                  alt="{{ .name }} logo"
+                  class="pf-v6-u-w-100{{ if not .logoNoPad }} pf-v6-u-p-xs{{ end }}"
+                  style="
+                    {{ if not .logoNoPad }}background-color: #fff;{{ end }}
+                    border-radius: var(
+                      --pf-t--global--border--radius--small
+                    );
+                  "
+                />
+              </td>
+              <td class="pf-v6-c-table__td" role="cell">
+                <b
+                  ><a
+                    href="{{ .url }}"
+                    target="_blank"
+                    rel="noopener"
+                    >{{ .name }}<icon-external
+                    ></icon-external></a
+                ></b>
+                <br />
+                {{ .description }}
+              </td>
+            </tr>
+          {{ end }}
+        </tbody>
+      </table>
+    </div>
+  </section>

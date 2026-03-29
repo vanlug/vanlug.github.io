@@ -1,0 +1,72 @@
+me:
+  - https://thecanadian.social/@vanlug
+navbar:
+  - title: About
+    page: /about/
+  - title: Events
+    page: /events/
+cta:
+  title: Become a member
+  titleShort: Membership
+  page: /membership/
+sidebar:
+  - title: Home
+    page: /
+  - title: Partners
+    page: /partners/
+  - title: Resources
+    page: /resources/
+  - separator: true
+  - title: Discourse
+    url: https://discourse.vanlug.ca
+    icon: fa-brands fa-discourse
+    description: Our forum for questions & projects
+  - title: Signal
+    url: https://signal.group/#CjQKIDT_S1T4NAqQq0UhlMwAVjirsOj6iW1JzpicVudNwr7SEhBRwaLJ9JGEM9CaciluJQdf
+    icon: fa-brands fa-signal-messenger
+    rel: noreferrer noopener
+    description: Our encrypted group chat
+  - title: Mastodon
+    url: https://thecanadian.social/@vanlug
+    icon: fa-brands fa-mastodon
+    description: Follow us on the fediverse
+  - title: Bluesky
+    url: https://bsky.app/profile/vanlug.thecanadian.social.ap.brid.gy
+    icon: fa-brands fa-bluesky
+    description: Bridged from Mastodon
+  - title: LinkedIn
+    url: https://www.linkedin.com/groups/1895787/
+    icon: fa-brands fa-linkedin
+    description: Our professional network group
+  - title: Email the board
+    url: mailto:contact@vanlug.ca
+    icon: fa-solid fa-envelope
+    description: Questions, talk proposals & more
+socials:
+  mastodon:
+    url: https://thecanadian.social/@vanlug
+    icon: fa-brands fa-mastodon
+  bluesky:
+    url: https://bsky.app/profile/vanlug.thecanadian.social.ap.brid.gy
+    icon: fa-brands fa-bluesky
+  linkedin:
+    url: https://www.linkedin.com/groups/1895787/
+    icon: fa-brands fa-linkedin
+  discourse:
+    url: https://discourse.vanlug.ca
+    icon: fa-brands fa-discourse
+  signal:
+    url: https://signal.group/#CjQKIDT_S1T4NAqQq0UhlMwAVjirsOj6iW1JzpicVudNwr7SEhBRwaLJ9JGEM9CaciluJQdf
+    icon: fa-brands fa-signal-messenger
+  email:
+    url: mailto:contact@vanlug.ca
+    icon: fa-solid fa-envelope
+donate:
+  url: https://www.paypal.com/ncp/payment/5LJ46YPC7JJ7E
+  icon: fa-brands fa-paypal
+luma:
+  calendar: cal-x23GENOxTsZqSMO
+  url: https://luma.com/vanlug
+  proxy: https://next-event-production.up.railway.app
+meetup:
+  url: https://www.meetup.com/vanlug-bc/events/

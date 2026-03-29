@@ -1,0 +1,77 @@
+{{ $c := .Site.Data.content.about }}
+  <section
+    class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+  >
+    <div
+      class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+    >
+      <div class="pf-v6-c-content">
+        <h1>{{ .Title }}</h1>
+        {{ .Content }}
+      </div>
+      <div class="pf-v6-l-gallery pf-m-gutter">
+        {{ range $c.images }}
+          <img
+            src="{{ .src | relURL }}"
+            alt="{{ .alt }}"
+            style="
+              border-radius: var(
+                --pf-t--global--border--radius--medium
+              );
+            "
+          />
+        {{ end }}
+      </div>
+      <div class="pf-v6-c-content">
+        <h3>{{ .Site.Data.content.about.purpose.title | default "Our purpose" }}</h3>
+        <p>{{ .Site.Data.content.about.purpose.preamble | default "We exist to fulfil the following mandates:" }}</p>
+        <ol type="a">
+          {{ range .Site.Data.content.about.purpose.mandates }}
+            <li>{{ . }}</li>
+          {{ end }}
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+  >
+    <div
+      class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+    >
+      <div class="pf-v6-c-content">
+        <h3>{{ .Site.Data.board.year }} Board of Directors</h3>
+        <p>
+          {{ .Site.Data.content.about.board.preamble | default "As a registered non-profit society in British Columbia, VanLUG is governed by a volunteer Board of Directors. Elections are held annually at our AGM. New volunteers are always welcome." }}
+          <a href="{{ .Site.Data.links.socials.email.url }}"
+            >Get in touch<icon-email></icon-email
+          ></a>
+          if you'd like to help.
+        </p>
+      </div>
+      <dl class="pf-v6-c-description-list pf-m-horizontal">
+        {{ range .Site.Data.board.members }}
+          <div class="pf-v6-c-description-list__group">
+            <dt class="pf-v6-c-description-list__term">
+              <span class="pf-v6-c-description-list__text"
+                >{{ .role }}</span
+              >
+            </dt>
+            <dd class="pf-v6-c-description-list__description">
+              <div class="pf-v6-c-description-list__text">
+                {{ .name }}
+              </div>
+            </dd>
+          </div>
+        {{ end }}
+      </dl>
+      <div class="pf-v6-c-content">
+        <p>
+          See our
+          <a href="{{ "/resources/" | relURL }}">Design System</a> on the Resources page
+          for VanLUG's icon, logo, fonts, colours, and design assets.
+        </p>
+      </div>
+    </div>
+  </section>

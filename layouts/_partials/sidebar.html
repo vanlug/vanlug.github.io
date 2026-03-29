@@ -1,0 +1,36 @@
+<aside class="pf-v6-c-page__sidebar pf-m-expanded" id="page-sidebar">
+  <div class="pf-v6-c-page__sidebar-body">
+    <nav class="pf-v6-c-nav" aria-label="Global navigation">
+      <ul class="pf-v6-c-nav__list" role="list">
+        {{ $current := $.RelPermalink }}
+        {{ range .Site.Data.links.sidebar }}
+          {{ if .separator }}
+            <li class="pf-v6-c-divider" role="separator"></li>
+          {{ else if .url }}
+            <li class="pf-v6-c-nav__item">
+              <a
+                class="pf-v6-c-nav__link"
+                href="{{ .url }}"
+                target="_blank"
+                rel="{{ with .rel }}{{ . }}{{ else }}noopener{{ end }}"
+                ><span
+                  >{{ .title }}{{ partial "icon" .icon }}<br /><small
+                    class="pf-v6-u-font-size-xs pf-v6-u-text-color-subtle"
+                    >{{ .description }}</small
+                  ></span
+                ></a
+              >
+            </li>
+          {{ else if .page }}
+            <li class="pf-v6-c-nav__item">
+              <a class="pf-v6-c-nav__link{{ if eq $current .page }} pf-m-current{{ end }}" href="{{ .page | relURL }}"
+                {{ if eq $current .page }}aria-current="page"{{ end }}
+                >{{ .title }}</a
+              >
+            </li>
+          {{ end }}
+        {{ end }}
+      </ul>
+    </nav>
+  </div>
+</aside>

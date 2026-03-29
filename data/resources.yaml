@@ -1,0 +1,190 @@
+slides:
+  - date: "May 2025"
+    talk: "Photography & Open Source Tools"
+    speaker: "Serhiy Kobyakov"
+    url: files/photography_and_open_source_software.pdf
+  - date: "Apr 2025"
+    talk: "Version Control Therapy through Git"
+    speaker: "Eduard M."
+    url: files/git-therapy_eduard_maievskyi.pdf
+  - date: "Jan 2025"
+    talk: "Mastering Regex"
+    speaker: "Dolan H."
+    url: files/dolanh_regex.pdf
+  - date: "Oct 2024"
+    talk: "Shell Magic: The Power of Bash One-Liners"
+    speaker: "—"
+    url: https://docs.google.com/presentation/d/1XpjvI3-uAbBBhxw1EJnOq5le--mSQcaBVMBnROF5qmk/edit?usp=sharing
+  - date: "Sep 2024"
+    talk: 'Job Search Strategies: "Dude, Where''s My Job?"'
+    speaker: "—"
+    url: files/dude-wheres-my-job.pdf
+  - date: "Sep 2024"
+    talk: "Discover Go Programming Language"
+    speaker: "—"
+    url: files/discover-go-programming.pdf
+  - date: "Aug 2024"
+    talk: "Upstream Projects from Red Hat"
+    speaker: "Waldirio"
+    url: http://www.waldirio.com.br/presentations/
+  - date: "Jun 2024"
+    talk: "DevOps, Linux && Open Source"
+    speaker: "KC"
+    url: files/burnaby-devops.pdf
+  - date: "Jun 2024"
+    talk: "Data Science & Open Source Tools"
+    speaker: "Eduard"
+    url: files/data-science-open-source.pdf
+  - date: "May 2024"
+    talk: "Bash Script Crash Course"
+    speaker: "Iman Anooshehpoor"
+    url: https://pitch.com/v/bash-script-crash-course-tifk8y
+  - date: "Apr 2024"
+    talk: "Tips on Compiling Linux Kernels"
+    speaker: "Kim Kulak"
+    url: files/kernel-build-outline.pdf
+    label: "Handout"
+  - date: "Mar 2024"
+    talk: "Unlock Linux: Software Packages"
+    speaker: "John Weintraub"
+    url: files/linux_package_managers.zip
+  - date: "Mar 2024"
+    talk: "Cybersecurity & the Flipper Zero"
+    speaker: "Levko Kravchuk"
+    url: files/vanlug_flipper_zero.pdf
+
+agm_documents:
+  - title: "2024 AGM agenda and minutes"
+    url: files/vanlug-agm-2024-minutes.pdf
+  - title: "Community Involvement, Kim Kulak"
+    url: files/vanlug-community-involvement.pdf
+  - title: "2023 AGM minutes"
+    url: files/vanlug-agm-2023-minutes.pdf
+  - title: "2024 year-end report"
+    url: files/vanlug-2024-year-end-report.pdf
+
+learning:
+  beginner:
+    - title: "Linux Foundation: Intro to Linux"
+      url: https://training.linuxfoundation.org/training/introduction-to-linux/
+      note: "free course, optional certification"
+    - title: "freeCodeCamp Linux Crash Course"
+      url: https://youtu.be/ROjZy1WbCIA
+      note: "video, beginner-friendly"
+    - title: "freeCodeCamp Introduction"
+      url: https://youtu.be/sWbUDq4S6Y8
+      note: "updated 2023 post-install course"
+    - title: "r/linux4noobs"
+      url: https://www.reddit.com/r/linux4noobs/
+      note: "no-judgement community Q&A"
+    - title: "University of Surrey UNIX Tutorials"
+      url: https://www.ee.surrey.ac.uk/Teaching/Unix/index.html
+      note: "eight fundamental exercises"
+  intermediate:
+    - title: "Linux.org Tutorials"
+      url: https://linux.org/forums/#linux-tutorials.122
+      note: "formal training for CS students"
+    - title: "Professor Messer: CompTIA Linux+"
+      url: http://www.professormesser.com/linux-plus/linux-training-videos/
+      note: "free certification prep videos"
+    - title: "IBM: Linux Kernel Tutorial"
+      url: http://www.ibm.com/developerworks/linux/tutorials/l-lpic2201/
+      note: "LPI exam prep"
+    - title: "UC Davis: Linux/Unix Tutorial Center"
+      url: http://heather.cs.ucdavis.edu/~matloff/unix.html
+      note: "Professor Matloff"
+    - title: "Linuxtopia: Linux Security for Beginners"
+      url: http://www.linuxtopia.org/LinuxSecurity/index.html
+  distros:
+    - title: "Introduction to Ubuntu Linux"
+      url: https://youtu.be/BMGixkvJ-6w
+    - title: "Introduction to Fedora Linux"
+      url: https://youtu.be/g5d0dfq_Ew8
+      extra:
+        title: "v38 update"
+        url: https://youtu.be/f-CkvPNJ4iM
+    - title: "From Windows to Linux: Transitioning to Ubuntu"
+      url: https://youtu.be/P9a0TALERK8
+    - title: "KDE Desktop Environment for Linux Users"
+      url: https://youtu.be/cN6DBsuvcpU
+    - title: "How to Install Linux in a VMware VM"
+      url: https://docs.vmware.com/en/VMware-Horizon/2303/linux-desktops-setup/GUID-51C371A9-4D76-4A8C-8645-909E93080B4F.html
+
+tools:
+  - title: "Linux Productivity Tools"
+    url: https://www.usenix.org/sites/default/files/conference/protected-files/lisa19_maheshwari.pdf
+    note: "command-line toolkit by Ketan Maheshwari (Oak Ridge National Laboratory)"
+  - title: "Recommended Hardware"
+    url: https://www.oreilly.com/library/view/running-linux-third/156592469X/ch01s09.html
+    note: "O'Reilly guide to Linux-compatible hardware"
+  - title: "Free Linux Training Videos"
+    url: https://youtu.be/dL05DoJ0qsQ
+    note: "introductions to various distros and VMware setup"
+
+design:
+  fonts:
+    header:
+      name: "Red Hat Display"
+      url: "https://fonts.google.com/specimen/Red+Hat+Display?preview.script=Latn&query=red+hat"
+    text:
+      name: "Red Hat Text"
+      url: "https://fonts.google.com/specimen/Red+Hat+Text?preview.script=Latn&query=red+hat"
+    mono:
+      name: "Red Hat Mono"
+      url: "https://fonts.google.com/specimen/Red+Hat+Mono?preview.script=Latn&query=red+hat"
+  colours:
+    light: "#0066cc"
+    dark: "#217cd6"
+  assets:
+    - name: icon
+      description: "VanLUG icon (Tux with Vancouver flag stripes)"
+    - name: logo
+      description: "VanLUG logo (icon + wordmark for cards)"
+    - name: header
+      description: "Banner header for Luma and OpenGraph"
+      photo:
+        credit: "Lee Robinson"
+        url: https://unsplash.com/photos/Yc9h5SJdEzI
+        source: design/lee-robinson-Yc9h5SJdEzI-unsplash.jpg
+    - name: card-talks
+      description: "Event card for Linux Talks"
+      photo:
+        credit: "Wesley Tingey"
+        url: https://unsplash.com/photos/bWRX_obQAl8
+        source: design/wesley-tingey-bWRX_obQAl8-unsplash.jpg
+    - name: card-agm
+      description: "Event card for Annual General Meeting"
+      photo:
+        credit: "Albert Stoynov"
+        url: https://unsplash.com/photos/MIFV5rWGqdA
+        source: design/albert-stoynov-MIFV5rWGqdA-unsplash.jpg
+    - name: card-christmas
+      description: "Event card for Christmas Party"
+      photo:
+        credit: "Albert Stoynov"
+        url: https://unsplash.com/photos/jooXO8q2Gcs
+        source: design/albert-stoynov-jooXO8q2Gcs-unsplash.jpg
+    - name: card-link-vancouver
+      description: "Linux Links event card for Vancouver"
+      photo:
+        credit: "Lee Robinson"
+        url: https://unsplash.com/photos/Yc9h5SJdEzI
+        source: design/lee-robinson-Yc9h5SJdEzI-unsplash.jpg
+    - name: card-link-burnaby
+      description: "Linux Links event card for Burnaby"
+      photo:
+        credit: "Junhyuk Jang"
+        url: https://unsplash.com/photos/-BaBt0EDIZE
+        source: design/junhyuk-jang--BaBt0EDIZE-unsplash.jpg
+    - name: card-link-richmond
+      description: "Linux Links event card for Richmond"
+      photo:
+        credit: "Jong Hyuk Lee"
+        url: https://unsplash.com/photos/aCINgpzFJAQ
+        source: design/jong-hyuk-lee-aCINgpzFJAQ-unsplash.jpg
+    - name: card-link-surrey
+      description: "Linux Links event card for Surrey"
+      photo:
+        credit: "Kharl Anthony Paica"
+        url: https://unsplash.com/photos/0ykNX2B6QFE
+        source: design/kharl-anthony-paica-0ykNX2B6QFE-unsplash.jpg

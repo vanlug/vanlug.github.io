@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="{{ .Site.Language.LanguageCode }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+      {{ if eq .Title .Site.Title }}
+        {{ .Title }}
+      {{ else }}
+        {{ .Title }} |
+        {{ .Site.Title }}
+      {{ end }}
+    </title>
+
+    {{ $opts := dict
+      "transpiler" "dartsass"
+      "includePaths" (slice "node_modules")
+      "outputStyle" (cond hugo.IsDevelopment "expanded" "compressed")
+      "silenceDeprecations" (slice "import" "if-function")
+      "silenceDependencyDeprecations" true
+    }}
+    {{ with resources.Get "scss/main.scss" | toCSS $opts }}
+      {{ if hugo.IsDevelopment }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}" />
+      {{ else }}
+        {{ with . | fingerprint }}
+          <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" />
+        {{ end }}
+      {{ end }}
+    {{ end }}
+    <link rel="icon" href="{{ "design/icon.svg" | relURL }}" />
+
+    {{ range .Site.Data.links.me }}
+      <link rel="me" href="{{ . }}" />
+    {{ end }}
+
+    <meta name="author" content="{{ .Site.Data.site.author }}" />
+    <meta name="fediverse:creator" content="@vanlug@thecanadian.social" />
+    <meta name="description" content="{{ .Site.Data.site.description }}" />
+    <meta
+      name="keywords"
+      content="{{ delimit .Site.Data.site.keywords `, ` }}"
+    />
+    <meta
+      name="copyright"
+      content="© {{ now.Year }} Vancouver Linux Users Group"
+    />
+
+    <meta property="og:title" content="{{ .Site.Title }}" />
+    <meta
+      property="og:description"
+      content="{{ .Site.Data.site.description }}"
+    />
+    <meta property="og:image" content="/design/header.png" />
+    <meta property="og:url" content="https://vanlug.github.io/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="{{ .Site.Data.site.author }}" />
+    <meta property="og:locale" content="en_CA" />
+    <script>
+      if (matchMedia("(prefers-color-scheme: dark)").matches)
+        document.documentElement.classList.add("pf-v6-theme-dark");
+    </script>
+  </head>
+
+  <body>
+    <div
+      class="pf-v6-c-page"
+      style="--pf-v6-c-page--section--m-limit-width--MaxWidth: 62rem"
+    >
+      {{ partial "masthead" . }}
+      {{ partial "sidebar" . }}
+
+      <div class="pf-v6-c-page__main-container">
+        <main class="pf-v6-c-page__main" id="main-content">
+          {{ block "main" . }}{{ end }}
+        </main>
+      </div>
+    </div>
+
+    {{ partial "next-event-template" . }}
+
+    <script src="{{ "main.js" | relURL }}"></script>
+  </body>
+</html>

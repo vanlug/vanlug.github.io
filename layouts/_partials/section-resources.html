@@ -1,0 +1,482 @@
+  <section
+    class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+  >
+    <div
+      class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+    >
+      <div class="pf-v6-c-content">
+        <h1>{{ .Title }}</h1>
+        {{ .Content }}
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+  >
+    <div
+      class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+    >
+      <div class="pf-v6-c-content">
+        <h3>Speaker slides</h3>
+        <p>Slides and materials from past VanLUG presentations.</p>
+      </div>
+      <table
+        class="pf-v6-c-table pf-m-grid-md pf-m-compact"
+        role="grid"
+        aria-label="Speaker slides"
+      >
+        <thead class="pf-v6-c-table__thead">
+          <tr class="pf-v6-c-table__tr" role="row">
+            <th
+              class="pf-v6-c-table__th"
+              role="columnheader"
+              scope="col"
+            >
+              Date
+            </th>
+            <th
+              class="pf-v6-c-table__th"
+              role="columnheader"
+              scope="col"
+            >
+              Talk
+            </th>
+            <th
+              class="pf-v6-c-table__th"
+              role="columnheader"
+              scope="col"
+            >
+              Speaker
+            </th>
+            <th
+              class="pf-v6-c-table__th"
+              role="columnheader"
+              scope="col"
+            ></th>
+          </tr>
+        </thead>
+        <tbody class="pf-v6-c-table__tbody" role="rowgroup">
+          {{ range .Site.Data.resources.slides }}
+            <tr class="pf-v6-c-table__tr" role="row">
+              <td
+                class="pf-v6-c-table__td"
+                role="cell"
+                data-label="Date"
+              >
+                {{ .date }}
+              </td>
+              <td
+                class="pf-v6-c-table__td"
+                role="cell"
+                data-label="Talk"
+              >
+                {{ .talk }}
+              </td>
+              <td
+                class="pf-v6-c-table__td"
+                role="cell"
+                data-label="Speaker"
+              >
+                {{ .speaker }}
+              </td>
+              <td class="pf-v6-c-table__td" role="cell">
+                <a
+                  href="{{ .url | relURL }}"
+                  target="_blank"
+                  rel="noopener"
+                  class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small"
+                  >{{ with .label }}{{ . }}{{ else }}Slides{{ end }}<icon-external></icon-external
+                ></a>
+              </td>
+            </tr>
+          {{ end }}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section
+    class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+  >
+    <div
+      class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+    >
+      <div class="pf-v6-c-content">
+        <h3>AGM documents</h3>
+        <p>Minutes and reports from our Annual General Meetings.</p>
+        <ul>
+          {{ range .Site.Data.resources.agm_documents }}
+            <li>
+              <a
+                href="{{ .url | relURL }}"
+                target="_blank"
+                rel="noopener"
+                >{{ .title }}<icon-external
+                ></icon-external
+              ></a>
+            </li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+  >
+    <div
+      class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+    >
+      <div class="pf-v6-c-content">
+        <h3>Learning Linux</h3>
+        <p>
+          Whether you're just getting started or sharpening your
+          skills, these free resources are a great place to begin.
+        </p>
+      </div>
+      <div
+        class="pf-v6-l-flex pf-m-wrap pf-m-gap-md pf-m-align-items-flex-start"
+      >
+        <div
+          class="pf-v6-c-card pf-m-compact pf-v6-u-flex-1"
+          style="min-width: 15rem"
+        >
+          <div class="pf-v6-c-card__title">
+            <div class="pf-v6-c-card__title-text">
+              Beginner-friendly
+            </div>
+          </div>
+          <div class="pf-v6-c-card__body">
+            <div class="pf-v6-c-content">
+              <ul>
+                {{ range .Site.Data.resources.learning.beginner }}
+                  <li>
+                    <a
+                      href="{{ .url }}"
+                      target="_blank"
+                      rel="noopener"
+                      >{{ .title }}<icon-external
+                      ></icon-external
+                    ></a>
+                    {{ with .note }}({{ . }}){{ end }}
+                  </li>
+                {{ end }}
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div
+          class="pf-v6-c-card pf-m-compact pf-v6-u-flex-1"
+          style="min-width: 15rem"
+        >
+          <div class="pf-v6-c-card__title">
+            <div class="pf-v6-c-card__title-text">
+              Intermediate &amp; certification
+            </div>
+          </div>
+          <div class="pf-v6-c-card__body">
+            <div class="pf-v6-c-content">
+              <ul>
+                {{ range .Site.Data.resources.learning.intermediate }}
+                  <li>
+                    <a
+                      href="{{ .url }}"
+                      target="_blank"
+                      rel="noopener"
+                      >{{ .title }}<icon-external
+                      ></icon-external
+                    ></a>
+                    {{ with .note }}({{ . }}){{ end }}
+                  </li>
+                {{ end }}
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div
+          class="pf-v6-c-card pf-m-compact pf-v6-u-flex-1"
+          style="min-width: 15rem"
+        >
+          <div class="pf-v6-c-card__title">
+            <div class="pf-v6-c-card__title-text">
+              Distros &amp; video guides
+            </div>
+          </div>
+          <div class="pf-v6-c-card__body">
+            <div class="pf-v6-c-content">
+              <ul>
+                {{ range .Site.Data.resources.learning.distros }}
+                  <li>
+                    <a
+                      href="{{ .url }}"
+                      target="_blank"
+                      rel="noopener"
+                      >{{ .title }}<icon-external
+                      ></icon-external
+                    ></a>
+                    {{ with .extra }}
+                      (<a
+                        href="{{ .url }}"
+                        target="_blank"
+                        rel="noopener"
+                        >{{ .title }}<icon-external></icon-external></a
+                      >)
+                    {{ end }}
+                  </li>
+                {{ end }}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+  >
+    <div
+      class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+    >
+      <div class="pf-v6-c-content">
+        <h3>Tools &amp; reference</h3>
+        <ul>
+          {{ range .Site.Data.resources.tools }}
+            <li>
+              <a
+                href="{{ .url }}"
+                target="_blank"
+                rel="noopener"
+                >{{ .title }}<icon-external
+                ></icon-external></a
+              >{{ with .note }}, {{ . }}{{ end }}
+            </li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+  >
+    <div
+      class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+    >
+      <div class="pf-v6-c-content">
+        <h3>Design system</h3>
+        <p>
+          VanLUG's design system is based on
+          <a
+            href="https://www.patternfly.org/"
+            target="_blank"
+            rel="noopener"
+            >PatternFly<icon-external></icon-external></a
+          >, the open-source design system used for this website.
+        </p>
+      </div>
+
+      <div class="pf-v6-c-content">
+        <h4>Icon &amp; logo</h4>
+        <p>
+          The VanLUG icon is a modified version of
+          <a
+            href="https://commons.wikimedia.org/wiki/File:TuxFlat.svg"
+            target="_blank"
+            rel="noopener"
+            >Tux Flat SVG<icon-external></icon-external
+          ></a>
+          by gg3po and Iwan Gabovitch, based on
+          <a
+            href="https://commons.wikimedia.org/wiki/File:NewTux.svg"
+            target="_blank"
+            rel="noopener"
+            >NewTux.svg<icon-external></icon-external
+          ></a>
+          by gg3po, itself based on the original
+          <a
+            href="https://commons.wikimedia.org/wiki/File:Tux.png"
+            target="_blank"
+            rel="noopener"
+            >Tux.png<icon-external></icon-external
+          ></a>
+          by Larry Ewing. The wavy stripes from the
+          <a
+            href="https://en.wikipedia.org/wiki/Flag_of_Vancouver"
+            target="_blank"
+            rel="noopener"
+            >flag of Vancouver<icon-external></icon-external
+          ></a>
+          have been added to the belly. Licensed under the
+          <a
+            href="https://www.gnu.org/licenses/gpl-2.0.html"
+            target="_blank"
+            rel="noopener"
+            >GNU GPL v2<icon-external></icon-external
+          ></a>
+          or later. The full logo combines the icon with the
+          &ldquo;VanLUG/Vancouver Linux User Group&rdquo; wordmark, as
+          seen on the banner and event cards.
+        </p>
+      </div>
+
+      <div class="pf-v6-c-content">
+        <h4>Fonts</h4>
+      </div>
+      <dl
+        class="pf-v6-c-description-list pf-m-horizontal pf-m-compact"
+      >
+        {{ range $key, $val := .Site.Data.resources.design.fonts }}
+          <div class="pf-v6-c-description-list__group">
+            <dt class="pf-v6-c-description-list__term">
+              <span class="pf-v6-c-description-list__text">{{ $key | title }}</span>
+            </dt>
+            <dd class="pf-v6-c-description-list__description">
+              <div class="pf-v6-c-description-list__text">
+                <a
+                  href="{{ $val.url }}"
+                  target="_blank"
+                  rel="noopener"
+                  >{{ $val.name }}<icon-external></icon-external
+                ></a>
+              </div>
+            </dd>
+          </div>
+        {{ end }}
+      </dl>
+
+      <div class="pf-v6-c-content">
+        <h4>Colours</h4>
+      </div>
+      <dl
+        class="pf-v6-c-description-list pf-m-horizontal pf-m-compact"
+      >
+        <div class="pf-v6-c-description-list__group">
+          <dt class="pf-v6-c-description-list__term">
+            <span class="pf-v6-c-description-list__text"
+              >Light mode</span
+            >
+          </dt>
+          <dd class="pf-v6-c-description-list__description">
+            <div class="pf-v6-c-description-list__text">
+              <span
+                class="pf-v6-c-label pf-m-compact pf-m-custom"
+                style="
+                  --pf-v6-c-label--BackgroundColor: {{ .Site.Data.resources.design.colours.light }};
+                  --pf-v6-c-label--Color: #fff;
+                "
+              >
+                <span class="pf-v6-c-label__content">{{ .Site.Data.resources.design.colours.light }}</span>
+              </span>
+            </div>
+          </dd>
+        </div>
+        <div class="pf-v6-c-description-list__group">
+          <dt class="pf-v6-c-description-list__term">
+            <span class="pf-v6-c-description-list__text"
+              >Dark mode</span
+            >
+          </dt>
+          <dd class="pf-v6-c-description-list__description">
+            <div class="pf-v6-c-description-list__text">
+              <span
+                class="pf-v6-c-label pf-m-compact pf-m-custom"
+                style="
+                  --pf-v6-c-label--BackgroundColor: {{ .Site.Data.resources.design.colours.dark }};
+                  --pf-v6-c-label--Color: #fff;
+                "
+              >
+                <span class="pf-v6-c-label__content">{{ .Site.Data.resources.design.colours.dark }}</span>
+              </span>
+            </div>
+          </dd>
+        </div>
+      </dl>
+
+      <div class="pf-v6-c-content">
+        <h4>Assets</h4>
+        <p>
+          All assets are created and maintained with
+          <a
+            href="https://inkscape.org/"
+            target="_blank"
+            rel="noopener"
+            >Inkscape<icon-external></icon-external></a
+          >. All files are in
+          <a
+            href="{{ .Site.Data.site.source }}/tree/main/static/design"
+            target="_blank"
+            rel="noopener"
+            >static/design/<icon-external></icon-external></a
+          >. Cards and headers use background photos from
+          <a
+            href="https://unsplash.com/"
+            target="_blank"
+            rel="noopener"
+            >Unsplash<icon-external></icon-external></a
+          >:
+        </p>
+      </div>
+
+      <table
+        class="pf-v6-c-table pf-m-compact pf-m-grid-md"
+        role="grid"
+      >
+        <thead class="pf-v6-c-table__thead">
+          <tr class="pf-v6-c-table__tr" role="row">
+            <th
+              class="pf-v6-c-table__th"
+              role="columnheader"
+              scope="col"
+            >
+              Asset
+            </th>
+            <th
+              class="pf-v6-c-table__th"
+              role="columnheader"
+              scope="col"
+            >
+              Description
+            </th>
+            <th
+              class="pf-v6-c-table__th"
+              role="columnheader"
+              scope="col"
+            >
+              Background photo
+            </th>
+          </tr>
+        </thead>
+        <tbody class="pf-v6-c-table__tbody">
+          {{ range .Site.Data.resources.design.assets }}
+            <tr class="pf-v6-c-table__tr" role="row">
+              <td class="pf-v6-c-table__td" role="cell">
+                <a href="{{ printf "design/%s.svg" .name | relURL }}" target="_blank">{{ .name }}.svg</a>/<a href="{{ printf "design/%s.png" .name | relURL }}" target="_blank">{{ .name }}.png</a>
+              </td>
+              <td class="pf-v6-c-table__td" role="cell">
+                {{ .description }}
+              </td>
+              <td class="pf-v6-c-table__td" role="cell">
+                {{ with .photo }}
+                  <a
+                    href="{{ .url }}"
+                    target="_blank"
+                    rel="noopener"
+                    >{{ .credit }}<icon-external></icon-external
+                  ></a>
+                  (<a
+                    href="{{ .source | relURL }}"
+                    target="_blank"
+                    >source</a
+                  >)
+                {{ else }}
+                  &mdash;
+                {{ end }}
+              </td>
+            </tr>
+          {{ end }}
+        </tbody>
+      </table>
+    </div>
+  </section>

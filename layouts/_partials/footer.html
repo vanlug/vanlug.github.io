@@ -1,0 +1,76 @@
+{{ $f := .Site.Data.content.footer }}
+<footer
+  class="pf-v6-c-page__main-section pf-m-no-fill pf-m-limit-width pf-m-align-center"
+  style="
+    --pf-v6-c-page__main-section--BackgroundColor: var(
+      --pf-t--global--background--color--secondary--default
+    );
+  "
+>
+  <div
+    class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-lg"
+  >
+    <div class="pf-v6-c-card">
+      <div class="pf-v6-c-card__title">
+        <div class="pf-v6-c-card__title-text">{{ $f.donate.title }}</div>
+      </div>
+      <div class="pf-v6-c-card__body">
+        <div class="pf-v6-c-content">
+          <p>{{ $f.donate.body }}</p>
+        </div>
+      </div>
+      <div class="pf-v6-c-card__footer">
+        <a
+          href="{{ .Site.Data.links.donate.url }}"
+          target="_blank"
+          rel="noopener"
+          class="pf-v6-c-button pf-m-control"
+          ><span class="pf-v6-c-button__text">{{ $f.donate.cta }}</span
+          ><span class="pf-v6-c-button__icon pf-m-end"
+            ><i class="fa-brands fa-paypal"></i></span
+        ></a>
+      </div>
+    </div>
+    <div class="pf-v6-c-content">
+      <p>
+        <small>{{ $f.land_acknowledgment }}</small>
+      </p>
+    </div>
+    <div class="pf-v6-l-grid pf-m-gutter">
+      <div class="pf-v6-l-grid__item pf-m-12-col pf-m-6-col-on-md">
+        <div class="pf-v6-c-content">
+          <p class="pf-v6-u-mb-0">
+            <small>&copy; {{ now.Year }} Vancouver Linux Users Group</small>
+          </p>
+          <p>
+            <small
+              >Our <a href="{{ "/conduct/" | relURL }}">Code of Conduct</a> applies in
+              all VanLUG spaces. Find the website
+              <a
+                href="{{ .Site.Data.site.source }}"
+                target="_blank"
+                rel="noopener"
+                >source code<icon-external></icon-external>
+              </a>
+              on GitHub, licensed under
+              <a
+                href="{{ .Site.Data.site.source }}/blob/main/LICENSE"
+                target="_blank"
+                rel="noopener"
+                >AGPL-3.0-or-later<icon-external></icon-external></a
+              >. See our <a href="{{ "/terms/" | relURL }}">terms</a> and
+              <a href="{{ "/privacy/" | relURL }}">privacy policy</a>.</small
+            >
+          </p>
+        </div>
+      </div>
+      <div class="pf-v6-l-grid__item pf-m-12-col pf-m-6-col-on-md">
+        <div class="pf-v6-c-content">
+          <p>
+            <small>{{ $f.nonprofit | safeHTML }}</small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

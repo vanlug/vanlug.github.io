@@ -1,0 +1,17 @@
+- name: Burnaby Public Library
+  url: https://bpl.bc.ca
+  logo: img/bpl-logo.png
+  description: Serves Burnaby and the surrounding Lower Mainland, empowering the community to engage with and share stories, ideas, and information through its four branches and online services.
+- name: Surrey Libraries
+  url: https://surreylibraries.ca/
+  logo: img/surrey-logo.png
+  description: The municipal public library system of Surrey, BC, serving a population of approximately 580,000 with a collection of more than 790,000 items.
+- name: Richmond Public Library
+  url: https://www.yourlibrary.ca/
+  logo: img/rpl-logo.webp
+  description: Has been proudly serving the Richmond community since 1976, creating opportunities to learn, connect, and belong.
+- name: Z-Space
+  url: https://z-space.ca
+  logo: img/zspace-logo.webp
+  logoNoPad: true
+  description: A registered non-profit in British Columbia providing affordable, sustainable, community-oriented space dedicated to supporting creative technologists, startups, and innovative small businesses in Vancouver. They host co-working, presentations, and events connecting the local art and tech community.

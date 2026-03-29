@@ -1,0 +1,74 @@
+{{ $c := .Site.Data.content.membership }}
+  <section
+    class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+  >
+    <div
+      class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+    >
+      <div class="pf-v6-c-content">
+        <h1>{{ .Title }}</h1>
+        {{ .Content }}
+      </div>
+      <img
+        src="{{ $c.image.src | relURL }}"
+        alt="{{ $c.image.alt }}"
+        class="pf-v6-u-w-100"
+        style="
+          border-radius: var(--pf-t--global--border--radius--medium);
+        "
+      />
+    </div>
+  </section>
+
+  <section
+    class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+  >
+    <div
+      class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+    >
+      <div class="pf-v6-c-content">
+        <h3>Why join</h3>
+        <p>
+          Over 2,200 members come to VanLUG for the people, the
+          knowledge, and the shared belief that open source makes
+          technology better for everyone.
+        </p>
+      </div>
+      <div class="pf-v6-l-gallery pf-m-gutter">
+        {{ range $c.why.cards }}
+          <div class="pf-v6-c-card">
+            <div class="pf-v6-c-card__title">
+              <div class="pf-v6-c-card__title-text">{{ .title }}</div>
+            </div>
+            <div class="pf-v6-c-card__body">{{ .body }}</div>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+  >
+    <div
+      class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+    >
+      <div class="pf-v6-c-content">
+        <h3>How to join</h3>
+        <p>
+          Register and subscribe to event notifications. That's it,
+          you're a member. Come to any of our three monthly meetings
+          when you can. If you miss one, just catch the next.
+        </p>
+      </div>
+      <a
+        href="{{ .Site.Data.links.luma.url }}"
+        target="_blank"
+        rel="noopener"
+        class="pf-v6-c-button pf-m-primary"
+        ><span class="pf-v6-c-button__text">Register on Luma</span
+        ><span class="pf-v6-c-button__icon pf-m-end"
+          ><icon-external></icon-external></span
+      ></a>
+    </div>
+  </section>

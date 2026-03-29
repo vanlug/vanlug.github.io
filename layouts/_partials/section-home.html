@@ -1,0 +1,172 @@
+{{ $c := .Site.Data.content.home }}
+  <section
+    class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+    style="
+      --pf-v6-c-page__main-section--BackgroundColor: var(
+        --pf-t--global--background--color--secondary--default
+      );
+      padding-block: var(--pf-t--global--spacer--3xl);
+    "
+  >
+    <div
+      class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-lg"
+    >
+      <div class="pf-v6-c-content">
+        <span
+          class="pf-v6-u-font-size-sm pf-v6-u-font-weight-bold"
+          style="
+            color: var(--pf-t--global--text--color--brand--default);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+          "
+        >
+          {{ $c.badge | safeHTML }}
+        </span>
+        <h1 class="pf-v6-u-font-size-4xl">
+          {{ $c.title }}
+        </h1>
+        <p class="pf-v6-u-font-size-xl pf-v6-u-font-weight-bold">
+          {{ $c.subtitle }}
+        </p>
+        <p class="pf-v6-u-font-size-lg">
+          {{ .Site.Data.site.description }} {{ $c.body }}
+        </p>
+      </div>
+      <div class="pf-v6-l-flex pf-m-gap-sm">
+        <a href="{{ $c.cta_primary.page | relURL }}" class="pf-v6-c-button pf-m-primary"
+          >{{ $c.cta_primary.title }}</a
+        >
+        <a href="{{ $c.cta_secondary.page | relURL }}" class="pf-v6-c-button pf-m-secondary"
+          >{{ $c.cta_secondary.title }}</a
+        >
+        {{ $social := index .Site.Data.links.socials $c.cta_link.social }}
+        <a
+          href="{{ $social.url }}"
+          target="_blank"
+          rel="noopener"
+          class="pf-v6-c-button pf-m-link"
+          ><span class="pf-v6-c-button__text">{{ $c.cta_link.title }}</span
+          ><span class="pf-v6-c-button__icon pf-m-end"
+            >{{ partial "icon" $social.icon }}</span
+        ></a>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+  >
+    <div
+      class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+    >
+      <div class="pf-v6-c-content">
+        <h3>{{ $c.next_meeting.title }}</h3>
+      </div>
+      <luma-next-event
+        calendar="{{ .Site.Data.links.luma.calendar }}"
+        proxy="{{ .Site.Data.links.luma.proxy }}"
+      >
+        <div class="pf-v6-c-card pf-m-compact">
+          <div class="pf-v6-c-card__body">
+            <div
+              class="pf-v6-l-flex pf-m-gap-lg pf-m-align-items-flex-start"
+            >
+              <div
+                class="pf-v6-c-skeleton"
+                style="
+                  --pf-v6-c-skeleton--Height: 3rem;
+                  --pf-v6-c-skeleton--Width: 3.5rem;
+                "
+              ></div>
+              <div
+                class="pf-v6-l-flex pf-m-column pf-m-gap-sm pf-m-grow"
+              >
+                <div
+                  class="pf-v6-c-skeleton pf-m-text-lg pf-m-width-50"
+                ></div>
+                <div
+                  class="pf-v6-c-skeleton pf-m-text-sm pf-m-width-75"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </luma-next-event>
+      <div class="pf-v6-c-content">
+        <p>
+          {{ $c.next_meeting.body }}
+          <a href="{{ "/events/" | relURL }}">Full schedule</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+  >
+    <div
+      class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+    >
+      <div class="pf-v6-c-content">
+        <h3>{{ $c.expect.title }}</h3>
+      </div>
+      <div class="pf-v6-l-gallery pf-m-gutter">
+        {{ range $c.expect.cards }}
+          <div class="pf-v6-c-card">
+            <div class="pf-v6-c-card__title">
+              <div class="pf-v6-c-card__title-text">{{ .title }}</div>
+            </div>
+            <div class="pf-v6-c-card__body">
+              {{ if eq .body_key "community_year_round" }}
+                The conversation keeps going on
+                <a
+                  href="{{ $.Site.Data.links.socials.discourse.url }}"
+                  target="_blank"
+                  rel="noopener"
+                  >Discourse<icon-discourse></icon-discourse
+                ></a>
+                and
+                <a
+                  href="{{ $.Site.Data.links.socials.signal.url }}"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  >Signal<icon-signal></icon-signal
+                ></a>
+                between meetings. Ask questions, share projects, find
+                collaborators.
+              {{ else }}
+                {{ .body }}
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
+      </div>
+      <div class="pf-v6-c-content">
+        <p>
+          Follow us on
+          <a
+            href="{{ .Site.Data.links.socials.mastodon.url }}"
+            target="_blank"
+            rel="noopener"
+            >Mastodon<icon-mastodon></icon-mastodon></a
+          >,
+          <a
+            href="{{ .Site.Data.links.socials.bluesky.url }}"
+            target="_blank"
+            rel="noopener"
+            >Bluesky<icon-bluesky></icon-bluesky></a
+          >, or
+          <a
+            href="{{ .Site.Data.links.socials.linkedin.url }}"
+            target="_blank"
+            rel="noopener"
+            >LinkedIn<icon-linkedin></icon-linkedin
+          ></a>
+          for announcements. Want to give a talk or have a question?
+          <a href="{{ .Site.Data.links.socials.email.url }}"
+            >Email the board.<icon-email></icon-email
+          ></a>
+        </p>
+      </div>
+    </div>
+  </section>

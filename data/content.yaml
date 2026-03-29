@@ -1,0 +1,73 @@
+home:
+  badge: "Since 1999 &middot; 2,200+ members"
+  title: "Vancouver's Linux community"
+  subtitle: "Come get free help - stay for the friendly chats"
+  body: "Since 1999, we've been promoting Linux and free, open-source software through monthly talks, drop-in help sessions, and community events, all free and all volunteer-run, for every level of proficiency."
+  cta_primary:
+    title: See upcoming events
+    page: /events/
+  cta_secondary:
+    title: Who we are
+    page: /about/
+  cta_link:
+    title: Join the forum
+    social: discourse
+  next_meeting:
+    title: Next meeting
+    body: "We also run regular drop-in Linux help sessions at libraries in Richmond, Surrey, and Burnaby."
+  expect:
+    title: What to expect
+    cards:
+      - title: Monthly talks
+        body: "One or two presentations each month: sysadmin deep-dives, tooling demos, career talks, security, whatever people find interesting."
+      - title: Drop-in help sessions
+        body: "Bring your laptop. We help people install Linux, troubleshoot problems, and get comfortable with the command line."
+      - title: Community year-round
+        body_key: community_year_round
+
+events:
+  past:
+    archive_links:
+      - title: "2011–2012"
+        url: https://web.archive.org/web/20120127105516/http://vanlug.bc.ca/category/events/vanlug-meetings
+      - title: "2000–2004"
+        url: https://web.archive.org/web/20090305092230/http://www.vanlug.bc.ca/events
+
+membership:
+  image:
+    src: img/vpl2.jpg
+    alt: VanLUG meetup at Vancouver Public Library
+  why:
+    cards:
+      - title: Learn and grow
+        body: "Talks on everything from kernel internals to career strategy. Pick up practical skills, discover new tools, and get better at troubleshooting."
+      - title: Build your network
+        body: "Connect with Linux professionals, developers, and hobbyists across Greater Vancouver. Find collaborators, mentors, and job leads."
+      - title: Support open source
+        body: "Be part of a community that champions transparent, collaborative software development and helps newcomers get started with Linux."
+
+about:
+  images:
+    - src: img/img_0874.jpg
+      alt: VanLUG meeting at a library
+    - src: img/felicitas-vanlug-presentation.jpeg
+      alt: VanLUG presentation
+  purpose:
+    title: Our purpose
+    preamble: "We exist to fulfil the following mandates:"
+    mandates:
+      - "To promote the use of GNU-Linux (aka LINUX), a freely distributable, UNIX-like operating system developed by Linus Torvalds and a team of International collaborators. Linux follows the 'free, open source software' (FOSS) principles created by Richard M. Stallman who headed the GNU project. We also promote other variants of Linux (called Distros) and other UNIX versions (like GNU, BSD, FreeBSD, OpenBSD, etc) by individuals, businesses, organizations, institutions, and others, particularly those in the Greater Vancouver Area, the Canadian Westcoast, and the Pacific North-West."
+      - "To promote Free, Open Source and other software development models under which GNU-Linux and related software are being developed."
+      - "To foster collaboration and cooperation between GNU-Linux / Unix users and developers, particularly those in the Greater Vancouver Area, the Canadian Westcoast, and the Pacific North-West."
+      - "To provide a focus for GNU-Linux / Unix users and developers, particularly those in Greater Vancouver Area and the Pacific North-West."
+      - "To organize events of various types in Greater Vancouver Area and the Pacific-North West, that promote the GNU-Linux / UNIX and related software and products to the larger community."
+  board:
+    preamble: "As a registered non-profit society in British Columbia, VanLUG is governed by a volunteer Board of Directors. Elections are held annually at our AGM. New volunteers are always welcome."
+
+footer:
+  donate:
+    title: Support VanLUG
+    body: "VanLUG is 100% volunteer-run. All Board of Directors and Executives volunteer their time and effort for free. Donations go toward maintaining our website, Discourse platform, network infrastructure, and expenses related to our in-person meetings. Any amount helps. Thank you for sharing your resources."
+    cta: Donate via PayPal
+  land_acknowledgment: "VanLUG acknowledges that we meet, learn, and collaborate on the shared territories of many Indigenous Peoples, including the q̓ic̓əy̓ (Katzie), q̓ʷɑ:n̓ƛ̓ən̓ (Kwantlen), kʷikʷəƛ̓əm (Kwikwetlem), máthxwi (Matsqui), xʷməθkʷəy̓əm (Musqueam), qiqéyt (Qayqayt), Semiahmoo, Sḵwx̱wú7mesh Úxwumixw (Squamish), scəw̓aθən məsteyəxʷ (Tsawwassen), and səlilwətaɬ (Tsleil-Waututh). We respect the diverse and distinct histories, languages, and cultures of First Nations, Métis, and Inuit."
+  nonprofit: 'VanLUG is a registered non-profit organization with the <a href="https://www2.gov.bc.ca/gov/content/employment-business/business/not-for-profit-organizations" target="_blank" rel="noreferrer noopener">BC Provincial Government<icon-external></icon-external></a>, incorporated on March 29, 1999. Run entirely by volunteers, we''ve been bringing Linux and open-source enthusiasts together in Vancouver for over 25 years.'
