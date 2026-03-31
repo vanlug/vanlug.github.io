@@ -30,49 +30,36 @@
           >. RSVP there to get reminders.
         </p>
       </div>
-      <luma-embed calendar="{{ .Site.Data.links.luma.calendar }}">
-        <div class="pf-v6-c-empty-state">
-          <div class="pf-v6-c-empty-state__content">
-            <div class="pf-v6-c-empty-state__icon">
-              <i class="fas fa-shield-alt" aria-hidden="true"></i>
-            </div>
-            <div class="pf-v6-c-empty-state__title-text">
-              External content
-            </div>
-            <div class="pf-v6-c-empty-state__body">
-              The event calendar is hosted by Luma. Loading it will
-              connect your browser to their servers. See Luma's
-              <a
-                href="https://luma.com/privacy-policy"
-                target="_blank"
-                rel="noopener"
-                >privacy policy<icon-external></icon-external></a
-              >.
-            </div>
-            <div class="pf-v6-c-empty-state__footer">
-              <div class="pf-v6-c-empty-state__actions">
-                <button
-                  class="pf-v6-c-button pf-m-primary"
-                  type="button"
-                  data-slot="load"
-                >
-                  Load events from Luma
-                </button>
+      <luma-upcoming-events
+        calendar="{{ .Site.Data.links.luma.calendar }}"
+        proxy="{{ .Site.Data.links.luma.proxy }}"
+      >
+        <div class="pf-v6-l-flex pf-m-column pf-m-gap-md">
+          {{ range (seq 3) }}
+            <div class="pf-v6-c-card pf-m-compact pf-m-flat">
+              <div class="pf-v6-c-card__header">
+                <div class="pf-v6-c-card__header-main">
+                  <div class="pf-v6-l-flex pf-m-gap-lg pf-m-align-items-center pf-m-nowrap">
+                    <div
+                      class="pf-v6-c-skeleton"
+                      style="
+                        --pf-v6-c-skeleton--Height: 4rem;
+                        --pf-v6-c-skeleton--Width: 4rem;
+                        border-radius: var(--pf-t--global--border--radius--medium);
+                        flex-shrink: 0;
+                      "
+                    ></div>
+                    <div class="pf-v6-l-flex pf-m-column pf-m-gap-sm pf-m-grow">
+                      <div class="pf-v6-c-skeleton pf-m-text-lg pf-m-width-50"></div>
+                      <div class="pf-v6-c-skeleton pf-m-text-sm pf-m-width-75"></div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <a
-                href="{{ .Site.Data.links.luma.url }}"
-                target="_blank"
-                rel="noopener"
-                class="pf-v6-c-button pf-m-link"
-                ><span class="pf-v6-c-button__text"
-                  >Open on Luma instead</span
-                ><span class="pf-v6-c-button__icon pf-m-end"
-                  ><icon-external></icon-external></span
-              ></a>
             </div>
-          </div>
+          {{ end }}
         </div>
-      </luma-embed>
+      </luma-upcoming-events>
     </div>
   </section>
 

@@ -90,25 +90,52 @@
     );
   }
 
-  customElements.define(
-    "luma-embed",
-    class extends HTMLElement {
-      connectedCallback() {
-        this.querySelector("[data-slot=load]").addEventListener("click", () => {
-          const cal = this.getAttribute("calendar");
-          const iframe = document.createElement("iframe");
-          iframe.src = `https://luma.com/embed/calendar/${encodeURIComponent(cal)}/events`;
-          iframe.allowFullscreen = true;
-          iframe.setAttribute("aria-label", "Upcoming VanLUG events on Luma");
-          iframe.frameBorder = "0";
-          iframe.className = "pf-v6-u-w-100";
-          iframe.style.cssText =
-            "height:28rem;border:none;border-radius:var(--pf-t--global--border--radius--medium)";
-          this.replaceChildren(iframe);
-        });
-      }
-    },
-  );
+  const eventTemplate = document.getElementById("next-event-template");
+
+  const renderEventCard = (evt) => {
+    const start = new Date(evt.start_at);
+    const now = new Date();
+    const days = Math.ceil((start - now) / 86400000);
+    const relative =
+      days <= 0
+        ? "(today!)"
+        : days === 1
+          ? "(tomorrow)"
+          : days < 7
+            ? "(this week)"
+            : days < 14
+              ? "(next week)"
+              : `(in ${Math.round(days / 7)} weeks)`;
+    const time = start.toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "2-digit",
+    });
+
+    const clone = eventTemplate.content.cloneNode(true);
+    const $ = (s) => clone.querySelector(`[data-slot="${s}"]`);
+    const cover = $("cover");
+    if (evt.cover_url) {
+      cover.src = evt.cover_url;
+      cover.alt = evt.name || "Event cover";
+    } else {
+      cover.remove();
+    }
+    $("date").textContent = start.toLocaleDateString("en-US", {
+      weekday: "short",
+      month: "short",
+      day: "numeric",
+    });
+    $("relative").textContent = relative;
+    $("name").textContent = evt.name || "VanLUG Meeting";
+    $("detail").textContent = evt.location
+      ? `${evt.location} \u00b7 ${time}`
+      : time;
+    const link = $("rsvp");
+    link.href = evt.url
+      ? `https://luma.com/${evt.url}`
+      : "https://luma.com/vanlug";
+    return clone;
+  };
 
   customElements.define(
     "luma-next-event",
@@ -116,7 +143,6 @@
       connectedCallback() {
         const cal = this.getAttribute("calendar");
         const proxy = this.getAttribute("proxy");
-        const t = document.getElementById("next-event-template");
         fetch(`${proxy}/next-event?calendar=${encodeURIComponent(cal)}`)
           .then((r) => r.json())
           .then(({ entries }) => {
@@ -127,48 +153,52 @@
               return;
             }
 
-            const start = new Date(evt.start_at);
-            const now = new Date();
-            const days = Math.ceil((start - now) / 86400000);
-            const relative =
-              days <= 0
-                ? "(today!)"
-                : days === 1
-                  ? "(tomorrow)"
-                  : days < 7
-                    ? "(this week)"
-                    : days < 14
-                      ? "(next week)"
-                      : `(in ${Math.round(days / 7)} weeks)`;
-            const time = start.toLocaleTimeString("en-US", {
-              hour: "numeric",
-              minute: "2-digit",
-            });
-
             this.replaceChildren();
-            const clone = t.content.cloneNode(true);
-            const $ = (s) => clone.querySelector(`[data-slot="${s}"]`);
-            $("date").textContent = start.toLocaleDateString("en-US", {
-              weekday: "short",
-              month: "short",
-              day: "numeric",
-            });
-            $("relative").textContent = relative;
-            $("name").textContent = evt.name || "VanLUG Meeting";
-            $("detail").textContent = evt.location
-              ? `${evt.location} \u00b7 ${time}`
-              : time;
-            const link = $("rsvp");
-            link.href = evt.url
-              ? `https://luma.com/${evt.url}`
-              : "https://luma.com/vanlug";
-            this.append(clone);
+            this.append(renderEventCard(evt));
           })
           .catch(() => {
             this.textContent = "Could not load the next event. ";
             const a = document.createElement("a");
             a.href = "/events/";
             a.textContent = "See all events.";
+            this.append(a);
+          });
+      }
+    },
+  );
+
+  customElements.define(
+    "luma-upcoming-events",
+    class extends HTMLElement {
+      connectedCallback() {
+        const cal = this.getAttribute("calendar");
+        const proxy = this.getAttribute("proxy");
+        fetch(`${proxy}/events?calendar=${encodeURIComponent(cal)}`)
+          .then((r) => r.json())
+          .then(({ entries }) => {
+            if (!entries || entries.length === 0) {
+              this.textContent =
+                "No upcoming events right now. Check back soon!";
+              return;
+            }
+
+            this.replaceChildren();
+            const container = document.createElement("div");
+            container.className = "pf-v6-l-flex pf-m-column pf-m-gap-md";
+
+            for (const evt of entries) {
+              container.appendChild(renderEventCard(evt));
+            }
+
+            this.appendChild(container);
+          })
+          .catch(() => {
+            this.textContent = "Could not load upcoming events. ";
+            const a = document.createElement("a");
+            a.href = "https://luma.com/vanlug";
+            a.target = "_blank";
+            a.rel = "noopener";
+            a.textContent = "View on Luma instead.";
             this.append(a);
           });
       }

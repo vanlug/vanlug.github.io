@@ -30,11 +30,9 @@ When accessing our website, the following information is processed for the reaso
    - Our website does NOT use cookies or other techniques for user-targeted analytics or advertisements.
    - Legal basis for processing this data is a legitimate interest of the website operator (Art. 6.1.f GDPR).
 
-#### 3.2 Luma Calendar Embed
+#### 3.2 Luma Event Data
 
-Our Events page offers an optional embed of the Luma event calendar. This embed is **not loaded by default**. It is only activated when you explicitly click "Load events from Luma". Loading it will connect your browser directly to Luma's servers.
-
-Our home page fetches the next upcoming event from Luma's API via our proxy on Railway to display the next meeting card. Your browser connects to our proxy, not directly to Luma.
+Our home page and events page fetch event data from Luma's API via our proxy on Railway. Your browser connects to our proxy, not directly to Luma. No data is sent to Luma from your browser.
 
 Luma, Inc.\
 548 Market St PMB 36143\
@@ -52,7 +50,7 @@ San Francisco, CA 94107\
 United States\
 Privacy policy: [GitHub Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement)
 
-Our Luma event API proxy for the home page is hosted by:
+Our Luma event API proxy is hosted by:
 
 Railway Corporation\
 548 Market St PMB 68956\
