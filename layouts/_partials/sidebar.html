@@ -5,7 +5,7 @@
         {{ $current := $.RelPermalink }}
         {{ range .Site.Data.links.sidebar }}
           {{ if .separator }}
-            <li class="pf-v6-c-divider" role="separator"></li>
+            <li class="pf-v6-c-divider" role="presentation"></li>
           {{ else if .url }}
             <li class="pf-v6-c-nav__item">
               <a

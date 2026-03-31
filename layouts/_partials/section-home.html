@@ -191,12 +191,10 @@
               <div
                 class="pf-v6-c-card pf-m-compact"
                 style="
-                  background-image: url('{{ .image.src | relURL }}');
+                  background-image: url('{{ .image | relURL }}');
                   background-size: cover;
                   background-position: center;
                 "
-                role="img"
-                aria-label="{{ .image.alt }}"
               >
                 <div class="pf-v6-c-card__body pf-v6-l-flex pf-m-column pf-m-justify-content-flex-end pf-m-gap-sm" style="
                   background: linear-gradient(color-mix(in srgb, var(--pf-t--global--background--color--primary--default) 40%, transparent) 0%, color-mix(in srgb, var(--pf-t--global--background--color--primary--default) 80%, transparent) 50%, var(--pf-t--global--background--color--primary--default) 100%);

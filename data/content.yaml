@@ -33,9 +33,7 @@ home:
       - title: 2026 Cloud Summit
         date: May 1, 2026
         url: https://cloudsummit.ca
-        image:
-          src: img/cloudsummit-2026.jpg
-          alt: 2026 Cloud Summit venue in Vancouver
+        image: img/cloudsummit-2026.jpg
 
 events:
   past:
