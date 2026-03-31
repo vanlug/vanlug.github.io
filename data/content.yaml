@@ -25,6 +25,18 @@ home:
       - title: Community year-round
         body_key: community_year_round
 
+  supporters:
+    title: Events we're supporting
+    placeholder: "More to come!"
+    empty: "Nothing right now. Check back soon!"
+    events:
+      - title: 2026 Cloud Summit
+        date: May 1, 2026
+        url: https://cloudsummit.ca
+        image:
+          src: img/cloudsummit-2026.jpg
+          alt: 2026 Cloud Summit venue in Vancouver
+
 events:
   past:
     archive_links:

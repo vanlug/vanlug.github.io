@@ -174,3 +174,83 @@
       </div>
     </div>
   </section>
+
+  {{ with $c.supporters }}
+    <section
+      class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+    >
+      <div
+        class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
+      >
+        <div class="pf-v6-c-content">
+          <h3>{{ .title }}</h3>
+        </div>
+        {{ if .events }}
+          <div class="pf-v6-l-gallery pf-m-gutter">
+            {{ range .events }}
+              <div
+                class="pf-v6-c-card pf-m-compact"
+                style="
+                  background-image: url('{{ .image.src | relURL }}');
+                  background-size: cover;
+                  background-position: center;
+                "
+                role="img"
+                aria-label="{{ .image.alt }}"
+              >
+                <div class="pf-v6-c-card__body pf-v6-l-flex pf-m-column pf-m-justify-content-flex-end pf-m-gap-sm" style="
+                  background: linear-gradient(color-mix(in srgb, var(--pf-t--global--background--color--primary--default) 40%, transparent) 0%, color-mix(in srgb, var(--pf-t--global--background--color--primary--default) 80%, transparent) 50%, var(--pf-t--global--background--color--primary--default) 100%);
+                  border-radius: inherit;
+                ">
+                  <div class="pf-v6-c-content">
+                    <h4>{{ .title }}</h4>
+                    <p><small>{{ .date }}</small></p>
+                  </div>
+                  <a
+                    href="{{ .url }}"
+                    target="_blank"
+                    rel="noopener"
+                    class="pf-v6-c-button pf-m-link pf-m-inline"
+                    ><span class="pf-v6-c-button__text">Visit website</span
+                    ><span class="pf-v6-c-button__icon pf-m-end"
+                      ><icon-external></icon-external></span
+                  ></a>
+                </div>
+              </div>
+            {{ end }}
+            {{ if lt (len .events) 3 }}
+              <div class="pf-v6-c-card pf-m-compact pf-m-plain">
+                <div class="pf-v6-c-card__body" style="flex: 1; display: flex; align-items: center; justify-content: center;">
+                  <div class="pf-v6-c-empty-state pf-m-xs">
+                    <div class="pf-v6-c-empty-state__content">
+                      <div class="pf-v6-c-empty-state__header">
+                        <div class="pf-v6-c-empty-state__icon pf-v6-u-font-size-xl pf-v6-u-mb-sm">
+                          <i class="fas fa-calendar-plus" aria-hidden="true"></i>
+                        </div>
+                        <div class="pf-v6-c-empty-state__title">
+                          <p class="pf-v6-c-empty-state__title-text pf-v6-u-font-size-sm">{{ .placeholder }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {{ end }}
+          </div>
+        {{ else }}
+          <div class="pf-v6-c-empty-state pf-m-xs">
+            <div class="pf-v6-c-empty-state__content">
+              <div class="pf-v6-c-empty-state__header">
+                <div class="pf-v6-c-empty-state__icon pf-v6-u-font-size-xl pf-v6-u-mb-sm">
+                  <i class="fas fa-calendar" aria-hidden="true"></i>
+                </div>
+                <div class="pf-v6-c-empty-state__title">
+                  <p class="pf-v6-c-empty-state__title-text pf-v6-u-font-size-sm">{{ .empty }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
