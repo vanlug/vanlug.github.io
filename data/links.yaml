@@ -30,14 +30,6 @@ sidebar:
     url: https://thecanadian.social/@vanlug
     icon: fa-brands fa-mastodon
     description: Follow us on the fediverse
-  - title: Posts RSS
-    url: https://thecanadian.social/@vanlug.rss
-    icon: fa-solid fa-rss
-    description: Subscribe to our Mastodon posts
-  - title: Events RSS
-    icon: fa-solid fa-rss
-    description: Subscribe to upcoming events
-    eventsFeed: true
   - title: Bluesky
     url: https://bsky.app/profile/vanlug.thecanadian.social.ap.brid.gy
     icon: fa-brands fa-bluesky
@@ -46,6 +38,16 @@ sidebar:
     url: https://www.linkedin.com/groups/1895787/
     icon: fa-brands fa-linkedin
     description: Our professional network group
+  - separator: true
+  - title: Posts RSS
+    url: https://thecanadian.social/@vanlug.rss
+    icon: fa-solid fa-rss
+    description: Subscribe to our Mastodon posts
+  - title: Events RSS
+    icon: fa-solid fa-rss
+    description: Subscribe to upcoming events
+    eventsFeed: true
+  - separator: true
   - title: Email the board
     url: mailto:contact@vanlug.ca
     icon: fa-solid fa-envelope
