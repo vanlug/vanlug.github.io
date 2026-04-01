@@ -8,7 +8,7 @@ tootTemplate.innerHTML = `
     <div class="pf-v6-l-flex pf-m-gap-sm pf-m-align-items-center pf-v6-u-font-size-xs pf-v6-u-text-color-subtle">
       <img data-slot="avatar" style="width: 1rem; height: 1rem; border-radius: 50%;" />
       <span data-slot="timestamp"></span>
-      <span data-slot="stats"></span>
+      <span class="pf-v6-l-flex pf-m-gap-sm pf-m-align-items-center" data-slot="stats"></span>
     </div>
   </a>`;
 
