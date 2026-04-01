@@ -152,6 +152,12 @@ design:
         credit: "Wesley Tingey"
         url: https://unsplash.com/photos/bWRX_obQAl8
         source: design/wesley-tingey-bWRX_obQAl8-unsplash.jpg
+    - name: card-chill-and-hangout
+      description: "Event card for Linux Chill & Hangout"
+      photo:
+        credit: "Aaron Thomas"
+        url: https://unsplash.com/photos/dMqlE7lgyOU
+        source: design/aaron-thomas-dMqlE7lgyOU-unsplash.jpg
     - name: card-agm
       description: "Event card for Annual General Meeting"
       photo:
