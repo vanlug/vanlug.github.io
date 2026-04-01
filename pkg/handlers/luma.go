@@ -3,9 +3,13 @@ package handlers
 import (
 	"encoding/json"
 	"fmt"
+	"html"
 	"io"
 	"net/http"
 	"net/url"
+	"time"
+
+	"github.com/gorilla/feeds"
 )
 
 type LumaEvent struct {
@@ -39,12 +43,10 @@ type EventOutput struct {
 	Entries []EventItem `json:"entries"`
 }
 
-func lumaFetch(w http.ResponseWriter, r *http.Request, apiBase string, limit string) {
+func lumaFetchItems(r *http.Request, apiBase string, limit string) ([]EventItem, error) {
 	cal := r.URL.Query().Get("calendar")
 	if cal == "" {
-		w.Write([]byte("missing calendar query parameter"))
-
-		panic("missing calendar query parameter")
+		return nil, fmt.Errorf("missing calendar query parameter")
 	}
 
 	u := apiBase + "?" + url.Values{
@@ -55,22 +57,21 @@ func lumaFetch(w http.ResponseWriter, r *http.Request, apiBase string, limit str
 
 	resp, err := http.Get(u)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer resp.Body.Close()
 
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	var lr LumaResponse
 	if err := json.Unmarshal(body, &lr); err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	output := EventOutput{}
-
+	var items []EventItem
 	for _, entry := range lr.Entries {
 		evt := entry.Event
 
@@ -82,7 +83,7 @@ func lumaFetch(w http.ResponseWriter, r *http.Request, apiBase string, limit str
 			}
 		}
 
-		output.Entries = append(output.Entries, EventItem{
+		items = append(items, EventItem{
 			Name:     evt.Name,
 			StartAt:  evt.StartAt,
 			URL:      evt.URL,
@@ -91,7 +92,18 @@ func lumaFetch(w http.ResponseWriter, r *http.Request, apiBase string, limit str
 		})
 	}
 
-	j, err := json.Marshal(output)
+	return items, nil
+}
+
+func lumaJSON(w http.ResponseWriter, r *http.Request, apiBase string, limit string) {
+	items, err := lumaFetchItems(r, apiBase, limit)
+	if err != nil {
+		w.Write([]byte(err.Error()))
+
+		panic(err)
+	}
+
+	j, err := json.Marshal(EventOutput{Entries: items})
 	if err != nil {
 		panic(err)
 	}
@@ -100,9 +112,81 @@ func lumaFetch(w http.ResponseWriter, r *http.Request, apiBase string, limit str
 }
 
 func NextEventHandler(w http.ResponseWriter, r *http.Request, apiBase string) {
-	lumaFetch(w, r, apiBase, "1")
+	lumaJSON(w, r, apiBase, "1")
 }
 
 func EventsHandler(w http.ResponseWriter, r *http.Request, apiBase string) {
-	lumaFetch(w, r, apiBase, "20")
+	lumaJSON(w, r, apiBase, "20")
+}
+
+func EventsFeedHandler(w http.ResponseWriter, r *http.Request, apiBase string, siteURL string) {
+	items, err := lumaFetchItems(r, apiBase, "20")
+	if err != nil {
+		w.Write([]byte(err.Error()))
+
+		panic(err)
+	}
+
+	now := time.Now()
+
+	feed := &feeds.Feed{
+		Title:       "VanLUG Events",
+		Link:        &feeds.Link{Href: siteURL + "events/"},
+		Description: "Upcoming events from the Vancouver Linux Users Group",
+		Author:      &feeds.Author{Name: "Vancouver Linux Users Group"},
+		Updated:     now,
+		Created:     now,
+		Id:          siteURL + "events/",
+	}
+
+	for _, item := range items {
+		link := "https://luma.com/vanlug"
+		if item.URL != "" {
+			link = "https://luma.com/" + item.URL
+		}
+
+		published := now
+		if t, err := time.Parse(time.RFC3339, item.StartAt); err == nil {
+			published = t
+		}
+
+		description := item.StartAt
+		if item.Location != "" {
+			description = item.Location + " — " + description
+		}
+
+		content := "<p>" + html.EscapeString(item.Name) + "</p>"
+		if item.Location != "" {
+			content += "<p>" + html.EscapeString(item.Location) + "</p>"
+		}
+		if item.CoverURL != "" {
+			content += `<p><img src="` + html.EscapeString(item.CoverURL) + `" alt="` + html.EscapeString(item.Name) + `" /></p>`
+		}
+
+		feedItem := &feeds.Item{
+			Title:       item.Name,
+			Link:        &feeds.Link{Href: link},
+			Description: description,
+			Id:          link,
+			Created:     published,
+			Updated:     published,
+			Content:     content,
+		}
+
+		if item.CoverURL != "" {
+			feedItem.Enclosure = &feeds.Enclosure{
+				Url:  item.CoverURL,
+				Type: "image/jpeg",
+			}
+		}
+
+		feed.Add(feedItem)
+	}
+
+	w.Header().Set("Content-Type", "application/atom+xml; charset=utf-8")
+	w.Header().Set("Cache-Control", "public, max-age=900")
+
+	if err := feed.WriteAtom(w); err != nil {
+		panic(err)
+	}
 }

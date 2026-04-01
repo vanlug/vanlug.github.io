@@ -6,6 +6,21 @@
         {{ range .Site.Data.links.sidebar }}
           {{ if .separator }}
             <li class="pf-v6-c-divider" role="presentation"></li>
+          {{ else if .eventsFeed }}
+            <li class="pf-v6-c-nav__item">
+              <a
+                class="pf-v6-c-nav__link"
+                href="{{ $.Site.Data.links.luma.proxy }}/events/feed?calendar={{ $.Site.Data.links.luma.calendar }}"
+                target="_blank"
+                rel="noopener"
+                ><span
+                  >{{ .title }}{{ partial "icon" .icon }}<br /><small
+                    class="pf-v6-u-font-size-xs pf-v6-u-text-color-subtle"
+                    >{{ .description }}</small
+                  ></span
+                ></a
+              >
+            </li>
           {{ else if .url }}
             <li class="pf-v6-c-nav__item">
               <a

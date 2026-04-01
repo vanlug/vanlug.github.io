@@ -97,7 +97,14 @@
       <div class="pf-v6-c-content">
         <p>
           {{ $c.next_meeting.body }}
-          <a href="{{ "/events/" | relURL }}">Full schedule</a>
+          See
+          <a href="{{ "/events/" | relURL }}">full schedule</a>, or subscribe via
+          <a
+            href="{{ .Site.Data.links.luma.proxy }}/events/feed?calendar={{ .Site.Data.links.luma.calendar }}"
+            target="_blank"
+            rel="noopener"
+            >RSS<icon-custom data-icon="fa-solid fa-rss"></icon-custom></a
+          >.
         </p>
       </div>
     </div>

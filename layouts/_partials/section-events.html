@@ -27,7 +27,13 @@
             target="_blank"
             rel="noopener"
             >Luma calendar<icon-external></icon-external></a
-          >. RSVP there to get reminders.
+          >. RSVP there to get reminders, or subscribe via
+          <a
+            href="{{ .Site.Data.links.luma.proxy }}/events/feed?calendar={{ .Site.Data.links.luma.calendar }}"
+            target="_blank"
+            rel="noopener"
+            >RSS<icon-custom data-icon="fa-solid fa-rss"></icon-custom></a
+          >.
         </p>
       </div>
       <luma-upcoming-events

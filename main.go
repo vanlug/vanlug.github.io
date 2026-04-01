@@ -32,6 +32,11 @@ func main() {
 		apiBase = defaultLumaAPIBase
 	}
 
+	siteURL := os.Getenv("SITE_URL")
+	if siteURL == "" {
+		siteURL = "https://vanlug.github.io/"
+	}
+
 	mastodonServer := os.Getenv("MASTODON_SERVER")
 	if mastodonServer == "" {
 		mastodonServer = "https://thecanadian.social"
@@ -85,6 +90,20 @@ func main() {
 		}()
 
 		handlers.EventsHandler(w, r, apiBase)
+	}))
+
+	mux.HandleFunc("/events/feed", cors(func(w http.ResponseWriter, r *http.Request) {
+		defer func() {
+			if err := recover(); err != nil {
+				log.Println("Error occured in events feed API:", err)
+
+				http.Error(w, "Error occured in events feed API", http.StatusInternalServerError)
+
+				return
+			}
+		}()
+
+		handlers.EventsFeedHandler(w, r, apiBase, siteURL)
 	}))
 
 	mux.HandleFunc("/mastodon", cors(func(w http.ResponseWriter, r *http.Request) {

@@ -34,7 +34,8 @@
     {{ range .Site.Data.links.me }}
       <link rel="me" href="{{ . }}" />
     {{ end }}
-    <link rel="alternate" type="application/rss+xml" title="Fediverse posts from {{ .Site.Title }}" href="{{ .Site.Data.links.feed.rss }}" />
+    <link rel="alternate" type="application/rss+xml" title="Mastodon posts from {{ .Site.Title }}" href="{{ .Site.Data.links.feed.mastodon }}" />
+    <link rel="alternate" type="application/atom+xml" title="Upcoming events from {{ .Site.Title }}" href="{{ .Site.Data.links.luma.proxy }}/events/feed?calendar={{ .Site.Data.links.luma.calendar }}" />
 
     <meta name="author" content="{{ .Site.Data.site.author }}" />
     <meta name="fediverse:creator" content="@vanlug@thecanadian.social" />
@@ -54,7 +55,7 @@
       content="{{ .Site.Data.site.description }}"
     />
     <meta property="og:image" content="/design/header.png" />
-    <meta property="og:url" content="https://vanlug.github.io/" />
+    <meta property="og:url" content="{{ .Site.BaseURL }}" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="{{ .Site.Data.site.author }}" />
     <meta property="og:locale" content="en_CA" />
