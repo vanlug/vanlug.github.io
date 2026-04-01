@@ -1,5 +1,5 @@
 <div class="pf-v6-l-flex pf-m-column pf-m-gap-md">
-  <div class="pf-v6-l-flex pf-m-align-items-center pf-m-justify-content-space-between pf-v6-u-pb-0 pf-v6-u-pl-0 pf-v6-u-pl-md-on-xl">
+  <div class="pf-v6-l-flex pf-m-align-items-center pf-m-justify-content-space-between pf-m-nowrap pf-v6-u-pb-0 pf-v6-u-pl-0 pf-v6-u-pl-md-on-xl">
     <div class="pf-v6-c-content">
       <h3>Latest posts</h3>
     </div>
@@ -28,15 +28,20 @@
       {{ end }}
     </div>
   </mastodon-feed>
-  <div class="pf-v6-l-flex pf-m-justify-content-center pf-v6-u-pb-sm">
-    <a
-      href="{{ .Site.Data.links.socials.mastodon.url }}"
-      target="_blank"
-      rel="noopener"
-      class="pf-v6-c-button pf-m-link"
-      ><span class="pf-v6-c-button__text">See all posts</span
-      ><span class="pf-v6-c-button__icon pf-m-end"
-        ><icon-external></icon-external></span
-    ></a>
+  <div class="pf-v6-c-content pf-v6-u-font-size-sm pf-v6-u-text-align-center pf-v6-u-pb-sm">
+    <p>
+      <a
+        href="{{ .Site.Data.links.socials.mastodon.url }}"
+        target="_blank"
+        rel="noopener"
+        >See all posts<icon-external></icon-external></a
+      >, or subscribe via
+      <a
+        href="{{ .Site.Data.links.feed.mastodon }}"
+        target="_blank"
+        rel="noopener"
+        >RSS<icon-custom data-icon="fa-solid fa-rss"></icon-custom></a
+      >.
+    </p>
   </div>
 </div>
