@@ -35,7 +35,7 @@
       <link rel="me" href="{{ . }}" />
     {{ end }}
     <link rel="alternate" type="application/rss+xml" title="Mastodon posts from {{ .Site.Title }}" href="{{ .Site.Data.links.feed.mastodon }}" />
-    <link rel="alternate" type="application/atom+xml" title="Upcoming events from {{ .Site.Title }}" href="{{ .Site.Data.links.luma.proxy }}/events/feed?calendar={{ .Site.Data.links.luma.calendar }}" />
+    <link rel="alternate" type="application/atom+xml" title="Upcoming events from {{ .Site.Title }}" href="{{ .Site.Data.links.api }}/events/feed?calendar={{ .Site.Data.links.luma.calendar }}" />
 
     <meta name="author" content="{{ .Site.Data.site.author }}" />
     <meta name="fediverse:creator" content="@vanlug@thecanadian.social" />

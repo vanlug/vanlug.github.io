@@ -60,10 +60,10 @@ customElements.define(
   class extends HTMLElement {
     async connectedCallback() {
       const cal = this.getAttribute("calendar");
-      const proxy = this.getAttribute("proxy");
+      const api = this.getAttribute("api");
       try {
         const { entries } = await fetch(
-          `${proxy}/next-event?calendar=${encodeURIComponent(cal)}`,
+          `${api}/next-event?calendar=${encodeURIComponent(cal)}`,
         ).then((r) => r.json());
         const evt = entries?.[0];
         if (!evt) {

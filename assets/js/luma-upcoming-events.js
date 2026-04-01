@@ -51,10 +51,10 @@ customElements.define(
   class extends HTMLElement {
     async connectedCallback() {
       const cal = this.getAttribute("calendar");
-      const proxy = this.getAttribute("proxy");
+      const api = this.getAttribute("api");
       try {
         const { entries } = await fetch(
-          `${proxy}/events?calendar=${encodeURIComponent(cal)}`,
+          `${api}/events?calendar=${encodeURIComponent(cal)}`,
         ).then((r) => r.json());
         if (!entries?.length) {
           this.textContent = "No upcoming events right now. Check back soon!";

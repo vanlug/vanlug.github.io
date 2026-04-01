@@ -77,9 +77,9 @@ donate:
   icon: fa-brands fa-paypal
 feed:
   mastodon: https://thecanadian.social/@vanlug.rss
+api: https://vanlug-website-backend.up.railway.app
 luma:
   calendar: cal-x23GENOxTsZqSMO
   url: https://luma.com/vanlug
-  proxy: https://vanlug-website-backend.up.railway.app/
 meetup:
   url: https://www.meetup.com/vanlug-bc/events/

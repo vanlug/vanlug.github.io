@@ -62,7 +62,7 @@
       </div>
       <luma-next-event
         calendar="{{ .Site.Data.links.luma.calendar }}"
-        proxy="{{ .Site.Data.links.luma.proxy }}"
+        api="{{ .Site.Data.links.api }}"
       >
         <div class="pf-v6-c-card pf-m-compact pf-m-flat">
           <div class="pf-v6-c-card__header">
@@ -100,7 +100,7 @@
           See
           <a href="{{ "/events/" | relURL }}">full schedule</a>, or subscribe via
           <a
-            href="{{ .Site.Data.links.luma.proxy }}/events/feed?calendar={{ .Site.Data.links.luma.calendar }}"
+            href="{{ .Site.Data.links.api }}/events/feed?calendar={{ .Site.Data.links.luma.calendar }}"
             target="_blank"
             rel="noopener"
             >RSS<icon-custom data-icon="fa-solid fa-rss"></icon-custom></a

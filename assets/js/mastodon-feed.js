@@ -83,11 +83,11 @@ customElements.define(
   class extends HTMLElement {
     async connectedCallback() {
       const username = this.getAttribute("username");
-      const proxy = this.getAttribute("proxy");
+      const api = this.getAttribute("api");
       const profile = this.getAttribute("profile");
       try {
         const data = await fetch(
-          `${proxy}/mastodon?username=${encodeURIComponent(username)}`,
+          `${api}/mastodon?username=${encodeURIComponent(username)}`,
         ).then((r) => r.json());
         if (!data.toots?.length) {
           this.textContent = "No posts yet.";
