@@ -49,6 +49,7 @@ sidebar:
 socials:
   mastodon:
     url: https://thecanadian.social/@vanlug
+    username: "@vanlug@thecanadian.social"
     icon: fa-brands fa-mastodon
   bluesky:
     url: https://bsky.app/profile/vanlug.thecanadian.social.ap.brid.gy
@@ -73,6 +74,6 @@ feed:
 luma:
   calendar: cal-x23GENOxTsZqSMO
   url: https://luma.com/vanlug
-  proxy: https://next-event-production.up.railway.app
+  proxy: http://localhost:8080
 meetup:
   url: https://www.meetup.com/vanlug-bc/events/

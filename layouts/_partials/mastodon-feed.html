@@ -1,0 +1,42 @@
+<div class="pf-v6-l-flex pf-m-column pf-m-gap-md">
+  <div class="pf-v6-l-flex pf-m-align-items-center pf-m-justify-content-space-between pf-v6-u-pb-0 pf-v6-u-pl-0 pf-v6-u-pl-md-on-xl">
+    <div class="pf-v6-c-content">
+      <h3>Latest posts</h3>
+    </div>
+    <a
+      href="{{ .Site.Data.links.socials.mastodon.url }}"
+      target="_blank"
+      rel="noopener"
+      class="pf-v6-c-button pf-m-control pf-m-small"
+      ><span class="pf-v6-c-button__icon pf-m-start"
+        ><i class="fa-brands fa-mastodon" aria-hidden="true"></i></span
+      ><span class="pf-v6-c-button__text">Follow</span
+    ></a>
+  </div>
+  <mastodon-feed
+    username="{{ .Site.Data.links.socials.mastodon.username }}"
+    proxy="{{ .Site.Data.links.luma.proxy }}"
+    profile="{{ .Site.Data.links.socials.mastodon.url }}"
+  >
+    <div class="pf-v6-l-flex pf-m-column pf-m-gap-sm">
+      {{ range (seq 3) }}
+        <div>
+          <div class="pf-v6-c-skeleton pf-m-text-sm pf-v6-u-mb-sm"></div>
+          <div class="pf-v6-c-skeleton pf-m-text-sm pf-m-width-75"></div>
+          <div class="pf-v6-c-skeleton pf-m-text-xs pf-m-width-50 pf-v6-u-mt-sm"></div>
+        </div>
+      {{ end }}
+    </div>
+  </mastodon-feed>
+  <div class="pf-v6-l-flex pf-m-justify-content-center pf-v6-u-pb-sm">
+    <a
+      href="{{ .Site.Data.links.socials.mastodon.url }}"
+      target="_blank"
+      rel="noopener"
+      class="pf-v6-c-button pf-m-link"
+      ><span class="pf-v6-c-button__text">See all posts</span
+      ><span class="pf-v6-c-button__icon pf-m-end"
+        ><icon-external></icon-external></span
+    ></a>
+  </div>
+</div>

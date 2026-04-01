@@ -72,15 +72,57 @@
       {{ partial "masthead" . }}
       {{ partial "sidebar" . }}
 
-      <div class="pf-v6-c-page__main-container">
-        <main class="pf-v6-c-page__main" id="main-content">
-          {{ block "main" . }}{{ end }}
-        </main>
-      </div>
+      {{ if .IsHome }}
+        <div class="pf-v6-c-page__drawer">
+          <div class="pf-v6-c-drawer pf-m-static pf-m-expanded" id="feed-drawer">
+            <div class="pf-v6-c-drawer__main">
+              <div class="pf-v6-c-drawer__content pf-v6-c-page__main-container" style="margin-inline-end: 0;">
+                <div class="pf-v6-c-drawer__body">
+                  <main class="pf-v6-c-page__main" id="main-content">
+                    {{ block "main" . }}{{ end }}
+                  </main>
+                </div>
+              </div>
+              <div class="pf-v6-c-drawer__panel pf-m-secondary pf-m-no-border pf-v6-u-display-none pf-v6-u-display-flex-on-xl" style="
+                --pf-v6-c-drawer__panel--md--FlexBasis: 20rem;
+                --pf-v6-c-drawer__panel--xl--FlexBasis: 20rem;
+                --pf-v6-c-drawer__panel--xl--MinWidth: 20rem;
+                border: 0 !important;
+                border-image: none !important;
+                box-shadow: none !important;
+              ">
+                <div class="pf-v6-c-drawer__body pf-v6-u-pt-sm" style="padding-inline-start: var(--pf-v6-c-page__sidebar-body--PaddingInlineEnd); padding-inline-end: var(--pf-v6-c-page__sidebar-body--PaddingInlineStart);">
+                  {{ partial "mastodon-feed" . }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {{ else }}
+        <div class="pf-v6-c-page__main-container">
+          <main class="pf-v6-c-page__main" id="main-content">
+            {{ block "main" . }}{{ end }}
+          </main>
+        </div>
+      {{ end }}
     </div>
 
     {{ partial "next-event-template" . }}
 
-    <script src="{{ "main.js" | relURL }}"></script>
+    {{ with resources.Get "js/main.js" }}
+      {{ $opts := dict
+        "minify" (not hugo.IsDevelopment)
+        "sourceMap" (cond hugo.IsDevelopment "linked" "none")
+      }}
+      {{ with . | js.Build $opts }}
+        {{ if hugo.IsDevelopment }}
+          <script src="{{ .RelPermalink }}"></script>
+        {{ else }}
+          {{ with . | fingerprint }}
+            <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></script>
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
   </body>
 </html>
