@@ -1,5 +1,83 @@
 import DOMPurify from "dompurify";
 
+const tootTemplate = document.createElement("template");
+tootTemplate.innerHTML = `
+  <a target="_blank" rel="noopener" style="text-decoration: none;">
+    <div class="pf-v6-c-content pf-v6-u-font-size-sm" data-slot="body"></div>
+    <div data-slot="media"></div>
+    <div class="pf-v6-l-flex pf-m-gap-sm pf-m-align-items-center pf-v6-u-font-size-xs pf-v6-u-text-color-subtle">
+      <img data-slot="avatar" style="width: 1rem; height: 1rem; border-radius: 50%;" />
+      <span data-slot="timestamp"></span>
+      <span data-slot="stats"></span>
+    </div>
+  </a>`;
+
+const renderToot = (toot, data, { isFirst, isLast, inDrawer, profile }) => {
+  const clone = tootTemplate.content.cloneNode(true);
+  const $ = (s) => clone.querySelector(`[data-slot="${s}"]`);
+  const item = clone.querySelector("a");
+
+  item.href = toot.url || profile;
+  item.className = [
+    "pf-v6-l-flex pf-m-column pf-m-gap-xs pf-v6-u-pt-sm pf-v6-u-text-color-regular",
+    isLast ? "pf-v6-u-pb-0" : "pf-v6-u-pb-sm",
+    inDrawer ? "pf-v6-u-px-md" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  if (!isFirst) {
+    item.style.borderTop =
+      "var(--pf-t--global--border--width--divider--default) solid var(--pf-t--global--border--color--default)";
+  }
+
+  const body = $("body");
+  body.innerHTML = DOMPurify.sanitize(toot.body); // In the future, we want to use https://developer.mozilla.org/en-US/docs/Web/API/Element/setHTML for this
+
+  const mediaSlot = $("media");
+  for (const m of toot.media?.slice(0, 1) ?? []) {
+    const el = document.createElement(m.isVideo ? "video" : "img");
+    el.src = m.url;
+    if (m.isVideo) el.controls = true;
+    else el.alt = m.altText || "";
+    el.className = "pf-v6-u-w-100";
+    el.style.maxHeight = "10rem";
+    el.style.objectFit = "cover";
+    el.style.borderRadius = "var(--pf-t--global--border--radius--medium)";
+    mediaSlot.append(el);
+  }
+  if (!mediaSlot.children.length) mediaSlot.remove();
+
+  const avatar = $("avatar");
+  avatar.src = data.userProfilePictureURL;
+  avatar.alt = data.userDisplayName;
+
+  $("timestamp").textContent = new Date(toot.timestamp).toLocaleDateString(
+    "en-CA",
+    { month: "short", day: "numeric" },
+  );
+
+  const statsSlot = $("stats");
+  for (const [icon, count] of [
+    ["fa-heart", toot.favoritesCount],
+    ["fa-retweet", toot.reblogsCount],
+  ]) {
+    if (count > 0) {
+      const i = document.createElement("i");
+      i.className = `fas ${icon}`;
+      i.setAttribute("aria-hidden", "true");
+
+      const stat = document.createElement("span");
+      stat.className = "pf-v6-l-flex pf-m-align-items-center pf-m-gap-xs";
+      stat.append(i, String(count));
+      statsSlot.append(stat);
+    }
+  }
+  if (!statsSlot.children.length) statsSlot.remove();
+
+  return clone;
+};
+
 customElements.define(
   "mastodon-feed",
   class extends HTMLElement {
@@ -21,81 +99,14 @@ customElements.define(
         container.className = "pf-v6-l-flex pf-m-column";
 
         for (const [i, toot] of data.toots.entries()) {
-          const item = document.createElement("a");
-          item.href = toot.url || profile;
-          item.target = "_blank";
-          item.rel = "noopener";
-          item.className = [
-            "pf-v6-l-flex pf-m-column pf-m-gap-xs pf-v6-u-pt-sm pf-v6-u-text-color-regular",
-            i === data.toots.length - 1 ? "pf-v6-u-pb-0" : "pf-v6-u-pb-sm",
-            inDrawer ? "pf-v6-u-px-md" : "",
-          ]
-            .filter(Boolean)
-            .join(" ");
-          item.style.textDecoration = "none";
-
-          if (i > 0) {
-            item.style.borderTop =
-              "var(--pf-t--global--border--width--divider--default) solid var(--pf-t--global--border--color--default)";
-          }
-
-          const content = document.createElement("div");
-          content.className = "pf-v6-c-content pf-v6-u-font-size-sm";
-          content.innerHTML = DOMPurify.sanitize(toot.body); // In the future, we want to use https://developer.mozilla.org/en-US/docs/Web/API/Element/setHTML for this
-          item.append(content);
-
-          for (const m of toot.media?.slice(0, 1) ?? []) {
-            const el = document.createElement(m.isVideo ? "video" : "img");
-            el.src = m.url;
-            if (m.isVideo) el.controls = true;
-            else el.alt = m.altText || "";
-            el.className = "pf-v6-u-w-100";
-            el.style.maxHeight = "10rem";
-            el.style.objectFit = "cover";
-            el.style.borderRadius =
-              "var(--pf-t--global--border--radius--medium)";
-            item.append(el);
-          }
-
-          const avatar = document.createElement("img");
-          avatar.src = data.userProfilePictureURL;
-          avatar.alt = data.userDisplayName;
-          avatar.style.cssText =
-            "width: 1rem; height: 1rem; border-radius: 50%;";
-
-          const timestamp = document.createElement("span");
-          timestamp.textContent = new Date(toot.timestamp).toLocaleDateString(
-            "en-CA",
-            {
-              month: "short",
-              day: "numeric",
-            },
+          container.append(
+            renderToot(toot, data, {
+              isFirst: i === 0,
+              isLast: i === data.toots.length - 1,
+              inDrawer,
+              profile,
+            }),
           );
-
-          const meta = document.createElement("div");
-          meta.className =
-            "pf-v6-l-flex pf-m-gap-sm pf-m-align-items-center pf-v6-u-font-size-xs pf-v6-u-text-color-subtle";
-          meta.append(avatar, timestamp);
-
-          for (const [icon, count] of [
-            ["fa-heart", toot.favoritesCount],
-            ["fa-retweet", toot.reblogsCount],
-          ]) {
-            if (count > 0) {
-              const i = document.createElement("i");
-              i.className = `fas ${icon}`;
-              i.setAttribute("aria-hidden", "true");
-
-              const stat = document.createElement("span");
-              stat.className =
-                "pf-v6-l-flex pf-m-align-items-center pf-m-gap-xs";
-              stat.append(i, String(count));
-              meta.append(stat);
-            }
-          }
-
-          item.append(meta);
-          container.append(item);
         }
 
         this.replaceChildren(container);

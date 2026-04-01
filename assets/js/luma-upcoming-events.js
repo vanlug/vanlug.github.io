@@ -1,70 +1,49 @@
-import { formatEvent, makeCoverImg, makeCell } from "./events.js";
+import { formatEvent, makeCoverImg } from "./events.js";
+
+const rowTemplate = document.createElement("template");
+rowTemplate.innerHTML = `
+  <tr class="pf-v6-c-table__tr" role="row">
+    <td class="pf-v6-c-table__td pf-v6-u-display-none pf-v6-u-display-table-cell-on-md" role="cell" style="vertical-align: middle;" data-slot="cover-desktop"></td>
+    <td class="pf-v6-c-table__td" role="cell" style="vertical-align: middle;">
+      <div class="pf-v6-l-flex pf-m-gap-md pf-m-align-items-center">
+        <span class="pf-v6-u-display-inline-block pf-v6-u-display-none-on-md" data-slot="cover-mobile"></span>
+        <div>
+          <div class="pf-v6-u-font-weight-bold pf-v6-u-display-block pf-v6-u-display-none-on-md" data-slot="name-mobile"></div>
+          <div><span data-slot="date"></span> <span class="pf-v6-u-font-size-xs" data-slot="relative"></span></div>
+          <small class="pf-v6-u-text-color-subtle" data-slot="time"></small>
+        </div>
+      </div>
+    </td>
+    <td class="pf-v6-c-table__td pf-v6-u-display-none pf-v6-u-display-table-cell-on-md" role="cell" style="vertical-align: middle;" data-slot="name-desktop"></td>
+    <td class="pf-v6-c-table__td" role="cell" style="vertical-align: middle;" data-slot="location"></td>
+    <td class="pf-v6-c-table__td" role="cell" style="vertical-align: middle;">
+      <a data-slot="rsvp" target="_blank" rel="noopener" class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small">
+        RSVP<span class="pf-v6-c-button__icon pf-m-end"><icon-external></icon-external></span>
+      </a>
+    </td>
+  </tr>`;
 
 const renderEventRow = (evt) => {
   const { name, date, time, relative, lumaUrl, location, coverUrl } =
     formatEvent(evt);
+  const clone = rowTemplate.content.cloneNode(true);
+  const $ = (s) => clone.querySelector(`[data-slot="${s}"]`);
 
-  const tr = document.createElement("tr");
-  tr.className = "pf-v6-c-table__tr";
-  tr.setAttribute("role", "row");
+  const desktopCover = makeCoverImg(coverUrl, name);
+  if (desktopCover) $("cover-desktop").append(desktopCover);
 
-  tr.append(
-    makeCell(
-      "pf-v6-c-table__td pf-v6-u-display-none pf-v6-u-display-table-cell-on-md",
-      makeCoverImg(coverUrl, name),
-    ),
-  );
+  const mobileCover = makeCoverImg(coverUrl, name);
+  if (mobileCover) $("cover-mobile").append(mobileCover);
 
-  const mobileCover = document.createElement("span");
-  mobileCover.className =
-    "pf-v6-u-display-inline-block pf-v6-u-display-none-on-md";
-  const mobileCoverImg = makeCoverImg(coverUrl, name);
-  if (mobileCoverImg) mobileCover.append(mobileCoverImg);
+  $("name-mobile").textContent = name;
+  $("date").textContent = date;
+  $("relative").textContent = relative;
+  $("time").textContent = time;
+  $("name-desktop").textContent = name;
+  $("location").textContent = location;
+  $("rsvp").href = lumaUrl;
 
-  const mobileName = document.createElement("div");
-  mobileName.className =
-    "pf-v6-u-font-weight-bold pf-v6-u-display-block pf-v6-u-display-none-on-md";
-  mobileName.textContent = name;
-
-  const relativeSpan = document.createElement("span");
-  relativeSpan.className = "pf-v6-u-font-size-xs";
-  relativeSpan.textContent = relative;
-
-  const dateLine = document.createElement("div");
-  dateLine.append(`${date} `, relativeSpan);
-
-  const timeLine = document.createElement("small");
-  timeLine.className = "pf-v6-u-text-color-subtle";
-  timeLine.textContent = time;
-
-  const textBlock = document.createElement("div");
-  textBlock.append(mobileName, dateLine, timeLine);
-
-  const flex = document.createElement("div");
-  flex.className = "pf-v6-l-flex pf-m-gap-md pf-m-align-items-center";
-  flex.append(mobileCover, textBlock);
-
-  tr.append(makeCell("pf-v6-c-table__td", flex));
-
-  const nameCell = makeCell(
-    "pf-v6-c-table__td pf-v6-u-display-none pf-v6-u-display-table-cell-on-md",
-  );
-  nameCell.textContent = name;
-  tr.append(nameCell);
-
-  const locCell = makeCell("pf-v6-c-table__td");
-  locCell.textContent = location;
-  tr.append(locCell);
-
-  const rsvpLink = document.createElement("a");
-  rsvpLink.href = lumaUrl;
-  rsvpLink.target = "_blank";
-  rsvpLink.rel = "noopener";
-  rsvpLink.className = "pf-v6-c-button pf-m-link pf-m-inline pf-m-small";
-  rsvpLink.append("RSVP", document.createElement("icon-external"));
-  tr.append(makeCell("pf-v6-c-table__td", rsvpLink));
-
-  return tr;
+  return clone;
 };
 
 customElements.define(

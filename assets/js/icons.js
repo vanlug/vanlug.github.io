@@ -1,54 +1,42 @@
-const inButton = (el) => el.closest(".pf-v6-c-button__icon") !== null;
-const renderFaIcon = (el, faClasses) => {
-  const i = `<i class="${faClasses}" aria-hidden="true"></i>`;
-  if (inButton(el)) {
-    el.innerHTML = i;
-  } else {
-    el.style.display = "inline";
-    el.style.whiteSpace = "nowrap";
-    el.innerHTML = "\u2060" + i;
-    el.querySelector("i").classList.add("pf-v6-u-ml-xs");
+class FaIcon extends HTMLElement {
+  static faClass = "";
+
+  connectedCallback() {
+    const inButton = this.closest(".pf-v6-c-button__icon") !== null;
+    const faClass = this.constructor.faClass || this.dataset.icon;
+    const icon = document.createElement("i");
+    icon.className = faClass;
+    icon.setAttribute("aria-hidden", "true");
+
+    if (inButton) {
+      this.replaceChildren(icon);
+    } else {
+      this.style.display = "inline";
+      this.style.whiteSpace = "nowrap";
+      icon.classList.add("pf-v6-u-ml-xs");
+      this.replaceChildren("\u2060", icon);
+    }
   }
-};
-const brandIcons = {
+}
+
+const icons = {
   "icon-discourse": "fa-brands fa-discourse",
   "icon-signal": "fa-brands fa-signal-messenger",
   "icon-mastodon": "fa-brands fa-mastodon",
   "icon-bluesky": "fa-brands fa-bluesky",
   "icon-linkedin": "fa-brands fa-linkedin",
   "icon-paypal": "fa-brands fa-paypal",
+  "icon-external": "fa-solid fa-arrow-up-right-from-square",
+  "icon-email": "fa-solid fa-envelope",
 };
-for (const [tag, cls] of Object.entries(brandIcons)) {
+
+for (const [tag, cls] of Object.entries(icons)) {
   customElements.define(
     tag,
-    class extends HTMLElement {
-      connectedCallback() {
-        renderFaIcon(this, cls);
-      }
+    class extends FaIcon {
+      static faClass = cls;
     },
   );
 }
-customElements.define(
-  "icon-external",
-  class extends HTMLElement {
-    connectedCallback() {
-      renderFaIcon(this, "fa-solid fa-arrow-up-right-from-square");
-    }
-  },
-);
-customElements.define(
-  "icon-email",
-  class extends HTMLElement {
-    connectedCallback() {
-      renderFaIcon(this, "fa-solid fa-envelope");
-    }
-  },
-);
-customElements.define(
-  "icon-custom",
-  class extends HTMLElement {
-    connectedCallback() {
-      renderFaIcon(this, this.dataset.icon);
-    }
-  },
-);
+
+customElements.define("icon-custom", FaIcon);

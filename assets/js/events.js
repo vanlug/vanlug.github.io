@@ -39,14 +39,3 @@ export const makeCoverImg = (coverUrl, alt) => {
     "width: 4rem; height: 4rem; object-fit: cover; border-radius: var(--pf-t--global--border--radius--medium);";
   return img;
 };
-
-export const makeCell = (className, ...children) => {
-  const td = document.createElement("td");
-  td.className = className;
-  td.setAttribute("role", "cell");
-  td.style.verticalAlign = "middle";
-  for (const child of children) {
-    if (child) td.append(child);
-  }
-  return td;
-};

@@ -107,8 +107,6 @@
       {{ end }}
     </div>
 
-    {{ partial "next-event-template" . }}
-
     {{ with resources.Get "js/main.js" }}
       {{ $opts := dict
         "minify" (not hugo.IsDevelopment)
