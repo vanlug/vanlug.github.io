@@ -1,174 +1,19 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
-	"io"
 	"log"
 	"net/http"
-	"net/url"
 	"os"
+
+	mastodonhandler "github.com/pojntfx/felicitas.pojtinger.com/api/mastodon"
+	"github.com/vanlug/vanlug.github.io/pkg/handlers"
 )
 
 const defaultLumaAPIBase = "https://api.luma.com/calendar/get-items"
 
-type LumaEvent struct {
-	Name     string `json:"name"`
-	StartAt  string `json:"start_at"`
-	URL      string `json:"url"`
-	CoverURL string `json:"cover_url"`
-	GeoAddr  *struct {
-		Address      string `json:"address"`
-		ShortAddress string `json:"short_address"`
-	} `json:"geo_address_info"`
-}
-
-type LumaEntry struct {
-	Event LumaEvent `json:"event"`
-}
-
-type LumaResponse struct {
-	Entries []LumaEntry `json:"entries"`
-}
-
-type EventItem struct {
-	Name     string `json:"name"`
-	StartAt  string `json:"start_at"`
-	URL      string `json:"url"`
-	Location string `json:"location"`
-	CoverURL string `json:"cover_url"`
-}
-
-type Output struct {
-	Entries []EventItem `json:"entries"`
-}
-
-func NextEventHandler(apiBase string) http.HandlerFunc {
-	return func(w http.ResponseWriter, r *http.Request) {
-		cal := r.URL.Query().Get("calendar")
-		if cal == "" {
-			w.Write([]byte("missing calendar query parameter"))
-
-			panic("missing calendar query parameter")
-		}
-
-		u := apiBase + "?" + url.Values{
-			"calendar_api_id":  {cal},
-			"period":           {"future"},
-			"pagination_limit": {"1"},
-		}.Encode()
-
-		resp, err := http.Get(u)
-		if err != nil {
-			panic(err)
-		}
-		defer resp.Body.Close()
-
-		body, err := io.ReadAll(resp.Body)
-		if err != nil {
-			panic(err)
-		}
-
-		var lr LumaResponse
-		if err := json.Unmarshal(body, &lr); err != nil {
-			panic(err)
-		}
-
-		output := Output{}
-
-		if len(lr.Entries) > 0 {
-			evt := lr.Entries[0].Event
-
-			loc := ""
-			if evt.GeoAddr != nil {
-				loc = evt.GeoAddr.Address
-				if loc == "" {
-					loc = evt.GeoAddr.ShortAddress
-				}
-			}
-
-			output.Entries = []EventItem{{
-				Name:     evt.Name,
-				StartAt:  evt.StartAt,
-				URL:      evt.URL,
-				Location: loc,
-				CoverURL: evt.CoverURL,
-			}}
-		}
-
-		j, err := json.Marshal(output)
-		if err != nil {
-			panic(err)
-		}
-
-		fmt.Fprintf(w, "%v", string(j))
-	}
-}
-
-func EventsHandler(apiBase string) http.HandlerFunc {
-	return func(w http.ResponseWriter, r *http.Request) {
-		cal := r.URL.Query().Get("calendar")
-		if cal == "" {
-			w.Write([]byte("missing calendar query parameter"))
-
-			panic("missing calendar query parameter")
-		}
-
-		u := apiBase + "?" + url.Values{
-			"calendar_api_id":  {cal},
-			"period":           {"future"},
-			"pagination_limit": {"20"},
-		}.Encode()
-
-		resp, err := http.Get(u)
-		if err != nil {
-			panic(err)
-		}
-		defer resp.Body.Close()
-
-		body, err := io.ReadAll(resp.Body)
-		if err != nil {
-			panic(err)
-		}
-
-		var lr LumaResponse
-		if err := json.Unmarshal(body, &lr); err != nil {
-			panic(err)
-		}
-
-		output := Output{}
-
-		for _, entry := range lr.Entries {
-			evt := entry.Event
-
-			loc := ""
-			if evt.GeoAddr != nil {
-				loc = evt.GeoAddr.Address
-				if loc == "" {
-					loc = evt.GeoAddr.ShortAddress
-				}
-			}
-
-			output.Entries = append(output.Entries, EventItem{
-				Name:     evt.Name,
-				StartAt:  evt.StartAt,
-				URL:      evt.URL,
-				Location: loc,
-				CoverURL: evt.CoverURL,
-			})
-		}
-
-		j, err := json.Marshal(output)
-		if err != nil {
-			panic(err)
-		}
-
-		fmt.Fprintf(w, "%v", string(j))
-	}
-}
-
 func Handler(w http.ResponseWriter, r *http.Request) {
-	NextEventHandler(defaultLumaAPIBase).ServeHTTP(w, r)
+	handlers.NextEventHandler(w, r, defaultLumaAPIBase)
 }
 
 func main() {
@@ -187,6 +32,14 @@ func main() {
 		apiBase = defaultLumaAPIBase
 	}
 
+	mastodonServer := os.Getenv("MASTODON_SERVER")
+	if mastodonServer == "" {
+		mastodonServer = "https://thecanadian.social"
+	}
+	mastodonClientID := os.Getenv("MASTODON_CLIENT_ID")
+	mastodonClientSecret := os.Getenv("MASTODON_CLIENT_SECRET")
+	mastodonAccessToken := os.Getenv("MASTODON_ACCESS_TOKEN")
+
 	cors := func(next http.HandlerFunc) http.HandlerFunc {
 		return func(w http.ResponseWriter, r *http.Request) {
 			w.Header().Set("Access-Control-Allow-Origin", origin)
@@ -204,11 +57,52 @@ func main() {
 		}
 	}
 
-	http.HandleFunc("/next-event", cors(NextEventHandler(apiBase)))
-	http.HandleFunc("/events", cors(EventsHandler(apiBase)))
+	mux := http.NewServeMux()
+
+	mux.HandleFunc("/next-event", cors(func(w http.ResponseWriter, r *http.Request) {
+		defer func() {
+			if err := recover(); err != nil {
+				log.Println("Error occured in next-event API:", err)
+
+				http.Error(w, "Error occured in next-event API", http.StatusInternalServerError)
+
+				return
+			}
+		}()
+
+		handlers.NextEventHandler(w, r, apiBase)
+	}))
+
+	mux.HandleFunc("/events", cors(func(w http.ResponseWriter, r *http.Request) {
+		defer func() {
+			if err := recover(); err != nil {
+				log.Println("Error occured in events API:", err)
+
+				http.Error(w, "Error occured in events API", http.StatusInternalServerError)
+
+				return
+			}
+		}()
+
+		handlers.EventsHandler(w, r, apiBase)
+	}))
+
+	mux.HandleFunc("/mastodon", cors(func(w http.ResponseWriter, r *http.Request) {
+		defer func() {
+			if err := recover(); err != nil {
+				log.Println("Error occured in Mastodon API:", err)
+
+				http.Error(w, "Error occured in Mastodon API", http.StatusInternalServerError)
+
+				return
+			}
+		}()
+
+		mastodonhandler.MastodonFeedHandler(w, r, mastodonServer, mastodonClientID, mastodonClientSecret, mastodonAccessToken)
+	}))
 
 	log.Printf("listening on :%s", port)
-	if err := http.ListenAndServe(fmt.Sprintf(":%s", port), nil); err != nil {
+	if err := http.ListenAndServe(fmt.Sprintf(":%s", port), mux); err != nil {
 		log.Fatal(err)
 	}
 }
