@@ -32,13 +32,22 @@ When accessing our website, the following information is processed for the reaso
 
 #### 3.2 Luma Event Data
 
-Our home page and events page fetch event data from Luma's API via our proxy on Railway. Your browser connects to our proxy, not directly to Luma. No data is sent to Luma from your browser.
+Our home page and events page fetch event data from Luma's API via our API proxy on Railway. Your browser connects to our proxy, not directly to Luma. No data is sent to Luma from your browser. We also provide a RSS/Atom feed of upcoming events via the same proxy.
 
 Luma, Inc.\
 548 Market St PMB 36143\
 San Francisco, CA 94104\
 United States\
 Privacy policy: [https://luma.com/privacy-policy](https://luma.com/privacy-policy)
+
+#### 3.3 Mastodon Feed Data
+
+Our home page fetches recent posts from our Mastodon account via our API proxy on Railway. Your browser connects to our proxy, not directly to [thecanadian.social](https://thecanadian.social). No data is sent to [thecanadian.social](https://thecanadian.social) from your browser.
+
+The Canadian ([thecanadian.social](https://thecanadian.social))\
+Kelowna and Burnaby, British Columbia\
+Canada\
+Privacy policy: [https://thecanadian.social/privacy-policy](https://thecanadian.social/privacy-policy)
 
 ### 4. Data Handling by Third Parties
 
@@ -50,7 +59,7 @@ San Francisco, CA 94107\
 United States\
 Privacy policy: [GitHub Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement)
 
-Our Luma event API proxy is hosted by:
+Our Luma and Mastodon API proxy is hosted by:
 
 Railway Corporation\
 548 Market St PMB 68956\
