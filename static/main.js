@@ -97,12 +97,12 @@
     const days = Math.ceil((start - new Date()) / 86400000);
     return {
       name: evt.name || "VanLUG Meeting",
-      date: start.toLocaleDateString("en-US", {
+      date: start.toLocaleDateString("en-CA", {
         weekday: "short",
         month: "short",
         day: "numeric",
       }),
-      time: start.toLocaleTimeString("en-US", {
+      time: start.toLocaleTimeString("en-CA", {
         hour: "numeric",
         minute: "2-digit",
       }),
