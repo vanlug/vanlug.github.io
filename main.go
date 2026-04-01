@@ -34,7 +34,7 @@ func main() {
 
 	siteURL := os.Getenv("SITE_URL")
 	if siteURL == "" {
-		siteURL = "https://vanlug.github.io/"
+		siteURL = "https://vanlug.ca/"
 	}
 
 	mastodonServer := os.Getenv("MASTODON_SERVER")
