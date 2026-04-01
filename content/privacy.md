@@ -32,7 +32,7 @@ When accessing our website, the following information is processed for the reaso
 
 #### 3.2 Luma Event Data
 
-Our home page and events page fetch event data from Luma's API via our API proxy on Railway. Your browser connects to our proxy, not directly to Luma. No data is sent to Luma from your browser. We also provide a RSS/Atom feed of upcoming events via the same proxy.
+Our home page and events page fetch event data from Luma's API via our API proxy on Railway. Your browser connects to our proxy, not directly to Luma. No data is sent to Luma from your browser. We also provide a RSS/Atom feed of upcoming events via the same proxy; when you subscribe to it, your feed reader connects to our proxy, which fetches event listings and per-event descriptions from Luma's API on your behalf.
 
 Luma, Inc.\
 548 Market St PMB 36143\
@@ -42,7 +42,7 @@ Privacy policy: [https://luma.com/privacy-policy](https://luma.com/privacy-polic
 
 #### 3.3 Mastodon Feed Data
 
-Our home page fetches recent posts from our Mastodon account via our API proxy on Railway. Your browser connects to our proxy, not directly to [thecanadian.social](https://thecanadian.social). No data is sent to [thecanadian.social](https://thecanadian.social) from your browser.
+Our home page fetches recent posts from our Mastodon account via our API proxy on Railway. Your browser connects to our proxy, not directly to [thecanadian.social](https://thecanadian.social). No data is sent to [thecanadian.social](https://thecanadian.social) from your browser. We also link to the public Mastodon RSS feed at `thecanadian.social/@vanlug.rss`; if you subscribe to it, your feed reader connects directly to [thecanadian.social](https://thecanadian.social).
 
 The Canadian ([thecanadian.social](https://thecanadian.social))\
 Kelowna and Burnaby, British Columbia\

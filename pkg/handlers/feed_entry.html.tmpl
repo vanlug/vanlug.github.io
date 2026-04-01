@@ -1,0 +1,36 @@
+{{ if .CoverURL -}}
+<p><img src="{{ .CoverURL }}" alt="{{ .Name }}" /></p>
+{{ end -}}
+
+<h2>{{ .Name }}</h2>
+
+<p>
+  <strong>Date:</strong> {{ .DateLine }}<br/>
+  <strong>Time:</strong> {{ .TimeLine }}
+</p>
+
+{{ if .Location -}}
+<p>
+  <strong>Venue:</strong> {{ .Location }}
+  {{- if .FullAddress }}<br/>{{ .FullAddress }}{{ end }}
+</p>
+{{ end -}}
+
+{{ if .Hosts -}}
+<p><strong>Hosted by:</strong> {{ .Hosts }}</p>
+{{ end -}}
+
+{{ if .Admission -}}
+<p><strong>Admission:</strong> {{ .Admission }}</p>
+{{ end -}}
+
+{{ if .Description -}}
+<hr/>
+{{ .Description }}
+{{ end -}}
+
+<p><a href="{{ .Link }}">RSVP on Luma</a></p>
+
+{{ if .MapURL -}}
+<p><a href="{{ .MapURL }}">View on map</a></p>
+{{ end -}}

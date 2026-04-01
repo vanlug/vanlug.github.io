@@ -10,10 +10,19 @@ import (
 	"github.com/vanlug/vanlug.github.io/pkg/handlers"
 )
 
-const defaultLumaAPIBase = "https://api.luma.com/calendar/get-items"
+const (
+	defaultLumaAPIBase         = "https://api.luma.com/calendar/get-items"
+	defaultLumaEventDetailBase = "https://api.luma.com/event/get"
+	defaultLumaBase            = "https://luma.com"
+	defaultMapBase             = "https://cartes.app/"
+)
 
 func Handler(w http.ResponseWriter, r *http.Request) {
 	handlers.NextEventHandler(w, r, defaultLumaAPIBase)
+}
+
+func FeedHandler(w http.ResponseWriter, r *http.Request) {
+	handlers.EventsFeedHandler(w, r, defaultLumaAPIBase, defaultLumaEventDetailBase, defaultLumaBase, defaultMapBase, "https://vanlug.ca/")
 }
 
 func main() {
@@ -30,6 +39,21 @@ func main() {
 	apiBase := os.Getenv("LUMA_API_BASE")
 	if apiBase == "" {
 		apiBase = defaultLumaAPIBase
+	}
+
+	eventDetailBase := os.Getenv("LUMA_EVENT_DETAIL_BASE")
+	if eventDetailBase == "" {
+		eventDetailBase = defaultLumaEventDetailBase
+	}
+
+	lumaBase := os.Getenv("LUMA_BASE")
+	if lumaBase == "" {
+		lumaBase = defaultLumaBase
+	}
+
+	mapBase := os.Getenv("MAP_BASE")
+	if mapBase == "" {
+		mapBase = defaultMapBase
 	}
 
 	siteURL := os.Getenv("SITE_URL")
@@ -103,7 +127,7 @@ func main() {
 			}
 		}()
 
-		handlers.EventsFeedHandler(w, r, apiBase, siteURL)
+		handlers.EventsFeedHandler(w, r, apiBase, eventDetailBase, lumaBase, mapBase, siteURL)
 	}))
 
 	mux.HandleFunc("/mastodon", cors(func(w http.ResponseWriter, r *http.Request) {
