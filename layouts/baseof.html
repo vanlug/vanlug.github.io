@@ -34,6 +34,7 @@
     {{ range .Site.Data.links.me }}
       <link rel="me" href="{{ . }}" />
     {{ end }}
+    <link rel="alternate" type="application/rss+xml" title="Fediverse posts from {{ .Site.Title }}" href="{{ .Site.Data.links.feed.rss }}" />
 
     <meta name="author" content="{{ .Site.Data.site.author }}" />
     <meta name="fediverse:creator" content="@vanlug@thecanadian.social" />

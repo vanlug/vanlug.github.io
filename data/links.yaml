@@ -30,6 +30,10 @@ sidebar:
     url: https://thecanadian.social/@vanlug
     icon: fa-brands fa-mastodon
     description: Follow us on the fediverse
+  - title: RSS
+    url: https://thecanadian.social/@vanlug.rss
+    icon: fa-solid fa-rss
+    description: Subscribe to our posts
   - title: Bluesky
     url: https://bsky.app/profile/vanlug.thecanadian.social.ap.brid.gy
     icon: fa-brands fa-bluesky
@@ -64,6 +68,8 @@ socials:
 donate:
   url: https://www.paypal.com/ncp/payment/5LJ46YPC7JJ7E
   icon: fa-brands fa-paypal
+feed:
+  rss: https://thecanadian.social/@vanlug.rss
 luma:
   calendar: cal-x23GENOxTsZqSMO
   url: https://luma.com/vanlug
