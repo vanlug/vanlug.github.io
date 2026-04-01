@@ -141,7 +141,7 @@ design:
     - name: logo
       description: "VanLUG logo (icon + wordmark for cards)"
     - name: header
-      description: "Banner header for Luma and OpenGraph"
+      description: "Banner header for Luma, OpenGraph and the home page background"
       photo:
         credit: "Lee Robinson"
         url: https://unsplash.com/photos/Yc9h5SJdEzI
