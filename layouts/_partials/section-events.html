@@ -34,31 +34,32 @@
         calendar="{{ .Site.Data.links.luma.calendar }}"
         proxy="{{ .Site.Data.links.luma.proxy }}"
       >
-        <div class="pf-v6-l-flex pf-m-column pf-m-gap-md">
-          {{ range (seq 3) }}
-            <div class="pf-v6-c-card pf-m-compact pf-m-flat">
-              <div class="pf-v6-c-card__header">
-                <div class="pf-v6-c-card__header-main">
-                  <div class="pf-v6-l-flex pf-m-gap-lg pf-m-align-items-center pf-m-nowrap">
-                    <div
-                      class="pf-v6-c-skeleton"
-                      style="
-                        --pf-v6-c-skeleton--Height: 4rem;
-                        --pf-v6-c-skeleton--Width: 4rem;
-                        border-radius: var(--pf-t--global--border--radius--medium);
-                        flex-shrink: 0;
-                      "
-                    ></div>
-                    <div class="pf-v6-l-flex pf-m-column pf-m-gap-sm pf-m-grow">
-                      <div class="pf-v6-c-skeleton pf-m-text-lg pf-m-width-50"></div>
-                      <div class="pf-v6-c-skeleton pf-m-text-sm pf-m-width-75"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          {{ end }}
-        </div>
+        <table
+          class="pf-v6-c-table pf-m-grid-md pf-m-compact"
+          role="grid"
+          aria-label="Upcoming events"
+        >
+          <thead class="pf-v6-c-table__thead">
+            <tr class="pf-v6-c-table__tr" role="row">
+              <th class="pf-v6-c-table__th" role="columnheader" scope="col"></th>
+              <th class="pf-v6-c-table__th" role="columnheader" scope="col">Date</th>
+              <th class="pf-v6-c-table__th" role="columnheader" scope="col">Event</th>
+              <th class="pf-v6-c-table__th" role="columnheader" scope="col">Location</th>
+              <th class="pf-v6-c-table__th" role="columnheader" scope="col"></th>
+            </tr>
+          </thead>
+          <tbody class="pf-v6-c-table__tbody" role="rowgroup">
+            {{ range (seq 3) }}
+              <tr class="pf-v6-c-table__tr" role="row">
+                <td class="pf-v6-c-table__td" role="cell"><div class="pf-v6-c-skeleton" style="--pf-v6-c-skeleton--Height: 4rem; --pf-v6-c-skeleton--Width: 4rem; border-radius: var(--pf-t--global--border--radius--medium);"></div></td>
+                <td class="pf-v6-c-table__td" role="cell" data-label="Date"><div class="pf-v6-c-skeleton pf-m-text-sm pf-m-width-75"></div></td>
+                <td class="pf-v6-c-table__td" role="cell" data-label="Event"><div class="pf-v6-c-skeleton pf-m-text-sm pf-m-width-50"></div></td>
+                <td class="pf-v6-c-table__td" role="cell" data-label="Location"><div class="pf-v6-c-skeleton pf-m-text-sm pf-m-width-75"></div></td>
+                <td class="pf-v6-c-table__td" role="cell"></td>
+              </tr>
+            {{ end }}
+          </tbody>
+        </table>
       </luma-upcoming-events>
     </div>
   </section>
