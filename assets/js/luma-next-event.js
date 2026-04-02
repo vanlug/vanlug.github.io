@@ -24,20 +24,27 @@ template.innerHTML = `
               <h4 data-slot="name"></h4>
               <p><small data-slot="detail"></small></p>
             </div>
-            <a data-slot="rsvp" target="_blank" rel="noopener"
-              class="pf-v6-c-button pf-m-link pf-m-inline">
-              <span class="pf-v6-c-button__text">RSVP on Luma</span>
-              <span class="pf-v6-c-button__icon pf-m-end"><icon-external></icon-external></span>
-            </a>
+            <div class="pf-v6-l-flex pf-m-gap-sm pf-m-align-items-center">
+              <button data-slot="details" type="button"
+                class="pf-v6-c-button pf-m-control pf-m-small">
+                <span class="pf-v6-c-button__text">View details</span>
+              </button>
+              <span class="pf-v6-u-text-color-subtle pf-v6-u-font-size-sm">or</span>
+              <a data-slot="rsvp" target="_blank" rel="noopener"
+                class="pf-v6-c-button pf-m-link pf-m-inline">
+                <span class="pf-v6-c-button__text">RSVP on Luma</span>
+                <span class="pf-v6-c-button__icon pf-m-end"><icon-external></icon-external></span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>`;
 
-const renderEventCard = (evt) => {
-  const { name, date, time, relative, lumaUrl, location, coverUrl } =
-    formatEvent(evt);
+const renderEventCard = (evt, api) => {
+  const { apiId, name, date, time, relative, lumaUrl, location, coverUrl } =
+    formatEvent(evt, api);
   const clone = template.content.cloneNode(true);
   const $ = (s) => clone.querySelector(`[data-slot="${s}"]`);
   const cover = $("cover");
@@ -52,6 +59,9 @@ const renderEventCard = (evt) => {
   $("name").textContent = name;
   $("detail").textContent = location ? `${location} \u00b7 ${time}` : time;
   $("rsvp").href = lumaUrl;
+  $("details").addEventListener("click", () => {
+    document.querySelector("event-detail-modal").open(apiId, api);
+  });
   return clone;
 };
 
@@ -70,7 +80,7 @@ customElements.define(
           this.textContent = "No upcoming events right now. Check back soon!";
           return;
         }
-        this.replaceChildren(renderEventCard(evt));
+        this.replaceChildren(renderEventCard(evt, api));
       } catch {
         this.textContent = "Could not load the next event. ";
         const a = document.createElement("a");

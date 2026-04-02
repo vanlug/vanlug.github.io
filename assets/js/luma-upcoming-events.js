@@ -17,15 +17,20 @@ rowTemplate.innerHTML = `
     <td class="pf-v6-c-table__td pf-v6-u-display-none pf-v6-u-display-table-cell-on-md" role="cell" style="vertical-align: middle;" data-slot="name-desktop"></td>
     <td class="pf-v6-c-table__td" role="cell" style="vertical-align: middle;" data-slot="location"></td>
     <td class="pf-v6-c-table__td" role="cell" style="vertical-align: middle;">
-      <a data-slot="rsvp" target="_blank" rel="noopener" class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small">
-        RSVP<span class="pf-v6-c-button__icon pf-m-end"><icon-external></icon-external></span>
-      </a>
+      <div class="pf-v6-l-flex pf-m-gap-sm">
+        <button data-slot="details" type="button" class="pf-v6-c-button pf-m-control pf-m-small">
+          Details
+        </button>
+        <a data-slot="rsvp" target="_blank" rel="noopener" class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small">
+          RSVP<span class="pf-v6-c-button__icon pf-m-end"><icon-external></icon-external></span>
+        </a>
+      </div>
     </td>
   </tr>`;
 
-const renderEventRow = (evt) => {
-  const { name, date, time, relative, lumaUrl, location, coverUrl } =
-    formatEvent(evt);
+const renderEventRow = (evt, api) => {
+  const { apiId, name, date, time, relative, lumaUrl, location, coverUrl } =
+    formatEvent(evt, api);
   const clone = rowTemplate.content.cloneNode(true);
   const $ = (s) => clone.querySelector(`[data-slot="${s}"]`);
 
@@ -42,6 +47,9 @@ const renderEventRow = (evt) => {
   $("name-desktop").textContent = name;
   $("location").textContent = location;
   $("rsvp").href = lumaUrl;
+  $("details").addEventListener("click", () => {
+    document.querySelector("event-detail-modal").open(apiId, api);
+  });
 
   return clone;
 };
@@ -86,7 +94,7 @@ customElements.define(
         tbody.className = "pf-v6-c-table__tbody";
         tbody.setAttribute("role", "rowgroup");
         for (const evt of entries) {
-          tbody.append(renderEventRow(evt));
+          tbody.append(renderEventRow(evt, api));
         }
         table.append(tbody);
 

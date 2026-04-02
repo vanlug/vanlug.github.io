@@ -26,7 +26,7 @@
 
 {{ if .Description -}}
 <hr/>
-{{ .Description }}
+{{ .Description | safeHTML }}
 {{ end -}}
 
 <p><a href="{{ .Link }}">RSVP on Luma</a></p>

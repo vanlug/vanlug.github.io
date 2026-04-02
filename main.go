@@ -130,6 +130,20 @@ func main() {
 		handlers.EventsFeedHandler(w, r, apiBase, eventDetailBase, lumaBase, mapBase, siteURL)
 	}))
 
+	mux.HandleFunc("/events/detail", cors(func(w http.ResponseWriter, r *http.Request) {
+		defer func() {
+			if err := recover(); err != nil {
+				log.Println("Error occured in event detail API:", err)
+
+				http.Error(w, "Error occured in event detail API", http.StatusInternalServerError)
+
+				return
+			}
+		}()
+
+		handlers.EventDetailHandler(w, r, eventDetailBase, lumaBase, mapBase)
+	}))
+
 	mux.HandleFunc("/mastodon", cors(func(w http.ResponseWriter, r *http.Request) {
 		defer func() {
 			if err := recover(); err != nil {
