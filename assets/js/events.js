@@ -1,14 +1,15 @@
-export const formatEvent = (evt) => {
+export const formatEvent = (evt, api) => {
   const start = new Date(evt.start_at);
   const days = Math.ceil((start - new Date()) / 86400000);
   return {
+    apiId: evt.api_id,
     name: evt.name || "VanLUG Meeting",
-    date: start.toLocaleDateString("en-CA", {
+    date: start.toLocaleDateString(undefined, {
       weekday: "short",
       month: "short",
       day: "numeric",
     }),
-    time: start.toLocaleTimeString("en-CA", {
+    time: start.toLocaleTimeString(undefined, {
       hour: "numeric",
       minute: "2-digit",
     }),

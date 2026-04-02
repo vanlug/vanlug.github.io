@@ -53,7 +53,7 @@ const renderToot = (toot, data, { isFirst, isLast, inDrawer, profile }) => {
   avatar.alt = data.userDisplayName;
 
   $("timestamp").textContent = new Date(toot.timestamp).toLocaleDateString(
-    "en-CA",
+    undefined,
     { month: "short", day: "numeric" },
   );
 

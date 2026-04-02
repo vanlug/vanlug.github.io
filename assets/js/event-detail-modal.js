@@ -138,7 +138,7 @@ customElements.define(
           day: "numeric",
           timeZone: data.timezone || undefined,
         };
-        $("date").textContent = start.toLocaleDateString("en-CA", dateOpts);
+        $("date").textContent = start.toLocaleDateString(undefined, dateOpts);
 
         const timeOpts = {
           hour: "numeric",
@@ -146,10 +146,10 @@ customElements.define(
           timeZone: data.timezone || undefined,
           timeZoneName: data.timezone ? "short" : undefined,
         };
-        let timeText = start.toLocaleTimeString("en-CA", timeOpts);
+        let timeText = start.toLocaleTimeString(undefined, timeOpts);
         if (data.end_at) {
           const end = new Date(data.end_at);
-          timeText += " – " + end.toLocaleTimeString("en-CA", timeOpts);
+          timeText += " – " + end.toLocaleTimeString(undefined, timeOpts);
         }
         $("time").textContent = timeText;
 
