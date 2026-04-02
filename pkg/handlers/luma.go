@@ -452,7 +452,7 @@ func EventDetailHandler(w http.ResponseWriter, r *http.Request, eventDetailBase 
 	fmt.Fprintf(w, "%v", string(j))
 }
 
-func EventsFeedHandler(w http.ResponseWriter, r *http.Request, apiBase string, eventDetailBase string, lumaBase string, mapBase string, siteURL string) {
+func EventsFeedHandler(w http.ResponseWriter, r *http.Request, apiBase string, eventDetailBase string, lumaBase string, mapBase string, siteURL string, apiURL string) {
 	items, err := lumaFetchItems(r, apiBase, "20")
 	if err != nil {
 		w.Write([]byte(err.Error()))
@@ -493,6 +493,10 @@ func EventsFeedHandler(w http.ResponseWriter, r *http.Request, apiBase string, e
 	for i, item := range items {
 		data := buildEntryData(item, descriptions[i], lumaBase, mapBase)
 
+		if data.CoverURL != "" {
+			data.CoverURL = apiURL + "/image?" + url.Values{"url": {data.CoverURL}}.Encode()
+		}
+
 		published := now
 		if t, err := time.Parse(time.RFC3339, item.StartAt); err == nil {
 			published = t
@@ -518,10 +522,9 @@ func EventsFeedHandler(w http.ResponseWriter, r *http.Request, apiBase string, e
 			Content:     buf.String(),
 		}
 
-		if item.CoverURL != "" {
+		if data.CoverURL != "" {
 			feedItem.Enclosure = &feeds.Enclosure{
-				Url:  item.CoverURL,
-				Type: "image/jpeg",
+				Url: data.CoverURL,
 			}
 		}
 

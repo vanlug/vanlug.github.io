@@ -1,3 +1,8 @@
+export const proxyImageUrl = (url, api) => {
+  if (!url) return "";
+  return `${api}/image?url=${encodeURIComponent(url)}`;
+};
+
 export const formatEvent = (evt, api) => {
   const start = new Date(evt.start_at);
   const days = Math.ceil((start - new Date()) / 86400000);
@@ -27,7 +32,7 @@ export const formatEvent = (evt, api) => {
       ? `https://luma.com/${encodeURI(evt.url)}`
       : "https://luma.com/vanlug",
     location: evt.location || "",
-    coverUrl: evt.cover_url,
+    coverUrl: proxyImageUrl(evt.cover_url, api),
   };
 };
 

@@ -1,4 +1,5 @@
 import DOMPurify from "dompurify";
+import { proxyImageUrl } from "./events.js";
 
 const tootTemplate = document.createElement("template");
 tootTemplate.innerHTML = `
@@ -12,7 +13,7 @@ tootTemplate.innerHTML = `
     </div>
   </a>`;
 
-const renderToot = (toot, data, { isFirst, isLast, inDrawer, profile }) => {
+const renderToot = (toot, data, { isFirst, isLast, inDrawer, profile, api }) => {
   const clone = tootTemplate.content.cloneNode(true);
   const $ = (s) => clone.querySelector(`[data-slot="${s}"]`);
   const item = clone.querySelector("a");
@@ -37,7 +38,7 @@ const renderToot = (toot, data, { isFirst, isLast, inDrawer, profile }) => {
   const mediaSlot = $("media");
   for (const m of toot.media?.slice(0, 1) ?? []) {
     const el = document.createElement(m.isVideo ? "video" : "img");
-    el.src = m.url;
+    el.src = proxyImageUrl(m.url, api);
     if (m.isVideo) el.controls = true;
     else el.alt = m.altText || "";
     el.className = "pf-v6-u-w-100";
@@ -49,7 +50,7 @@ const renderToot = (toot, data, { isFirst, isLast, inDrawer, profile }) => {
   if (!mediaSlot.children.length) mediaSlot.remove();
 
   const avatar = $("avatar");
-  avatar.src = data.userProfilePictureURL;
+  avatar.src = proxyImageUrl(data.userProfilePictureURL, api);
   avatar.alt = data.userDisplayName;
 
   $("timestamp").textContent = new Date(toot.timestamp).toLocaleDateString(
@@ -105,6 +106,7 @@ customElements.define(
               isLast: i === data.toots.length - 1,
               inDrawer,
               profile,
+              api,
             }),
           );
         }

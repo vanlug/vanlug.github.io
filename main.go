@@ -21,10 +21,6 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	handlers.NextEventHandler(w, r, defaultLumaAPIBase)
 }
 
-func FeedHandler(w http.ResponseWriter, r *http.Request) {
-	handlers.EventsFeedHandler(w, r, defaultLumaAPIBase, defaultLumaEventDetailBase, defaultLumaBase, defaultMapBase, "https://vanlug.ca/")
-}
-
 func main() {
 	port := os.Getenv("PORT")
 	if port == "" {
@@ -59,6 +55,11 @@ func main() {
 	siteURL := os.Getenv("SITE_URL")
 	if siteURL == "" {
 		siteURL = "https://vanlug.ca/"
+	}
+
+	apiURL := os.Getenv("API_URL")
+	if apiURL == "" {
+		apiURL = "http://localhost:" + port
 	}
 
 	mastodonServer := os.Getenv("MASTODON_SERVER")
@@ -127,7 +128,7 @@ func main() {
 			}
 		}()
 
-		handlers.EventsFeedHandler(w, r, apiBase, eventDetailBase, lumaBase, mapBase, siteURL)
+		handlers.EventsFeedHandler(w, r, apiBase, eventDetailBase, lumaBase, mapBase, siteURL, apiURL)
 	}))
 
 	mux.HandleFunc("/events/detail", cors(func(w http.ResponseWriter, r *http.Request) {
@@ -142,6 +143,20 @@ func main() {
 		}()
 
 		handlers.EventDetailHandler(w, r, eventDetailBase, lumaBase, mapBase)
+	}))
+
+	mux.HandleFunc("/image", cors(func(w http.ResponseWriter, r *http.Request) {
+		defer func() {
+			if err := recover(); err != nil {
+				log.Println("Error occured in image proxy:", err)
+
+				http.Error(w, "Error occured in image proxy", http.StatusInternalServerError)
+
+				return
+			}
+		}()
+
+		handlers.ImageProxyHandler(w, r)
 	}))
 
 	mux.HandleFunc("/mastodon", cors(func(w http.ResponseWriter, r *http.Request) {
