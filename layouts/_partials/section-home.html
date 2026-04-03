@@ -121,31 +121,44 @@
       </div>
       <div class="pf-v6-l-gallery pf-m-gutter">
         {{ range $c.expect.cards }}
-          <div class="pf-v6-c-card">
-            <div class="pf-v6-c-card__title">
-              <div class="pf-v6-c-card__title-text">{{ .title }}</div>
-            </div>
-            <div class="pf-v6-c-card__body">
-              {{ if eq .body_key "community_year_round" }}
-                The conversation keeps going on
-                <a
-                  href="{{ $.Site.Data.links.socials.discourse.url }}"
-                  target="_blank"
-                  rel="noopener"
-                  >Discourse<icon-discourse></icon-discourse
-                ></a>
-                and
-                <a
-                  href="{{ $.Site.Data.links.socials.signal.url }}"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  >Signal<icon-signal></icon-signal
-                ></a>
-                between meetings. Ask questions, share projects, find
-                collaborators.
-              {{ else }}
-                {{ .body }}
-              {{ end }}
+          <div
+            class="pf-v6-c-card"
+            {{ with .image }}
+              style="
+                background: url('{{ . | relURL }}') center / cover;
+                min-height: 10rem;
+              "
+            {{ end }}
+          >
+            <div class="pf-v6-c-card__body pf-v6-l-flex pf-m-column pf-m-justify-content-flex-end pf-m-gap-sm" {{ with .image }}style="
+              background: linear-gradient(color-mix(in srgb, var(--pf-t--global--background--color--primary--default) 60%, transparent) 0%, color-mix(in srgb, var(--pf-t--global--background--color--primary--default) 80%, transparent) 50%, var(--pf-t--global--background--color--primary--default) 100%);
+              border-radius: inherit;
+            "{{ end }}>
+              <div class="pf-v6-c-content">
+                <h4>{{ .title }}</h4>
+                <p>
+                  {{ if eq .body_key "community_year_round" }}
+                    The conversation keeps going on
+                    <a
+                      href="{{ $.Site.Data.links.socials.discourse.url }}"
+                      target="_blank"
+                      rel="noopener"
+                      >Discourse<icon-discourse></icon-discourse
+                    ></a>
+                    and
+                    <a
+                      href="{{ $.Site.Data.links.socials.signal.url }}"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      >Signal<icon-signal></icon-signal
+                    ></a>
+                    between meetings. Ask questions, share projects, find
+                    collaborators.
+                  {{ else }}
+                    {{ .body }}
+                  {{ end }}
+                </p>
+              </div>
             </div>
           </div>
         {{ end }}

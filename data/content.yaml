@@ -19,11 +19,14 @@ home:
     title: What to expect
     cards:
       - title: Monthly talks
-        body: "One or two presentations each month: sysadmin deep-dives, tooling demos, career talks, security, whatever people find interesting."
+        body: "Sysadmin deep-dives, tooling demos, career talks, security — one or two presentations each month, followed by Q&A."
+        image: design/wesley-tingey-bWRX_obQAl8-unsplash.jpg
       - title: Drop-in help sessions
-        body: "Bring your laptop. We help people install Linux, troubleshoot problems, and get comfortable with the command line."
+        body: "Bring your laptop to a local library. We help with installs, troubleshooting, and getting comfortable on the command line."
+        image: design/lee-robinson-Yc9h5SJdEzI-unsplash.jpg
       - title: Community year-round
         body_key: community_year_round
+        image: design/aaron-thomas-dMqlE7lgyOU-unsplash.jpg
 
   supporters:
     title: Events we're supporting
