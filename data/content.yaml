@@ -36,6 +36,35 @@ home:
         image: img/cloudsummit-2026.jpg
 
 events:
+  event_types:
+    - key: link
+      title: Linux Link
+      tagline: Hands-on help at your local library
+      description: "Drop-in help sessions at local libraries. Bring your laptop, get hands-on help installing Linux, troubleshooting, or learning the command line."
+      image: design/lee-robinson-Yc9h5SJdEzI-unsplash.jpg
+      regex: "Linux Link"
+      empty: "No Linux Link sessions scheduled right now."
+    - key: talks
+      title: Linux Talks
+      tagline: Learn something new every month
+      description: "Monthly presentations on topics like sysadmin, security, development tools, and career advice. One or two talks each session, followed by Q&A."
+      image: design/wesley-tingey-bWRX_obQAl8-unsplash.jpg
+      regex: "Talks"
+      empty: "No talks scheduled right now."
+    - key: chill
+      title: Chill and Hangout
+      tagline: No agenda, just good company
+      description: "Casual get-togethers for Linux enthusiasts. No agenda, just friendly conversation, show-and-tell, and community vibes."
+      image: design/aaron-thomas-dMqlE7lgyOU-unsplash.jpg
+      regex: "Chill"
+      empty: "No hangouts scheduled right now."
+    - key: special
+      title: Special Events
+      tagline: Celebrations and one-off gatherings
+      description: "One-off community events like Hacktoberfest, our Annual General Meeting, the Christmas party, and other celebrations throughout the year."
+      image: design/albert-stoynov-jooXO8q2Gcs-unsplash.jpg
+      regex: "Hacktoberfest|Annual General Meeting|AGM|Christmas|Holiday|Foundation Survey"
+      empty: "No special events coming up right now."
   past:
     archive_links:
       - title: "2011–2012"

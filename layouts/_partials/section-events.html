@@ -12,6 +12,7 @@
     </div>
   </section>
 
+  {{ $et := .Site.Data.content.events.event_types }}
   <section
     class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
   >
@@ -21,52 +22,97 @@
       <div class="pf-v6-c-content">
         <h3>Upcoming</h3>
         <p>
-          All upcoming events are listed on our
+          We run {{ range $i, $t := $et }}{{ if $i }}{{ if eq $i (sub (len $et) 1) }}, and {{ else }}, {{ end }}{{ end }}<strong>{{ $t.title }}</strong>{{ end }} events.
+          Also available as a
           <a
             href="{{ .Site.Data.links.luma.url }}"
             target="_blank"
             rel="noopener"
-            >Luma calendar<icon-external></icon-external></a
-          >. RSVP there to get reminders, or subscribe via
+            >calendar on Luma<icon-external></icon-external></a
+          > and
           <a
             href="{{ .Site.Data.links.api }}/events/feed?calendar={{ .Site.Data.links.luma.calendar }}"
             target="_blank"
             rel="noopener"
-            >RSS<icon-custom data-icon="fa-solid fa-rss"></icon-custom></a
+            >RSS feed<icon-custom data-icon="fa-solid fa-rss"></icon-custom></a
           >.
         </p>
       </div>
-      <luma-upcoming-events
-        calendar="{{ .Site.Data.links.luma.calendar }}"
-        api="{{ .Site.Data.links.api }}"
-      >
-        <table
-          class="pf-v6-c-table pf-m-grid-md pf-m-compact"
-          role="grid"
-          aria-label="Upcoming events"
-        >
-          <thead class="pf-v6-c-table__thead">
-            <tr class="pf-v6-c-table__tr" role="row">
-              <th class="pf-v6-c-table__th" role="columnheader" scope="col"></th>
-              <th class="pf-v6-c-table__th" role="columnheader" scope="col">Date</th>
-              <th class="pf-v6-c-table__th" role="columnheader" scope="col">Event</th>
-              <th class="pf-v6-c-table__th" role="columnheader" scope="col">Location</th>
-              <th class="pf-v6-c-table__th" role="columnheader" scope="col"></th>
-            </tr>
-          </thead>
-          <tbody class="pf-v6-c-table__tbody" role="rowgroup">
-            {{ range (seq 3) }}
-              <tr class="pf-v6-c-table__tr" role="row">
-                <td class="pf-v6-c-table__td" role="cell"><div class="pf-v6-c-skeleton" style="--pf-v6-c-skeleton--Height: 4rem; --pf-v6-c-skeleton--Width: 4rem; border-radius: var(--pf-t--global--border--radius--medium);"></div></td>
-                <td class="pf-v6-c-table__td" role="cell" data-label="Date"><div class="pf-v6-c-skeleton pf-m-text-sm pf-m-width-75"></div></td>
-                <td class="pf-v6-c-table__td" role="cell" data-label="Event"><div class="pf-v6-c-skeleton pf-m-text-sm pf-m-width-50"></div></td>
-                <td class="pf-v6-c-table__td" role="cell" data-label="Location"><div class="pf-v6-c-skeleton pf-m-text-sm pf-m-width-75"></div></td>
-                <td class="pf-v6-c-table__td" role="cell"></td>
-              </tr>
-            {{ end }}
-          </tbody>
-        </table>
-      </luma-upcoming-events>
+      <div class="pf-v6-c-tabs pf-m-fill" id="event-type-tabs" aria-label="Filter by event type">
+        <ul class="pf-v6-c-tabs__list" role="tablist">
+          <li class="pf-v6-c-tabs__item pf-m-current" role="presentation">
+            <button class="pf-v6-c-tabs__link" role="tab" id="event-tab-all" aria-selected="true" aria-controls="event-panel-all" data-regex="" data-empty="No upcoming events right now. Check back soon!">
+              All
+            </button>
+          </li>
+          {{ range $et }}
+            <li class="pf-v6-c-tabs__item" role="presentation">
+              <button class="pf-v6-c-tabs__link" role="tab" id="event-tab-{{ .key }}" aria-selected="false" aria-controls="event-panel-{{ .key }}" data-regex="{{ .regex }}" data-empty="{{ .empty }}">
+                {{ .title }}
+              </button>
+            </li>
+          {{ end }}
+        </ul>
+      </div>
+      <section class="pf-v6-c-tab-content" role="tabpanel" id="event-panel-all" aria-labelledby="event-tab-all" tabindex="0">
+        <div class="pf-v6-c-tab-content__body">
+          <luma-upcoming-events
+            calendar="{{ .Site.Data.links.luma.calendar }}"
+            api="{{ .Site.Data.links.api }}"
+            luma="{{ .Site.Data.links.luma.url }}"
+          >
+            <table
+              class="pf-v6-c-table pf-m-grid-md pf-m-compact"
+              role="grid"
+              aria-label="Upcoming events"
+            >
+              <thead class="pf-v6-c-table__thead">
+                <tr class="pf-v6-c-table__tr" role="row">
+                  <th class="pf-v6-c-table__th" role="columnheader" scope="col"></th>
+                  <th class="pf-v6-c-table__th" role="columnheader" scope="col">Date</th>
+                  <th class="pf-v6-c-table__th" role="columnheader" scope="col">Event</th>
+                  <th class="pf-v6-c-table__th" role="columnheader" scope="col">Location</th>
+                  <th class="pf-v6-c-table__th" role="columnheader" scope="col"></th>
+                </tr>
+              </thead>
+              <tbody class="pf-v6-c-table__tbody" role="rowgroup">
+                {{ range (seq 3) }}
+                  <tr class="pf-v6-c-table__tr" role="row">
+                    <td class="pf-v6-c-table__td" role="cell"><div class="pf-v6-c-skeleton" style="--pf-v6-c-skeleton--Height: 4rem; --pf-v6-c-skeleton--Width: 4rem; border-radius: var(--pf-t--global--border--radius--medium);"></div></td>
+                    <td class="pf-v6-c-table__td" role="cell" data-label="Date"><div class="pf-v6-c-skeleton pf-m-text-sm pf-m-width-75"></div></td>
+                    <td class="pf-v6-c-table__td" role="cell" data-label="Event"><div class="pf-v6-c-skeleton pf-m-text-sm pf-m-width-50"></div></td>
+                    <td class="pf-v6-c-table__td" role="cell" data-label="Location"><div class="pf-v6-c-skeleton pf-m-text-sm pf-m-width-75"></div></td>
+                    <td class="pf-v6-c-table__td" role="cell"></td>
+                  </tr>
+                {{ end }}
+              </tbody>
+            </table>
+          </luma-upcoming-events>
+        </div>
+      </section>
+      {{ range $et }}
+        <section class="pf-v6-c-tab-content" role="tabpanel" id="event-panel-{{ .key }}" aria-labelledby="event-tab-{{ .key }}" tabindex="0" hidden>
+          <div class="pf-v6-c-tab-content__body">
+            <div
+              class="pf-v6-c-card pf-m-compact pf-m-plain"
+              style="
+                background: url('{{ .image | relURL }}') center / cover;
+                min-height: 10rem;
+              "
+            >
+              <div class="pf-v6-c-card__body pf-v6-l-flex pf-m-column pf-m-justify-content-flex-end" style="
+                background: linear-gradient(color-mix(in srgb, var(--pf-t--global--background--color--primary--default) 60%, transparent) 0%, color-mix(in srgb, var(--pf-t--global--background--color--primary--default) 80%, transparent) 50%, var(--pf-t--global--background--color--primary--default) 100%);
+                border-radius: inherit;
+              ">
+                <div class="pf-v6-c-content">
+                  <h4>{{ .tagline }}</h4>
+                  <p>{{ .description }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      {{ end }}
     </div>
   </section>
 
