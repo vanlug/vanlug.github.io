@@ -12,4 +12,11 @@ $font-path: "../../webfonts";
 @import "@fortawesome/fontawesome-free/scss/solid";
 @import "@fortawesome/fontawesome-free/scss/brands";
 
-// Customization here
+// By default this is a `<div>`, but we want to use the native `<dialog>` component instead
+dialog.pf-v6-c-modal-box:not([open]) {
+  display: none;
+}
+
+dialog[open].pf-v6-c-modal-box::backdrop {
+  background-color: var(--pf-t--global--background--color--backdrop--default);
+}

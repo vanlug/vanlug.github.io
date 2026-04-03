@@ -1,47 +1,42 @@
 import DOMPurify from "dompurify";
 import { proxyImageUrl } from "./events.js";
 
-const backdropClass = "pf-v6-c-backdrop";
-
 const modalTemplate = document.createElement("template");
 modalTemplate.innerHTML = `
-  <div class="${backdropClass}" style="display: none;">
-    <div class="pf-v6-l-bullseye">
-    <div class="pf-v6-c-modal-box pf-m-md" role="dialog" aria-modal="true"
-         aria-labelledby="event-detail-title" aria-describedby="event-detail-body">
-      <div class="pf-v6-c-modal-box__close">
-        <button class="pf-v6-c-button pf-m-plain" type="button" aria-label="Close" data-slot="close">
-          <span class="pf-v6-c-button__icon">
-            <i class="fas fa-times" aria-hidden="true"></i>
-          </span>
-        </button>
+  <dialog class="pf-v6-c-modal-box pf-m-md" closedby="any"
+          aria-labelledby="event-detail-title" aria-describedby="event-detail-body">
+    <form method="dialog" class="pf-v6-c-modal-box__close">
+      <button class="pf-v6-c-button pf-m-plain" type="submit" aria-label="Close" autofocus>
+        <span class="pf-v6-c-button__icon">
+          <i class="fas fa-times" aria-hidden="true"></i>
+        </span>
+      </button>
+    </form>
+    <header class="pf-v6-c-modal-box__header">
+      <div class="pf-v6-c-modal-box__header-main">
+        <h1 class="pf-v6-c-modal-box__title" id="event-detail-title" data-slot="title"></h1>
       </div>
-      <header class="pf-v6-c-modal-box__header">
-        <div class="pf-v6-c-modal-box__header-main">
-          <h1 class="pf-v6-c-modal-box__title" id="event-detail-title" data-slot="title"></h1>
-        </div>
-      </header>
-      <div class="pf-v6-c-modal-box__body" id="event-detail-body" tabindex="0" data-slot="body">
-        <div data-slot="content">
-          <div class="pf-v6-c-skeleton pf-v6-u-mb-md" style="--pf-v6-c-skeleton--Height: 10rem; border-radius: var(--pf-t--global--border--radius--medium);"></div>
-          <div class="pf-v6-c-skeleton pf-m-text-sm pf-m-width-75 pf-v6-u-mb-sm"></div>
-          <div class="pf-v6-c-skeleton pf-m-text-sm pf-m-width-50 pf-v6-u-mb-sm"></div>
-          <div class="pf-v6-c-skeleton pf-m-text-sm pf-m-width-75 pf-v6-u-mb-sm"></div>
-          <div class="pf-v6-c-skeleton pf-m-text-sm pf-m-width-50 pf-v6-u-mb-md"></div>
-          <div class="pf-v6-c-skeleton pf-m-text-sm pf-v6-u-mb-sm"></div>
-          <div class="pf-v6-c-skeleton pf-m-text-sm pf-m-width-75 pf-v6-u-mb-sm"></div>
-          <div class="pf-v6-c-skeleton pf-m-text-sm pf-m-width-50"></div>
-        </div>
+    </header>
+    <div class="pf-v6-c-modal-box__body" id="event-detail-body" data-slot="body">
+      <div data-slot="content">
+        <div class="pf-v6-c-skeleton pf-v6-u-mb-md" style="--pf-v6-c-skeleton--Height: 10rem; border-radius: var(--pf-t--global--border--radius--medium);"></div>
+        <div class="pf-v6-c-skeleton pf-m-text-sm pf-m-width-75 pf-v6-u-mb-sm"></div>
+        <div class="pf-v6-c-skeleton pf-m-text-sm pf-m-width-50 pf-v6-u-mb-sm"></div>
+        <div class="pf-v6-c-skeleton pf-m-text-sm pf-m-width-75 pf-v6-u-mb-sm"></div>
+        <div class="pf-v6-c-skeleton pf-m-text-sm pf-m-width-50 pf-v6-u-mb-md"></div>
+        <div class="pf-v6-c-skeleton pf-m-text-sm pf-v6-u-mb-sm"></div>
+        <div class="pf-v6-c-skeleton pf-m-text-sm pf-m-width-75 pf-v6-u-mb-sm"></div>
+        <div class="pf-v6-c-skeleton pf-m-text-sm pf-m-width-50"></div>
       </div>
-      <footer class="pf-v6-c-modal-box__footer">
-        <a data-slot="rsvp" target="_blank" rel="noopener"
-           class="pf-v6-c-button pf-m-primary">RSVP on Luma</a>
-        <button data-slot="cancel" type="button"
-                class="pf-v6-c-button pf-m-link">Close</button>
-      </footer>
     </div>
-    </div>
-  </div>`;
+    <footer class="pf-v6-c-modal-box__footer">
+      <a data-slot="rsvp" target="_blank" rel="noopener"
+         class="pf-v6-c-button pf-m-primary">RSVP on Luma</a>
+      <form method="dialog" style="display: inline;">
+        <button type="submit" class="pf-v6-c-button pf-m-link">Close</button>
+      </form>
+    </footer>
+  </dialog>`;
 
 const detailTemplate = document.createElement("template");
 detailTemplate.innerHTML = `
@@ -79,25 +74,13 @@ customElements.define(
   class extends HTMLElement {
     connectedCallback() {
       this.append(modalTemplate.content.cloneNode(true));
-      this._backdrop = this.querySelector(`.${backdropClass}`);
+      this._dialog = this.querySelector("dialog");
       this._$ = (s) => this.querySelector(`[data-slot="${s}"]`);
-
-      this._$("close").addEventListener("click", () => this.close());
-      this._$("cancel").addEventListener("click", () => this.close());
-      this._backdrop.addEventListener("click", (e) => {
-        if (e.target === this._backdrop) this.close();
-      });
-      this._keyHandler = (e) => {
-        if (e.key === "Escape") this.close();
-      };
     }
 
     async open(eventApiId, api) {
-      this._backdrop.style.display = "";
-      document.documentElement.style.overflow = "hidden";
-      document.addEventListener("keydown", this._keyHandler);
-
-      this._$("title").innerHTML = '<div class="pf-v6-c-skeleton pf-m-text-lg pf-m-width-50"></div>';
+      this._$("title").innerHTML =
+        '<div class="pf-v6-c-skeleton pf-m-text-lg pf-m-width-50"></div>';
       const content = this._$("content");
       content.innerHTML = `
         <div class="pf-v6-c-skeleton pf-v6-u-mb-md" style="--pf-v6-c-skeleton--Height: 10rem; border-radius: var(--pf-t--global--border--radius--medium);"></div>
@@ -109,6 +92,8 @@ customElements.define(
         <div class="pf-v6-c-skeleton pf-m-text-sm pf-m-width-75 pf-v6-u-mb-sm"></div>
         <div class="pf-v6-c-skeleton pf-m-text-sm pf-m-width-50"></div>`;
       this._$("rsvp").style.display = "none";
+
+      this._dialog.showModal();
 
       try {
         const data = await fetch(
@@ -154,17 +139,17 @@ customElements.define(
         $("time").textContent = timeText;
 
         if (data.location) {
-          const venueText = data.full_address
+          $("venue").textContent = data.full_address
             ? `${data.location} — ${data.full_address}`
             : data.location;
-          $("venue").textContent = venueText;
 
           if (data.map_url) {
-            const mapLink = document.createElement("a");
-            mapLink.href = data.map_url;
-            mapLink.target = "_blank";
-            mapLink.rel = "noopener";
-            mapLink.className = "pf-v6-c-button pf-m-link pf-m-inline pf-m-small";
+            const mapLink = Object.assign(document.createElement("a"), {
+              href: data.map_url,
+              target: "_blank",
+              rel: "noopener",
+              className: "pf-v6-c-button pf-m-link pf-m-inline pf-m-small",
+            });
             mapLink.innerHTML =
               'View on map <span class="pf-v6-c-button__icon pf-m-end"><icon-external></icon-external></span>';
             $("map-link").append(mapLink);
@@ -200,12 +185,6 @@ customElements.define(
         content.innerHTML =
           "<p>Could not load event details. Please try again later.</p>";
       }
-    }
-
-    close() {
-      this._backdrop.style.display = "none";
-      document.documentElement.style.overflow = "";
-      document.removeEventListener("keydown", this._keyHandler);
     }
   },
 );
