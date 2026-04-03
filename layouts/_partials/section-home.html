@@ -130,10 +130,7 @@
               "
             {{ end }}
           >
-            <div class="pf-v6-c-card__body pf-v6-l-flex pf-m-column pf-m-justify-content-flex-end pf-m-gap-sm" {{ with .image }}style="
-              background: linear-gradient(color-mix(in srgb, var(--pf-t--global--background--color--primary--default) 60%, transparent) 0%, color-mix(in srgb, var(--pf-t--global--background--color--primary--default) 80%, transparent) 50%, var(--pf-t--global--background--color--primary--default) 100%);
-              border-radius: inherit;
-            "{{ end }}>
+            <div class="pf-v6-c-card__body pf-v6-l-flex pf-m-column pf-m-justify-content-flex-end pf-m-gap-sm {{ with .image }}pf-m-bg-overlay{{ end }}">
               <div class="pf-v6-c-content">
                 <h4>{{ .title }}</h4>
                 <p>
@@ -214,10 +211,7 @@
                   background-position: center;
                 "
               >
-                <div class="pf-v6-c-card__body pf-v6-l-flex pf-m-column pf-m-justify-content-flex-end pf-m-gap-sm" style="
-                  background: linear-gradient(color-mix(in srgb, var(--pf-t--global--background--color--primary--default) 40%, transparent) 0%, color-mix(in srgb, var(--pf-t--global--background--color--primary--default) 80%, transparent) 50%, var(--pf-t--global--background--color--primary--default) 100%);
-                  border-radius: inherit;
-                ">
+                <div class="pf-v6-c-card__body pf-v6-l-flex pf-m-column pf-m-justify-content-flex-end pf-m-gap-sm pf-m-bg-overlay pf-m-overlay-light">
                   <div class="pf-v6-c-content">
                     <h4>{{ .title }}</h4>
                     <p><small>{{ .date }}</small></p>

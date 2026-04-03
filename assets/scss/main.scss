@@ -20,3 +20,35 @@ dialog.pf-v6-c-modal-box:not([open]) {
 dialog[open].pf-v6-c-modal-box::backdrop {
   background-color: var(--pf-t--global--background--color--backdrop--default);
 }
+
+.pf-v6-c-card__body.pf-m-bg-overlay {
+  --bg-overlay-start: 60%;
+  --bg-overlay-mid: 80%;
+
+  background: linear-gradient(
+    color-mix(
+        in srgb,
+        var(--pf-t--global--background--color--primary--default)
+          var(--bg-overlay-start),
+        transparent
+      )
+      0%,
+    color-mix(
+        in srgb,
+        var(--pf-t--global--background--color--primary--default)
+          var(--bg-overlay-mid),
+        transparent
+      )
+      50%,
+    var(--pf-t--global--background--color--primary--default) 100%
+  );
+  border-radius: inherit;
+
+  &.pf-m-overlay-light {
+    --bg-overlay-start: 40%;
+  }
+
+  &.pf-m-overlay-heavy {
+    --bg-overlay-start: 80%;
+  }
+}
