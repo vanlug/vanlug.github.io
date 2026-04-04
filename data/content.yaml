@@ -23,10 +23,10 @@ home:
         image: design/wesley-tingey-bWRX_obQAl8-unsplash.jpg
       - title: Drop-in help sessions
         body: "Bring your laptop to a local library. We help with installs, troubleshooting, and getting comfortable on the command line."
-        image: design/lee-robinson-Yc9h5SJdEzI-unsplash.jpg
+        image: design/aaron-thomas-dMqlE7lgyOU-unsplash.jpg
       - title: Community year-round
         body_key: community_year_round
-        image: design/aaron-thomas-dMqlE7lgyOU-unsplash.jpg
+        image: design/albert-stoynov-jooXO8q2Gcs-unsplash.jpg
 
   supporters:
     title: Events we're supporting
