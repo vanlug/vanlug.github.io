@@ -26,6 +26,8 @@ const icons = {
   "icon-bluesky": "fa-brands fa-bluesky",
   "icon-linkedin": "fa-brands fa-linkedin",
   "icon-paypal": "fa-brands fa-paypal",
+  "icon-github": "fa-brands fa-github",
+  "icon-globe": "fa-solid fa-globe",
   "icon-external": "fa-solid fa-arrow-up-right-from-square",
   "icon-email": "fa-solid fa-envelope",
 };
