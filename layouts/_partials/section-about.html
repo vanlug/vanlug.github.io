@@ -45,18 +45,17 @@
         <p>
           {{ .Site.Data.content.about.board.preamble | default "As a registered non-profit society in British Columbia, VanLUG is governed by a volunteer Board of Directors. Elections are held annually at our AGM. New volunteers are always welcome." }}
           <a href="{{ .Site.Data.links.socials.email.url }}"
-            >Get in touch<icon-email></icon-email
-          ></a>
+            >Get in touch{{ partial "icon" "email" }}</a>
           if you'd like to help.
         </p>
       </div>
 
-      {{ $prevRole := "" }}
+      {{ $directorSeen := false }}
       {{ range $i, $member := .Site.Data.board.bios }}
-        {{ if and (ne $i 0) (ne $member.role $prevRole) }}
+        {{ if and (not $directorSeen) (eq $member.role "Director-at-large") (ne $i 0) }}
           <hr class="pf-v6-c-divider" />
         {{ end }}
-        {{ $prevRole = $member.role }}
+        {{ if eq $member.role "Director-at-large" }}{{ $directorSeen = true }}{{ end }}
         <div class="pf-v6-c-card pf-m-compact">
           <div class="pf-v6-c-card__title">
             <div class="pf-v6-c-card__title-text">
@@ -83,7 +82,7 @@
                     href="{{ .url }}"
                     target="_blank"
                     rel="noreferrer noopener"
-                  >{{ .label }}{{ with .icon }}{{ printf "<%s></%s>" . . | safeHTML }}{{ else }}<icon-external></icon-external>{{ end }}</a>
+                  >{{ .label }}{{ partial "icon" ((.icon | default "icon-external") | strings.TrimPrefix "icon-") }}</a>
                 {{ end }}
               </div>
             {{ end }}

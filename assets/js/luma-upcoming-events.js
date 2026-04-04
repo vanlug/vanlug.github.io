@@ -22,7 +22,7 @@ rowTemplate.innerHTML = `
           Details
         </button>
         <a data-slot="rsvp" target="_blank" rel="noopener" class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small">
-          RSVP<span class="pf-v6-c-button__icon pf-m-end"><icon-external></icon-external></span>
+          RSVP<span class="pf-v6-c-button__icon pf-m-end"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
         </a>
       </div>
     </td>
@@ -81,7 +81,7 @@ customElements.define(
       const api = this.getAttribute("api");
       const lumaUrl = this.getAttribute("luma") ?? "https://luma.com/vanlug";
       const rssUrl = `${api}/events/feed?calendar=${encodeURIComponent(cal)}`;
-      const subscribeLinks = `<br>Stay updated via <a href="${lumaUrl}" target="_blank" rel="noopener">Luma<icon-external></icon-external></a> or <a href="${rssUrl}" target="_blank" rel="noopener">RSS<icon-custom data-icon="fa-solid fa-rss"></icon-custom></a>.`;
+      const subscribeLinks = `<br>Stay updated via <a href="${lumaUrl}" target="_blank" rel="noopener">Luma<span style="display: inline; white-space: nowrap;">&#8288;<i class="fa-solid fa-arrow-up-right-from-square pf-v6-u-ml-xs" aria-hidden="true"></i></span></a> or <a href="${rssUrl}" target="_blank" rel="noopener">RSS<span style="display: inline; white-space: nowrap;">&#8288;<i class="fa-solid fa-rss pf-v6-u-ml-xs" aria-hidden="true"></i></span></a>.`;
 
       try {
         const { entries } = await fetch(

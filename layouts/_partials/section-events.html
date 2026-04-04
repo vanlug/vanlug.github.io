@@ -28,13 +28,13 @@
             href="{{ .Site.Data.links.luma.url }}"
             target="_blank"
             rel="noopener"
-            >calendar on Luma<icon-external></icon-external></a
+            >calendar on Luma{{ partial "icon" "external" }}</a
           > and
           <a
             href="{{ .Site.Data.links.api }}/events/feed?calendar={{ .Site.Data.links.luma.calendar }}"
             target="_blank"
             rel="noopener"
-            >RSS feed<icon-custom data-icon="fa-solid fa-rss"></icon-custom></a
+            >RSS feed{{ partial "icon" "rss" }}</a
           >.
         </p>
       </div>
@@ -145,19 +145,18 @@
             href="{{ .Site.Data.links.luma.url }}"
             target="_blank"
             rel="noopener"
-            >Luma<icon-external></icon-external></a
+            >Luma{{ partial "icon" "external" }}</a
           >,
           <a
             href="{{ .Site.Data.links.meetup.url }}"
             target="_blank"
             rel="noopener"
-            >Meetup<icon-external></icon-external
-          ></a>
+            >Meetup{{ partial "icon" "external" }}</a>
           and the Web Archive ({{ range $i, $link := $c.past.archive_links }}{{ if $i }}, {{ end }}<a
             href="{{ $link.url }}"
             target="_blank"
             rel="noopener"
-            >{{ $link.title }}<icon-external></icon-external></a
+            >{{ $link.title }}{{ partial "icon" "external" }}</a
           >{{ end }}). Slides and materials from past talks are on our
           <a href="{{ "/resources/" | relURL }}">Resources</a> page.
         </p>
@@ -188,8 +187,7 @@
                     target="_blank"
                     rel="noopener"
                     class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small"
-                    >{{ .title }}<icon-external></icon-external
-                  ></a>
+                    >{{ .title }}{{ partial "icon" "external" }}</a>
                 {{ end }}
               </td>
             </tr>

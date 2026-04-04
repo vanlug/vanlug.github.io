@@ -151,7 +151,7 @@ customElements.define(
               className: "pf-v6-c-button pf-m-link pf-m-inline pf-m-small",
             });
             mapLink.innerHTML =
-              'View on map <span class="pf-v6-c-button__icon pf-m-end"><icon-external></icon-external></span>';
+              'View on map <span class="pf-v6-c-button__icon pf-m-end"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>';
             $("map-link").append(mapLink);
           } else {
             $("map-br").remove();

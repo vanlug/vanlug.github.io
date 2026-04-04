@@ -86,8 +86,7 @@
                   target="_blank"
                   rel="noopener"
                   class="pf-v6-c-button pf-m-link pf-m-inline pf-m-small"
-                  >{{ with .label }}{{ . }}{{ else }}Slides{{ end }}<icon-external></icon-external
-                ></a>
+                  >{{ with .label }}{{ . }}{{ else }}Slides{{ end }}{{ partial "icon" "external" }}</a>
               </td>
             </tr>
           {{ end }}
@@ -112,9 +111,7 @@
                 href="{{ .url | relURL }}"
                 target="_blank"
                 rel="noopener"
-                >{{ .title }}<icon-external
-                ></icon-external
-              ></a>
+                >{{ .title }}{{ partial "icon" "external" }}</a>
             </li>
           {{ end }}
         </ul>
@@ -156,9 +153,7 @@
                       href="{{ .url }}"
                       target="_blank"
                       rel="noopener"
-                      >{{ .title }}<icon-external
-                      ></icon-external
-                    ></a>
+                      >{{ .title }}{{ partial "icon" "external" }}</a>
                     {{ with .note }}({{ . }}){{ end }}
                   </li>
                 {{ end }}
@@ -184,9 +179,7 @@
                       href="{{ .url }}"
                       target="_blank"
                       rel="noopener"
-                      >{{ .title }}<icon-external
-                      ></icon-external
-                    ></a>
+                      >{{ .title }}{{ partial "icon" "external" }}</a>
                     {{ with .note }}({{ . }}){{ end }}
                   </li>
                 {{ end }}
@@ -212,15 +205,13 @@
                       href="{{ .url }}"
                       target="_blank"
                       rel="noopener"
-                      >{{ .title }}<icon-external
-                      ></icon-external
-                    ></a>
+                      >{{ .title }}{{ partial "icon" "external" }}</a>
                     {{ with .extra }}
                       (<a
                         href="{{ .url }}"
                         target="_blank"
                         rel="noopener"
-                        >{{ .title }}<icon-external></icon-external></a
+                        >{{ .title }}{{ partial "icon" "external" }}</a
                       >)
                     {{ end }}
                   </li>
@@ -248,8 +239,7 @@
                 href="{{ .url }}"
                 target="_blank"
                 rel="noopener"
-                >{{ .title }}<icon-external
-                ></icon-external></a
+                >{{ .title }}{{ partial "icon" "external" }}</a
               >{{ with .note }}, {{ . }}{{ end }}
             </li>
           {{ end }}
@@ -272,7 +262,7 @@
             href="https://www.patternfly.org/"
             target="_blank"
             rel="noopener"
-            >PatternFly<icon-external></icon-external></a
+            >PatternFly{{ partial "icon" "external" }}</a
           >, the open-source design system used for this website.
         </p>
       </div>
@@ -285,36 +275,31 @@
             href="https://commons.wikimedia.org/wiki/File:TuxFlat.svg"
             target="_blank"
             rel="noopener"
-            >Tux Flat SVG<icon-external></icon-external
-          ></a>
+            >Tux Flat SVG{{ partial "icon" "external" }}</a>
           by gg3po and Iwan Gabovitch, based on
           <a
             href="https://commons.wikimedia.org/wiki/File:NewTux.svg"
             target="_blank"
             rel="noopener"
-            >NewTux.svg<icon-external></icon-external
-          ></a>
+            >NewTux.svg{{ partial "icon" "external" }}</a>
           by gg3po, itself based on the original
           <a
             href="https://commons.wikimedia.org/wiki/File:Tux.png"
             target="_blank"
             rel="noopener"
-            >Tux.png<icon-external></icon-external
-          ></a>
+            >Tux.png{{ partial "icon" "external" }}</a>
           by Larry Ewing. The wavy stripes from the
           <a
             href="https://en.wikipedia.org/wiki/Flag_of_Vancouver"
             target="_blank"
             rel="noopener"
-            >flag of Vancouver<icon-external></icon-external
-          ></a>
+            >flag of Vancouver{{ partial "icon" "external" }}</a>
           have been added to the belly. Licensed under the
           <a
             href="https://www.gnu.org/licenses/gpl-2.0.html"
             target="_blank"
             rel="noopener"
-            >GNU GPL v2<icon-external></icon-external
-          ></a>
+            >GNU GPL v2{{ partial "icon" "external" }}</a>
           or later. The full logo combines the icon with the
           &ldquo;VanLUG/Vancouver Linux User Group&rdquo; wordmark, as
           seen on the banner and event cards.
@@ -338,8 +323,7 @@
                   href="{{ $val.url }}"
                   target="_blank"
                   rel="noopener"
-                  >{{ $val.name }}<icon-external></icon-external
-                ></a>
+                  >{{ $val.name }}{{ partial "icon" "external" }}</a>
               </div>
             </dd>
           </div>
@@ -402,19 +386,19 @@
             href="https://inkscape.org/"
             target="_blank"
             rel="noopener"
-            >Inkscape<icon-external></icon-external></a
+            >Inkscape{{ partial "icon" "external" }}</a
           >. All files are in
           <a
             href="{{ .Site.Data.site.source }}/tree/main/static/design"
             target="_blank"
             rel="noopener"
-            >static/design/<icon-external></icon-external></a
+            >static/design/{{ partial "icon" "external" }}</a
           >. Cards and headers use background photos from
           <a
             href="https://unsplash.com/"
             target="_blank"
             rel="noopener"
-            >Unsplash<icon-external></icon-external></a
+            >Unsplash{{ partial "icon" "external" }}</a
           >:
         </p>
       </div>
@@ -463,8 +447,7 @@
                     href="{{ .url }}"
                     target="_blank"
                     rel="noopener"
-                    >{{ .credit }}<icon-external></icon-external
-                  ></a>
+                    >{{ .credit }}{{ partial "icon" "external" }}</a>
                   (<a
                     href="{{ .source | relURL }}"
                     target="_blank"

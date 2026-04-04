@@ -45,7 +45,7 @@
           class="pf-v6-c-button pf-m-link"
           ><span class="pf-v6-c-button__text">{{ $c.cta_link.title }}</span
           ><span class="pf-v6-c-button__icon pf-m-end"
-            >{{ partial "icon" $social.icon }}</span
+            >{{ partial "icon" (dict "icon" $social.icon "inButton" true) }}</span
         ></a>
       </div>
     </div>
@@ -121,7 +121,7 @@
             href="{{ .Site.Data.links.api }}/events/feed?calendar={{ .Site.Data.links.luma.calendar }}"
             target="_blank"
             rel="noopener"
-            >RSS<icon-custom data-icon="fa-solid fa-rss"></icon-custom></a
+            >RSS{{ partial "icon" "rss" }}</a
           >.
         </p>
       </div>
@@ -158,15 +158,13 @@
                       href="{{ $.Site.Data.links.socials.discourse.url }}"
                       target="_blank"
                       rel="noopener"
-                      >Discourse<icon-discourse></icon-discourse
-                    ></a>
+                      >Discourse{{ partial "icon" "discourse" }}</a>
                     and
                     <a
                       href="{{ $.Site.Data.links.socials.signal.url }}"
                       target="_blank"
                       rel="noreferrer noopener"
-                      >Signal<icon-signal></icon-signal
-                    ></a>
+                      >Signal{{ partial "icon" "signal" }}</a>
                     between meetings. Ask questions, share projects, find
                     collaborators.
                   {{ else }}
@@ -185,24 +183,22 @@
             href="{{ .Site.Data.links.socials.mastodon.url }}"
             target="_blank"
             rel="noopener"
-            >Mastodon<icon-mastodon></icon-mastodon></a
+            >Mastodon{{ partial "icon" "mastodon" }}</a
           >,
           <a
             href="{{ .Site.Data.links.socials.bluesky.url }}"
             target="_blank"
             rel="noopener"
-            >Bluesky<icon-bluesky></icon-bluesky></a
+            >Bluesky{{ partial "icon" "bluesky" }}</a
           >, or
           <a
             href="{{ .Site.Data.links.socials.linkedin.url }}"
             target="_blank"
             rel="noopener"
-            >LinkedIn<icon-linkedin></icon-linkedin
-          ></a>
+            >LinkedIn{{ partial "icon" "linkedin" }}</a>
           for announcements. Want to give a talk or have a question?
           <a href="{{ .Site.Data.links.socials.email.url }}"
-            >Email the board.<icon-email></icon-email
-          ></a>
+            >Email the board.{{ partial "icon" "email" }}</a>
         </p>
       </div>
     </div>
@@ -241,7 +237,7 @@
                     class="pf-v6-c-button pf-m-link pf-m-inline"
                     ><span class="pf-v6-c-button__text">Visit website</span
                     ><span class="pf-v6-c-button__icon pf-m-end"
-                      ><icon-external></icon-external></span
+                      >{{ partial "icon" (dict "icon" "external" "inButton" true) }}</span
                   ></a>
                 </div>
               </div>

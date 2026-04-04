@@ -50,14 +50,13 @@
                 href="{{ .Site.Data.site.source }}"
                 target="_blank"
                 rel="noopener"
-                >source code<icon-external></icon-external>
-              </a>
+                >source code{{ partial "icon" "external" }}</a>
               on GitHub, licensed under
               <a
                 href="{{ .Site.Data.site.source }}/blob/main/LICENSE"
                 target="_blank"
                 rel="noopener"
-                >AGPL-3.0-or-later<icon-external></icon-external></a
+                >AGPL-3.0-or-later{{ partial "icon" "external" }}</a
               >. See our <a href="{{ "/terms/" | relURL }}">terms</a> and
               <a href="{{ "/privacy/" | relURL }}">privacy policy</a>.</small
             >

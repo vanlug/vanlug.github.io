@@ -48,13 +48,13 @@
         href="{{ .Site.Data.links.socials.mastodon.url }}"
         target="_blank"
         rel="noopener"
-        >See all posts<icon-external></icon-external></a
+        >See all posts{{ partial "icon" "external" }}</a
       >, or subscribe via
       <a
         href="{{ .Site.Data.links.feed.mastodon }}"
         target="_blank"
         rel="noopener"
-        >RSS<icon-custom data-icon="fa-solid fa-rss"></icon-custom></a
+        >RSS{{ partial "icon" "rss" }}</a
       >.
     </p>
   </div>

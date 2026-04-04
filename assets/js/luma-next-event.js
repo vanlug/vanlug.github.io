@@ -33,7 +33,7 @@ template.innerHTML = `
               <a data-slot="rsvp" target="_blank" rel="noopener"
                 class="pf-v6-c-button pf-m-link pf-m-inline">
                 <span class="pf-v6-c-button__text">RSVP on Luma</span>
-                <span class="pf-v6-c-button__icon pf-m-end"><icon-external></icon-external></span>
+                <span class="pf-v6-c-button__icon pf-m-end"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
               </a>
             </div>
           </div>
