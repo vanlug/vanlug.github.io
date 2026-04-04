@@ -63,6 +63,17 @@
       if (matchMedia("(prefers-color-scheme: dark)").matches)
         document.documentElement.classList.add("pf-v6-theme-dark");
     </script>
+    <noscript>
+      {{ with resources.Get "scss/noscript.scss" | toCSS (dict "outputStyle" "compressed") }}
+        {{ if hugo.IsDevelopment }}
+          <link rel="stylesheet" href="{{ .RelPermalink }}" />
+        {{ else }}
+          {{ with . | fingerprint }}
+            <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" />
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    </noscript>
   </head>
 
   <body>

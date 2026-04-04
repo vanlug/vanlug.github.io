@@ -62,7 +62,7 @@
             luma="{{ .Site.Data.links.luma.url }}"
           >
             <table
-              class="pf-v6-c-table pf-m-grid-md pf-m-compact"
+              class="pf-v6-c-table pf-m-grid-md pf-m-compact js-only"
               role="grid"
               aria-label="Upcoming events"
             >
@@ -87,6 +87,24 @@
                 {{ end }}
               </tbody>
             </table>
+            <div class="noscript-only">
+              <div class="pf-v6-c-empty-state pf-m-xs">
+                <div class="pf-v6-c-empty-state__content">
+                  <div class="pf-v6-c-empty-state__header">
+                    <div class="pf-v6-c-empty-state__icon pf-v6-u-font-size-xl pf-v6-u-mb-sm">
+                      <i class="fas fa-calendar" aria-hidden="true"></i>
+                    </div>
+                    <div class="pf-v6-c-empty-state__title">
+                      <p class="pf-v6-c-empty-state__title-text pf-v6-u-font-size-sm">JavaScript is required to load the events list.</p>
+                    </div>
+                  </div>
+                  <div class="pf-v6-c-empty-state__body pf-v6-u-font-size-sm">
+                    View upcoming events on
+                    <a href="{{ .Site.Data.links.luma.url }}" target="_blank" rel="noopener">Luma</a>.
+                  </div>
+                </div>
+              </div>
+            </div>
           </luma-upcoming-events>
         </div>
       </section>

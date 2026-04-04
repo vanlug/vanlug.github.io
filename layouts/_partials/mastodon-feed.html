@@ -18,7 +18,7 @@
     api="{{ .Site.Data.links.api }}"
     profile="{{ .Site.Data.links.socials.mastodon.url }}"
   >
-    <div class="pf-v6-l-flex pf-m-column pf-m-gap-sm">
+    <div class="pf-v6-l-flex pf-m-column pf-m-gap-sm js-only">
       {{ range (seq 3) }}
         <div>
           <div class="pf-v6-c-skeleton pf-m-text-sm pf-v6-u-mb-sm"></div>
@@ -26,6 +26,20 @@
           <div class="pf-v6-c-skeleton pf-m-text-xs pf-m-width-50 pf-v6-u-mt-sm"></div>
         </div>
       {{ end }}
+    </div>
+    <div class="noscript-only">
+      <div class="pf-v6-c-empty-state pf-m-xs">
+        <div class="pf-v6-c-empty-state__content">
+          <div class="pf-v6-c-empty-state__header">
+            <div class="pf-v6-c-empty-state__icon pf-v6-u-font-size-xl pf-v6-u-mb-sm">
+              <i class="fa-brands fa-mastodon" aria-hidden="true"></i>
+            </div>
+            <div class="pf-v6-c-empty-state__title">
+              <p class="pf-v6-c-empty-state__title-text pf-v6-u-font-size-sm">JavaScript is required to load the feed.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </mastodon-feed>
   <div class="pf-v6-c-content pf-v6-u-font-size-sm pf-v6-u-text-align-center pf-v6-u-pb-sm">
