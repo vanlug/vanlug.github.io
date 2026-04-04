@@ -12,9 +12,16 @@ $font-path: "../../webfonts";
 @import "@fortawesome/fontawesome-free/scss/solid";
 @import "@fortawesome/fontawesome-free/scss/brands";
 
+.noscript-only {
+  display: none;
+}
+
 // Remove the bottom corner & padding from the Patternfly page to get more vertical space
 .pf-v6-c-page {
-  --pf-v6-c-page__main-container--BorderRadius: var(--pf-t--global--border--radius--medium) var(--pf-t--global--border--radius--medium) 0 0;
+  --pf-v6-c-page__main-container--BorderRadius: var(
+      --pf-t--global--border--radius--medium
+    )
+    var(--pf-t--global--border--radius--medium) 0 0;
   --pf-v6-c-page__main-container--AlignSelf: stretch;
   --pf-v6-c-page__main-container--MaxHeight: 100%;
   --pf-v6-c-page__main-container--BorderBlockEndWidth: 0;
