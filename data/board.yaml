@@ -20,11 +20,17 @@ bios:
         url: https://www.linkedin.com/in/nestorbalce
         icon: icon-linkedin
 
+  - name: John Weintraub
+    role: Vice President
+
   - name: Kim Kulak
     role: Treasurer / Acting Secretary
     bio: "Started at University of Alberta in 1973 in physics. Took a computing course because I knew nothing about computers. Graduated with a B.Sc in Computing Science, because I was a lot better at computers than physics. Worked 20 years as a programmer. Most of that time writing embedded software on Unix hosts. In that time used almost all of the commercial Unix systems, BSD on a Vax, AIX, HPUX, SunOS, Solaris, System V on AT&T 3b2, and many that I don't remember any more. When I heard of this Linux thing I downloaded (over dialup) about 10 floppies of tar balls. Got it running on my 486 and was blown away by how good it was. I missed the first VanLUG meeting organized by Dave Michelson but attended the second and almost all meetings since then. Started to help run the club almost immediately. I've been VanLUG president in 2008, 2009, 2024, and 2025. And every other position at one time or another."
     needs: "Past President is the one and only position on the board that isn't elected. It's there to provide continuity from one president to the next. I did run for secretary treasurer (or more correctly secretary and treasurer) because nobody else wanted these positions. I'd be happy to pass them on to anybody willing to do it."
     contributions: "I'm with Nestor: 'The Theme for 2026 is \"Expansion of Linux and Open Source.\"' I currently do this through Linux Link. If you've never seen Linux, I have a couple of computers running Linux and I'll show you around and let you try it yourself. If you're now ready to use Linux, I'll help you install it. If you're already a Linux user, then come in! There are always other Linux users ready and willing to talk about Linux. I think running workshops would be a fantastic opportunity to bring Linux and Open Source to dozens of people in addition to the personalized one-at-a-time at Linux Link."
+
+  - name: Alex Z.
+    role: Director-at-large
 
   - name: Brant F.
     role: Director-at-large
@@ -64,6 +70,9 @@ bios:
         url: https://www.whonix.org/wiki/Hosting_Location_Hidden_Services#Anonymous_Web_Third-Party_Hosting_Providers
         icon: icon-external
 
+  - name: PJ L.
+    role: Director-at-large
+
   - name: Ted L.
     role: Director-at-large
     bio: "I first started using computers in 1972. It was a computer terminal hard-wired to the Vancouver School HP-2000A time-shared computer, programmed in BASIC. I quickly got hooked and taught myself BASIC and the command interface. At first, I programmed in BASIC using pencil-marked cards. Later, I learned that I could simply walk into the UBC computer lab for students (I was a Grade 10 high school student at the time) and use the keypunch machine to enter my programs. I received credit for CS10 through remote studies, as the school I attended was too small to offer a computer science program. In 1978, I managed to scrape together $5,000 to buy a TRS-80—an 8-bit CPU with 4 KB of RAM. I converted a Model 15 teletype printer, running at 66 WPM, from 6-bit Baudot to 7-bit ASCII in order to print lowercase letters. In the 1980s, I earned a diploma in Computer Systems Management from Capilano College. In the 1990s, I learned about VanLUG and obtained the famous yellow disc used to install Slackware on a PC via a CD-ROM drive—one that I installed myself. I later shifted my focus from Linux to the Internet and learned how to communicate with computers over radio. I deepened my Linux knowledge by using Raspberry Pi models 1, 2, 3, and 4 to interface with radio equipment, TOR relays, Bitcoin nodes, and more. I graduated from Kwantlen University College in 2003 with a degree in Technology. I am now retired and spend my time helping people meet their financial goals."
@@ -74,11 +83,17 @@ bios:
         url: http://about.tedlee.ca
         icon: icon-globe
 
+  - name: Victor AV S.
+    role: Director-at-large
+
   - name: Violet F.
     role: Director-at-large
     bio: "I am Violet Figueroa (they/she), and I am trained as a Cloud Security Analyst. Over the last year I have been shifting into cybersecurity after completing a training program, and have been getting more involved with VanLUG through meetups, the mailing list, and volunteer work. Ask me to infodump if you want media recommendations for movies, tv, games, linux homelabing stuffs, PKM and book recommendations, etc etc, I will happily oblige!"
     needs: "From my perspective, one of the main things VanLUG needs is to keep lowering the barriers for new and returning Linux users. That includes clear on-ramps for beginners, more geographically distributed events, and spaces that feel welcoming to people from different backgrounds and experience levels. I also think we can continue to highlight how Linux and open source connect to everyday concerns like privacy, accessibility, and cost of living."
     contributions: "To support that, I can help with outreach to community organizations and neighbourhood houses in Vancouver as potential meetup venues, contribute a security and privacy lens to talks and workshops, and pitch in on documentation and processes that make it easier for new volunteers and speakers to plug in. I am especially interested in helping with events and content that show how Linux and open source can support digital safety and inclusion."
+
+  - name: William G.
+    role: Director-at-large
 
   - name: Zhiqiang Z.
     role: Director-at-large

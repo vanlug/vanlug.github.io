@@ -67,9 +67,15 @@
             </div>
           </div>
           <div class="pf-v6-c-card__body">
-            <div class="pf-v6-c-content">
-              <p>{{ $member.bio }}</p>
-            </div>
+            {{ if $member.bio }}
+              <div class="pf-v6-c-content">
+                <p>{{ $member.bio }}</p>
+              </div>
+            {{ else }}
+              <div class="pf-v6-c-content">
+                <p class="pf-v6-u-text-color-subtle">{{ $member.name }} has chosen not to share a public biography at this time.</p>
+              </div>
+            {{ end }}
             {{ with $member.links }}
               <div class="pf-v6-l-flex pf-m-wrap pf-m-gap-md pf-v6-u-pt-sm">
                 {{ range . }}
