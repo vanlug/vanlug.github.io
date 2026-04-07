@@ -331,51 +331,33 @@
       </dl>
 
       <div class="pf-v6-c-content">
-        <h4>Colours</h4>
+        <h4>Colours (Vancouver flag palette)</h4>
       </div>
       <dl
         class="pf-v6-c-description-list pf-m-horizontal pf-m-compact"
       >
-        <div class="pf-v6-c-description-list__group">
-          <dt class="pf-v6-c-description-list__term">
-            <span class="pf-v6-c-description-list__text"
-              >Light mode</span
-            >
-          </dt>
-          <dd class="pf-v6-c-description-list__description">
-            <div class="pf-v6-c-description-list__text">
-              <span
-                class="pf-v6-c-label pf-m-compact pf-m-custom"
-                style="
-                  --pf-v6-c-label--BackgroundColor: {{ .Site.Data.resources.design.colours.light }};
-                  --pf-v6-c-label--Color: #fff;
-                "
+        {{ range .Site.Data.resources.design.colours }}
+          <div class="pf-v6-c-description-list__group">
+            <dt class="pf-v6-c-description-list__term">
+              <span class="pf-v6-c-description-list__text"
+                >{{ .name }}</span
               >
-                <span class="pf-v6-c-label__content">{{ .Site.Data.resources.design.colours.light }}</span>
-              </span>
-            </div>
-          </dd>
-        </div>
-        <div class="pf-v6-c-description-list__group">
-          <dt class="pf-v6-c-description-list__term">
-            <span class="pf-v6-c-description-list__text"
-              >Dark mode</span
-            >
-          </dt>
-          <dd class="pf-v6-c-description-list__description">
-            <div class="pf-v6-c-description-list__text">
-              <span
-                class="pf-v6-c-label pf-m-compact pf-m-custom"
-                style="
-                  --pf-v6-c-label--BackgroundColor: {{ .Site.Data.resources.design.colours.dark }};
-                  --pf-v6-c-label--Color: #fff;
-                "
-              >
-                <span class="pf-v6-c-label__content">{{ .Site.Data.resources.design.colours.dark }}</span>
-              </span>
-            </div>
-          </dd>
-        </div>
+            </dt>
+            <dd class="pf-v6-c-description-list__description">
+              <div class="pf-v6-c-description-list__text">
+                <span
+                  class="pf-v6-c-label pf-m-compact pf-m-custom"
+                  style="
+                    --pf-v6-c-label--BackgroundColor: {{ .value }};
+                    --pf-v6-c-label--Color: {{ .text }};
+                  "
+                >
+                  <span class="pf-v6-c-label__content">{{ .value }}</span>
+                </span>
+              </div>
+            </dd>
+          </div>
+        {{ end }}
       </dl>
 
       <div class="pf-v6-c-content">

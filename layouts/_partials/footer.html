@@ -1,10 +1,13 @@
 {{ $f := .Site.Data.content.footer }}
+{{ $isHome := .IsHome }}
 <footer
   class="pf-v6-c-page__main-section pf-m-no-fill pf-m-limit-width pf-m-align-center"
   style="
-    --pf-v6-c-page__main-section--BackgroundColor: var(
-      --pf-t--global--background--color--secondary--default
-    );
+    {{ if $isHome }}
+      --pf-v6-c-page__main-section--BackgroundColor: var(--pf-t--global--background--color--secondary--default);
+    {{ else }}
+      background: linear-gradient(var(--pf-t--global--background--color--primary--default) 0%, var(--pf-t--global--background--color--secondary--default) 100%);
+    {{ end }}
   "
 >
   <div

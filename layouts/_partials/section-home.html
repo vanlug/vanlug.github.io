@@ -2,7 +2,7 @@
   <section
     class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
     style="
-      background: linear-gradient(color-mix(in srgb, var(--pf-t--global--background--color--primary--default) 80%, transparent) 0%, var(--pf-t--global--background--color--primary--default) 100%), url('{{ "design/lee-robinson-Yc9h5SJdEzI-unsplash.jpg" | relURL }}') center / cover;
+      background: linear-gradient(color-mix(in srgb, var(--pf-t--global--background--color--primary--default) 80%, transparent) 0%, var(--pf-x-hero-gradient-end) 100%), url('{{ "design/lee-robinson-Yc9h5SJdEzI-unsplash.jpg" | relURL }}') center / cover;
       padding-block: var(--pf-t--global--spacer--3xl);
     "
   >
@@ -53,6 +53,7 @@
 
   <section
     class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+    style="background: var(--pf-x-hero-gradient-end); padding-block-end: var(--pf-t--global--spacer--3xl)"
   >
     <div
       class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
@@ -130,6 +131,7 @@
 
   <section
     class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+    style="background: linear-gradient(var(--pf-x-hero-gradient-end) 0%, color-mix(in srgb, var(--pf-x-hero-gradient-end) 50%, var(--pf-t--global--background--color--secondary--default)) 100%)"
   >
     <div
       class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
@@ -207,6 +209,7 @@
   {{ with $c.supporters }}
     <section
       class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
+      style="background: linear-gradient(color-mix(in srgb, var(--pf-x-hero-gradient-end) 50%, var(--pf-t--global--background--color--secondary--default)) 0%, var(--pf-t--global--background--color--secondary--default) 100%)"
     >
       <div
         class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
@@ -281,6 +284,7 @@
 
   <section
     class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center pf-v6-u-display-none-on-xl"
+    style="--pf-v6-c-page__main-section--BackgroundColor: var(--pf-t--global--background--color--secondary--default)"
   >
     <div class="pf-v6-c-page__main-body">
       {{ partial "mastodon-feed" . }}
