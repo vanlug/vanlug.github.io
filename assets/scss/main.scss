@@ -7,6 +7,75 @@ $pf-v6-global--image-path: "../../images";
 @import "@patternfly/patternfly/patternfly.scss";
 @import "@patternfly/patternfly/patternfly-addons.scss";
 
+// We want to use BC Sans instead of Red Hat Text
+@font-face {
+  font-family: "BC Sans";
+  font-style: normal;
+  font-weight: 300;
+  src:
+    url("../../fonts/BCSans/BCSans-Light.woff2") format("woff2"),
+    url("../../fonts/BCSans/BCSans-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "BC Sans";
+  font-style: italic;
+  font-weight: 300;
+  src:
+    url("../../fonts/BCSans/BCSans-LightItalic.woff2") format("woff2"),
+    url("../../fonts/BCSans/BCSans-LightItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "BC Sans";
+  font-style: normal;
+  font-weight: 400;
+  src:
+    url("../../fonts/BCSans/BCSans-Regular.woff2") format("woff2"),
+    url("../../fonts/BCSans/BCSans-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "BC Sans";
+  font-style: italic;
+  font-weight: 400;
+  src:
+    url("../../fonts/BCSans/BCSans-Italic.woff2") format("woff2"),
+    url("../../fonts/BCSans/BCSans-Italic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "BC Sans";
+  font-style: normal;
+  font-weight: 700;
+  src:
+    url("../../fonts/BCSans/BCSans-Bold.woff2") format("woff2"),
+    url("../../fonts/BCSans/BCSans-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "BC Sans";
+  font-style: italic;
+  font-weight: 700;
+  src:
+    url("../../fonts/BCSans/BCSans-BoldItalic.woff2") format("woff2"),
+    url("../../fonts/BCSans/BCSans-BoldItalic.woff") format("woff");
+}
+
+:root {
+  --pf-x-base-color: #00529b;
+
+  --pf-t--global--font--family--100:
+    "BC Sans", "Noto Sans", Verdana, Arial, sans-serif;
+  --pf-t--global--font--family--200:
+    "BC Sans", "Noto Sans", Verdana, Arial, sans-serif;
+
+  // BC Sans only has 300/400/700
+  --pf-t--global--font--weight--200: 700;
+  --pf-t--global--font--weight--300: 700;
+}
+
+
 $font-path: "../../webfonts";
 @import "@fortawesome/fontawesome-free/scss/fontawesome";
 @import "@fortawesome/fontawesome-free/scss/solid";

@@ -21,3 +21,5 @@ module:
       target: static/pficon
     - source: node_modules/@fortawesome/fontawesome-free/webfonts
       target: static/webfonts
+    - source: node_modules/@bcgov/bc-sans/fonts
+      target: static/fonts/BCSans

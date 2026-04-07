@@ -124,17 +124,39 @@ tools:
 design:
   fonts:
     header:
-      name: "Red Hat Display"
-      url: "https://fonts.google.com/specimen/Red+Hat+Display?preview.script=Latn&query=red+hat"
+      name: "BC Sans"
+      url: "https://github.com/bcgov/bc-sans"
     text:
-      name: "Red Hat Text"
-      url: "https://fonts.google.com/specimen/Red+Hat+Text?preview.script=Latn&query=red+hat"
+      name: "BC Sans"
+      url: "https://github.com/bcgov/bc-sans"
     mono:
       name: "Red Hat Mono"
       url: "https://fonts.google.com/specimen/Red+Hat+Mono?preview.script=Latn&query=red+hat"
   colours:
-    light: "#0066cc"
-    dark: "#217cd6"
+    - name: "Blue"
+      value: "#00529B"
+      text: "#fff"
+    - name: "Green"
+      value: "#00703C"
+      text: "#fff"
+    - name: "Yellow"
+      value: "#FFCC00"
+      text: "#000"
+    - name: "Black"
+      value: "#000000"
+      text: "#fff"
+    - name: "White"
+      value: "#FFFFFF"
+      text: "#000"
+    - name: "CTA (light)"
+      value: "#00703C"
+      text: "#fff"
+    - name: "CTA (dark)"
+      value: "#4CC88A"
+      text: "#0d1520"
+    - name: "Brand (dark)"
+      value: "#b8d6f7"
+      text: "#000"
   assets:
     - name: icon
       description: "VanLUG icon (Tux with Vancouver flag stripes)"
