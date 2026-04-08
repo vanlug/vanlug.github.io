@@ -1,6 +1,6 @@
-export const proxyImageUrl = (url, api) => {
+export const proxyImageUrl = (url, api, size = "lg") => {
   if (!url) return "";
-  return `${api}/image?url=${encodeURIComponent(url)}`;
+  return `${api}/image?url=${encodeURIComponent(url)}&size=${size}`;
 };
 
 export const formatEvent = (evt, api) => {
@@ -32,7 +32,7 @@ export const formatEvent = (evt, api) => {
       ? `https://luma.com/${encodeURI(evt.url)}`
       : "https://luma.com/vanlug",
     location: evt.location || "",
-    coverUrl: proxyImageUrl(evt.cover_url, api),
+    coverUrl: proxyImageUrl(evt.cover_url, api, "sm"),
   };
 };
 

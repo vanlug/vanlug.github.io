@@ -30,17 +30,18 @@ var feedEntryTmpl = template.Must(
 		Parse(feedEntryTmplStr))
 
 type feedEntryData struct {
-	CoverURL    string `json:"cover_url,omitempty"`
-	Name        string `json:"name"`
-	DateLine    string `json:"date_line"`
-	TimeLine    string `json:"time_line"`
-	Location    string `json:"location,omitempty"`
-	FullAddress string `json:"full_address,omitempty"`
-	Hosts       string `json:"hosts,omitempty"`
-	Admission   string `json:"admission,omitempty"`
-	Description string `json:"description,omitempty"`
-	Link        string `json:"link"`
-	MapURL      string `json:"map_url,omitempty"`
+	CoverURL        string `json:"cover_url,omitempty"`
+	CoverURLPreview string `json:"-"`
+	Name            string `json:"name"`
+	DateLine        string `json:"date_line"`
+	TimeLine        string `json:"time_line"`
+	Location        string `json:"location,omitempty"`
+	FullAddress     string `json:"full_address,omitempty"`
+	Hosts           string `json:"hosts,omitempty"`
+	Admission       string `json:"admission,omitempty"`
+	Description     string `json:"description,omitempty"`
+	Link            string `json:"link"`
+	MapURL          string `json:"map_url,omitempty"`
 }
 
 func caTime(s string) string {
@@ -494,7 +495,8 @@ func EventsFeedHandler(w http.ResponseWriter, r *http.Request, apiBase string, e
 		data := buildEntryData(item, descriptions[i], lumaBase, mapBase)
 
 		if data.CoverURL != "" {
-			data.CoverURL = apiURL + "/image?" + url.Values{"url": {data.CoverURL}}.Encode()
+			data.CoverURLPreview = apiURL + "/image?" + url.Values{"url": {data.CoverURL}, "size": {"md"}}.Encode()
+			data.CoverURL = apiURL + "/image?" + url.Values{"url": {data.CoverURL}, "size": {"lg"}}.Encode()
 		}
 
 		published := now
@@ -522,9 +524,9 @@ func EventsFeedHandler(w http.ResponseWriter, r *http.Request, apiBase string, e
 			Content:     buf.String(),
 		}
 
-		if data.CoverURL != "" {
+		if data.CoverURLPreview != "" {
 			feedItem.Enclosure = &feeds.Enclosure{
-				Url: data.CoverURL,
+				Url: data.CoverURLPreview,
 			}
 		}
 

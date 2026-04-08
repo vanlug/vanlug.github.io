@@ -38,7 +38,7 @@ const renderToot = (toot, data, { isFirst, isLast, inDrawer, profile, api }) => 
   const mediaSlot = $("media");
   for (const m of toot.media?.slice(0, 1) ?? []) {
     const el = document.createElement(m.isVideo ? "video" : "img");
-    el.src = proxyImageUrl(m.url, api);
+    el.src = proxyImageUrl(m.url, api, "md");
     if (m.isVideo) el.controls = true;
     else el.alt = m.altText || "";
     el.className = "pf-v6-u-w-100";
@@ -50,7 +50,7 @@ const renderToot = (toot, data, { isFirst, isLast, inDrawer, profile, api }) => 
   if (!mediaSlot.children.length) mediaSlot.remove();
 
   const avatar = $("avatar");
-  avatar.src = proxyImageUrl(data.userProfilePictureURL, api);
+  avatar.src = proxyImageUrl(data.userProfilePictureURL, api, "sm");
   avatar.alt = data.userDisplayName;
 
   $("timestamp").textContent = new Date(toot.timestamp).toLocaleDateString(

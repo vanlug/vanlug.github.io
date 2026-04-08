@@ -109,7 +109,7 @@ customElements.define(
 
         const cover = $("cover");
         if (data.cover_url) {
-          cover.src = proxyImageUrl(data.cover_url, api);
+          cover.src = proxyImageUrl(data.cover_url, api, "lg");
           cover.alt = data.name;
         } else {
           cover.remove();
