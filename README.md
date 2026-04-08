@@ -56,7 +56,7 @@ Click on an image to see a larger version.
 - [gohugoio/hugo](https://github.com/gohugoio/hugo) provides the static site generator.
 - The open source [PatternFly design system](https://www.patternfly.org/) provides the UI components.
 - [FortAwesome/Font-Awesome](https://github.com/FortAwesome/Font-Awesome) provides the icons.
-- [lu.ma](https://lu.ma/) provides the event calendar and API.
+- [Luma](https://luma.com/home) provides the event calendar and API.
 
 ## Contributing
 

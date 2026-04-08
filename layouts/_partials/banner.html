@@ -1,0 +1,12 @@
+{{ with .Site.Data.banner }}
+  {{ if .enabled }}
+    <div class="pf-v6-c-banner pf-m-sticky{{ with .color }} pf-m-{{ . }}{{ end }} pf-v6-u-text-align-center" role="status" style="white-space: normal;">
+      <span class="pf-v6-screen-reader">{{ .screen_reader_text }}</span>
+      <i class="fas {{ with .icon }}{{ . }}{{ else }}fa-info-circle{{ end }} pf-v6-u-mr-sm" aria-hidden="true"></i>
+      {{- .message -}}
+      {{ if and .link_text .link_url }}
+        <a href="{{ .link_url }}">{{ .link_text }}{{ partial "icon" "external" }}</a>
+      {{ end }}
+    </div>
+  {{ end }}
+{{ end }}

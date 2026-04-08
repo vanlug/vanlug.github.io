@@ -1,0 +1,7 @@
+enabled: true
+color: info # info, warning, danger, success, custom
+screen_reader_text: "Info:"
+icon: fa-info-circle # fa-info-circle (info), fa-exclamation-triangle (warning), fa-exclamation-circle (danger), fa-check-circle (success), fa-bell (custom)
+message: "Our next Burnaby talk, Linux Talks (May 23), has changed location from the Bob Prittie Metrotown Branch to the Tommy Douglas Library."
+link_text: "RSVP on Luma" # Optional
+link_url: "https://luma.com/ahm1hi2s" # Optional

@@ -94,6 +94,7 @@
               <div class="pf-v6-c-drawer__content pf-v6-c-page__main-container">
                 <div class="pf-v6-c-drawer__body">
                   <main class="pf-v6-c-page__main" id="main-content">
+                    {{ partial "banner" . }}
                     {{ block "main" . }}{{ end }}
                   </main>
                 </div>
