@@ -148,15 +148,19 @@ design:
     - name: "White"
       value: "#FFFFFF"
       text: "#000"
+  roles:
+    - name: "Brand (light)"
+      value: "#00529B"
+      text: "#fff"
+    - name: "Brand (dark)"
+      value: "#b8d6f7"
+      text: "#000"
     - name: "CTA (light)"
       value: "#00703C"
       text: "#fff"
     - name: "CTA (dark)"
       value: "#4CC88A"
       text: "#0d1520"
-    - name: "Brand (dark)"
-      value: "#b8d6f7"
-      text: "#000"
   assets:
     - name: icon
       description: "VanLUG icon (Tux with Vancouver flag stripes)"

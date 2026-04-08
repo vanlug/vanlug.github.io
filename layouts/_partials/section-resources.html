@@ -257,119 +257,185 @@
       <div class="pf-v6-c-content">
         <h3>Design system</h3>
         <p>
-          VanLUG's design system is based on
+          This website uses
           <a
             href="https://www.patternfly.org/"
             target="_blank"
             rel="noopener"
             >PatternFly{{ partial "icon" "external" }}</a
-          >, the open-source design system used for this website.
+          >, Red Hat's open-source design system. All colours are drawn from the
+          <a
+            href="https://en.wikipedia.org/wiki/Flag_of_Vancouver"
+            target="_blank"
+            rel="noopener"
+            >flag of Vancouver{{ partial "icon" "external" }}</a
+          >:
         </p>
+      </div>
+      <div class="pf-v6-l-flex pf-m-column pf-m-gap-sm">
+        <img
+          src="{{ "design/flag-of-vancouver.svg" | relURL }}"
+          alt="Flag of the city of Vancouver, Canada"
+          style="max-width: 20rem;"
+        />
+        <div class="pf-v6-c-content">
+          <small>
+            Flag of Vancouver by
+            <a
+              href="https://commons.wikimedia.org/wiki/File:Flag_of_Vancouver.svg"
+              target="_blank"
+              rel="noopener"
+              >Sshu94{{ partial "icon" "external" }}</a
+            >, CC BY-SA 4.0.
+          </small>
+        </div>
       </div>
 
       <div class="pf-v6-c-content">
-        <h4>Icon &amp; logo</h4>
+        <h4>Logo</h4>
         <p>
-          The VanLUG icon is a modified version of
+          From 1999 to 2026, VanLUG used an unmodified
+          <a
+            href="https://commons.wikimedia.org/wiki/File:Tux.svg"
+            target="_blank"
+            rel="noopener"
+            >Tux{{ partial "icon" "external" }}</a
+          >
+          by Larry Ewing, Simon Budig and Garrett LeSage as its icon,
+          paired with a stylized mountain logo created by Ben Holt.
+        </p>
+        <p>
+          The current icon, adopted in 2026, is a modified
           <a
             href="https://commons.wikimedia.org/wiki/File:TuxFlat.svg"
             target="_blank"
             rel="noopener"
-            >Tux Flat SVG{{ partial "icon" "external" }}</a>
-          by gg3po and Iwan Gabovitch, based on
+            >Tux Flat SVG{{ partial "icon" "external" }}</a
+          >
+          by gg3po and Iwan Gabovitch (based on
           <a
             href="https://commons.wikimedia.org/wiki/File:NewTux.svg"
             target="_blank"
             rel="noopener"
-            >NewTux.svg{{ partial "icon" "external" }}</a>
+            >NewTux.svg{{ partial "icon" "external" }}</a
+          >
           by gg3po, itself based on the original
           <a
             href="https://commons.wikimedia.org/wiki/File:Tux.png"
             target="_blank"
             rel="noopener"
-            >Tux.png{{ partial "icon" "external" }}</a>
-          by Larry Ewing. The wavy stripes from the
-          <a
-            href="https://en.wikipedia.org/wiki/Flag_of_Vancouver"
-            target="_blank"
-            rel="noopener"
-            >flag of Vancouver{{ partial "icon" "external" }}</a>
-          have been added to the belly. Licensed under the
+            >Tux.png{{ partial "icon" "external" }}</a
+          >
+          by Larry Ewing) with the wavy stripes of the Vancouver flag added
+          to the belly. It is licensed under the
           <a
             href="https://www.gnu.org/licenses/gpl-2.0.html"
             target="_blank"
             rel="noopener"
-            >GNU GPL v2{{ partial "icon" "external" }}</a>
-          or later. The full logo combines the icon with the
-          &ldquo;VanLUG/Vancouver Linux User Group&rdquo; wordmark, as
-          seen on the banner and event cards.
+            >GNU GPL v2{{ partial "icon" "external" }}</a
+          >
+          or later. The full logo pairs the icon with the
+          &ldquo;VanLUG / Vancouver Linux User Group&rdquo; wordmark.
         </p>
+      </div>
+      <div class="pf-v6-l-flex pf-m-gap-lg pf-m-align-items-flex-end pf-m-wrap">
+        <div class="pf-v6-l-flex pf-m-column pf-m-gap-sm pf-m-align-items-center">
+          <img
+            src="{{ "design/tux.svg" | relURL }}"
+            alt="Tux, the Linux mascot, used as the original VanLUG icon"
+            style="height: 6rem;"
+          />
+          <div class="pf-v6-c-content"><small>Original icon (1999&ndash;2026)</small></div>
+        </div>
+        <div class="pf-v6-l-flex pf-m-column pf-m-gap-sm pf-m-align-items-center">
+          <img
+            src="{{ "design/icon.png" | relURL }}"
+            alt="VanLUG icon"
+            style="height: 6rem;"
+          />
+          <div class="pf-v6-c-content"><small>Icon by Felicitas Pojtinger (2026&ndash;present)</small></div>
+        </div>
+        <div class="pf-v6-l-flex pf-m-column pf-m-gap-sm pf-m-align-items-center">
+          <img
+            src="{{ "design/logo-old.svg" | relURL }}"
+            alt="Original VanLUG logo by Ben Holt"
+            style="height: 6rem; background: #fff; padding: 0.5rem;"
+          />
+          <div class="pf-v6-c-content"><small>Original logo by Ben Holt (1999&ndash;2026)</small></div>
+        </div>
+        <div class="pf-v6-l-flex pf-m-column pf-m-gap-sm pf-m-align-items-center">
+          <img
+            src="{{ "design/logo.png" | relURL }}"
+            alt="VanLUG logo"
+            style="height: 6rem; background: #fff; padding: 0.5rem;"
+          />
+          <div class="pf-v6-c-content"><small>Logo by Felicitas Pojtinger (2026&ndash;present)</small></div>
+        </div>
       </div>
 
       <div class="pf-v6-c-content">
         <h4>Fonts</h4>
       </div>
-      <dl
-        class="pf-v6-c-description-list pf-m-horizontal pf-m-compact"
-      >
+      <div class="pf-v6-l-flex pf-m-gap-sm pf-m-wrap">
         {{ range $key, $val := .Site.Data.resources.design.fonts }}
-          <div class="pf-v6-c-description-list__group">
-            <dt class="pf-v6-c-description-list__term">
-              <span class="pf-v6-c-description-list__text">{{ $key | title }}</span>
-            </dt>
-            <dd class="pf-v6-c-description-list__description">
-              <div class="pf-v6-c-description-list__text">
-                <a
-                  href="{{ $val.url }}"
-                  target="_blank"
-                  rel="noopener"
-                  >{{ $val.name }}{{ partial "icon" "external" }}</a>
-              </div>
-            </dd>
-          </div>
+          <span class="pf-v6-c-label pf-m-compact pf-m-outline">
+            <a
+              href="{{ $val.url }}"
+              target="_blank"
+              rel="noopener"
+              class="pf-v6-c-label__content"
+            >
+              <span class="pf-v6-c-label__text">{{ $key | title }}: {{ $val.name }}</span>
+              <span class="pf-v6-c-label__icon">
+                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+              </span>
+            </a>
+          </span>
         {{ end }}
-      </dl>
+      </div>
 
       <div class="pf-v6-c-content">
-        <h4>Colours (Vancouver flag palette)</h4>
+        <h4>Colours</h4>
       </div>
-      <dl
-        class="pf-v6-c-description-list pf-m-horizontal pf-m-compact"
-      >
+      <div class="pf-v6-l-flex pf-m-gap-sm pf-m-wrap">
         {{ range .Site.Data.resources.design.colours }}
-          <div class="pf-v6-c-description-list__group">
-            <dt class="pf-v6-c-description-list__term">
-              <span class="pf-v6-c-description-list__text"
-                >{{ .name }}</span
-              >
-            </dt>
-            <dd class="pf-v6-c-description-list__description">
-              <div class="pf-v6-c-description-list__text">
-                <span
-                  class="pf-v6-c-label pf-m-compact pf-m-custom"
-                  style="
-                    --pf-v6-c-label--BackgroundColor: {{ .value }};
-                    --pf-v6-c-label--Color: {{ .text }};
-                  "
-                >
-                  <span class="pf-v6-c-label__content">{{ .value }}</span>
-                </span>
-              </div>
-            </dd>
-          </div>
+          <span
+            class="pf-v6-c-label pf-m-compact pf-m-custom"
+            style="
+              --pf-v6-c-label--BackgroundColor: {{ .value }};
+              --pf-v6-c-label--Color: {{ .text }};
+            "
+          >
+            <span class="pf-v6-c-label__content">
+              <span class="pf-v6-c-label__text">{{ .name }} {{ .value }}</span>
+            </span>
+          </span>
         {{ end }}
-      </dl>
+        {{ range .Site.Data.resources.design.roles }}
+          <span
+            class="pf-v6-c-label pf-m-compact pf-m-outline pf-m-custom"
+            style="
+              --pf-v6-c-label--BackgroundColor: {{ .value }};
+              --pf-v6-c-label--Color: {{ .text }};
+            "
+          >
+            <span class="pf-v6-c-label__content">
+              <span class="pf-v6-c-label__text">{{ .name }} {{ .value }}</span>
+            </span>
+          </span>
+        {{ end }}
+      </div>
 
       <div class="pf-v6-c-content">
         <h4>Assets</h4>
         <p>
-          All assets are created and maintained with
+          Created with
           <a
             href="https://inkscape.org/"
             target="_blank"
             rel="noopener"
             >Inkscape{{ partial "icon" "external" }}</a
-          >. All files are in
+          >. Source files are in
           <a
             href="{{ .Site.Data.site.source }}/tree/main/static/design"
             target="_blank"
@@ -381,13 +447,45 @@
             target="_blank"
             rel="noopener"
             >Unsplash{{ partial "icon" "external" }}</a
-          >:
+          >.
         </p>
+      </div>
+
+      <div class="pf-v6-l-flex pf-m-gap-lg pf-m-align-items-flex-start pf-m-wrap">
+        <div class="pf-v6-l-flex pf-m-column pf-m-gap-sm pf-v6-u-flex-1" style="min-width: 15rem;">
+          <img
+            src="{{ "design/header.png" | relURL }}"
+            alt="VanLUG header banner"
+            style="max-width: 100%; height: 10rem; object-fit: contain;"
+          />
+          <div class="pf-v6-c-content">
+            <small>
+              header.svg / header.png. Banner for Luma, OpenGraph and the home page.
+              Photo by
+              <a href="https://unsplash.com/photos/Yc9h5SJdEzI" target="_blank" rel="noopener">Lee Robinson{{ partial "icon" "external" }}</a>.
+            </small>
+          </div>
+        </div>
+        <div class="pf-v6-l-flex pf-m-column pf-m-gap-sm">
+          <img
+            src="{{ "design/card-talks.png" | relURL }}"
+            alt="VanLUG Linux Talks event card"
+            style="height: 10rem; object-fit: contain;"
+          />
+          <div class="pf-v6-c-content">
+            <small>
+              Example event card (card-talks.svg / card-talks.png).
+              Photo by
+              <a href="https://unsplash.com/photos/bWRX_obQAl8" target="_blank" rel="noopener">Wesley Tingey{{ partial "icon" "external" }}</a>.
+            </small>
+          </div>
+        </div>
       </div>
 
       <table
         class="pf-v6-c-table pf-m-compact pf-m-grid-md"
         role="grid"
+        aria-label="Design assets"
       >
         <thead class="pf-v6-c-table__thead">
           <tr class="pf-v6-c-table__tr" role="row">
@@ -418,7 +516,7 @@
           {{ range .Site.Data.resources.design.assets }}
             <tr class="pf-v6-c-table__tr" role="row">
               <td class="pf-v6-c-table__td" role="cell">
-                <a href="{{ printf "design/%s.svg" .name | relURL }}" target="_blank">{{ .name }}.svg</a>/<a href="{{ printf "design/%s.png" .name | relURL }}" target="_blank">{{ .name }}.png</a>
+                <a href="{{ printf "design/%s.svg" .name | relURL }}" target="_blank">{{ .name }}.svg</a> / <a href="{{ printf "design/%s.png" .name | relURL }}" target="_blank">{{ .name }}.png</a>
               </td>
               <td class="pf-v6-c-table__td" role="cell">
                 {{ .description }}
@@ -436,7 +534,7 @@
                     >source</a
                   >)
                 {{ else }}
-                  &mdash;
+                  n/a
                 {{ end }}
               </td>
             </tr>
