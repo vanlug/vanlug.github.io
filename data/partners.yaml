@@ -15,3 +15,7 @@
   logo: img/zspace-logo.webp
   logoNoPad: true
   description: A registered non-profit in British Columbia providing affordable, sustainable, community-oriented space dedicated to supporting creative technologists, startups, and innovative small businesses in Vancouver. They host co-working, presentations, and events connecting the local art and tech community.
+- name: West Vancouver Memorial Library
+  url: https://westvanlibrary.ca/
+  logo: img/wvml.png
+  description: Since 1950, The West Vancouver Memorial Library has long been one of the quiet cornerstones of our civic life—a place where curiosity is nurtured, ideas are explored, and neighbours of all ages find connection.
