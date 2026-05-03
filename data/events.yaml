@@ -1,4 +1,22 @@
 past:
+  - date: "Apr 21, 2026"
+    name: "Linux Link at Surrey (Guildford)"
+    location: "Surrey Libraries, Guildford Branch"
+    links:
+      - title: Luma
+        url: https://luma.com/dtp4rbec
+  - date: "Apr 8, 2026"
+    name: "Linux Link at Richmond"
+    location: "Richmond Public Library, Brighouse Branch"
+    links:
+      - title: Luma
+        url: https://luma.com/t5jdcd0f
+  - date: "Apr 4, 2026"
+    name: "Linux Chill and Hangout"
+    location: "Burnaby Public Library, Bob Prittie Metrotown Branch"
+    links:
+      - title: Luma
+        url: https://luma.com/6vxeehqg
   - date: "Mar 21, 2026"
     name: "Linux Talks: Ansible 101 - Automate Everything"
     location: "Burnaby Public Library, Bob Prittie Metrotown"
