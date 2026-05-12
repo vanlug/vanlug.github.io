@@ -1,7 +1,7 @@
 {{ $f := .Site.Data.content.footer }}
 {{ $isHome := .IsHome }}
 <footer
-  class="pf-v6-c-page__main-section pf-m-no-fill pf-m-limit-width pf-m-align-center"
+  class="pf-v6-c-page__main-section pf-m-no-fill pf-m-limit-width pf-m-align-center{{ if not $isHome }} pf-v6-u-mt-auto{{ end }}"
   style="
     {{ if $isHome }}
       --pf-v6-c-page__main-section--BackgroundColor: var(--pf-t--global--background--color--secondary--default);
