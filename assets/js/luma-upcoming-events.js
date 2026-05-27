@@ -9,7 +9,7 @@ rowTemplate.innerHTML = `
         <span class="pf-v6-u-display-inline-block pf-v6-u-display-none-on-md" data-slot="cover-mobile"></span>
         <div>
           <div class="pf-v6-u-font-weight-bold pf-v6-u-display-block pf-v6-u-display-none-on-md" data-slot="name-mobile"></div>
-          <div><span data-slot="date"></span> <span class="pf-v6-u-font-size-xs" data-slot="relative"></span></div>
+          <div style="white-space: nowrap;"><span data-slot="date"></span> <span class="pf-v6-u-font-size-xs" data-slot="relative"></span></div>
           <small class="pf-v6-u-text-color-subtle" data-slot="time"></small>
         </div>
       </div>
