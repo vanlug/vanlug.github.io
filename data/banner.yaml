@@ -1,4 +1,4 @@
-enabled: true
+enabled: false
 color: info # info, warning, danger, success, custom
 screen_reader_text: "Info:"
 icon: fa-info-circle # fa-info-circle (info), fa-exclamation-triangle (warning), fa-exclamation-circle (danger), fa-check-circle (success), fa-bell (custom)
