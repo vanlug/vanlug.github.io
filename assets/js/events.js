@@ -5,7 +5,11 @@ export const proxyImageUrl = (url, api, size = "lg") => {
 
 export const formatEvent = (evt, api) => {
   const start = new Date(evt.start_at);
-  const days = Math.ceil((start - new Date()) / 86400000);
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const eventDay = new Date(start);
+  eventDay.setHours(0, 0, 0, 0);
+  const days = Math.round((eventDay - today) / 86400000);
   return {
     apiId: evt.api_id,
     name: evt.name || "VanLUG Meeting",
