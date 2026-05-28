@@ -4,10 +4,18 @@ import { proxyImageUrl } from "./events.js";
 const tootTemplate = document.createElement("template");
 tootTemplate.innerHTML = `
   <a target="_blank" rel="noopener" style="text-decoration: none;">
+    <div class="pf-v6-l-flex pf-m-gap-xs pf-m-align-items-center pf-v6-u-font-size-xs pf-v6-u-text-color-subtle" data-slot="boost" hidden>
+      <i class="fas fa-retweet" aria-hidden="true"></i>
+      <img data-slot="boost-avatar" style="width: 1rem; height: 1rem; border-radius: 50%;" />
+      <span data-slot="boost-label"></span>
+    </div>
     <div class="pf-v6-c-content pf-v6-u-font-size-sm" data-slot="body"></div>
     <div data-slot="media"></div>
     <div class="pf-v6-l-flex pf-m-gap-sm pf-m-align-items-center pf-v6-u-font-size-xs pf-v6-u-text-color-subtle">
-      <img data-slot="avatar" style="width: 1rem; height: 1rem; border-radius: 50%;" />
+      <span class="pf-v6-l-flex pf-m-align-items-center" data-slot="identity">
+        <img data-slot="avatar" style="width: 1rem; height: 1rem; border-radius: 50%;" />
+        <span data-slot="author-name" hidden></span>
+      </span>
       <span data-slot="timestamp"></span>
       <span class="pf-v6-l-flex pf-m-gap-sm pf-m-align-items-center" data-slot="stats"></span>
     </div>
@@ -32,6 +40,17 @@ const renderToot = (toot, data, { isFirst, isLast, inDrawer, profile, api }) => 
       "var(--pf-t--global--border--width--divider--default) solid var(--pf-t--global--border--color--default)";
   }
 
+  const boost = $("boost");
+  if (toot.boostedBy) {
+    boost.hidden = false;
+    const boostAvatar = $("boost-avatar");
+    boostAvatar.src = proxyImageUrl(toot.boostedBy.userProfilePictureURL, api, "sm");
+    boostAvatar.alt = toot.boostedBy.userDisplayName;
+    $("boost-label").textContent = `${toot.boostedBy.userDisplayName} boosted`;
+  } else {
+    boost.remove();
+  }
+
   const body = $("body");
   body.innerHTML = DOMPurify.sanitize(toot.body); // In the future, we want to use https://developer.mozilla.org/en-US/docs/Web/API/Element/setHTML for this
 
@@ -49,9 +68,22 @@ const renderToot = (toot, data, { isFirst, isLast, inDrawer, profile, api }) => 
   }
   if (!mediaSlot.children.length) mediaSlot.remove();
 
+  const author = toot.author ?? {
+    userProfilePictureURL: data.userProfilePictureURL,
+    userDisplayName: data.userDisplayName,
+  };
   const avatar = $("avatar");
-  avatar.src = proxyImageUrl(data.userProfilePictureURL, api, "sm");
-  avatar.alt = data.userDisplayName;
+  avatar.src = proxyImageUrl(author.userProfilePictureURL, api, "sm");
+  avatar.alt = author.userDisplayName;
+
+  const authorName = $("author-name");
+  if (toot.boostedBy) {
+    authorName.hidden = false;
+    authorName.textContent = author.userDisplayName;
+    $("identity").classList.add("pf-m-gap-xs");
+  } else {
+    authorName.remove();
+  }
 
   $("timestamp").textContent = new Date(toot.timestamp).toLocaleDateString(
     undefined,
@@ -88,7 +120,7 @@ customElements.define(
       const profile = this.getAttribute("profile");
       try {
         const data = await fetch(
-          `${api}/mastodon?username=${encodeURIComponent(username)}`,
+          `${api}/mastodon?username=${encodeURIComponent(username)}&includeReblogs`,
         ).then((r) => r.json());
         if (!data.toots?.length) {
           this.textContent = "No posts yet.";
