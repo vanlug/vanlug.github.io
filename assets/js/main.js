@@ -1,4 +1,3 @@
-import "./theme.js";
 import "./sidebar.js";
 import "./event-detail-modal.js";
 import "./luma-next-event.js";
