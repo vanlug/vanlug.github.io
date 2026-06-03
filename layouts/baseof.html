@@ -49,7 +49,7 @@
     />
     <meta
       name="copyright"
-      content="© {{ now.Year }} Vancouver Linux Users Group"
+      content="© {{ now.Year }} {{ .Site.Data.site.author }} ({{ .Site.Data.site.license }})"
     />
 
     <meta property="og:title" content="{{ .Site.Title }}" />
@@ -61,11 +61,7 @@
     <meta property="og:url" content="{{ .Site.BaseURL }}" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="{{ .Site.Data.site.author }}" />
-    <meta property="og:locale" content="en_CA" />
-    <script>
-      if (matchMedia("(prefers-color-scheme: dark)").matches)
-        document.documentElement.classList.add("pf-v6-theme-dark");
-    </script>
+    <meta property="og:locale" content="{{ .Site.Language.LanguageCode }}" />
     {{ with resources.Get "js/head.js" }}
       {{ $opts := dict
         "minify" (not hugo.IsDevelopment)

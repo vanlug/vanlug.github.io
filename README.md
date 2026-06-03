@@ -75,4 +75,4 @@ $ hugo server
 
 vanlug.ca (c) 2026 Felicitas Pojtinger and contributors
 
-SPDX-License-Identifier: AGPL-3.0
+SPDX-License-Identifier: AGPL-3.0-or-later
