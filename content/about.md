@@ -3,7 +3,7 @@ title: About VanLUG
 layout: about
 ---
 
-The Vancouver Linux User Group is a non-profit association of technology professionals and enthusiasts in the Greater Vancouver area. With over 2,200 members, we are one of the largest Linux user groups in the world.
+The Vancouver Linux User Group is a non-profit association of technology professionals and enthusiasts in the Greater Vancouver area. We are one of the largest Linux user groups in the world.
 
 VanLUG existed for a couple of years before it was officially incorporated on March 29, 1999. What started as a handful of people in a library meeting room has grown into one of the most active user groups of its kind across Greater Vancouver and the Lower Mainland.
 

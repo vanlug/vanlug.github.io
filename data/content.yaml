@@ -2,7 +2,7 @@ home:
   badge: ""
   title: "Vancouver's Linux community"
   subtitle: "Come get free help - stay for the friendly chats"
-  body: "Since 1999, our more than 2000 members have been promoting Linux and free, open-source software through monthly talks, drop-in help sessions, and community events, all free and all volunteer-run, for every level of proficiency."
+  body: "Since 1999, we've been promoting Linux and free, open-source software through monthly talks, drop-in help sessions, and community events, all free and all volunteer-run, for every level of proficiency."
   cta_primary:
     title: See upcoming events
     page: /events/
