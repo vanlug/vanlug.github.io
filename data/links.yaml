@@ -5,10 +5,10 @@ navbar:
     page: /about/
   - title: Events
     page: /events/
-cta:
-  title: Become a member
-  titleShort: Membership
-  page: /membership/
+# cta: # TODO: Re-enable the membership CTA once the membership rules have been reworked
+#   title: Become a member
+#   titleShort: Membership
+#   page: /membership/
 sidebar:
   - title: Home
     page: /
