@@ -71,19 +71,22 @@
               </ul>
             </nav>
           </div>
-            <!-- TODO: Re-enable the membership CTA once the membership rules have been reworked -->
-            <!-- <div class="pf-v6-c-toolbar__item">
-            <a
-              href="{{ .Site.Data.links.cta.page | relURL }}"
-              class="pf-v6-c-button pf-m-primary pf-m-small"
-              ><span
-                class="pf-v6-u-display-none pf-v6-u-display-inline-on-md"
-                >{{ .Site.Data.links.cta.title }}</span
-              ><span class="pf-v6-u-display-none-on-md"
-                >{{ .Site.Data.links.cta.titleShort }}</span
-              ></a
-            > -->
-          </div>
+          {{ with .Site.Data.links.cta }}
+            {{ if and .title .titleShort }}
+              <div class="pf-v6-c-toolbar__item">
+                <a
+                  href="{{ .page | relURL }}"
+                  class="pf-v6-c-button pf-m-primary pf-m-small"
+                  ><span
+                    class="pf-v6-u-display-none pf-v6-u-display-inline-on-md"
+                    >{{ .title }}</span
+                  ><span class="pf-v6-u-display-none-on-md"
+                    >{{ .titleShort }}</span
+                  ></a
+                >
+              </div>
+            {{ end }}
+          {{ end }}
         </div>
       </div>
     </div>
