@@ -1,4 +1,4 @@
-{{ $f := .Site.Data.content.footer }}
+{{ $f := hugo.Data.content.footer }}
 {{ $isHome := .IsHome }}
 <footer
   class="pf-v6-c-page__main-section pf-m-no-fill pf-m-limit-width pf-m-align-center{{ if not $isHome }} pf-v6-u-mt-auto{{ end }}"
@@ -24,7 +24,7 @@
       </div>
       <div class="pf-v6-c-card__footer">
         <a
-          href="{{ .Site.Data.links.donate.url }}"
+          href="{{ hugo.Data.links.donate.url }}"
           target="_blank"
           rel="noopener"
           class="pf-v6-c-button pf-m-control"
@@ -50,16 +50,16 @@
               >Our <a href="{{ "/conduct/" | relURL }}">Code of Conduct</a> applies in
               all VanLUG spaces. Find the website
               <a
-                href="{{ .Site.Data.site.source }}"
+                href="{{ hugo.Data.site.source }}"
                 target="_blank"
                 rel="noopener"
                 >source code{{ partial "icon" "external" }}</a>
               on GitHub, licensed under
               <a
-                href="{{ .Site.Data.site.source }}/blob/main/LICENSE"
+                href="{{ hugo.Data.site.source }}/blob/main/LICENSE"
                 target="_blank"
                 rel="noopener"
-                >{{ .Site.Data.site.license }}{{ partial "icon" "external" }}</a
+                >{{ hugo.Data.site.license }}{{ partial "icon" "external" }}</a
               >. See our <a href="{{ "/terms/" | relURL }}">terms</a> and
               <a href="{{ "/privacy/" | relURL }}">privacy policy</a>.</small
             >

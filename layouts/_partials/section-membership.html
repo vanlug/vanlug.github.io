@@ -1,4 +1,4 @@
-{{ $c := .Site.Data.content.membership }}
+{{ $c := hugo.Data.content.membership }}
   <section
     class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
   >
@@ -64,7 +64,7 @@
         </p>
       </div>
       <a
-        href="{{ .Site.Data.links.luma.url }}"
+        href="{{ hugo.Data.links.luma.url }}"
         target="_blank"
         rel="noopener"
         class="pf-v6-c-button pf-m-primary"

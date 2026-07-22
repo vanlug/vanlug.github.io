@@ -57,7 +57,7 @@
           </tr>
         </thead>
         <tbody class="pf-v6-c-table__tbody" role="rowgroup">
-          {{ range .Site.Data.resources.slides }}
+          {{ range hugo.Data.resources.slides }}
             <tr class="pf-v6-c-table__tr" role="row">
               <td
                 class="pf-v6-c-table__td"
@@ -105,7 +105,7 @@
         <h3>AGM documents</h3>
         <p>Minutes and reports from our Annual General Meetings.</p>
         <ul>
-          {{ range .Site.Data.resources.agm_documents }}
+          {{ range hugo.Data.resources.agm_documents }}
             <li>
               <a
                 href="{{ .url | relURL }}"
@@ -147,7 +147,7 @@
           <div class="pf-v6-c-card__body">
             <div class="pf-v6-c-content">
               <ul>
-                {{ range .Site.Data.resources.learning.beginner }}
+                {{ range hugo.Data.resources.learning.beginner }}
                   <li>
                     <a
                       href="{{ .url }}"
@@ -173,7 +173,7 @@
           <div class="pf-v6-c-card__body">
             <div class="pf-v6-c-content">
               <ul>
-                {{ range .Site.Data.resources.learning.intermediate }}
+                {{ range hugo.Data.resources.learning.intermediate }}
                   <li>
                     <a
                       href="{{ .url }}"
@@ -199,7 +199,7 @@
           <div class="pf-v6-c-card__body">
             <div class="pf-v6-c-content">
               <ul>
-                {{ range .Site.Data.resources.learning.distros }}
+                {{ range hugo.Data.resources.learning.distros }}
                   <li>
                     <a
                       href="{{ .url }}"
@@ -233,7 +233,7 @@
       <div class="pf-v6-c-content">
         <h3>Tools &amp; reference</h3>
         <ul>
-          {{ range .Site.Data.resources.tools }}
+          {{ range hugo.Data.resources.tools }}
             <li>
               <a
                 href="{{ .url }}"
@@ -377,7 +377,7 @@
         <h4>Fonts</h4>
       </div>
       <div class="pf-v6-l-flex pf-m-gap-sm pf-m-wrap">
-        {{ range $key, $val := .Site.Data.resources.design.fonts }}
+        {{ range $key, $val := hugo.Data.resources.design.fonts }}
           <span class="pf-v6-c-label pf-m-compact pf-m-outline">
             <a
               href="{{ $val.url }}"
@@ -398,7 +398,7 @@
         <h4>Colours</h4>
       </div>
       <div class="pf-v6-l-flex pf-m-gap-sm pf-m-wrap">
-        {{ range .Site.Data.resources.design.colours }}
+        {{ range hugo.Data.resources.design.colours }}
           <span
             class="pf-v6-c-label pf-m-compact pf-m-custom"
             style="
@@ -411,7 +411,7 @@
             </span>
           </span>
         {{ end }}
-        {{ range .Site.Data.resources.design.roles }}
+        {{ range hugo.Data.resources.design.roles }}
           <span
             class="pf-v6-c-label pf-m-compact pf-m-outline pf-m-custom"
             style="
@@ -437,7 +437,7 @@
             >Inkscape{{ partial "icon" "external" }}</a
           >. Source files are in
           <a
-            href="{{ .Site.Data.site.source }}/tree/main/static/design"
+            href="{{ hugo.Data.site.source }}/tree/main/static/design"
             target="_blank"
             rel="noopener"
             >static/design/{{ partial "icon" "external" }}</a
@@ -513,7 +513,7 @@
           </tr>
         </thead>
         <tbody class="pf-v6-c-table__tbody">
-          {{ range .Site.Data.resources.design.assets }}
+          {{ range hugo.Data.resources.design.assets }}
             <tr class="pf-v6-c-table__tr" role="row">
               <td class="pf-v6-c-table__td" role="cell">
                 <a href="{{ printf "design/%s.svg" .name | relURL }}" target="_blank">{{ .name }}.svg</a> / <a href="{{ printf "design/%s.png" .name | relURL }}" target="_blank">{{ .name }}.png</a>

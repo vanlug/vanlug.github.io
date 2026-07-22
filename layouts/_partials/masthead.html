@@ -58,7 +58,7 @@
             >
               <ul class="pf-v6-c-nav__list" role="list">
                 {{ $current := $.RelPermalink }}
-                {{ range .Site.Data.links.navbar }}
+                {{ range hugo.Data.links.navbar }}
                   <li class="pf-v6-c-nav__item">
                     <a
                       class="pf-v6-c-nav__link{{ if eq $current .page }} pf-m-current{{ end }}"
@@ -71,7 +71,7 @@
               </ul>
             </nav>
           </div>
-          {{ with .Site.Data.links.cta }}
+          {{ with hugo.Data.links.cta }}
             {{ if and .title .titleShort }}
               <div class="pf-v6-c-toolbar__item">
                 <a

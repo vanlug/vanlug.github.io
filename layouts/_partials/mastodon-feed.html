@@ -4,7 +4,7 @@
       <h3>Latest posts</h3>
     </div>
     <a
-      href="{{ .Site.Data.links.socials.mastodon.url }}"
+      href="{{ hugo.Data.links.socials.mastodon.url }}"
       target="_blank"
       rel="noopener"
       class="pf-v6-c-button pf-m-control pf-m-small"
@@ -14,9 +14,9 @@
     ></a>
   </div>
   <mastodon-feed
-    username="{{ .Site.Data.links.socials.mastodon.username }}"
-    api="{{ .Site.Data.links.api }}"
-    profile="{{ .Site.Data.links.socials.mastodon.url }}"
+    username="{{ hugo.Data.links.socials.mastodon.username }}"
+    api="{{ hugo.Data.links.api }}"
+    profile="{{ hugo.Data.links.socials.mastodon.url }}"
   >
     <div class="pf-v6-l-flex pf-m-column pf-m-gap-sm js-only">
       {{ range (seq 3) }}
@@ -45,13 +45,13 @@
   <div class="pf-v6-c-content pf-v6-u-font-size-sm pf-v6-u-text-align-center pf-v6-u-pb-sm">
     <p>
       <a
-        href="{{ .Site.Data.links.socials.mastodon.url }}"
+        href="{{ hugo.Data.links.socials.mastodon.url }}"
         target="_blank"
         rel="noopener"
         >See all posts{{ partial "icon" "external" }}</a
       >, or subscribe via
       <a
-        href="{{ .Site.Data.links.feed.mastodon }}"
+        href="{{ hugo.Data.links.feed.mastodon }}"
         target="_blank"
         rel="noopener"
         >RSS{{ partial "icon" "rss" }}</a

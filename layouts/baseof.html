@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ .Site.Language.LanguageCode }}">
+<html lang="{{ .Site.Language.Locale }}">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -34,34 +34,34 @@
     <meta name="theme-color" content="#eff3f7" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#111a26" media="(prefers-color-scheme: dark)" />
 
-    {{ range .Site.Data.links.me }}
+    {{ range hugo.Data.links.me }}
       <link rel="me" href="{{ . }}" />
     {{ end }}
-    <link rel="alternate" type="application/rss+xml" title="Mastodon posts from {{ .Site.Title }}" href="{{ .Site.Data.links.feed.mastodon }}" />
-    <link rel="alternate" type="application/atom+xml" title="Upcoming events from {{ .Site.Title }}" href="{{ .Site.Data.links.api }}/events/feed?calendar={{ .Site.Data.links.luma.calendar }}" />
+    <link rel="alternate" type="application/rss+xml" title="Mastodon posts from {{ .Site.Title }}" href="{{ hugo.Data.links.feed.mastodon }}" />
+    <link rel="alternate" type="application/atom+xml" title="Upcoming events from {{ .Site.Title }}" href="{{ hugo.Data.links.api }}/events/feed?calendar={{ hugo.Data.links.luma.calendar }}" />
 
-    <meta name="author" content="{{ .Site.Data.site.author }}" />
+    <meta name="author" content="{{ hugo.Data.site.author }}" />
     <meta name="fediverse:creator" content="@vanlug@thecanadian.social" />
-    <meta name="description" content="{{ .Site.Data.site.description }}" />
+    <meta name="description" content="{{ hugo.Data.site.description }}" />
     <meta
       name="keywords"
-      content="{{ delimit .Site.Data.site.keywords `, ` }}"
+      content="{{ delimit hugo.Data.site.keywords `, ` }}"
     />
     <meta
       name="copyright"
-      content="© {{ now.Year }} {{ .Site.Data.site.author }} ({{ .Site.Data.site.license }})"
+      content="© {{ now.Year }} {{ hugo.Data.site.author }} ({{ hugo.Data.site.license }})"
     />
 
     <meta property="og:title" content="{{ .Site.Title }}" />
     <meta
       property="og:description"
-      content="{{ .Site.Data.site.description }}"
+      content="{{ hugo.Data.site.description }}"
     />
     <meta property="og:image" content="/design/header.png" />
     <meta property="og:url" content="{{ .Site.BaseURL }}" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="{{ .Site.Data.site.author }}" />
-    <meta property="og:locale" content="{{ .Site.Language.LanguageCode }}" />
+    <meta property="og:site_name" content="{{ hugo.Data.site.author }}" />
+    <meta property="og:locale" content="{{ .Site.Language.Locale }}" />
     {{ with resources.Get "js/head.js" }}
       {{ $opts := dict
         "minify" (not hugo.IsDevelopment)

@@ -1,6 +1,5 @@
 baseURL: https://vanlug.ca/
 locale: en-CA
-languageCode: en-CA
 title: "VanLUG: Vancouver Linux Users Group"
 relativeURLs: true
 build:

@@ -1,4 +1,4 @@
-{{ $c := .Site.Data.content.home }}
+{{ $c := hugo.Data.content.home }}
   <section
     class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
     style="
@@ -17,7 +17,7 @@
           {{ $c.subtitle }}
         </p>
         <p class="pf-v6-u-font-size-lg">
-          {{ .Site.Data.site.description }} {{ $c.body }}
+          {{ hugo.Data.site.description }} {{ $c.body }}
         </p>
       </div>
       <div class="pf-v6-l-flex pf-m-gap-sm">
@@ -27,7 +27,7 @@
         <a href="{{ $c.cta_secondary.page | relURL }}" class="pf-v6-c-button pf-m-secondary"
           >{{ $c.cta_secondary.title }}</a
         >
-        {{ $social := index .Site.Data.links.socials $c.cta_link.social }}
+        {{ $social := index hugo.Data.links.socials $c.cta_link.social }}
         <a
           href="{{ $social.url }}"
           target="_blank"
@@ -52,8 +52,8 @@
         <h3>{{ $c.next_meeting.title }}</h3>
       </div>
       <luma-next-event
-        calendar="{{ .Site.Data.links.luma.calendar }}"
-        api="{{ .Site.Data.links.api }}"
+        calendar="{{ hugo.Data.links.luma.calendar }}"
+        api="{{ hugo.Data.links.api }}"
       >
         <div class="pf-v6-c-card pf-m-compact pf-m-flat js-only">
           <div class="pf-v6-c-card__header">
@@ -97,7 +97,7 @@
               </div>
               <div class="pf-v6-c-empty-state__body pf-v6-u-font-size-sm">
                 View our next event on
-                <a href="{{ .Site.Data.links.luma.url }}" target="_blank" rel="noopener">Luma</a>.
+                <a href="{{ hugo.Data.links.luma.url }}" target="_blank" rel="noopener">Luma</a>.
               </div>
             </div>
           </div>
@@ -109,7 +109,7 @@
           See
           <a href="{{ "/events/" | relURL }}">full schedule</a>, or subscribe via
           <a
-            href="{{ .Site.Data.links.api }}/events/feed?calendar={{ .Site.Data.links.luma.calendar }}"
+            href="{{ hugo.Data.links.api }}/events/feed?calendar={{ hugo.Data.links.luma.calendar }}"
             target="_blank"
             rel="noopener"
             >RSS{{ partial "icon" "rss" }}</a
@@ -147,13 +147,13 @@
                   {{ if eq .body_key "community_year_round" }}
                     The conversation keeps going on
                     <a
-                      href="{{ $.Site.Data.links.socials.discourse.url }}"
+                      href="{{ hugo.Data.links.socials.discourse.url }}"
                       target="_blank"
                       rel="noopener"
                       >Discourse{{ partial "icon" "discourse" }}</a>
                     and
                     <a
-                      href="{{ $.Site.Data.links.socials.signal.url }}"
+                      href="{{ hugo.Data.links.socials.signal.url }}"
                       target="_blank"
                       rel="noreferrer noopener"
                       >Signal{{ partial "icon" "signal" }}</a>
@@ -172,24 +172,24 @@
         <p>
           Follow us on
           <a
-            href="{{ .Site.Data.links.socials.mastodon.url }}"
+            href="{{ hugo.Data.links.socials.mastodon.url }}"
             target="_blank"
             rel="noopener"
             >Mastodon{{ partial "icon" "mastodon" }}</a
           >,
           <a
-            href="{{ .Site.Data.links.socials.bluesky.url }}"
+            href="{{ hugo.Data.links.socials.bluesky.url }}"
             target="_blank"
             rel="noopener"
             >Bluesky{{ partial "icon" "bluesky" }}</a
           >, or
           <a
-            href="{{ .Site.Data.links.socials.linkedin.url }}"
+            href="{{ hugo.Data.links.socials.linkedin.url }}"
             target="_blank"
             rel="noopener"
             >LinkedIn{{ partial "icon" "linkedin" }}</a>
           for announcements. Want to give a talk or have a question?
-          <a href="{{ .Site.Data.links.socials.email.url }}"
+          <a href="{{ hugo.Data.links.socials.email.url }}"
             >Email the board.{{ partial "icon" "email" }}</a>
         </p>
       </div>

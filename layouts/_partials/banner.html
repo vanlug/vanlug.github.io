@@ -1,4 +1,4 @@
-{{ with .Site.Data.banner }}
+{{ with hugo.Data.banner }}
   {{ if .enabled }}
     <div class="pf-v6-c-banner pf-m-sticky{{ with .color }} pf-m-{{ . }}{{ end }} pf-v6-u-text-align-center" role="status" style="white-space: normal;">
       <span class="pf-v6-screen-reader">{{ .screen_reader_text }}</span>

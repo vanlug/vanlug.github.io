@@ -1,4 +1,4 @@
-{{ $c := .Site.Data.content.events }}
+{{ $c := hugo.Data.content.events }}
   <section
     class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
   >
@@ -12,7 +12,7 @@
     </div>
   </section>
 
-  {{ $et := .Site.Data.content.events.event_types }}
+  {{ $et := hugo.Data.content.events.event_types }}
   <section
     class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
   >
@@ -25,13 +25,13 @@
           We run {{ range $i, $t := $et }}{{ if $i }}{{ if eq $i (sub (len $et) 1) }}, and {{ else }}, {{ end }}{{ end }}<strong>{{ $t.title }}</strong>{{ end }} events.
           Also available as a
           <a
-            href="{{ .Site.Data.links.luma.url }}"
+            href="{{ hugo.Data.links.luma.url }}"
             target="_blank"
             rel="noopener"
             >calendar on Luma{{ partial "icon" "external" }}</a
           > and
           <a
-            href="{{ .Site.Data.links.api }}/events/feed?calendar={{ .Site.Data.links.luma.calendar }}"
+            href="{{ hugo.Data.links.api }}/events/feed?calendar={{ hugo.Data.links.luma.calendar }}"
             target="_blank"
             rel="noopener"
             >RSS feed{{ partial "icon" "rss" }}</a
@@ -57,9 +57,9 @@
       <section class="pf-v6-c-tab-content" role="tabpanel" id="event-panel-all" aria-labelledby="event-tab-all" tabindex="0">
         <div class="pf-v6-c-tab-content__body">
           <luma-upcoming-events
-            calendar="{{ .Site.Data.links.luma.calendar }}"
-            api="{{ .Site.Data.links.api }}"
-            luma="{{ .Site.Data.links.luma.url }}"
+            calendar="{{ hugo.Data.links.luma.calendar }}"
+            api="{{ hugo.Data.links.api }}"
+            luma="{{ hugo.Data.links.luma.url }}"
           >
             <table
               class="pf-v6-c-table pf-m-grid-md pf-m-compact js-only"
@@ -100,7 +100,7 @@
                   </div>
                   <div class="pf-v6-c-empty-state__body pf-v6-u-font-size-sm">
                     View upcoming events on
-                    <a href="{{ .Site.Data.links.luma.url }}" target="_blank" rel="noopener">Luma</a>.
+                    <a href="{{ hugo.Data.links.luma.url }}" target="_blank" rel="noopener">Luma</a>.
                   </div>
                 </div>
               </div>
@@ -142,13 +142,13 @@
         <p>
           Full event history is available on
           <a
-            href="{{ .Site.Data.links.luma.url }}"
+            href="{{ hugo.Data.links.luma.url }}"
             target="_blank"
             rel="noopener"
             >Luma{{ partial "icon" "external" }}</a
           >,
           <a
-            href="{{ .Site.Data.links.meetup.url }}"
+            href="{{ hugo.Data.links.meetup.url }}"
             target="_blank"
             rel="noopener"
             >Meetup{{ partial "icon" "external" }}</a>
@@ -175,7 +175,7 @@
           </tr>
         </thead>
         <tbody class="pf-v6-c-table__tbody" role="rowgroup">
-          {{ range .Site.Data.events.past }}
+          {{ range hugo.Data.events.past }}
             <tr class="pf-v6-c-table__tr" role="row">
               <td class="pf-v6-c-table__td" role="cell" data-label="Date">{{ .date }}</td>
               <td class="pf-v6-c-table__td" role="cell" data-label="Event">{{ .name }}</td>

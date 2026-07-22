@@ -3,14 +3,14 @@
     <nav class="pf-v6-c-nav" aria-label="Global navigation">
       <ul class="pf-v6-c-nav__list" role="list">
         {{ $current := $.RelPermalink }}
-        {{ range .Site.Data.links.sidebar }}
+        {{ range hugo.Data.links.sidebar }}
           {{ if .separator }}
             <li class="pf-v6-c-divider" role="presentation"></li>
           {{ else if .eventsFeed }}
             <li class="pf-v6-c-nav__item">
               <a
                 class="pf-v6-c-nav__link"
-                href="{{ $.Site.Data.links.api }}/events/feed?calendar={{ $.Site.Data.links.luma.calendar }}"
+                href="{{ hugo.Data.links.api }}/events/feed?calendar={{ hugo.Data.links.luma.calendar }}"
                 target="_blank"
                 rel="noopener"
                 ><span

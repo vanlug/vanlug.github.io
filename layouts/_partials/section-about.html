@@ -1,4 +1,4 @@
-{{ $c := .Site.Data.content.about }}
+{{ $c := hugo.Data.content.about }}
   <section
     class="pf-v6-c-page__main-section pf-m-limit-width pf-m-align-center"
   >
@@ -23,10 +23,10 @@
         {{ end }}
       </div>
       <div class="pf-v6-c-content">
-        <h3>{{ .Site.Data.content.about.purpose.title | default "Our purpose" }}</h3>
-        <p>{{ .Site.Data.content.about.purpose.preamble | default "We exist to fulfil the following mandates:" }}</p>
+        <h3>{{ hugo.Data.content.about.purpose.title | default "Our purpose" }}</h3>
+        <p>{{ hugo.Data.content.about.purpose.preamble | default "We exist to fulfil the following mandates:" }}</p>
         <ol type="a">
-          {{ range .Site.Data.content.about.purpose.mandates }}
+          {{ range hugo.Data.content.about.purpose.mandates }}
             <li>{{ . }}</li>
           {{ end }}
         </ol>
@@ -41,17 +41,17 @@
       class="pf-v6-c-page__main-body pf-v6-l-flex pf-m-column pf-m-gap-md"
     >
       <div class="pf-v6-c-content">
-        <h3>{{ .Site.Data.board.year }} Board of Directors</h3>
+        <h3>{{ hugo.Data.board.year }} Board of Directors</h3>
         <p>
-          {{ .Site.Data.content.about.board.preamble | default "As a registered non-profit society in British Columbia, VanLUG is governed by a volunteer Board of Directors. Elections are held annually at our AGM. New volunteers are always welcome." }}
-          <a href="{{ .Site.Data.links.socials.email.url }}"
+          {{ hugo.Data.content.about.board.preamble | default "As a registered non-profit society in British Columbia, VanLUG is governed by a volunteer Board of Directors. Elections are held annually at our AGM. New volunteers are always welcome." }}
+          <a href="{{ hugo.Data.links.socials.email.url }}"
             >Get in touch{{ partial "icon" "email" }}</a>
           if you'd like to help.
         </p>
       </div>
 
       {{ $directorSeen := false }}
-      {{ range $i, $member := .Site.Data.board.bios }}
+      {{ range $i, $member := hugo.Data.board.bios }}
         {{ if and (not $directorSeen) (eq $member.role "Director-at-large") (ne $i 0) }}
           <hr class="pf-v6-c-divider" />
         {{ end }}
