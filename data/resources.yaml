@@ -226,3 +226,10 @@ design:
         credit: "Albert Stoynov"
         url: https://unsplash.com/photos/PRfzwn6colA
         source: design/albert-stoynov-PRfzwn6colA-unsplash.jpg
+    - name: fossy-2026
+      file: img/fossy-2026.jpg
+      description: "Card for FOSSY 2026 (UBC clock tower, CC BY-SA 4.0)"
+      photo:
+        credit: "Dllu"
+        url: https://commons.wikimedia.org/wiki/User:Dllu
+        source: img/fossy-2026.jpg

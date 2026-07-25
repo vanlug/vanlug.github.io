@@ -516,7 +516,8 @@
           {{ range hugo.Data.resources.design.assets }}
             <tr class="pf-v6-c-table__tr" role="row">
               <td class="pf-v6-c-table__td" role="cell">
-                <a href="{{ printf "design/%s.svg" .name | relURL }}" target="_blank">{{ .name }}.svg</a> / <a href="{{ printf "design/%s.png" .name | relURL }}" target="_blank">{{ .name }}.png</a>
+                {{ $file := .file | default (printf "design/%s.png" .name) }}
+                <a href="{{ $file | relURL }}" target="_blank">{{ $file | relURL }}</a>
               </td>
               <td class="pf-v6-c-table__td" role="cell">
                 {{ .description }}

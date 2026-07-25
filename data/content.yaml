@@ -32,7 +32,11 @@ home:
     title: Events we're supporting
     placeholder: "More to come!"
     empty: "Nothing right now. Check back soon!"
-    events: []
+    events:
+      - title: FOSSY 2026
+        date: August 6-9, 2026
+        url: https://2026.fossy.us/
+        image: img/fossy-2026.jpg
 
 events:
   event_types:
