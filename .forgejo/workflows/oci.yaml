@@ -20,7 +20,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Setup Docker
-        uses: ./setup-docker
+        uses: https://git.vanlug.p8.lu/pojntfx/forgejo-runner-meta/setup-docker@main
       # See https://docs.docker.com/guides/gha/#conclusion
       - name: Extract Docker image metadata
         id: meta
