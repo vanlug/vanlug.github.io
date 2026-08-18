@@ -46,18 +46,18 @@ jobs:
           hugo build \
             --gc \
             --minify \
-            --baseURL "https://vanlug.ca/"
-      - name: Deploy to Forgejo Pages at vanlug.ca
+            --baseURL "https://vanlug.p8.lu/"
+      - name: Deploy to Forgejo Pages at vanlug.p8.lu
         uses: https://code.forgejo.org/actions/git-pages@v2
         with:
-          site: https://vanlug.ca/
+          site: https://vanlug.p8.lu/
           server: codeberg.page
           token: ${{ forge.token }}
           source: public/
       # See https://docs.codeberg.org/codeberg-pages/using-custom-domain/#deploying-to-versions-of-your-domain-both-with-and-without-www.
-      - name: Deploy to Forgejo Pages at www.vanlug.ca
+      - name: Deploy to Forgejo Pages at www.vanlug.p8.lu
         uses: https://code.forgejo.org/actions/git-pages@v2
         with:
-          site: https://www.vanlug.ca/
+          site: https://www.vanlug.p8.lu/
           token: ${{ forge.token }}
           source: public/

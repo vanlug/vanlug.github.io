@@ -18,7 +18,7 @@ sidebar:
     page: /resources/
   - separator: true
   - title: Discourse
-    url: https://discourse.vanlug.ca
+    url: https://discourse.vanlug.p8.lu
     icon: fa-brands fa-discourse
     description: Our forum for questions & projects
   - title: Signal
@@ -49,7 +49,7 @@ sidebar:
     eventsFeed: true
   - separator: true
   - title: Email the board
-    url: mailto:contact@vanlug.ca
+    url: mailto:contact@vanlug.p8.lu
     icon: fa-solid fa-envelope
     description: Questions, talk proposals & more
 socials:
@@ -64,13 +64,13 @@ socials:
     url: https://www.linkedin.com/groups/1895787/
     icon: fa-brands fa-linkedin
   discourse:
-    url: https://discourse.vanlug.ca
+    url: https://discourse.vanlug.p8.lu
     icon: fa-brands fa-discourse
   signal:
     url: https://signal.group/#CjQKIDT_S1T4NAqQq0UhlMwAVjirsOj6iW1JzpicVudNwr7SEhBRwaLJ9JGEM9CaciluJQdf
     icon: fa-brands fa-signal-messenger
   email:
-    url: mailto:contact@vanlug.ca
+    url: mailto:contact@vanlug.p8.lu
     icon: fa-solid fa-envelope
 donate:
   url: https://www.paypal.com/ncp/payment/5LJ46YPC7JJ7E

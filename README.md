@@ -1,11 +1,11 @@
-# vanlug.ca
+# vanlug.p8.lu
 
 Website for the Vancouver Linux Users Group.
 
-[![Hugo CI](https://git.vanlug.ca/vanlug/vanlug.ca/badges/workflows/hugo.yaml/badge.svg)](https://git.vanlug.ca/vanlug/vanlug.ca/actions?workflow=hugo.yaml)
-[![Docker CI](https://git.vanlug.ca/vanlug/vanlug.ca/badges/workflows/docker.yaml/badge.svg)](https://git.vanlug.ca/vanlug/vanlug.ca/actions?workflow=docker.yaml)
+[![Hugo CI](https://git.vanlug.p8.lu/vanlug/vanlug.p8.lu/badges/workflows/hugo.yaml/badge.svg)](https://git.vanlug.p8.lu/vanlug/vanlug.p8.lu/actions?workflow=hugo.yaml)
+[![Docker CI](https://git.vanlug.p8.lu/vanlug/vanlug.p8.lu/badges/workflows/docker.yaml/badge.svg)](https://git.vanlug.p8.lu/vanlug/vanlug.p8.lu/actions?workflow=docker.yaml)
 ![Go Version](https://img.shields.io/badge/go%20version-%3E=1.25-61CFDD.svg)
-[![Go Reference](https://pkg.go.dev/badge/git.vanlug.ca/vanlug/vanlug.ca.svg)](https://pkg.go.dev/git.vanlug.ca/vanlug/vanlug.ca)
+[![Go Reference](https://pkg.go.dev/badge/git.vanlug.p8.lu/vanlug/vanlug.p8.lu.svg)](https://pkg.go.dev/git.vanlug.p8.lu/vanlug/vanlug.p8.lu)
 
 ## Overview
 
@@ -22,7 +22,7 @@ It provides the following:
 - Code of Conduct, Terms of Service, and Privacy Policy pages
 - Donate card and land acknowledgment in the footer
 
-The site is accessible at [https://vanlug.ca/](https://vanlug.ca/).
+The site is accessible at [https://vanlug.p8.lu/](https://vanlug.p8.lu/).
 
 ## Screenshots
 
@@ -61,19 +61,19 @@ Click on an image to see a larger version.
 
 ## Contributing
 
-To contribute, please use the [Codeberg flow](https://docs.codeberg.org/collaborating/) and follow our [Code of Conduct](https://vanlug.ca/conduct/).
+To contribute, please use the [Codeberg flow](https://docs.codeberg.org/collaborating/) and follow our [Code of Conduct](https://vanlug.p8.lu/conduct/).
 
 To build the site locally, run:
 
 ```shell
-$ git clone https://git.vanlug.ca/vanlug/vanlug.ca
-$ cd vanlug.ca
+$ git clone https://git.vanlug.p8.lu/vanlug/vanlug.p8.lu
+$ cd vanlug.p8.lu
 $ npm install
 $ hugo server
 ```
 
 ## License
 
-vanlug.ca (c) 2026 Felicitas Pojtinger and contributors
+vanlug.p8.lu (c) 2026 Felicitas Pojtinger and contributors
 
 SPDX-License-Identifier: AGPL-3.0-or-later

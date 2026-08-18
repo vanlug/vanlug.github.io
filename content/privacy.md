@@ -16,7 +16,7 @@ This document outlines our responsibilities and duties regarding the processing 
 <!-- TODO: We'll want to eventually designate a natural person again here -->
 
 Vancouver Linux User Group (VanLUG)\
-Email: [contact@vanlug.ca](mailto:contact@vanlug.ca)
+Email: [contact@vanlug.p8.lu](mailto:contact@vanlug.p8.lu)
 
 If you want to report a privacy concern, please contact the data protection officer at the address above.
 
