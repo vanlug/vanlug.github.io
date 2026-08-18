@@ -26,7 +26,7 @@ jobs:
         id: meta
         uses: https://github.com/docker/metadata-action@v6
         with:
-          images: git.vanlug.p8.lu/${{ vars.DOCKER_USERNAME }}/forgejo-runner-meta
+          images: git.vanlug.p8.lu/${{ vars.DOCKER_USERNAME }}/vanlug-api
       - name: Log in to Docker Hub
         uses: https://github.com/docker/login-action@v4
         with:

@@ -72,6 +72,13 @@ $ npm install
 $ hugo server
 ```
 
+By default, the static site is configured to use the production version of our API hosted at [https://vanlug.p8.lu/api](https://vanlug.p8.lu/api), which is deployed as a Podman quadlet by [https://codeberg.org/pojntfx/vanlug-infrastructure](https://codeberg.org/pojntfx/vanlug-infrastructure). During development, if you'd like to make changes to the API, first set `api` in [data/links.yaml](data/links.yaml) to `http://localhost:8080`, then start it locally by running the following:
+
+```shell
+$ export SITE_URL=http://localhost:1313/ MASTODON_SERVER=https://thecanadian.social MASTODON_ACCESS_TOKEN=myaccesstoken
+$ go run .
+```
+
 ## License
 
 vanlug.p8.lu (c) 2026 Felicitas Pojtinger and contributors

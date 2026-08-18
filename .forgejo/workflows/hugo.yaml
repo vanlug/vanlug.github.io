@@ -4,10 +4,12 @@
 # and https://codeberg.org/pojntfx/vanlug-infrastructure/src/branch/master/forgejo-runner-meta/.forgejo/workflows/oci.yaml
 
 name: Hugo CI
+
 on:
   push:
     branches:
       - main
+
 jobs:
   build:
     runs-on: ubuntu-latest
