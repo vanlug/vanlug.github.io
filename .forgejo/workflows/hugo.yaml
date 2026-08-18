@@ -53,7 +53,7 @@ jobs:
         uses: https://code.forgejo.org/actions/git-pages@v2
         with:
           site: https://vanlug.p8.lu/
-          # server: git.vanlug.p8.lu
+          server: git.vanlug.p8.lu
           token: ${{ forge.token }}
           source: public/
       # See https://docs.codeberg.org/codeberg-pages/using-custom-domain/#deploying-to-versions-of-your-domain-both-with-and-without-www.
@@ -61,6 +61,6 @@ jobs:
         uses: https://code.forgejo.org/actions/git-pages@v2
         with:
           site: https://www.vanlug.p8.lu/
-          # server: git.vanlug.p8.lu
+          server: git.vanlug.p8.lu
           token: ${{ forge.token }}
           source: public/
