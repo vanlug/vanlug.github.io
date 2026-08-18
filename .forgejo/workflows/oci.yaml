@@ -1,0 +1,47 @@
+# Based on https://codeberg.org/pojntfx/vanlug-infrastructure/src/branch/master/forgejo-runner-meta/.forgejo/workflows/oci.yaml
+
+name: OCI CI
+
+on:
+  push:
+    branches:
+      - main
+  # We allow manually triggering the workflow, e.g. to quickly patch a known CVE not tracked in code (e.g. in Debian's repos)
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * 1" # Every Monday at 06:00 UTC
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: https://code.forgejo.org/actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Setup Docker
+        uses: ./setup-docker
+      # See https://docs.docker.com/guides/gha/#conclusion
+      - name: Extract Docker image metadata
+        id: meta
+        uses: https://github.com/docker/metadata-action@v6
+        with:
+          images: git.vanlug.p8.lu/${{ vars.DOCKER_USERNAME }}/forgejo-runner-meta
+      - name: Log in to Docker Hub
+        uses: https://github.com/docker/login-action@v4
+        with:
+          registry: git.vanlug.p8.lu
+          username: ${{ vars.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Set up Docker Buildx
+        uses: https://github.com/docker/setup-buildx-action@v4
+      - name: Build and push Docker image
+        uses: https://github.com/docker/build-push-action@v7
+        with:
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta.outputs.tags }}
+          annotations: ${{ steps.meta.outputs.annotations }}
+          # Both provenance and SBOM generation are very flaky, and since we're the only users of this image they are disabled
+          # provenance: true
+          # sbom: true
+          file: Containerfile
