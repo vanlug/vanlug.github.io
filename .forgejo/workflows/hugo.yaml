@@ -1,0 +1,63 @@
+# Based on https://codeberg.org/steiger/hugo-on-codeberg-pages-documentation#4-set-up-forgejo-action
+# and https://github.com/vanlug/vanlug.github.io/blob/main/.github/workflows/hugo.yaml.
+# Adapted from https://codeberg.org/pojntfx/netteart-com/src/branch/main/.forgejo/workflows/hugo.yaml
+# and https://codeberg.org/pojntfx/vanlug-infrastructure/src/branch/master/forgejo-runner-meta/.forgejo/workflows/oci.yaml
+
+name: Hugo CI
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      DART_SASS_VERSION: 1.102.0
+      HUGO_VERSION: 0.165.0
+      NODE_VERSION: 26.7.0
+    steps:
+      - name: Checkout
+        uses: https://code.forgejo.org/actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: https://code.forgejo.org/actions/setup-node@v7
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Install Dart Sass
+        run: |
+          mkdir -p "${HOME}/.local"
+          curl -sLJO "https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz"
+          tar -C "${HOME}/.local" -xf "dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz"
+          rm "dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz"
+          echo "${HOME}/.local/dart-sass" >> "${FORGEJO_PATH}"
+      - name: Install Hugo
+        run: |
+          curl -sLJO "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz"
+          mkdir -p "${HOME}/.local/hugo"
+          tar -C "${HOME}/.local/hugo" -xf "hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz"
+          rm "hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz"
+          echo "${HOME}/.local/hugo" >> "${FORGEJO_PATH}"
+      - name: Install Node.js dependencies
+        run: |
+          [[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true
+      - name: Build the site
+        run: |
+          hugo build \
+            --gc \
+            --minify \
+            --baseURL "https://vanlug.ca/"
+      - name: Deploy to Forgejo Pages at vanlug.ca
+        uses: https://code.forgejo.org/actions/git-pages@v2
+        with:
+          site: https://vanlug.ca/
+          server: codeberg.page
+          token: ${{ forge.token }}
+          source: public/
+      # See https://docs.codeberg.org/codeberg-pages/using-custom-domain/#deploying-to-versions-of-your-domain-both-with-and-without-www.
+      - name: Deploy to Forgejo Pages at www.vanlug.ca
+        uses: https://code.forgejo.org/actions/git-pages@v2
+        with:
+          site: https://www.vanlug.ca/
+          token: ${{ forge.token }}
+          source: public/

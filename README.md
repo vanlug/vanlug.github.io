@@ -2,9 +2,10 @@
 
 Website for the Vancouver Linux Users Group.
 
-[![Hugo CI](https://github.com/vanlug/vanlug.github.io/actions/workflows/hugo.yaml/badge.svg)](https://github.com/vanlug/vanlug.github.io/actions/workflows/hugo.yaml)
+[![Hugo CI](https://git.vanlug.ca/vanlug/vanlug.ca/badges/workflows/hugo.yaml/badge.svg)](https://git.vanlug.ca/vanlug/vanlug.ca/actions?workflow=hugo.yaml)
+[![Docker CI](https://git.vanlug.ca/vanlug/vanlug.ca/badges/workflows/docker.yaml/badge.svg)](https://git.vanlug.ca/vanlug/vanlug.ca/actions?workflow=docker.yaml)
 ![Go Version](https://img.shields.io/badge/go%20version-%3E=1.25-61CFDD.svg)
-[![Go Reference](https://pkg.go.dev/badge/github.com/vanlug/vanlug.github.io.svg)](https://pkg.go.dev/github.com/vanlug/vanlug.github.io)
+[![Go Reference](https://pkg.go.dev/badge/git.vanlug.ca/vanlug/vanlug.ca.svg)](https://pkg.go.dev/git.vanlug.ca/vanlug/vanlug.ca)
 
 ## Overview
 
@@ -60,13 +61,13 @@ Click on an image to see a larger version.
 
 ## Contributing
 
-To contribute, please use the [GitHub flow](https://guides.github.com/introduction/flow/) and follow our [Code of Conduct](./CODE_OF_CONDUCT.md).
+To contribute, please use the [Codeberg flow](https://docs.codeberg.org/collaborating/) and follow our [Code of Conduct](https://vanlug.ca/conduct/).
 
 To build the site locally, run:
 
 ```shell
-$ git clone https://github.com/vanlug/vanlug.github.io.git
-$ cd vanlug.github.io
+$ git clone https://git.vanlug.ca/vanlug/vanlug.ca
+$ cd vanlug.ca
 $ npm install
 $ hugo server
 ```

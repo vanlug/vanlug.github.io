@@ -7,7 +7,7 @@ import (
 	"os"
 
 	mastodonhandler "github.com/pojntfx/felicitas.pojtinger.com/api/mastodon"
-	"github.com/vanlug/vanlug.github.io/pkg/handlers"
+	"git.vanlug.ca/vanlug/vanlug.ca/pkg/handlers"
 )
 
 const (

@@ -1,4 +1,4 @@
-module github.com/vanlug/vanlug.github.io
+module git.vanlug.ca/vanlug/vanlug.ca
 
 go 1.26
 
