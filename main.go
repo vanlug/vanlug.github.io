@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"os"
 
-	"git.vanlug.p8.lu/vanlug/vanlug.p8.lu/pkg/handlers"
+	"git.vanlug.p8.lu/pojntfx/vanlug.p8.lu/pkg/handlers"
 	mastodonhandler "github.com/pojntfx/felicitas.pojtinger.com/api/mastodon"
 )
 

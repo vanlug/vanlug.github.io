@@ -2,10 +2,10 @@
 
 Website for the Vancouver Linux Users Group.
 
-[![Hugo CI](https://git.vanlug.p8.lu/vanlug/vanlug.p8.lu/badges/workflows/hugo.yaml/badge.svg)](https://git.vanlug.p8.lu/vanlug/vanlug.p8.lu/actions?workflow=hugo.yaml)
-[![OCI CI](https://git.vanlug.p8.lu/vanlug/vanlug.p8.lu/badges/workflows/oci.yaml/badge.svg)](https://git.vanlug.p8.lu/vanlug/vanlug.p8.lu/actions?workflow=oci.yaml)
+[![Hugo CI](https://git.vanlug.p8.lu/pojntfx/vanlug.p8.lu/badges/workflows/hugo.yaml/badge.svg)](https://git.vanlug.p8.lu/pojntfx/vanlug.p8.lu/actions?workflow=hugo.yaml)
+[![OCI CI](https://git.vanlug.p8.lu/pojntfx/vanlug.p8.lu/badges/workflows/oci.yaml/badge.svg)](https://git.vanlug.p8.lu/pojntfx/vanlug.p8.lu/actions?workflow=oci.yaml)
 ![Go Version](https://img.shields.io/badge/go%20version-%3E=1.25-61CFDD.svg)
-[![Go Reference](https://pkg.go.dev/badge/git.vanlug.p8.lu/vanlug/vanlug.p8.lu.svg)](https://pkg.go.dev/git.vanlug.p8.lu/vanlug/vanlug.p8.lu)
+[![Go Reference](https://pkg.go.dev/badge/git.vanlug.p8.lu/pojntfx/vanlug.p8.lu.svg)](https://pkg.go.dev/git.vanlug.p8.lu/pojntfx/vanlug.p8.lu)
 
 ## Overview
 
@@ -66,7 +66,7 @@ To contribute, please use the [Codeberg flow](https://docs.codeberg.org/collabor
 To build the site locally, run:
 
 ```shell
-$ git clone https://git.vanlug.p8.lu/vanlug/vanlug.p8.lu
+$ git clone https://git.vanlug.p8.lu/pojntfx/vanlug.p8.lu
 $ cd vanlug.p8.lu
 $ npm install
 $ hugo server
