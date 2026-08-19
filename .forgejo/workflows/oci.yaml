@@ -46,6 +46,7 @@ jobs:
           # provenance: true
           # sbom: true
           file: Containerfile
-          # See https://sumguy.com/forgejo-actions-runners-self-hosted/#persistent-cache-and-build-optimization
-          cache-from: type=registry,ref=git.vanlug.p8.lu/${{ vars.DOCKER_USERNAME }}/vanlug-api:buildcache
-          cache-to: type=registry,ref=git.vanlug.p8.lu/${{ vars.DOCKER_USERNAME }}/vanlug-api:buildcache,mode=max
+          # This is disabled because caching makes this workflow very flaky
+          # # See https://sumguy.com/forgejo-actions-runners-self-hosted/#persistent-cache-and-build-optimization
+          # cache-from: type=registry,ref=git.vanlug.p8.lu/${{ vars.DOCKER_USERNAME }}/vanlug-api:buildcache
+          # cache-to: type=registry,ref=git.vanlug.p8.lu/${{ vars.DOCKER_USERNAME }}/vanlug-api:buildcache,mode=max
