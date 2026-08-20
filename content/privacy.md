@@ -71,7 +71,11 @@ Kelowna and Burnaby, British Columbia\
 Canada\
 Privacy policy: [https://thecanadian.social/privacy-policy](https://thecanadian.social/privacy-policy)
 
-### 4. Data Handling by Third Parties
+### 4. Data Handling by Association Bodies & Third Parties
+
+Personal data may only be processed by the association bodies which are responsible for their respective tasks. This specifically means that:
+
+- Tech committee members can access all resources and personal information stored on our servers. This is required for maintaining the infrastructure necessary for providing the Vancouver Linux User Group's services.
 
 Our website, Luma and Mastodon API proxy and Forgejo are hosted by:
 
