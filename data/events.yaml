@@ -1,4 +1,70 @@
 past:
+  - date: "Aug 18, 2026"
+    name: "Linux Link at Surrey (Guildford)"
+    location: "Surrey Libraries, Guildford Branch"
+    links:
+      - title: Luma
+        url: https://luma.com/sc81cqex
+  - date: "Aug 12, 2026"
+    name: "Linux Link at Richmond"
+    location: "Richmond Public Library, Brighouse Branch"
+    links:
+      - title: Luma
+        url: https://luma.com/7av62bmx
+  - date: "Aug 6–9, 2026"
+    name: "FOSSY 2026 (Free and Open Source Software Yearly)"
+    location: "University of British Columbia, Vancouver"
+    links:
+      - title: FOSSY
+        url: https://2026.fossy.ca
+  - date: "Jul 21, 2026"
+    name: "Linux Link at Surrey (Guildford)"
+    location: "Surrey Libraries, Guildford Branch"
+    links:
+      - title: Luma
+        url: https://luma.com/zc2u055s
+  - date: "Jul 20, 2026"
+    name: "West Van Linux Link"
+    location: "West Vancouver Memorial Library"
+    links:
+      - title: Luma
+        url: https://luma.com/hlou1i52
+  - date: "Jul 11, 2026"
+    name: "Linux Talks: Networking and Connecting Event"
+    location: "Burnaby Public Library, Tommy Douglas Library"
+    links:
+      - title: Luma
+        url: https://luma.com/njmkh4c1
+  - date: "Jul 8, 2026"
+    name: "Linux Link at Richmond"
+    location: "Richmond Public Library, Brighouse Branch"
+    links:
+      - title: Luma
+        url: https://luma.com/uu3g6qlq
+  - date: "Jun 22, 2026"
+    name: "West Van Linux Link"
+    location: "West Vancouver Memorial Library"
+    links:
+      - title: Luma
+        url: https://luma.com/llgsjmfz
+  - date: "Jun 20, 2026"
+    name: "Linux Talks: Linux and Open Source Lightning Demos"
+    location: "Burnaby Public Library, Tommy Douglas Library"
+    links:
+      - title: Luma
+        url: https://luma.com/oqct3532
+  - date: "Jun 16, 2026"
+    name: "Linux Link at Surrey (Guildford)"
+    location: "Surrey Libraries, Guildford Branch"
+    links:
+      - title: Luma
+        url: https://luma.com/9rd6ohus
+  - date: "Jun 10, 2026"
+    name: "Linux Link at Richmond"
+    location: "Richmond Public Library, Brighouse Branch"
+    links:
+      - title: Luma
+        url: https://luma.com/1eatfw8n
   - date: "May 23, 2026"
     name: "Linux Talks: Fediverse for the Linux Crowd"
     location: "Burnaby Public Library, Tommy Douglas Library"
