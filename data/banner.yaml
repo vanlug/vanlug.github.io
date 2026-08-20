@@ -5,3 +5,4 @@ icon: fa-info-circle # fa-info-circle (info), fa-exclamation-triangle (warning),
 message: "We have updated our Terms of Service and Privacy Policy."
 link_text: "Read the new terms" # Optional
 link_url: "/terms/" # Optional
+link_external: false # Optional; adds an external-link icon after link_text

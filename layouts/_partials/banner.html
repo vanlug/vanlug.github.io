@@ -5,7 +5,7 @@
       <i class="fas {{ with .icon }}{{ . }}{{ else }}fa-info-circle{{ end }} pf-v6-u-mr-sm" aria-hidden="true"></i>
       {{- .message -}}
       {{ if and .link_text .link_url }}
-        <a href="{{ .link_url }}">{{ .link_text }}{{ partial "icon" "external" }}</a>
+        <a href="{{ .link_url }}">{{ .link_text }}{{ if .link_external }}{{ partial "icon" "external" }}{{ end }}</a>
       {{ end }}
     </div>
   {{ end }}
