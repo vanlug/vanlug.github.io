@@ -9,9 +9,6 @@ home:
   cta_secondary:
     title: Who we are
     page: /about/
-  cta_link:
-    title: Join the forum
-    social: discourse
   next_meeting:
     title: Next meeting
     body: "We also run regular drop-in Linux help sessions at libraries in Richmond, Surrey, and Burnaby."

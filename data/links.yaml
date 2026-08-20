@@ -17,10 +17,6 @@ sidebar:
   - title: Resources
     page: /resources/
   - separator: true
-  - title: Discourse
-    url: https://discourse.vanlug.p8.lu
-    icon: fa-brands fa-discourse
-    description: Our forum for questions & projects
   - title: Signal
     url: https://signal.group/#CjQKIDT_S1T4NAqQq0UhlMwAVjirsOj6iW1JzpicVudNwr7SEhBRwaLJ9JGEM9CaciluJQdf
     icon: fa-brands fa-signal-messenger
@@ -63,9 +59,6 @@ socials:
   linkedin:
     url: https://www.linkedin.com/groups/1895787/
     icon: fa-brands fa-linkedin
-  discourse:
-    url: https://discourse.vanlug.p8.lu
-    icon: fa-brands fa-discourse
   signal:
     url: https://signal.group/#CjQKIDT_S1T4NAqQq0UhlMwAVjirsOj6iW1JzpicVudNwr7SEhBRwaLJ9JGEM9CaciluJQdf
     icon: fa-brands fa-signal-messenger

@@ -27,16 +27,6 @@
         <a href="{{ $c.cta_secondary.page | relURL }}" class="pf-v6-c-button pf-m-secondary"
           >{{ $c.cta_secondary.title }}</a
         >
-        {{ $social := index hugo.Data.links.socials $c.cta_link.social }}
-        <a
-          href="{{ $social.url }}"
-          target="_blank"
-          rel="noopener"
-          class="pf-v6-c-button pf-m-link"
-          ><span class="pf-v6-c-button__text">{{ $c.cta_link.title }}</span
-          ><span class="pf-v6-c-button__icon pf-m-end"
-            >{{ partial "icon" (dict "icon" $social.icon "inButton" true) }}</span
-        ></a>
       </div>
     </div>
   </section>
@@ -146,12 +136,6 @@
                 <p>
                   {{ if eq .body_key "community_year_round" }}
                     The conversation keeps going on
-                    <a
-                      href="{{ hugo.Data.links.socials.discourse.url }}"
-                      target="_blank"
-                      rel="noopener"
-                      >Discourse{{ partial "icon" "discourse" }}</a>
-                    and
                     <a
                       href="{{ hugo.Data.links.socials.signal.url }}"
                       target="_blank"
