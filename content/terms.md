@@ -32,7 +32,7 @@ The Vancouver Linux User Group's website and services provide various documents 
 
 (1) As described in section 3, registration on the Vancouver Linux User Group's Forgejo instance is only open to Vancouver Linux User Group board members.
 
-(2) For cancellation and termination, the [Codeberg Terms of Use § 4 (Cancellation and Termination)](https://codeberg.org/Codeberg/org/src/branch/main/TermsOfUse.md#4-cancellation-and-termination) apply, unless they are overridden by the preceding terms of this document.
+(2) For cancellation and termination, the [Codeberg Terms of Use § 4 (Cancellation and Termination)](https://codeberg.org/Codeberg/org/src/branch/main/TermsOfUse.md#4-cancellation-and-termination) apply, unless they are overridden by the preceding terms of this section.
 
 ### 6. Disclaimer of Warranties and Liability
 
