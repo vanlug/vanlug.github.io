@@ -196,6 +196,12 @@ design:
         credit: "Albert Stoynov"
         url: https://unsplash.com/photos/jooXO8q2Gcs
         source: design/albert-stoynov-jooXO8q2Gcs-unsplash.jpg
+    - name: card-business
+      description: "VanLUG business card (designed by piscimisty)"
+      photo:
+        credit: "Lee Robinson"
+        url: https://unsplash.com/photos/Yc9h5SJdEzI
+        source: design/lee-robinson-Yc9h5SJdEzI-unsplash.jpg
     - name: card-link-vancouver
       description: "Linux Links event card for Vancouver"
       photo:
