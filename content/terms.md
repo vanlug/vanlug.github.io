@@ -16,6 +16,7 @@ The Vancouver Linux User Group's website and services provide various documents 
 (1) By using the Vancouver Linux User Group's website and services, you agree to adhere to the following rules when providing data:
 
 1. Our service is only available to users from the Province of British Columbia, Canada and the EU/EEA, with no minimum age requirement.
+2. All content must adhere to our [code of conduct](/conduct/). The Vancouver Linux User Group board reserves the right to delete content that does not follow the code of conduct, with appropriate notice.
 
 (2) The ability to publish content by registering on the Vancouver Linux User Group's Forgejo instance is only available to Vancouver Linux User Group board members on an invite-only basis. When browsing content on the Vancouver Linux User Group's Forgejo instance, the same terms as for the website apply.
 
