@@ -17,6 +17,8 @@ The Vancouver Linux User Group's website and services provide various documents 
 
 1. Our service is only available to users from the Province of British Columbia, Canada and the EU/EEA, with no minimum age requirement.
 
+(2) The ability to publish content by registering on the Vancouver Linux User Group's Forgejo instance is only available to Vancouver Linux User Group board members on an invite-only basis. When browsing content on the Vancouver Linux User Group's Forgejo instance, the same terms as for the website apply.
+
 ### 4. Rights, Responsibilities, Copyright & Guarantees
 
 (1) Please see our [privacy policy](/privacy/) to learn more about your rights as a subject of personal data processing.
