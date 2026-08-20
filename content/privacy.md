@@ -33,7 +33,7 @@ When accessing our website, the following information is processed for the reaso
 
 #### 3.2 Luma Event Data
 
-Our home page and events page fetch event data from Luma's API and images from Luma's CDN via our proxy on Railway. Your browser connects to our proxy, not directly to Luma. No data is sent to Luma from your browser. We also provide the RSS/Atom feed of upcoming events and their images via the same proxy.
+Our home page and events page fetch event data from Luma's API and images from Luma's CDN via our proxy. Your browser connects to our proxy, not directly to Luma. No data is sent to Luma from your browser. We also provide the RSS/Atom feed of upcoming events and their images via the same proxy.
 
 Luma, Inc.\
 548 Market St PMB 36143\
@@ -43,7 +43,7 @@ Privacy policy: [https://luma.com/privacy-policy](https://luma.com/privacy-polic
 
 #### 3.3 Mastodon Feed Data
 
-Our home page fetches recent posts and media from our Mastodon account via our proxy on Railway. Your browser connects to our proxy, not directly to [thecanadian.social](https://thecanadian.social). No data is sent to [thecanadian.social](https://thecanadian.social) from your browser. We also link to the public Mastodon RSS feed at `thecanadian.social/@vanlug.rss`; if you subscribe to it, your feed reader connects directly to [thecanadian.social](https://thecanadian.social).
+Our home page fetches recent posts and media from our Mastodon account via our proxy. Your browser connects to our proxy, not directly to [thecanadian.social](https://thecanadian.social). No data is sent to [thecanadian.social](https://thecanadian.social) from your browser. We also link to the public Mastodon RSS feed at `thecanadian.social/@vanlug.rss`; if you subscribe to it, your feed reader connects directly to [thecanadian.social](https://thecanadian.social).
 
 The Canadian ([thecanadian.social](https://thecanadian.social))\
 Kelowna and Burnaby, British Columbia\
@@ -52,23 +52,15 @@ Privacy policy: [https://thecanadian.social/privacy-policy](https://thecanadian.
 
 ### 4. Data Handling by Third Parties
 
-Our website is hosted by:
+Our website, Luma and Mastodon API proxy and Forgejo are hosted by:
 
-GitHub, Inc. (GitHub Pages)\
-88 Colin P Kelly Jr St\
-San Francisco, CA 94107\
-United States\
-Privacy policy: [GitHub Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement)
+Hetzner Online GmbH\
+Industriestr. 25\
+91710 Gunzenhausen\
+Germany\
+Privacy policy: [https://www.hetzner.com/legal/privacy-policy/](https://www.hetzner.com/legal/privacy-policy/)
 
-Our Luma and Mastodon API proxy is hosted by:
-
-Railway Corporation\
-548 Market St PMB 68956\
-San Francisco, CA 94104\
-United States\
-Privacy policy: [Railway Privacy Policy](https://railway.com/legal/privacy)
-
-These companies are based in the United States. Data transfers to the US are based on appropriate safeguards according to Art. 46 GDPR.
+This company is based in Germany. Data transfers to the European Union are based on appropriate safeguards according to Art. 46 GDPR.
 
 ### 5. Data Retention
 

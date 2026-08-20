@@ -15,7 +15,7 @@ The Vancouver Linux User Group's website and services provide various documents 
 
 (1) By using the Vancouver Linux User Group's website and services, you agree to adhere to the following rules when providing data:
 
-1. Our service is only available to users from the EU/EEA and the Province of British Columbia, Canada, with no minimum age requirement.
+1. Our service is only available to users from the Province of British Columbia, Canada and the EU/EEA, with no minimum age requirement.
 
 ### 4. Rights, Responsibilities, Copyright & Guarantees
 

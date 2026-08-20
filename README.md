@@ -13,8 +13,8 @@ VanLUG is a non-profit user group for Linux professionals, hobbyists, and curiou
 
 It provides the following:
 
-- Home page with next meeting card (fetched from Luma API via a proxy hosted on Railway), "what to expect" cards, and social links
-- Events page with upcoming events (fetched from Luma API via a proxy hosted on Railway) and full past event history
+- Home page with next meeting card (fetched from Luma API via our proxy), "what to expect" cards, and social links
+- Events page with upcoming events (fetched from Luma API via our proxy) and full past event history
 - About page with mission, purpose mandates, and board of directors
 - Partners page listing library and community venue partners
 - Resources page with speaker slides, AGM documents, learning links, and design system
