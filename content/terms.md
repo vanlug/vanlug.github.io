@@ -34,6 +34,8 @@ The Vancouver Linux User Group's website and services provide various documents 
 
 (2) For cancellation and termination, the [Codeberg Terms of Use § 4 (Cancellation and Termination)](https://codeberg.org/Codeberg/org/src/branch/main/TermsOfUse.md#4-cancellation-and-termination) apply, unless they are overridden by the preceding terms of this section.
 
+(3) Changes to these Terms of Service are communicated via an announcement banner on our website. If you do not visit our website for longer than three months, it is your own responsibility to recheck for the current Terms of Service. If you disagree to a change, you are responsible for ceasing to use the Vancouver Linux User Group's website and services.
+
 ### 6. Disclaimer of Warranties and Liability
 
 (1) The materials on our platform are provided on an "as is" basis. The Vancouver Linux User Group's website and services make no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
