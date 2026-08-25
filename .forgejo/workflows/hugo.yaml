@@ -9,6 +9,8 @@ on:
   push:
     branches:
       - main
+  # We allow manually triggering the workflow, e.g. to quickly patch a known CVE not tracked in code (e.g. in Debian's repos) or to run actions after an initial mirror
+  workflow_dispatch:
 
 jobs:
   build:
