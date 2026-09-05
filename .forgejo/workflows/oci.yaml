@@ -20,17 +20,17 @@ jobs:
         with:
           fetch-depth: 0
       - name: Setup Docker
-        uses: https://git.vanlug.p8.lu/pojntfx/forgejo-runner-meta/setup-docker@main
+        uses: https://git.vanlug.ca/pojntfx/forgejo-runner-meta/setup-docker@main
       # See https://docs.docker.com/guides/gha/#conclusion
       - name: Extract Docker image metadata
         id: meta
         uses: https://github.com/docker/metadata-action@v6
         with:
-          images: git.vanlug.p8.lu/${{ vars.DOCKER_USERNAME }}/vanlug-api
+          images: git.vanlug.ca/${{ vars.DOCKER_USERNAME }}/vanlug-api
       - name: Log in to Docker Hub
         uses: https://github.com/docker/login-action@v4
         with:
-          registry: git.vanlug.p8.lu
+          registry: git.vanlug.ca
           username: ${{ vars.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Set up Docker Buildx
@@ -48,5 +48,5 @@ jobs:
           file: Containerfile
           # This is disabled because caching makes this workflow very flaky
           # # See https://sumguy.com/forgejo-actions-runners-self-hosted/#persistent-cache-and-build-optimization
-          # cache-from: type=registry,ref=git.vanlug.p8.lu/${{ vars.DOCKER_USERNAME }}/vanlug-api:buildcache
-          # cache-to: type=registry,ref=git.vanlug.p8.lu/${{ vars.DOCKER_USERNAME }}/vanlug-api:buildcache,mode=max
+          # cache-from: type=registry,ref=git.vanlug.ca/${{ vars.DOCKER_USERNAME }}/vanlug-api:buildcache
+          # cache-to: type=registry,ref=git.vanlug.ca/${{ vars.DOCKER_USERNAME }}/vanlug-api:buildcache,mode=max

@@ -1,4 +1,4 @@
-module git.vanlug.p8.lu/pojntfx/vanlug.p8.lu
+module git.vanlug.ca/pojntfx/vanlug.ca
 
 go 1.26
 

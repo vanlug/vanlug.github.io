@@ -1,11 +1,11 @@
-# vanlug.p8.lu
+# vanlug.ca
 
 Website for the Vancouver Linux Users Group.
 
-[![Hugo CI](https://git.vanlug.p8.lu/pojntfx/vanlug.p8.lu/badges/workflows/hugo.yaml/badge.svg)](https://git.vanlug.p8.lu/pojntfx/vanlug.p8.lu/actions?workflow=hugo.yaml)
-[![OCI CI](https://git.vanlug.p8.lu/pojntfx/vanlug.p8.lu/badges/workflows/oci.yaml/badge.svg)](https://git.vanlug.p8.lu/pojntfx/vanlug.p8.lu/actions?workflow=oci.yaml)
+[![Hugo CI](https://git.vanlug.ca/pojntfx/vanlug.ca/badges/workflows/hugo.yaml/badge.svg)](https://git.vanlug.ca/pojntfx/vanlug.ca/actions?workflow=hugo.yaml)
+[![OCI CI](https://git.vanlug.ca/pojntfx/vanlug.ca/badges/workflows/oci.yaml/badge.svg)](https://git.vanlug.ca/pojntfx/vanlug.ca/actions?workflow=oci.yaml)
 ![Go Version](https://img.shields.io/badge/go%20version-%3E=1.25-61CFDD.svg)
-[![Go Reference](https://pkg.go.dev/badge/git.vanlug.p8.lu/pojntfx/vanlug.p8.lu.svg)](https://pkg.go.dev/git.vanlug.p8.lu/pojntfx/vanlug.p8.lu)
+[![Go Reference](https://pkg.go.dev/badge/git.vanlug.ca/pojntfx/vanlug.ca.svg)](https://pkg.go.dev/git.vanlug.ca/pojntfx/vanlug.ca)
 
 ## Overview
 
@@ -22,7 +22,7 @@ It provides the following:
 - Code of Conduct, Terms of Service, and Privacy Policy pages
 - Donate card and land acknowledgment in the footer
 
-The site is accessible at [https://vanlug.p8.lu/](https://vanlug.p8.lu/).
+The site is accessible at [https://vanlug.ca/](https://vanlug.ca/).
 
 ## Screenshots
 
@@ -61,18 +61,18 @@ Click on an image to see a larger version.
 
 ## Contributing
 
-To contribute, please use the [Codeberg flow](https://docs.codeberg.org/collaborating/) and follow our [Code of Conduct](https://vanlug.p8.lu/conduct/).
+To contribute, please use the [Codeberg flow](https://docs.codeberg.org/collaborating/) and follow our [Code of Conduct](https://vanlug.ca/conduct/).
 
 To build the site locally, run:
 
 ```shell
-$ git clone https://git.vanlug.p8.lu/pojntfx/vanlug.p8.lu
-$ cd vanlug.p8.lu
+$ git clone https://git.vanlug.ca/pojntfx/vanlug.ca
+$ cd vanlug.ca
 $ npm install
 $ hugo server
 ```
 
-By default, the static site is configured to use the production version of our API hosted at [https://vanlug.p8.lu/api](https://vanlug.p8.lu/api), which is deployed as a Podman quadlet by [https://codeberg.org/pojntfx/vanlug-infrastructure](https://codeberg.org/pojntfx/vanlug-infrastructure). During development, if you'd like to make changes to the API, first set `api` in [data/links.yaml](data/links.yaml) to `http://localhost:8080`, then start it locally by running the following:
+By default, the static site is configured to use the production version of our API hosted at [https://vanlug.ca/api](https://vanlug.ca/api), which is deployed as a Podman quadlet by [https://codeberg.org/pojntfx/vanlug-infrastructure](https://codeberg.org/pojntfx/vanlug-infrastructure). During development, if you'd like to make changes to the API, first set `api` in [data/links.yaml](data/links.yaml) to `http://localhost:8080`, then start it locally by running the following:
 
 ```shell
 $ export SITE_URL=http://localhost:1313/ MASTODON_SERVER=https://thecanadian.social MASTODON_ACCESS_TOKEN=myaccesstoken
@@ -81,6 +81,6 @@ $ go run .
 
 ## License
 
-vanlug.p8.lu (c) 2026 Felicitas Pojtinger and contributors
+vanlug.ca (c) 2026 Felicitas Pojtinger and contributors
 
 SPDX-License-Identifier: AGPL-3.0-or-later

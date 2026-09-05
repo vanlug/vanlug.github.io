@@ -50,8 +50,8 @@ jobs:
           hugo build \
             --gc \
             --minify \
-            --baseURL "https://vanlug.p8.lu/"
-      - name: Deploy to Forgejo Pages at vanlug.p8.lu
+            --baseURL "https://vanlug.ca/"
+      - name: Deploy to Forgejo Pages at vanlug.ca
         # When using `uses` with `runs.using: docker` directly, the Forgejo runner tries to use `--network=container:$jobcontainer`,
         # which gVisor doesn't support (see https://github.com/google/gvisor/issues/13337 and
         # https://github.com/google/gvisor/issues/12132), leading to no network device appearing in the container.
@@ -61,22 +61,22 @@ jobs:
         with:
           # See https://code.forgejo.org/actions/git-pages/src/tag/v2.2.0/action.yml#L31
           args: >-
-            https://vanlug.p8.lu/
+            https://vanlug.ca/
             --path=
             --parents
-            --server=git.vanlug.p8.lu
+            --server=git.vanlug.ca
             --password=
             --token=${{ forge.token }}
             --upload-dir=public/
       # See https://docs.codeberg.org/codeberg-pages/using-custom-domain/#deploying-to-versions-of-your-domain-both-with-and-without-www.
-      - name: Deploy to Forgejo Pages at www.vanlug.p8.lu
+      - name: Deploy to Forgejo Pages at www.vanlug.ca
         uses: docker://data.forgejo.org/git-pages/git-pages-cli:1.10.0
         with:
           args: >-
-            https://www.vanlug.p8.lu/
+            https://www.vanlug.ca/
             --path=
             --parents
-            --server=git.vanlug.p8.lu
+            --server=git.vanlug.ca
             --password=
             --token=${{ forge.token }}
             --upload-dir=public/

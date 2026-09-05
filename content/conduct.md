@@ -22,7 +22,7 @@ Community leaders have the right and responsibility to remove, edit, or reject c
 
 ### 4. Reporting & Enforcement
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the community team via [email](mailto:contact@vanlug.p8.lu). The team will review and investigate all complaints, and will respond in a way that it deems appropriate to the circumstances.
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the community team via [email](mailto:contact@vanlug.ca). The team will review and investigate all complaints, and will respond in a way that it deems appropriate to the circumstances.
 
 ### 5. Changes to this Code of Conduct
 

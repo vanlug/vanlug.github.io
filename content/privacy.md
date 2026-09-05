@@ -16,7 +16,7 @@ This document outlines our responsibilities and duties regarding the processing 
 <!-- TODO: We'll want to eventually designate a natural person again here -->
 
 Vancouver Linux User Group (VanLUG)\
-Email: [contact@vanlug.p8.lu](mailto:contact@vanlug.p8.lu)
+Email: [contact@vanlug.ca](mailto:contact@vanlug.ca)
 
 If you want to report a privacy concern, please contact the data protection officer at the address above.
 
@@ -35,11 +35,11 @@ When accessing our website, the following information is processed for the reaso
 
 #### 3.2 VanLUG Forgejo Data
 
-When accessing the Vancouver Linux User Group's Forgejo instance at [git.vanlug.p8.lu](https://git.vanlug.p8.lu), the following information is processed for the reasons outlined below:
+When accessing the Vancouver Linux User Group's Forgejo instance at [git.vanlug.ca](https://git.vanlug.ca), the following information is processed for the reasons outlined below:
 
 1. Account details (username, e-mail addresses, name, linked accounts), for the purpose of providing you with an account on our Forgejo instance.
    - Registration is closed; accounts are only created for Vancouver Linux User Group board members on an invite-only basis, as described in our [terms of service](/terms/).
-   - Data can be changed on the user account page at [git.vanlug.p8.lu/user/settings](https://git.vanlug.p8.lu/user/settings).
+   - Data can be changed on the user account page at [git.vanlug.ca/user/settings](https://git.vanlug.ca/user/settings).
    - Pseudonyms can be used in the public profile, there is no requirement to use real personal information besides a reachable e-mail address.
    - Legal basis for processing this data is the user's consent to either share the data on our platform or to receive notifications (Art. 6.1.a GDPR).
 2. Voluntarily provided author details (name, e-mail address) when using e.g. the third-party software "Git" ([https://git-scm.com](https://git-scm.com)) to create/upload "commits" to our Forgejo instance, for the purpose of being able to reconstruct the original authorship of uploaded code for copyright & licensing reasons.

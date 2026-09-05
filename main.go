@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"os"
 
-	"git.vanlug.p8.lu/pojntfx/vanlug.p8.lu/pkg/handlers"
+	"git.vanlug.ca/pojntfx/vanlug.ca/pkg/handlers"
 	mastodonhandler "github.com/pojntfx/felicitas.pojtinger.com/api/mastodon"
 )
 
@@ -54,7 +54,7 @@ func main() {
 
 	siteURL := os.Getenv("SITE_URL")
 	if siteURL == "" {
-		siteURL = "https://vanlug.p8.lu/"
+		siteURL = "https://vanlug.ca/"
 	}
 
 	apiURL := os.Getenv("API_URL")
