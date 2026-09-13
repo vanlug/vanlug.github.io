@@ -1,4 +1,22 @@
 past:
+  - date: "Sep 12, 2026"
+    name: "Linux Talks: Energy Grids and Agentic A.I."
+    location: "Burnaby Public Library, Tommy Douglas Library"
+    links:
+      - title: Luma
+        url: https://luma.com/vhkvwn7f
+  - date: "Sep 9, 2026"
+    name: "Linux Link at Richmond"
+    location: "Richmond Public Library, Brighouse Branch"
+    links:
+      - title: Luma
+        url: https://luma.com/4sjz8tzh
+  - date: "Aug 24, 2026"
+    name: "West Van Linux Link"
+    location: "West Vancouver Memorial Library"
+    links:
+      - title: Luma
+        url: https://luma.com/azx3u46q
   - date: "Aug 18, 2026"
     name: "Linux Link at Surrey (Guildford)"
     location: "Surrey Libraries, Guildford Branch"
