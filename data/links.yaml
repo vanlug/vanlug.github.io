@@ -45,7 +45,7 @@ sidebar:
     eventsFeed: true
   - separator: true
   - title: Email the board
-    url: mailto:contact@vanlug.ca
+    url: mailto:contact@vanlug.p8.lu
     icon: fa-solid fa-envelope
     description: Questions, talk proposals & more
 socials:
@@ -63,14 +63,14 @@ socials:
     url: https://signal.group/#CjQKIDT_S1T4NAqQq0UhlMwAVjirsOj6iW1JzpicVudNwr7SEhBRwaLJ9JGEM9CaciluJQdf
     icon: fa-brands fa-signal-messenger
   email:
-    url: mailto:contact@vanlug.ca
+    url: mailto:contact@vanlug.p8.lu
     icon: fa-solid fa-envelope
 donate:
   url: https://www.paypal.com/ncp/payment/5LJ46YPC7JJ7E
   icon: fa-brands fa-paypal
 feed:
   mastodon: https://thecanadian.social/@vanlug.rss
-api: https://vanlug-website-backend.up.railway.app
+api: https://vanlug.p8.lu/api
 luma:
   calendar: cal-x23GENOxTsZqSMO
   url: https://luma.com/vanlug
