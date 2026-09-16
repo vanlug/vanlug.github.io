@@ -20,7 +20,7 @@ Email: [contact@vanlug.p8.lu](mailto:contact@vanlug.p8.lu)
 
 If you want to report a privacy concern, please contact the data protection officer at the address above.
 
-Should you wish to report a complaint or if you feel that the Vancouver Linux User Group (VanLUG) has not addressed your concern in a satisfactory manner, you may contact the responsible Information Commissioner's Office: the [Office of the Information and Privacy Commissioner for British Columbia](https://www.oipc.bc.ca/for-the-public/how-do-i-make-a-complaint/).
+Should you wish to report a complaint or if you feel that the Vancouver Linux User Group has not addressed your concern in a satisfactory manner, you may contact the responsible Information Commissioner's Office: the [Office of the Information and Privacy Commissioner for British Columbia](https://www.oipc.bc.ca/for-the-public/how-do-i-make-a-complaint/).
 
 ### 3. Data Processing Reasons & Legal Basis
 
@@ -33,7 +33,7 @@ When accessing our website, the following information is processed for the reaso
    - Our website does NOT use cookies or other techniques for user-targeted analytics or advertisements.
    - Legal basis for processing this data is a legitimate interest of the website operator (Art. 6.1.f GDPR).
 
-#### 3.2 VanLUG Forgejo Data
+#### 3.2 Forgejo Data
 
 When accessing the Vancouver Linux User Group's Forgejo instance at [git.vanlug.p8.lu](https://git.vanlug.p8.lu), the following information is processed for the reasons outlined below:
 
@@ -45,14 +45,20 @@ When accessing the Vancouver Linux User Group's Forgejo instance at [git.vanlug.
 2. Voluntarily provided author details (name, e-mail address) when using e.g. the third-party software "Git" ([https://git-scm.com](https://git-scm.com)) to create/upload "commits" to our Forgejo instance, for the purpose of being able to reconstruct the original authorship of uploaded code for copyright & licensing reasons.
    - Data is provided voluntarily by the user, usually during setup, and is then automatically included in newly created commits.
    - Legal basis for processing this data is the license of the project as a legal contract (Art. 6.1.b GDPR).
-   - Attention: Most licenses permitted by our [terms of service](/terms/) are irrevocable and apply indefinitely, to the extent permitted by copyright law. Such licenses are considered to be legal contracts. As a distributor of open-source content, the Vancouver Linux User Group (VanLUG) reserves the right to maintain a copy of commit authorship records indefinitely. Additionally, the Vancouver Linux User Group (VanLUG) reserves the right to distribute such authorship records to all parties that wish to download, view or otherwise inspect content published using an allowed license. Such parties possess a legitimate interest to this information, as commit authorship records are necessary for adhering to the legal terms stipulated by the project license.
+   - Attention: Most licenses permitted by our [terms of service](/terms/) are irrevocable and apply indefinitely, to the extent permitted by copyright law. Such licenses are considered to be legal contracts. As a distributor of open-source content, the Vancouver Linux User Group reserves the right to maintain a copy of commit authorship records indefinitely. Additionally, the Vancouver Linux User Group reserves the right to distribute such authorship records to all parties that wish to download, view or otherwise inspect content published using an allowed license. Such parties possess a legitimate interest to this information, as commit authorship records are necessary for adhering to the legal terms stipulated by the project license.
 3. Technical metadata for the purpose of providing the platform services and avoiding misuse of our resources.
    - Data is processed during regular use of our Forgejo instance, and includes the IP address of the requesting computer, the browser and operating system you are using, the date and time of access, the Uniform Resource Locators (URL) requested on our Forgejo instance, as well as the previously visited website (referrer URL).
    - Further metadata includes technically necessary cookies to identify the session of a logged-in user or to protect users from so-called CSRF attacks. Our Forgejo instance does NOT use cookies or other techniques for user-targeted analytics or advertisements.
    - Legal basis for processing this data is a legitimate interest of the platform operator (Art. 6.1.f GDPR).
 4. When projects hosted on our Forgejo instance process personal data using our resources (e.g. within our CI, by using repositories as storage, or through a website hosted on our Git Pages), the project owner is primarily responsible for the data processing and must make sure to adhere to the GDPR as well as their local legislature independently from these terms.
 
-#### 3.3 Luma Event Data
+#### 3.3 User Site Data
+
+The Vancouver Linux User Group hosts the sites of its members at the public suffix [users.vanlugusercontent.p8.lu](https://users.vanlugusercontent.p8.lu/). We serve these sites with the same infrastructure as our website, so the information in section 3.1 applies to them as well.
+
+The owner of a user site is primarily responsible for the content of the site and for the personal data that it processes, as described in section 3.2.
+
+#### 3.4 Luma Event Data
 
 Our home page and events page fetch event data from Luma's API and images from Luma's CDN via our proxy. Your browser connects to our proxy, not directly to Luma. No data is sent to Luma from your browser. We also provide the RSS/Atom feed of upcoming events and their images via the same proxy.
 
@@ -62,7 +68,7 @@ San Francisco, CA 94104\
 United States\
 Privacy policy: [https://luma.com/privacy-policy](https://luma.com/privacy-policy)
 
-#### 3.4 Mastodon Feed Data
+#### 3.5 Mastodon Feed Data
 
 Our home page fetches recent posts and media from our Mastodon account via our proxy. Your browser connects to our proxy, not directly to [thecanadian.social](https://thecanadian.social). No data is sent to [thecanadian.social](https://thecanadian.social) from your browser. We also link to the public Mastodon RSS feed at `thecanadian.social/@vanlug.rss`; if you subscribe to it, your feed reader connects directly to [thecanadian.social](https://thecanadian.social).
 
@@ -77,7 +83,7 @@ Personal data may only be processed by the association bodies which are responsi
 
 - Tech committee members can access all resources and personal information stored on our servers. This is required for maintaining the infrastructure necessary for providing the Vancouver Linux User Group's services.
 
-Our website, Luma and Mastodon API proxy and Forgejo are hosted by:
+Our website, the member sites at the public suffix, our Luma and Mastodon API proxy and our Forgejo instance are hosted by:
 
 Hetzner Online GmbH\
 Industriestr. 25\

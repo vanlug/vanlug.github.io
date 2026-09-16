@@ -22,13 +22,23 @@ The Vancouver Linux User Group's website and services provide various documents 
 
 (3) For allowed content and usage, the [Codeberg Terms of Use § 2 (Allowed Content & Usage)](https://codeberg.org/Codeberg/org/src/branch/main/TermsOfUse.md#2-allowed-content-usage) apply, unless they are overridden by the preceding terms of this section.
 
-### 4. Rights, Responsibilities, Copyright & Guarantees
+### 4. User Sites
+
+(1) The Vancouver Linux User Group operates the public suffix [users.vanlugusercontent.p8.lu](https://users.vanlugusercontent.p8.lu/), which hosts the sites of Vancouver Linux User Group members. Those sites are not official Vancouver Linux User Group material.
+
+(2) The user sites are hosted on the Vancouver Linux User Group's Forgejo instance and served by our git-pages server. The terms for the Forgejo instance in section 3 (2) apply.
+
+(3) To request the removal of user site content for legal reasons, contact the abuse and moderation team at [contact@vanlug.p8.lu](mailto:contact@vanlug.p8.lu).
+
+(4) Each user site at a subdomain of the public suffix must show a visible notice. The notice must state that the material is not official Vancouver Linux User Group material. The notice is required at an address such as [pojntfx.users.vanlugusercontent.p8.lu](https://pojntfx.users.vanlugusercontent.p8.lu/). That notice must link to [users.vanlugusercontent.p8.lu](https://users.vanlugusercontent.p8.lu/) for more information. The user can for example place the notice in the site footer. If the site is served at a custom domain rather than at a subdomain of the public suffix, the notice is not required.
+
+### 5. Rights, Responsibilities, Copyright & Guarantees
 
 (1) Please see our [privacy policy](/privacy/) to learn more about your rights as a subject of personal data processing.
 
 (2) For rights, responsibilities, copyright and guarantees, the [Codeberg Terms of Use § 3 (Responsibilities, Copyright & Guarantees)](https://codeberg.org/Codeberg/org/src/branch/main/TermsOfUse.md#3-responsibilities-copyright-guarantees) apply, unless they are overridden by the preceding terms of this section.
 
-### 5. Cancellation and Termination
+### 6. Cancellation and Termination
 
 (1) As described in section 3, registration on the Vancouver Linux User Group's Forgejo instance is only open to Vancouver Linux User Group board members.
 
@@ -36,7 +46,7 @@ The Vancouver Linux User Group's website and services provide various documents 
 
 (3) Changes to these Terms of Service are communicated via an announcement banner on our website. If you do not visit our website for longer than three months, it is your own responsibility to recheck for the current Terms of Service. If you disagree to a change, you are responsible for ceasing to use the Vancouver Linux User Group's website and services.
 
-### 6. Disclaimer of Warranties and Liability
+### 7. Disclaimer of Warranties and Liability
 
 (1) The materials on our platform are provided on an "as is" basis. The Vancouver Linux User Group's website and services make no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
 
@@ -44,6 +54,6 @@ The Vancouver Linux User Group's website and services provide various documents 
 
 (3) In no event shall the Vancouver Linux User Group's website and services or their suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on the Vancouver Linux User Group's website and services, even if the Vancouver Linux User Group's website and services or a Vancouver Linux User Group's website and services-authorized representative has been notified orally or in writing of the possibility of such damage. Because some jurisdictions do not allow limitations on implied warranties, or limitations of liability for consequential or incidental damages, these limitations may not apply to you.
 
-### 7. Licence
+### 8. Licence
 
 These terms of service are inspired by the [Codeberg Terms of Use](https://codeberg.org/Codeberg/org/src/branch/main/TermsOfUse.md). You can freely use and modify this text under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) licence.
