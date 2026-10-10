@@ -1,4 +1,22 @@
 past:
+  - date: "Sep 21, 2026"
+    name: "West Van Linux Link"
+    location: "West Vancouver Memorial Library"
+    links:
+      - title: Luma
+        url: https://luma.com/19s0w89t
+  - date: "Sep 15, 2026"
+    name: "Linux Link at Surrey (Guildford)"
+    location: "Surrey Libraries, Guildford Branch"
+    links:
+      - title: Luma
+        url: https://luma.com/lkvrvkj2
+  - date: "Sep 5–7, 2026"
+    name: "Vancouver TAIWANfest"
+    location: "Granville Street, Downtown Vancouver"
+    links:
+      - title: TAIWANfest
+        url: https://vancouvertaiwanfest.ca/
   - date: "Sep 12, 2026"
     name: "Linux Talks: Energy Grids and Agentic A.I."
     location: "Burnaby Public Library, Tommy Douglas Library"
