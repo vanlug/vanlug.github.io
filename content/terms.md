@@ -24,13 +24,13 @@ The Vancouver Linux User Group's website and services provide various documents 
 
 ### 4. User Sites
 
-(1) The Vancouver Linux User Group operates the public suffix [users.vanlugusercontent.p8.lu](https://users.vanlugusercontent.p8.lu/), which hosts the sites of Vancouver Linux User Group members. Those sites are not official Vancouver Linux User Group material.
+(1) The Vancouver Linux User Group operates the public suffix [users.vanlug.org](https://users.vanlug.org/), which hosts the sites of Vancouver Linux User Group members. Those sites are not official Vancouver Linux User Group material.
 
 (2) The user sites are hosted on the Vancouver Linux User Group's Forgejo instance and served by our git-pages server. The terms for the Forgejo instance in section 3 (2) apply.
 
 (3) To request the removal of user site content for legal reasons, contact the abuse and moderation team at [contact@vanlug.p8.lu](mailto:contact@vanlug.p8.lu).
 
-(4) Each user site at a subdomain of the public suffix must show a visible notice. The notice must state that the material is not official Vancouver Linux User Group material. The notice is required at an address such as [pojntfx.users.vanlugusercontent.p8.lu](https://pojntfx.users.vanlugusercontent.p8.lu/). That notice must link to [users.vanlugusercontent.p8.lu](https://users.vanlugusercontent.p8.lu/) for more information. The user can for example place the notice in the site footer. If the site is served at a custom domain rather than at a subdomain of the public suffix, the notice is not required.
+(4) Each user site at a subdomain of the public suffix must show a visible notice. The notice must state that the material is not official Vancouver Linux User Group material. The notice is required at an address such as [pojntfx.users.vanlug.org](https://pojntfx.users.vanlug.org/). That notice must link to [users.vanlug.org](https://users.vanlug.org/) for more information. The user can for example place the notice in the site footer. If the site is served at a custom domain rather than at a subdomain of the public suffix, the notice is not required.
 
 ### 5. Rights, Responsibilities, Copyright & Guarantees
 

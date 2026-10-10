@@ -54,7 +54,7 @@ When accessing the Vancouver Linux User Group's Forgejo instance at [git.vanlug.
 
 #### 3.3 User Site Data
 
-The Vancouver Linux User Group hosts the sites of its members at the public suffix [users.vanlugusercontent.p8.lu](https://users.vanlugusercontent.p8.lu/). We serve these sites with the same infrastructure as our website, so the information in section 3.1 applies to them as well.
+The Vancouver Linux User Group hosts the sites of its members at the public suffix [users.vanlug.org](https://users.vanlug.org/). We serve these sites with the same infrastructure as our website, so the information in section 3.1 applies to them as well.
 
 The owner of a user site is primarily responsible for the content of the site and for the personal data that it processes, as described in section 3.2.
 
