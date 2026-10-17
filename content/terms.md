@@ -28,7 +28,7 @@ The Vancouver Linux User Group's website and services provide various documents 
 
 (2) The user sites are hosted on the Vancouver Linux User Group's Forgejo instance and served by our git-pages server. The terms for the Forgejo instance in section 3 (2) apply.
 
-(3) To request the removal of user site content for legal reasons, contact the abuse and moderation team at [contact@vanlug.p8.lu](mailto:contact@vanlug.p8.lu).
+(3) To request the removal of user site content for legal reasons, contact the abuse and moderation team at [contact@vanlug.ca](mailto:contact@vanlug.ca).
 
 (4) Each user site at a subdomain of the public suffix must show a visible notice. The notice must state that the material is not official Vancouver Linux User Group material. The notice is required at an address such as [pojntfx.users.vanlug.org](https://pojntfx.users.vanlug.org/). That notice must link to [users.vanlug.org](https://users.vanlug.org/) for more information. The user can for example place the notice in the site footer. If the site is served at a custom domain rather than at a subdomain of the public suffix, the notice is not required.
 
