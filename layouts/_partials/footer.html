@@ -23,15 +23,15 @@
         </div>
       </div>
       <div class="pf-v6-c-card__footer">
-        <a
-          href="{{ hugo.Data.links.donate.url }}"
-          target="_blank"
-          rel="noopener"
+        <button
+          type="button"
           class="pf-v6-c-button pf-m-control"
+          aria-haspopup="dialog"
+          data-interac-donate-open
+          ><span class="pf-v6-c-button__icon pf-m-start"
+            >{{ partial "icon" (dict "icon" "interac" "inButton" true) }}</span
           ><span class="pf-v6-c-button__text">{{ $f.donate.cta }}</span
-          ><span class="pf-v6-c-button__icon pf-m-end"
-            ><i class="fa-brands fa-paypal"></i></span
-        ></a>
+        ></button>
       </div>
     </div>
     <div class="pf-v6-c-content">
@@ -76,3 +76,34 @@
     </div>
   </div>
 </footer>
+
+{{- $interac := $f.donate.interac }}
+<interac-donate-modal title="{{ $interac.title }}">
+  <div class="pf-v6-l-flex pf-m-gap-sm pf-m-align-items-center pf-v6-u-mb-md">
+    <span>{{ $interac.recipient_label }}</span>
+    <span class="pf-v6-u-font-weight-bold" data-interac-email>{{ $interac.email }}</span>
+    <button
+      type="button"
+      class="pf-v6-c-button pf-m-secondary pf-m-small"
+      data-interac-copy
+      data-interac-copied-label="Copied"
+      ><span class="pf-v6-c-button__text">Copy</span
+      ><span class="pf-v6-c-button__icon pf-m-end"
+        >{{ partial "icon" (dict "icon" "copy" "inButton" true) }}</span
+    ></button>
+    <span class="pf-v6-u-screen-reader" role="status" data-interac-status></span>
+  </div>
+  <div class="pf-v6-c-content">
+    <ol>
+      {{- range $interac.steps }}
+      <li>{{ . }}</li>
+      {{- end }}
+    </ol>
+    <p class="pf-v6-u-mt-md">
+      {{ $interac.alternative }}
+      <a href="{{ hugo.Data.links.donate.url }}" target="_blank" rel="noopener"
+        >{{ $f.donate.cta_paypal }}</a
+      >.
+    </p>
+  </div>
+</interac-donate-modal>

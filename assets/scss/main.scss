@@ -430,6 +430,10 @@ dialog[open].pf-v6-c-modal-box::backdrop {
   background-color: var(--pf-t--global--background--color--backdrop--default);
 }
 
+interac-donate-modal:not(:defined) {
+  display: none;
+}
+
 .pf-v6-c-card__body.pf-m-bg-overlay {
   --bg-overlay-start: 60%;
   --bg-overlay-mid: 80%;

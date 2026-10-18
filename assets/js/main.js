@@ -1,5 +1,6 @@
 import "./sidebar.js";
 import "./event-detail-modal.js";
+import "./interac-donate-modal.js";
 import "./luma-next-event.js";
 import "./luma-upcoming-events.js";
 import "./mastodon-feed.js";
