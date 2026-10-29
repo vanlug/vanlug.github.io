@@ -2,4 +2,4 @@ enabled: true
 color: info # info, warning, danger, success, custom
 screen_reader_text: "Info:"
 icon: fa-info-circle # fa-info-circle (info), fa-exclamation-triangle (warning), fa-exclamation-circle (danger), fa-check-circle (success), fa-bell (custom)
-message: 'We have updated our <a href="/terms/">terms of service</a> and <a href="/privacy/">privacy policy</a>.'
+message: 'The 2026 Annual General Meeting is on Saturday, December 12 at 2:00pm. Get the <a href="/agm/2026/">location and AGM package</a>.'
