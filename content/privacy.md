@@ -77,6 +77,18 @@ Kelowna and Burnaby, British Columbia\
 Canada\
 Privacy policy: [https://thecanadian.social/privacy-policy](https://thecanadian.social/privacy-policy)
 
+#### 3.6 Mailing List Data
+
+We send the AGM package (the annual general meeting notice and reports) to our members from `noreply@vanlug.org` using Brevo. We send nothing else through Brevo. We import the mailing list from Luma, and each address on it represents a member of the Vancouver Linux User Group. Membership implies consent to receive these e-mails under Canada's Anti-Spam Legislation (CASL). Every e-mail contains a link to unsubscribe.
+
+We process your e-mail address, name and subscription status to send the AGM package. The legal basis is our legitimate interest in informing members (Art. 6.1.f GDPR). Brevo stores delivery data for each message on our behalf. We use anonymous tracking for opens and clicks. Brevo does not link them to you, and it anonymizes your e-mail address and IP address. Brevo also routes links and images in our e-mails through its servers.
+
+Brevo\
+17 rue de Salneuve\
+75017 Paris\
+France\
+Privacy policy: [https://www.brevo.com/legal/privacypolicy/](https://www.brevo.com/legal/privacypolicy/)
+
 ### 4. Data Handling by Association Bodies & Third Parties
 
 Personal data may only be processed by the association bodies which are responsible for their respective tasks. This specifically means that:
@@ -99,6 +111,7 @@ This company is based in Germany. Data transfers to the European Union are based
 2. Technical metadata like IP addresses are processed, not stored or retained by us directly, but rather by the third parties specified in section 4. Please see each provider's privacy policy for details.
 3. Personal data may exist in encrypted backups for up to 1 year. If the data retention period is exceeded at the time of restoration of a backup, affected personal data will be purged.
 4. Personal data is stored in accordance with the statutory archiving obligations in British Columbia, Canada.
+5. Mailing list contact details are stored until you unsubscribe or your membership ends. We keep unsubscribed e-mail addresses on a suppression list to make sure that we do not send you further e-mails.
 
 ### 6. Data Subject Rights
 
